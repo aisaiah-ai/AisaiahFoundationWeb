@@ -50,19 +50,19 @@ export function Features() {
 
   const screenshots = [
     {
-      src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=800",
-      alt: "Technology and faith integration showing modern spiritual interface",
-      title: "Prayer Interface"
+      src: "/attached_assets/Screenshot 2025-07-21 at 2.28.04 PM_1753122510764.png",
+      alt: "AIsaiah app home screen with daily spiritual journey interface and Good morning greeting",
+      title: "Daily Spiritual Journey"
     },
     {
-      src: "https://images.unsplash.com/photo-1544027993-37dbfe43562a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=800",
-      alt: "Spiritual meditation and peaceful technology use in serene setting",
-      title: "Scripture Study"
+      src: "/attached_assets/Screenshot 2025-07-21 at 2.27.07 PM_1753122510764.png", 
+      alt: "AIsaiah app spiritual progress tracker showing 100% completion with Prayer, Scripture, and Works",
+      title: "Spiritual Progress Tracker"
     },
     {
-      src: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=800",
-      alt: "Technology device displaying spiritual app interface",
-      title: "Ministry Dashboard"
+      src: "/attached_assets/Screenshot 2025-07-21 at 2.26.43 PM_1753122510764.png",
+      alt: "AIsaiah app dark mode showing prayer and reflection features with spiritual dashboard", 
+      title: "Prayer & Reflection Hub"
     }
   ];
 
