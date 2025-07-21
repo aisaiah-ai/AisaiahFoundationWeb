@@ -17,6 +17,18 @@ Preferred communication style: Simple, everyday language.
   - Pushed database schema to PostgreSQL with tables: users, contacts, newsletter_subscriptions, waitlist_entries
   - All form submissions now persist to database rather than in-memory storage
 
+- **Production Deployment Fixes**: Resolved all deployment configuration issues
+  - Fixed server/index.ts to properly handle production environment detection
+  - Added automatic NODE_ENV=production fallback when not specified
+  - Implemented proper Express app environment configuration
+  - Enhanced error handling with production-safe error responses
+  - Added comprehensive server startup logging and error reporting
+  - Implemented graceful shutdown handling for SIGTERM and SIGINT signals
+  - Fixed server.listen() syntax to properly bind to host and port
+  - Added production build verification and static file serving validation
+  - Comprehensive error handling for server setup and startup failures
+  - Successfully tested production server with health check endpoints
+
 ## System Architecture
 
 ### Frontend Architecture
@@ -100,18 +112,42 @@ Preferred communication style: Simple, everyday language.
 3. **Static Assets**: Bundled with frontend for efficient serving
 
 ### Environment Configuration
-- **Development**: Local development with Vite dev server
-- **Production**: Express server serves built React app as static files
+- **Development**: Local development with Vite dev server and hot reloading
+- **Production**: Express server serves pre-built React app as static files from `dist/public`
 - **Database**: PostgreSQL connection via environment variables
+- **Port Configuration**: Server automatically binds to PORT environment variable (default: 5000)
+
+### Deployment Commands
+```bash
+# Development
+npm run dev
+
+# Production Build
+npm run build
+
+# Production Server
+NODE_ENV=production npm start
+```
 
 ### Hosting Requirements
-- Node.js environment for Express server
+- Node.js 20+ environment for Express server
 - PostgreSQL database (Neon Database recommended)
 - Environment variables for database connection
 - Static file serving capability
+- Port 5000 accessibility (configurable via PORT env var)
 
 ### Key Environment Variables
-- `DATABASE_URL`: PostgreSQL connection string
-- `NODE_ENV`: Environment mode (development/production)
+- `DATABASE_URL`: PostgreSQL connection string (required)
+- `NODE_ENV`: Environment mode (development/production, auto-defaults to production)
+- `PORT`: Server port binding (default: 5000)
 
-The application is designed to be easily deployable on platforms like Vercel, Netlify, or traditional hosting providers with Node.js support.
+### Production Ready Features
+- ✅ Automatic production environment detection and fallback
+- ✅ Comprehensive error handling with production-safe responses  
+- ✅ Graceful server shutdown handling (SIGTERM/SIGINT)
+- ✅ Static file serving with proper build directory validation
+- ✅ Health check endpoint (`/api/health`) for monitoring
+- ✅ Request logging and performance monitoring
+- ✅ Database connectivity validation
+
+The application is production-ready and deployable on Replit, Vercel, Railway, or traditional hosting providers with Node.js support.
