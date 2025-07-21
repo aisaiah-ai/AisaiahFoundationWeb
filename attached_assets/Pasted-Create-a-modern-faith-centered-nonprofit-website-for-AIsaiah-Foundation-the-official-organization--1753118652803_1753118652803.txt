@@ -1,0 +1,45 @@
+Create a modern, faith-centered nonprofit website for AIsaiah Foundation, the official organization supporting the AIsaiah Spiritual App.
+
+Key Requirements:
+    1.  Branding & Logo
+    •   Use the attached logo (cross + dove + circuit design) prominently in the hero section.
+    •   Color palette inspired by the logo (teal, purple, and soft gradients).
+    •   Rounded, modern typography with a serene spiritual feel.
+    2.  Website Structure:
+    •   Hero Section
+    •   Large display of the logo with a soft glowing background.
+    •   Headline: “Empowering Spiritual Growth Through Faith & Technology”
+    •   Subtext: “AIsaiah Foundation is a nonprofit organization dedicated to building AI-powered spiritual tools for Christians and ministries worldwide.”
+    •   Call-to-action buttons: “Learn More” | “Download the App” | “Support Us”
+    •   About Section
+    •   Explain the mission: “We bridge faith and innovation, making spiritual practices more accessible through technology.”
+    •   Highlight nonprofit status and purpose.
+    •   Include a photo or illustration of people praying, worshiping, or using technology for faith.
+    •   App Features Section
+    •   Show the AIsaiah App features with icons: Guided Prayer, Scripture Journaling, AI Spiritual Companion, Ministry Tools.
+    •   Include screenshots or placeholders for the app UI.
+    •   Get Involved Section
+    •   Ways to contribute: Donations, Volunteering, Becoming a Faith Ambassador.
+    •   A “Donate Now” button with a secure payment gateway.
+    •   Events & Community Section
+    •   Upcoming conferences, workshops, or spiritual gatherings.
+    •   Newsletter signup.
+    •   Testimonials Section
+    •   Quotes from early users, pastors, or ministry leaders about the app’s impact.
+    •   Contact & Footer
+    •   Contact form (name, email, message). Details email: info@aisaiah.org contact number: 813-576-8131, address: 16192
+Coastal Hwy, Lewes, Delaware 19958, County of Sussex
+    •   Social media links.
+    •   Nonprofit info & legal disclaimer.
+    3.  Design Style:
+    •   Minimalistic, calm, and inspiring.
+    •   Light backgrounds with soft gradients and glowing effects.
+    •   Subtle Christian iconography (crosses, rays of light).
+    •   Mobile-friendly and responsive layout.
+    4.  Additional Features:
+    •   Integrate a “Join the Waitlist” form for future app updates.
+    •   Add a “Partner with Us” section for churches and ministries.
+    •   SEO-friendly with meta descriptions for faith-based organizations.
+
+Output:
+Generate clean, modern nonprofit website with the above sections with option for dark and light. Place the provided logo in the hero section and use it as a favicon. 
