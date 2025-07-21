@@ -131,10 +131,10 @@ export function Hero() {
               <span>Support Us</span>
             </Button>
           </motion.div>
-          
-          {/* Scroll Down Indicator */}
+
+          {/* Scroll Down Indicator - Positioned below CTA buttons */}
           <motion.div
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+            className="mt-12"
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1 }}
@@ -142,7 +142,7 @@ export function Hero() {
             <motion.div
               animate={{ y: [0, 5, 0] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="cursor-pointer"
+              className="cursor-pointer flex justify-center"
               onClick={() => scrollToSection("about")}
             >
               <div className="flex flex-col items-center text-muted-foreground hover:text-[hsl(var(--teal-primary))] transition-colors duration-300">
