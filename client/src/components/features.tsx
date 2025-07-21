@@ -51,18 +51,18 @@ export function Features() {
   const screenshots = [
     {
       src: "/screenshots/app-home.png",
-      alt: "AIsaiah app home screen with daily spiritual journey interface and Good morning greeting",
-      title: "Daily Spiritual Journey"
+      alt: "AIsaiah app welcome screen featuring sunrise over cross with Good morning greeting and spiritual journey options",
+      title: "Inspiring Daily Welcome"
     },
     {
       src: "/screenshots/app-progress.png", 
-      alt: "AIsaiah app spiritual progress tracker showing 100% completion with Prayer, Scripture, and Works",
-      title: "Spiritual Progress Tracker"
+      alt: "AIsaiah app showing 20% spiritual progress with Pray, Review, Act tracking and QuickLog features for Mass, Gospel, Fasting",
+      title: "Track Your Spiritual Growth"
     },
     {
       src: "/screenshots/app-dark.png",
-      alt: "AIsaiah app dark mode showing prayer and reflection features with spiritual dashboard", 
-      title: "Prayer & Reflection Hub"
+      alt: "AIsaiah app dark mode displaying 100% spiritual completion with Prayer, Scripture, Works and Daily Prayer & Reflection", 
+      title: "Complete Spiritual Dashboard"
     }
   ];
 
