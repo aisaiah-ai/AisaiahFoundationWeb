@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Heart, HandHeart, Users, Church, GraduationCap, Handshake } from "lucide-react";
 import { motion } from "framer-motion";
+import communityImagePath from "@assets/1753116969024-inspiring_diverse_community_collaboration_index_1@1536x1024_1753121360002.png";
 
 export function GetInvolved() {
   const scrollToSection = (sectionId: string) => {
@@ -59,8 +60,18 @@ export function GetInvolved() {
   ];
 
   return (
-    <section id="get-involved" className="py-20 bg-card">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="get-involved" className="py-20 bg-card relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0">
+        <img 
+          src={communityImagePath} 
+          alt="Diverse Community Collaboration" 
+          className="w-full h-full object-cover opacity-5 dark:opacity-3"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/80 to-background/90"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-6xl mx-auto">
           <motion.div
             className="text-center mb-16"

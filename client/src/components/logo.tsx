@@ -1,11 +1,39 @@
 export function Logo({ className = "w-8 h-10" }: { className?: string }) {
   return (
-    <div className={className}>
+    <div className={`${className} relative`}>
+      {/* Animated glow effect */}
+      <div className="absolute inset-0 blur-lg opacity-50 animate-pulse">
+        <svg 
+          viewBox="0 0 121 162" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-full"
+        >
+          <g filter="url(#glow1)">
+            <path fillRule="evenodd" clipRule="evenodd" d="M94.8162 35.4397C93.972 35.6659 93.1024 35.1648 92.8763 34.3206C92.6481 33.4744 93.1511 32.6048 93.9954 32.3787L110.677 27.9099C111.521 27.6818 112.391 28.1849 112.617 29.0291C112.843 29.8753 112.342 30.7448 111.496 30.971L94.8162 35.4397Z" fill="url(#glowGradient1)"/>
+          </g>
+          <defs>
+            <filter id="glow1">
+              <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+              <feMerge> 
+                <feMergeNode in="coloredBlur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+            <linearGradient id="glowGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#20E3C7" stopOpacity="0.8"/>
+              <stop offset="100%" stopColor="#8262C9" stopOpacity="0.8"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+      
+      {/* Main logo with enhanced animation */}
       <svg 
         viewBox="0 0 121 162" 
         fill="none" 
         xmlns="http://www.w3.org/2000/svg"
-        className="w-full h-full"
+        className="w-full h-full relative z-10 animate-logo-glow"
       >
         <g clipPath="url(#clip0_1_3)">
           <path 

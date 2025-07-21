@@ -1,7 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Logo } from "@/components/logo";
-import { ArrowRight, Download, Heart } from "lucide-react";
+import { ArrowRight, Download, Heart, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
+import faithTechBgPath from "@assets/1753116855202-faithtech_prayer_background_index_0@1536x1024_1753121360002.png";
 
 export function Hero() {
   const scrollToSection = (sectionId: string) => {
@@ -13,8 +14,15 @@ export function Hero() {
 
   return (
     <section className="pt-16 min-h-screen flex items-center justify-center relative overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--teal-primary))]/10 via-[hsl(var(--purple-primary))]/10 to-background"></div>
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0">
+        <img 
+          src={faithTechBgPath} 
+          alt="Faith and Technology Background" 
+          className="w-full h-full object-cover opacity-20 dark:opacity-10"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-[hsl(var(--teal-primary))]/20 via-[hsl(var(--purple-primary))]/20 to-background/80"></div>
+      </div>
       
       {/* Floating Elements */}
       <motion.div
@@ -43,15 +51,30 @@ export function Hero() {
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
-          {/* Logo Display */}
+          {/* Logo Display with Enhanced Glow */}
           <motion.div
             className="mb-8 flex justify-center"
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.8, type: "spring", bounce: 0.3 }}
           >
-            <div className="w-32 h-40 md:w-40 md:h-48 lg:w-48 lg:h-60 animate-glow drop-shadow-2xl">
-              <Logo className="w-full h-full" />
+            <div className="w-32 h-40 md:w-40 md:h-48 lg:w-48 lg:h-60 relative">
+              {/* Animated particle glow behind logo */}
+              <motion.div
+                className="absolute inset-0 blur-2xl opacity-40"
+                animate={{
+                  scale: [1, 1.1, 1],
+                  opacity: [0.3, 0.6, 0.3],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+              >
+                <div className="w-full h-full bg-gradient-to-r from-[hsl(var(--teal-primary))] to-[hsl(var(--purple-primary))] rounded-full"></div>
+              </motion.div>
+              <Logo className="w-full h-full relative z-10" />
             </div>
           </motion.div>
 
@@ -107,6 +130,26 @@ export function Hero() {
               <Heart className="mr-2 h-4 w-4" />
               <span>Support Us</span>
             </Button>
+          </motion.div>
+          
+          {/* Scroll Down Indicator */}
+          <motion.div
+            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 1 }}
+          >
+            <motion.div
+              animate={{ y: [0, 5, 0] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              className="cursor-pointer"
+              onClick={() => scrollToSection("about")}
+            >
+              <div className="flex flex-col items-center text-muted-foreground hover:text-[hsl(var(--teal-primary))] transition-colors duration-300">
+                <span className="text-sm mb-2">Scroll to explore</span>
+                <ChevronDown className="w-6 h-6 animate-bounce" />
+              </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

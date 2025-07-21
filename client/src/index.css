@@ -79,6 +79,10 @@
     animation: glow 2s ease-in-out infinite alternate;
   }
   
+  .animate-logo-glow {
+    animation: logoGlow 3s ease-in-out infinite alternate, float 4s ease-in-out infinite;
+  }
+  
   .animate-float {
     animation: float 3s ease-in-out infinite;
   }
@@ -96,6 +100,17 @@
     animation: fadeIn 0.5s ease-in-out 0.4s forwards;
     opacity: 0;
   }
+  
+  .text-gradient-spiritual {
+    background: linear-gradient(135deg, hsl(var(--teal-primary)), hsl(var(--purple-primary)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .bg-gradient-spiritual {
+    background: linear-gradient(135deg, hsl(var(--teal-primary))/10, hsl(var(--purple-primary))/10);
+  }
 }
 
 @keyframes glow {
@@ -104,6 +119,18 @@
   }
   100% { 
     box-shadow: 0 0 30px hsla(var(--teal-primary), 0.6);
+  }
+}
+
+@keyframes logoGlow {
+  0% { 
+    filter: drop-shadow(0 0 10px hsl(var(--teal-primary))) drop-shadow(0 0 20px hsl(var(--teal-primary))/50);
+  }
+  50% { 
+    filter: drop-shadow(0 0 20px hsl(var(--purple-primary))) drop-shadow(0 0 30px hsl(var(--purple-primary))/50);
+  }
+  100% { 
+    filter: drop-shadow(0 0 15px hsl(var(--teal-primary))) drop-shadow(0 0 25px hsl(var(--teal-primary))/50);
   }
 }
 

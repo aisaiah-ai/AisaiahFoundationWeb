@@ -1,0 +1,50 @@
+
+⸻
+
+✅ Visual Style Updates
+	•	Background & Layout
+	•	Add soft, animated gradient backgrounds (teal & purple with subtle glowing effects).
+	•	Introduce section dividers with wave or curved shapes for better visual flow.
+	•	Add a light pattern or faint Christian symbolism (cross, rays of light) in hero & footer backgrounds.
+	•	Typography & Colors
+	•	Keep Poppins but increase font contrast for better readability.
+	•	Add gold accents for highlights (CTA buttons, section headers).
+	•	Images & Icons
+	•	Replace existing placeholder illustrations with high-quality Christian-inspired stock images (Unsplash or Pexels).
+	•	Use custom icons for Prayer, AI, Ministry, Community.
+	•	Add a hero background image with subtle overlay (e.g., someone praying with a tech glow effect).
+
+⸻
+
+✅ Content & UX Improvements
+	1.	Hero Section
+	•	Add a subtle animated particle glow behind the logo.
+	•	Keep the main tagline but include a short mission subheadline.
+	•	Add scroll-down indicator for better UX.
+	2.	About Section
+	•	Introduce a timeline or milestone block to show the journey of the foundation.
+	•	Add a “Learn More” modal with extended mission details.
+	3.	Features Section
+	•	Display cards with hover effects & short descriptions for each app feature.
+	•	Include a short embedded demo video of the AIsaiah App.
+	4.	Get Involved Section
+	•	Add donation tiers with icons (e.g., $10 – Seeds of Faith, $50 – Community Builder).
+	•	Include a CTA button that links to a donation page.
+	5.	Testimonials Section
+	•	Make them carousel style with smooth auto-scroll.
+	•	Add profile images or avatars for a more personal feel.
+	6.	Partner & Waitlist Forms
+	•	Style forms with rounded inputs and subtle shadow effects.
+	•	Add a confirmation modal instead of a browser alert.
+	7.	Footer & Contact
+	•	Add a mini-map for location
+	•	Include quick links (Donate, Contact, Privacy Policy)
+	•	Display social media preview icons with hover effects.
+
+⸻
+
+✅ Interactive Enhancements
+	•	Add smooth scroll animations when navigating sections.
+	•	Use fade-in + slide-up effects for section reveals.
+	•	Include a floating “Support Us” donation button visible on all pages.
+	•	Improve dark/light mode toggle with a smooth transition.
