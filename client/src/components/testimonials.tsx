@@ -15,22 +15,25 @@ export function Testimonials() {
       quote: "AIsaiah Foundation is revolutionizing how our congregation connects with their faith. The AI-powered prayer guidance has deepened our community's spiritual practices in ways we never imagined.",
       author: "Pastor Michael Johnson",
       title: "Grace Community Church",
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100",
-      color: "text-[hsl(var(--teal-primary))]"
+      initials: "MJ",
+      color: "text-[hsl(var(--teal-primary))]",
+      bgColor: "bg-[hsl(var(--teal-primary))]"
     },
     {
       quote: "The scripture journaling features have transformed my daily devotions. Having AI assistance in understanding biblical context while maintaining the personal spiritual connection is incredible.",
-      author: "Dr. Sarah Williams",
+      author: "Dr. Sarah Williams", 
       title: "Theological Seminary Professor",
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b332c75c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100",
-      color: "text-[hsl(var(--purple-primary))]"
+      initials: "SW",
+      color: "text-[hsl(var(--purple-primary))]",
+      bgColor: "bg-[hsl(var(--purple-primary))]"
     },
     {
       quote: "As a ministry leader, the AIsaiah tools have enabled our team to serve our community more effectively. The technology enhances our spiritual outreach without replacing the human element.",
       author: "Pastor David Chen",
-      title: "Hope Fellowship Ministry",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100",
-      color: "text-[hsl(var(--teal-primary))]"
+      title: "Hope Fellowship Ministry", 
+      initials: "DC",
+      color: "text-[hsl(var(--teal-primary))]",
+      bgColor: "bg-[hsl(var(--teal-primary))]"
     }
   ];
 
@@ -70,11 +73,9 @@ export function Testimonials() {
                   "{testimonial.quote}"
                 </p>
                 <div className="flex items-center space-x-4">
-                  <img 
-                    src={testimonial.avatar} 
-                    alt={`${testimonial.author} testimonial photo`} 
-                    className="w-12 h-12 rounded-full object-cover"
-                  />
+                  <div className={`w-12 h-12 rounded-full ${testimonial.bgColor} flex items-center justify-center text-white font-semibold text-sm`}>
+                    {testimonial.initials}
+                  </div>
                   <div>
                     <div className="font-semibold text-foreground">{testimonial.author}</div>
                     <div className="text-sm text-muted-foreground">{testimonial.title}</div>
