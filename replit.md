@@ -8,6 +8,15 @@ This is a modern, faith-centered nonprofit website for AIsaiah Foundation, an or
 
 Preferred communication style: Simple, everyday language.
 
+## Recent Changes
+
+### January 21, 2025
+- **Database Integration**: Successfully integrated PostgreSQL database using Neon Database
+  - Added DatabaseStorage class to replace MemStorage for persistent data storage
+  - Configured Drizzle ORM with serverless PostgreSQL connection using WebSocket support
+  - Pushed database schema to PostgreSQL with tables: users, contacts, newsletter_subscriptions, waitlist_entries
+  - All form submissions now persist to database rather than in-memory storage
+
 ## System Architecture
 
 ### Frontend Architecture
@@ -27,9 +36,10 @@ Preferred communication style: Simple, everyday language.
 
 ### Database & Data Storage
 - **ORM**: Drizzle ORM for type-safe database operations
-- **Database**: PostgreSQL (configured for Neon Database)
+- **Database**: PostgreSQL with Neon Database (active)
 - **Migration System**: Drizzle Kit for schema management
-- **Development Storage**: In-memory storage implementation for development/testing
+- **Storage Implementation**: DatabaseStorage class with full PostgreSQL integration
+- **Connection**: Serverless PostgreSQL via @neondatabase/serverless with WebSocket support
 
 ## Key Components
 
