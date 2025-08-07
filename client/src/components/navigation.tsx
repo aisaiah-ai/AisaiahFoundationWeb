@@ -60,6 +60,12 @@ export function Navigation() {
             >
               Contact
             </button>
+            <a
+              href="/support"
+              className="text-muted-foreground hover:text-primary transition-colors duration-200"
+            >
+              Support
+            </a>
 
             {/* Theme Toggle */}
             <Button
@@ -136,6 +142,12 @@ export function Navigation() {
             >
               Contact
             </button>
+            <a
+              href="/support"
+              className="block text-muted-foreground hover:text-primary transition-colors duration-200"
+            >
+              Support
+            </a>
             <div className="flex items-center space-x-4 pt-4 border-t border-border">
               <Button
                 variant="ghost"

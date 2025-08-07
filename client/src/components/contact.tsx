@@ -358,6 +358,7 @@ export function Contact() {
                   <li><button onClick={() => document.getElementById("get-involved")?.scrollIntoView({ behavior: "smooth" })} className="hover:text-primary transition-colors duration-200">Get Involved</button></li>
                   <li><button onClick={() => document.getElementById("events")?.scrollIntoView({ behavior: "smooth" })} className="hover:text-primary transition-colors duration-200">Events</button></li>
                   <li><button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })} className="hover:text-primary transition-colors duration-200">Contact</button></li>
+                  <li><a href="/support" className="hover:text-primary transition-colors duration-200">Support</a></li>
                 </ul>
               </div>
 
