@@ -366,7 +366,7 @@ export function Contact() {
               <div>
                 <h4 className="font-semibold mb-4">Legal</h4>
                 <ul className="space-y-2 text-gray-300">
-                  <li><a href="#privacy" className="hover:text-primary transition-colors duration-200">Privacy Policy</a></li>
+                  <li><a href="/privacy" className="hover:text-primary transition-colors duration-200">Privacy Policy</a></li>
                   <li><a href="#terms" className="hover:text-primary transition-colors duration-200">Terms of Service</a></li>
                   <li><a href="#nonprofit" className="hover:text-primary transition-colors duration-200">Nonprofit Info</a></li>
                   <li><a href="#security" className="hover:text-primary transition-colors duration-200">Security</a></li>

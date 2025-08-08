@@ -66,6 +66,12 @@ export function Navigation() {
             >
               Support
             </a>
+            <a
+              href="/privacy"
+              className="text-muted-foreground hover:text-primary transition-colors duration-200"
+            >
+              Privacy
+            </a>
 
             {/* Theme Toggle */}
             <Button
@@ -147,6 +153,12 @@ export function Navigation() {
               className="block text-muted-foreground hover:text-primary transition-colors duration-200"
             >
               Support
+            </a>
+            <a
+              href="/privacy"
+              className="block text-muted-foreground hover:text-primary transition-colors duration-200"
+            >
+              Privacy
             </a>
             <div className="flex items-center space-x-4 pt-4 border-t border-border">
               <Button
