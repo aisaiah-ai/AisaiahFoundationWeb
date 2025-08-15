@@ -200,7 +200,7 @@ export function Contact() {
                         value={contactForm.lastName}
                         onChange={(e) => setContactForm(prev => ({ ...prev, lastName: e.target.value }))}
                         className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400"
-                        placeholder="Doe"
+                        placeholder="Smith"
                         required
                       />
                     </div>
@@ -214,7 +214,7 @@ export function Contact() {
                       value={contactForm.email}
                       onChange={(e) => setContactForm(prev => ({ ...prev, email: e.target.value }))}
                       className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400"
-                      placeholder="john@example.com"
+                      placeholder="john@aisaiah.org"
                       required
                     />
                   </div>
