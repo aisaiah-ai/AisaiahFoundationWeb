@@ -9,6 +9,18 @@
   --radius-xl: 1rem;
   --shadow-card: 0 8px 24px rgba(0,0,0,.08);
   
+  /* Header glass effect tokens */
+  --hdr-height: 64px;
+  --glass-blur: 14px;
+  --glass-radius: 16px;
+  --glass-border: 1px;
+  --glass-tint-dark: rgba(12,15,20,.55);
+  --glass-tint-light: rgba(255,255,255,.65);
+  --gooey-opacity-dark: .28;
+  --gooey-opacity-light: .18;
+  --sep-shadow-dark: 0 8px 30px rgba(0,0,0,.25);
+  --sep-shadow-light: 0 8px 24px rgba(2,6,23,.08);
+  
   /* Dark theme (default) */
   --bg: #0c0f14;
   --bg-elev: rgba(255,255,255,.05);
@@ -21,13 +33,16 @@
   --input-bg: rgba(255,255,255,.06);
   --input-placeholder: #92a0b5;
   --shadow-header: 0 8px 30px rgba(0,0,0,.25);
-  --glass-tint: rgba(12,15,20,.55);
-  --gooey-opacity: .28;
   
   /* Enhanced AIsaiah theme colors */
   --purple: #7C5CE3;
   --teal: #1BA39A;
   --gold: #F5C15B;
+  
+  /* Header glass theme defaults */
+  --glass-tint: var(--glass-tint-dark);
+  --gooey-opacity: var(--gooey-opacity-dark);
+  --hdr-shadow: var(--sep-shadow-dark);
 }
 
 [data-theme="light"] {
@@ -42,8 +57,11 @@
   --input-bg: #ffffff;
   --input-placeholder: #64748b;
   --shadow-header: 0 8px 24px rgba(2,6,23,.08);
-  --glass-tint: rgba(255,255,255,.65);
-  --gooey-opacity: .18;
+  
+  /* Header glass theme overrides */
+  --glass-tint: var(--glass-tint-light);
+  --gooey-opacity: var(--gooey-opacity-light);
+  --hdr-shadow: var(--sep-shadow-light);
 }
 
 @layer base {
@@ -64,26 +82,74 @@
 }
 
 @layer utilities {
-  /* Header glass effect */
-  .header-glass {
-    background: var(--bg-elev);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow-header);
+  /* Liquid header with proper layering */
+  .liquid-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    height: var(--hdr-height);
+    isolation: isolate;
+  }
+  
+  /* Liquid background (behind the glass) */
+  .liquid-bg {
+    position: absolute;
+    inset: 0;
+    opacity: var(--gooey-opacity);
+    pointer-events: none;
+  }
+  
+  /* Blob color follows theme accent softly */
+  .blob {
+    fill: color-mix(in oklab, var(--accent) 35%, transparent);
+  }
+  
+  /* Glass bar that sits ABOVE blobs but BELOW text using ::before tint */
+  .glass-bar {
+    position: relative;
+    height: 100%;
+    margin: 8px auto;
+    max-width: 1100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: var(--glass-radius);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: var(--glass-border) solid var(--border);
+    box-shadow: var(--hdr-shadow);
+    overflow: hidden;
+  }
+  
+  /* The tint layer that restores contrast on both themes */
+  .glass-bar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--glass-tint);
+    z-index: 0;
+  }
+  
+  /* Ensure nav content sits above tint */
+  .glass-bar > * {
+    position: relative;
+    z-index: 1;
   }
   
   /* Navigation link styles */
   .nav-link {
-    @apply relative px-2 py-1 font-semibold tracking-wide transition;
+    position: relative;
+    padding: 0.5rem 0.6rem;
+    font-weight: 600;
     color: var(--text-primary);
   }
-  .nav-link:hover,
-  .nav-link[aria-current="page"] {
-    color: var(--text-primary);
-    filter: brightness(1.1);
+  
+  .nav-link:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
   }
-  .nav-underline::after {
+  
+  .nav-link::after {
     content: "";
     position: absolute;
     left: 50%;
@@ -94,23 +160,20 @@
     border-radius: 9999px;
     transition: width 0.2s, left 0.2s;
   }
-  .nav-link:hover .nav-underline::after,
-  .nav-link[aria-current="page"] .nav-underline::after {
+  
+  .nav-link:hover::after,
+  .nav-link[aria-current="page"]::after {
     left: 0;
     width: 100%;
   }
   
-  /* Accent button */
-  .btn-accent {
+  /* Donate pill (kept high-contrast) */
+  .btn-donate {
+    border-radius: 9999px;
+    padding: 0.55rem 0.9rem;
+    font-weight: 700;
     background: var(--accent);
     color: var(--btn-text-on-accent);
-    border-radius: 9999px;
-    padding: 0.5rem 0.9rem;
-    font-weight: 600;
-    transition: filter 0.2s;
-  }
-  .btn-accent:hover {
-    filter: brightness(1.05);
   }
   
   /* Icon buttons */
@@ -124,6 +187,18 @@
   }
   .icon-btn:focus {
     box-shadow: 0 0 0 2px var(--accent);
+  }
+  
+  /* Mobile panel inherits glass */
+  .mobile-panel {
+    margin: 6px 8px 0;
+    padding: 8px;
+    border-radius: var(--glass-radius);
+    border: var(--glass-border) solid var(--border);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    background: var(--glass-tint);
+    box-shadow: var(--hdr-shadow);
   }
   
   /* Mobile navigation links */
