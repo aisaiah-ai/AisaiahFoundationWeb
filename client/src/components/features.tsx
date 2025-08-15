@@ -4,6 +4,11 @@ import { useState } from "react";
 import { HandHeart, BookOpen, Bot, Church } from "lucide-react";
 import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
+import splashScreen from "@assets/01_Splash_1755272472047.png";
+import welcomeMission from "@assets/02_WelcomeMission_1755272472047.png";
+import welcomeAI from "@assets/03_WelcomeAI_1755272472047.png";
+import spiritualRings from "@assets/04_SpiritualRings_1755272472047.png";
+import twrSchedule from "@assets/05_TWRSchedule_1755272472048.png";
 
 export function Features() {
   const [waitlistEmail, setWaitlistEmail] = useState("");
@@ -50,19 +55,29 @@ export function Features() {
 
   const screenshots = [
     {
-      src: "/screenshots/app-home.png",
-      alt: "AIsaiah app welcome screen featuring sunrise over cross with Good morning greeting and spiritual journey options",
-      title: "Inspiring Daily Welcome"
+      src: splashScreen,
+      alt: "AIsaiah app splash screen showing the logo with teal cross and purple dove on dark gradient background",
+      title: "Beautiful App Launch"
     },
     {
-      src: "/screenshots/app-progress.png", 
-      alt: "AIsaiah app showing 20% spiritual progress with Pray, Review, Act tracking and QuickLog features for Mass, Gospel, Fasting",
-      title: "Track Your Spiritual Growth"
+      src: welcomeMission,
+      alt: "AIsaiah onboarding screen explaining Our Mission to deepen faith daily with guided prayer and scripture",
+      title: "Our Mission"
     },
     {
-      src: "/screenshots/app-dark.png",
-      alt: "AIsaiah app dark mode displaying 100% spiritual completion with Prayer, Scripture, Works and Daily Prayer & Reflection", 
-      title: "Complete Spiritual Dashboard"
+      src: welcomeAI,
+      alt: "AIsaiah AI features screen showing AI chip icon and mission statement with Get Started and Sign In options",
+      title: "AI-Powered Spiritual Growth"
+    },
+    {
+      src: spiritualRings,
+      alt: "AIsaiah main dashboard showing 100% spiritual completion with colorful progress rings for Pray, Review, and Acts",
+      title: "Track Your Daily Progress"
+    },
+    {
+      src: twrSchedule,
+      alt: "AIsaiah event schedule showing CFC SE-B Regional Theme Weekend Retreat with worship and session times",
+      title: "Ministry Event Planning"
     }
   ];
 
@@ -119,7 +134,7 @@ export function Features() {
               <p className="text-muted-foreground">Experience the beautiful, intuitive interface designed for spiritual growth.</p>
             </div>
             
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
               {screenshots.map((screenshot, index) => (
                 <motion.div
                   key={screenshot.title}
