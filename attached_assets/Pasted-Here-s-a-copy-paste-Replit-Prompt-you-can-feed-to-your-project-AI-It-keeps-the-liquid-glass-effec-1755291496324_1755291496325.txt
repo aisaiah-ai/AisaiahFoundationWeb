@@ -1,0 +1,169 @@
+Here’s a copy-paste “Replit Prompt” you can feed to your project AI. It keeps the liquid/glass effect but makes the top nav much easier to read and use.
+
+⸻
+
+Replit Prompt — Improve Top Navigation (Keep Liquid Effect)
+
+Project: AIsaiah Foundation web app (dark theme).
+Goal: Keep the existing “liquid / glass” header vibe, but make the top menu highly readable and usable across desktop + mobile.
+
+What to change
+  1.  Header container
+  • Keep a translucent, liquid/glass style but raise contrast for the menu text.
+  • Use position: sticky; top: 0; z-index: 50; so the bar stays visible on scroll.
+  • Apply a subtle backdrop blur and darker overlay so text passes WCAG AA on dark backgrounds.
+  • Add a soft bottom border or shadow to separate the header from content.
+  2.  Logo + Brand
+  • Left-align logo, maintain current SVG.
+  • Ensure the brand name AIsaiah Foundation has minimum contrast ratio 4.5:1 over the header.
+  3.  Nav items (Desktop ≥1024px)
+  • Increase font weight to 600, letter-spacing +0.2px.
+  • Default color: #E6ECF5 (or rgba(230,236,245,.92)).
+  • Hover/active: text to #FFFFFF and add a liquid underline: a 2px rounded bar that grows from center to full width (200ms).
+  • Focus state (keyboard): 2px focus ring #67E8F9 outside text.
+  4.  Dark/Light toggle
+  • Keep the moon icon, but ensure it has a visible focus ring and tooltip title="Toggle theme".
+  5.  Mobile nav (≤1023px)
+  • Replace the cramped top links with a right-aligned hamburger.
+  • Slide-down panel with the same glass/liquid look (blur + tint), full-width, safe-area insets respected.
+  • Each item is at least 44px tall; include separators at 10% opacity.
+  6.  Liquid effect (retain)
+  • Keep the gooey/liquid background in the header using CSS/SVG filter (no heavy canvas).
+  • Tone it down 30–40% so it doesn’t lower text contrast. Mask it behind the overlay layer.
+  7.  Accessibility
+  • All text in header passes WCAG AA (≥4.5:1).
+  • Full keyboard navigation (Tab → Shift+Tab), aria-expanded on hamburger, aria-label on toggle.
+  • Reduce motion preference: if prefers-reduced-motion, disable underline animation.
+  8.  Performance
+  • Use will-change: backdrop-filter and avoid large box-shadow blurs.
+  • Only mount the mobile panel in DOM when open.
+
+Implement with Tailwind (preferred) or vanilla CSS
+
+If Tailwind is available, add these utilities; otherwise, create equivalent CSS.
+
+Header markup (example)
+
+<header class="sticky top-0 z-50">
+  <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <nav class="flex h-16 items-center justify-between rounded-2xl border border-white/10 bg-white/5
+                backdrop-blur-xl supports-[backdrop-filter]:bg-white/5
+                shadow-[0_8px_30px_rgb(0_0_0_/_0.25)]">
+      <!-- Left: Logo -->
+      <a href="/" class="flex items-center gap-3 px-2 py-2">
+        <img src="/logo.svg" alt="AIsaiah Foundation" class="h-7 w-7" />
+        <span class="text-slate-100/95 font-semibold tracking-wide">AIsaiah Foundation</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <ul class="hidden lg:flex items-center gap-6">
+        <!-- repeat for each link -->
+        <li><a class="nav-link" href="/about">About</a></li>
+        <li><a class="nav-link" href="/features">App Features</a></li>
+        <li><a class="nav-link" href="/involved">Get Involved</a></li>
+        <li><a class="nav-link" href="/events">Events</a></li>
+        <li><a class="nav-link" href="/contact">Contact</a></li>
+        <li><a class="nav-link" href="/support">Support</a></li>
+        <li><a class="nav-link" href="/privacy">Privacy</a></li>
+        <li><a class="btn-donate" href="/donate">Donate</a></li>
+      </ul>
+
+      <!-- Right: Theme toggle + mobile button -->
+      <div class="flex items-center gap-2">
+        <button class="icon-btn" aria-label="Toggle theme" title="Toggle theme">
+          <!-- moon/sun svg -->
+        </button>
+        <button class="lg:hidden icon-btn" aria-label="Open menu" aria-expanded="false" id="menuButton">
+          <!-- hamburger svg -->
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Mobile panel -->
+  <div id="mobilePanel" class="lg:hidden hidden">
+    <div class="mx-2 mt-2 rounded-2xl border border-white/10 bg-white/8 backdrop-blur-xl p-2">
+      <a class="mobile-link" href="/about">About</a>
+      <a class="mobile-link" href="/features">App Features</a>
+      <a class="mobile-link" href="/involved">Get Involved</a>
+      <a class="mobile-link" href="/events">Events</a>
+      <a class="mobile-link" href="/contact">Contact</a>
+      <a class="mobile-link" href="/support">Support</a>
+      <a class="mobile-link" href="/privacy">Privacy</a>
+      <a class="mobile-donate" href="/donate">Donate</a>
+    </div>
+  </div>
+
+  <!-- Liquid layer (kept) -->
+  <svg class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+    <!-- existing gooey filter + shapes; reduce opacity to ~0.25 -->
+  </svg>
+</header>
+
+Tailwind plugin classes (add to your global CSS)
+
+/* Base link styles for visibility */
+.nav-link{
+  @apply relative px-2 py-1 text-slate-100/90 font-semibold tracking-wide transition;
+}
+.nav-link:hover,
+.nav-link[aria-current="page"]{
+  @apply text-white;
+}
+.nav-link::after{
+  content:"";
+  @apply absolute left-1/2 -bottom-0.5 h-0.5 w-0 rounded-full bg-cyan-300/80 transition-[width,left] duration-200;
+}
+.nav-link:hover::after,
+.nav-link[aria-current="page"]::after{
+  @apply left-0 w-full;
+}
+
+/* Donate as a high-contrast pill */
+.btn-donate{
+  @apply ml-2 rounded-full px-3 py-1.5 text-sm font-semibold
+         bg-teal-400/90 text-slate-900 hover:bg-teal-300 focus:outline-none
+         focus:ring-2 focus:ring-offset-0 focus:ring-cyan-300;
+}
+
+/* Icon buttons */
+.icon-btn{
+  @apply rounded-full p-2 text-slate-100/90 hover:text-white focus:outline-none
+         focus:ring-2 focus:ring-cyan-300;
+}
+
+/* Mobile links */
+.mobile-link{
+  @apply block rounded-xl px-3 py-3 text-slate-100/90 hover:text-white hover:bg-white/5;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+.mobile-link:last-child{ border-bottom: none; }
+.mobile-donate{ @apply block mt-1 rounded-xl px-3 py-3 bg-teal-400/90 text-slate-900 font-semibold text-center; }
+
+Minimal JS (vanilla)
+
+const btn = document.getElementById('menuButton');
+const panel = document.getElementById('mobilePanel');
+
+btn?.addEventListener('click', () => {
+  const open = panel.classList.toggle('hidden') === false;
+  btn.setAttribute('aria-expanded', String(open));
+});
+
+// Reduce motion: disable underline animation
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.documentElement.style.setProperty('--tw-duration', '0ms');
+}
+
+Liquid / Gooey filter tip
+  • Keep your existing SVG filter (e.g., feGaussianBlur + feColorMatrix + feBlend) but wrap it under the header using an absolutely positioned SVG, and lower the shapes’ opacity to 0.25–0.35.
+  • Put the tint/overlay above the gooey layer: a ::before on the header with background: rgba(10,12,18,0.55); backdrop-filter: blur(12px);.
+
+Acceptance criteria
+  • Nav text contrast ≥ 4.5:1 on all header states.
+  • Sticky header with clear separation from content.
+  • Smooth liquid vibe remains visible but subtle.
+  • Keyboard-navigable; focus styles visible.
+  • Mobile menu is readable, touch-friendly (44px min).
+  • No layout shift; Lighthouse Accessibility ≥ 95 for header section.
+

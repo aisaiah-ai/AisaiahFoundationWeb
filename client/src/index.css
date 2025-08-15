@@ -88,6 +88,55 @@
 }
 
 @layer utilities {
+  /* Navigation link styles for improved readability */
+  .nav-link {
+    @apply relative px-2 py-1 text-slate-100/90 font-semibold tracking-wide transition;
+  }
+  .nav-link:hover,
+  .nav-link[aria-current="page"] {
+    @apply text-white;
+  }
+  .nav-link::after {
+    content: "";
+    @apply absolute left-1/2 -bottom-0.5 h-0.5 w-0 rounded-full bg-cyan-300/80 transition-[width,left] duration-200;
+  }
+  .nav-link:hover::after,
+  .nav-link[aria-current="page"]::after {
+    @apply left-0 w-full;
+  }
+  
+  /* Donate button as high-contrast pill */
+  .btn-donate {
+    @apply ml-2 rounded-full px-3 py-1.5 text-sm font-semibold
+           bg-teal-400/90 text-slate-900 hover:bg-teal-300 focus:outline-none
+           focus:ring-2 focus:ring-offset-0 focus:ring-cyan-300;
+  }
+  
+  /* Icon buttons */
+  .icon-btn {
+    @apply rounded-full p-2 text-slate-100/90 hover:text-white focus:outline-none
+           focus:ring-2 focus:ring-cyan-300;
+  }
+  
+  /* Mobile navigation links */
+  .mobile-link {
+    @apply block rounded-xl px-3 py-3 text-slate-100/90 hover:text-white hover:bg-white/5;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
+  .mobile-link:last-child { 
+    border-bottom: none; 
+  }
+  .mobile-donate { 
+    @apply block mt-1 rounded-xl px-3 py-3 bg-teal-400/90 text-slate-900 font-semibold text-center; 
+  }
+  
+  /* Reduce motion support */
+  @media (prefers-reduced-motion: reduce) {
+    .nav-link::after {
+      transition: none;
+    }
+  }
+  
   .animate-glow {
     animation: glow 2s ease-in-out infinite alternate;
   }

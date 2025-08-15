@@ -1,8 +1,7 @@
-import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { useState, useEffect } from "react";
 import { Logo } from "@/components/logo";
 import { useTheme } from "@/components/theme-provider";
-import { Sun, Moon, Menu, X } from "lucide-react";
+import { Moon, Menu, X } from "lucide-react";
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,173 +15,264 @@ export function Navigation() {
     }
   };
 
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as Element;
+      if (isMenuOpen && !target.closest('#navigation-header')) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [isMenuOpen]);
+
+  // Handle keyboard navigation
+  const handleMenuButtonClick = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <nav className="fixed top-0 w-full bg-background/90 dark:bg-background/90 backdrop-blur-md z-50 border-b border-border">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center space-x-3">
-            <Logo className="w-8 h-10" />
-            <span className="text-xl font-semibold text-foreground">
-              AIsaiah Foundation
-            </span>
-          </div>
+    <header className="sticky top-0 z-50" id="navigation-header">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <nav className="flex h-16 items-center justify-between rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl supports-[backdrop-filter]:bg-white/5 shadow-[0_8px_30px_rgb(0_0_0_/_0.25)]">
+          {/* Left: Logo */}
+          <a href="/" className="flex items-center gap-3 px-2 py-2">
+            <Logo className="h-7 w-7" />
+            <span className="text-slate-100/95 font-semibold tracking-wide">AIsaiah Foundation</span>
+          </a>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={() => scrollToSection("about")}
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
-              About
-            </button>
-            <button
-              onClick={() => scrollToSection("features")}
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
-              App Features
-            </button>
-            <button
-              onClick={() => scrollToSection("get-involved")}
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
-              Get Involved
-            </button>
-            <button
-              onClick={() => scrollToSection("events")}
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
-              Events
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
-              Contact
-            </button>
-            <a
-              href="/support"
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
-              Support
-            </a>
-            <a
-              href="/privacy"
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
-              Privacy
-            </a>
+          {/* Desktop nav */}
+          <ul className="hidden lg:flex items-center gap-6">
+            <li>
+              <button 
+                className="nav-link" 
+                onClick={() => scrollToSection("features")}
+                data-testid="nav-features"
+              >
+                App Features
+              </button>
+            </li>
+            <li>
+              <button 
+                className="nav-link" 
+                onClick={() => scrollToSection("mission")}
+                data-testid="nav-mission"
+              >
+                Mission
+              </button>
+            </li>
+            <li>
+              <button 
+                className="nav-link" 
+                onClick={() => scrollToSection("faq")}
+                data-testid="nav-faq"
+              >
+                FAQ
+              </button>
+            </li>
+            <li>
+              <button 
+                className="nav-link" 
+                onClick={() => scrollToSection("waitlist")}
+                data-testid="nav-waitlist"
+              >
+                Waitlist
+              </button>
+            </li>
+            <li>
+              <button 
+                className="nav-link" 
+                onClick={() => scrollToSection("get-involved")}
+                data-testid="nav-get-involved"
+              >
+                Get Involved
+              </button>
+            </li>
+            <li>
+              <button 
+                className="nav-link" 
+                onClick={() => scrollToSection("contact")}
+                data-testid="nav-contact"
+              >
+                Contact
+              </button>
+            </li>
+            <li>
+              <a 
+                className="nav-link" 
+                href="/support"
+                data-testid="nav-support"
+              >
+                Support
+              </a>
+            </li>
+            <li>
+              <a 
+                className="nav-link" 
+                href="/privacy"
+                data-testid="nav-privacy"
+              >
+                Privacy
+              </a>
+            </li>
+            <li>
+              <button 
+                className="btn-donate" 
+                onClick={() => scrollToSection("donate")}
+                data-testid="nav-donate"
+              >
+                Donate
+              </button>
+            </li>
+          </ul>
 
-            {/* Theme Toggle */}
-            <Button
-              variant="ghost"
-              size="icon"
+          {/* Right: Theme toggle + mobile button */}
+          <div className="flex items-center gap-2">
+            <button 
+              className="icon-btn" 
+              aria-label="Toggle theme" 
+              title="Toggle theme"
               onClick={toggleTheme}
-              className="h-9 w-9"
+              data-testid="theme-toggle"
             >
-              {theme === "dark" ? (
-                <Sun className="h-4 w-4" />
-              ) : (
-                <Moon className="h-4 w-4" />
-              )}
-              <span className="sr-only">Toggle theme</span>
-            </Button>
-
-            <Button
-              onClick={() => scrollToSection("donate")}
-              className="bg-gradient-spiritual hover:shadow-lg transform hover:scale-105 transition-all duration-200"
-            >
-              Donate
-            </Button>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="h-9 w-9"
+              <Moon className="h-4 w-4" />
+            </button>
+            <button 
+              className="lg:hidden icon-btn" 
+              aria-label="Open menu" 
+              aria-expanded={isMenuOpen}
+              onClick={handleMenuButtonClick}
+              data-testid="mobile-menu-button"
             >
               {isMenuOpen ? (
                 <X className="h-5 w-5" />
               ) : (
                 <Menu className="h-5 w-5" />
               )}
-            </Button>
+            </button>
           </div>
-        </div>
+        </nav>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile panel */}
       {isMenuOpen && (
-        <div className="md:hidden bg-background border-t border-border">
-          <div className="px-4 py-4 space-y-4">
-            <button
-              onClick={() => scrollToSection("about")}
-              className="block text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
-              About
-            </button>
-            <button
+        <div className="lg:hidden" data-testid="mobile-menu-panel">
+          <div className="mx-2 mt-2 rounded-2xl border border-white/10 bg-white/8 backdrop-blur-xl p-2">
+            <button 
+              className="mobile-link" 
               onClick={() => scrollToSection("features")}
-              className="block text-muted-foreground hover:text-primary transition-colors duration-200"
+              data-testid="mobile-nav-features"
             >
               App Features
             </button>
-            <button
+            <button 
+              className="mobile-link" 
+              onClick={() => scrollToSection("mission")}
+              data-testid="mobile-nav-mission"
+            >
+              Mission
+            </button>
+            <button 
+              className="mobile-link" 
+              onClick={() => scrollToSection("faq")}
+              data-testid="mobile-nav-faq"
+            >
+              FAQ
+            </button>
+            <button 
+              className="mobile-link" 
+              onClick={() => scrollToSection("waitlist")}
+              data-testid="mobile-nav-waitlist"
+            >
+              Waitlist
+            </button>
+            <button 
+              className="mobile-link" 
               onClick={() => scrollToSection("get-involved")}
-              className="block text-muted-foreground hover:text-primary transition-colors duration-200"
+              data-testid="mobile-nav-get-involved"
             >
               Get Involved
             </button>
-            <button
-              onClick={() => scrollToSection("events")}
-              className="block text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
-              Events
-            </button>
-            <button
+            <button 
+              className="mobile-link" 
               onClick={() => scrollToSection("contact")}
-              className="block text-muted-foreground hover:text-primary transition-colors duration-200"
+              data-testid="mobile-nav-contact"
             >
               Contact
             </button>
-            <a
+            <a 
+              className="mobile-link" 
               href="/support"
-              className="block text-muted-foreground hover:text-primary transition-colors duration-200"
+              data-testid="mobile-nav-support"
             >
               Support
             </a>
-            <a
+            <a 
+              className="mobile-link" 
               href="/privacy"
-              className="block text-muted-foreground hover:text-primary transition-colors duration-200"
+              data-testid="mobile-nav-privacy"
             >
               Privacy
             </a>
-            <div className="flex items-center space-x-4 pt-4 border-t border-border">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={toggleTheme}
-                className="h-9 w-9"
-              >
-                {theme === "dark" ? (
-                  <Sun className="h-4 w-4" />
-                ) : (
-                  <Moon className="h-4 w-4" />
-                )}
-              </Button>
-              <Button
-                onClick={() => scrollToSection("donate")}
-                className="bg-gradient-spiritual"
-              >
-                Donate
-              </Button>
-            </div>
+            <button 
+              className="mobile-donate" 
+              onClick={() => scrollToSection("donate")}
+              data-testid="mobile-nav-donate"
+            >
+              Donate
+            </button>
           </div>
         </div>
       )}
-    </nav>
+
+      {/* Liquid layer (kept subtle) */}
+      <svg 
+        className="pointer-events-none absolute inset-0 -z-10 opacity-25" 
+        aria-hidden="true"
+        viewBox="0 0 100 20"
+        preserveAspectRatio="none"
+      >
+        <defs>
+          <filter id="gooey">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="blur" />
+            <feColorMatrix 
+              in="blur" 
+              mode="matrix" 
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -10" 
+              result="gooey" 
+            />
+            <feBlend in="SourceGraphic" in2="gooey" />
+          </filter>
+        </defs>
+        <g filter="url(#gooey)">
+          <circle cx="20" cy="10" r="8" fill="var(--teal)" opacity="0.3">
+            <animate 
+              attributeName="cx" 
+              values="20;80;20" 
+              dur="8s" 
+              repeatCount="indefinite" 
+            />
+          </circle>
+          <circle cx="60" cy="10" r="6" fill="var(--purple)" opacity="0.2">
+            <animate 
+              attributeName="cx" 
+              values="60;30;60" 
+              dur="6s" 
+              repeatCount="indefinite" 
+            />
+          </circle>
+          <circle cx="40" cy="10" r="4" fill="var(--gold)" opacity="0.15">
+            <animate 
+              attributeName="cy" 
+              values="10;5;10" 
+              dur="4s" 
+              repeatCount="indefinite" 
+            />
+          </circle>
+        </g>
+      </svg>
+    </header>
   );
 }
