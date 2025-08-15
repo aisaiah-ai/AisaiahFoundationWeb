@@ -343,51 +343,49 @@ export function Contact() {
           </motion.div>
 
           {/* Footer */}
-          <footer className="border-t border-gray-700 pt-8">
+          <footer className="border-t pt-8" style={{ borderColor: 'var(--muted)' }}>
             <div className="grid md:grid-cols-4 gap-8 mb-8">
               {/* Logo and Description */}
               <div className="md:col-span-2">
                 <div className="flex items-center space-x-3 mb-4">
                   <Logo className="w-8 h-10" />
-                  <span className="text-xl font-semibold">AIsaiah Foundation</span>
+                  <span className="text-xl font-semibold" style={{ color: 'var(--text)' }}>AIsaiah Foundation</span>
                 </div>
-                <p className="text-gray-300 mb-4">
+                <p className="mb-4" style={{ color: 'var(--muted)' }}>
                   A nonprofit organization bridging faith and innovation to make spiritual practices more accessible through AI-powered technology.
                 </p>
-                <p className="text-sm text-gray-400">
-                  © 2024 AIsaiah Foundation. All rights reserved.
+                <p className="text-sm" style={{ color: 'var(--muted)' }}>
+                  © 2025 AIsaiah Foundation. All rights reserved.
                 </p>
               </div>
 
               {/* Quick Links */}
               <div>
-                <h4 className="font-semibold mb-4">Quick Links</h4>
-                <ul className="space-y-2 text-gray-300">
-                  <li><button onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })} className="hover:text-primary transition-colors duration-200">About Us</button></li>
-                  <li><button onClick={() => document.getElementById("features")?.scrollIntoView({ behavior: "smooth" })} className="hover:text-primary transition-colors duration-200">App Features</button></li>
-                  <li><button onClick={() => document.getElementById("get-involved")?.scrollIntoView({ behavior: "smooth" })} className="hover:text-primary transition-colors duration-200">Get Involved</button></li>
-                  <li><button onClick={() => document.getElementById("events")?.scrollIntoView({ behavior: "smooth" })} className="hover:text-primary transition-colors duration-200">Events</button></li>
-                  <li><button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })} className="hover:text-primary transition-colors duration-200">Contact</button></li>
-                  <li><a href="/support" className="hover:text-primary transition-colors duration-200">Support</a></li>
+                <h4 className="font-semibold mb-4" style={{ color: 'var(--text)' }}>Quick Links</h4>
+                <ul className="space-y-2" style={{ color: 'var(--muted)' }}>
+                  <li><button onClick={() => document.getElementById("features")?.scrollIntoView({ behavior: "smooth" })} className="hover:opacity-80 transition-opacity duration-200">App Features</button></li>
+                  <li><button onClick={() => document.getElementById("mission")?.scrollIntoView({ behavior: "smooth" })} className="hover:opacity-80 transition-opacity duration-200">Mission</button></li>
+                  <li><button onClick={() => document.getElementById("faq")?.scrollIntoView({ behavior: "smooth" })} className="hover:opacity-80 transition-opacity duration-200">FAQ</button></li>
+                  <li><button onClick={() => document.getElementById("waitlist")?.scrollIntoView({ behavior: "smooth" })} className="hover:opacity-80 transition-opacity duration-200">Waitlist</button></li>
+                  <li><button onClick={() => document.getElementById("get-involved")?.scrollIntoView({ behavior: "smooth" })} className="hover:opacity-80 transition-opacity duration-200">Get Involved</button></li>
+                  <li><button onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })} className="hover:opacity-80 transition-opacity duration-200">Contact</button></li>
                 </ul>
               </div>
 
               {/* Legal */}
               <div>
-                <h4 className="font-semibold mb-4">Legal</h4>
-                <ul className="space-y-2 text-gray-300">
-                  <li><a href="/privacy" className="hover:text-primary transition-colors duration-200">Privacy Policy</a></li>
-                  <li><a href="#terms" className="hover:text-primary transition-colors duration-200">Terms of Service</a></li>
-                  <li><a href="#nonprofit" className="hover:text-primary transition-colors duration-200">Nonprofit Info</a></li>
-                  <li><a href="#security" className="hover:text-primary transition-colors duration-200">Security</a></li>
-                  <li><a href="#accessibility" className="hover:text-primary transition-colors duration-200">Accessibility</a></li>
+                <h4 className="font-semibold mb-4" style={{ color: 'var(--text)' }}>Legal</h4>
+                <ul className="space-y-2" style={{ color: 'var(--muted)' }}>
+                  <li><a href="/privacy" className="hover:opacity-80 transition-opacity duration-200">Privacy</a></li>
+                  <li><a href="#terms" className="hover:opacity-80 transition-opacity duration-200">Terms</a></li>
+                  <li><a href="mailto:hello@aisaiah.org" className="hover:opacity-80 transition-opacity duration-200">Support</a></li>
                 </ul>
               </div>
             </div>
 
             {/* Legal Disclaimer */}
-            <div className="border-t border-gray-700 pt-6">
-              <p className="text-xs text-gray-400 text-center">
+            <div className="border-t pt-6" style={{ borderColor: 'var(--muted)' }}>
+              <p className="text-xs text-center" style={{ color: 'var(--muted)' }}>
                 AIsaiah Foundation is a registered 501(c)(3) nonprofit organization. Contributions are tax-deductible to the extent permitted by law. 
                 No goods or services were provided in exchange for your donation. Please consult your tax advisor for specific advice.
               </p>

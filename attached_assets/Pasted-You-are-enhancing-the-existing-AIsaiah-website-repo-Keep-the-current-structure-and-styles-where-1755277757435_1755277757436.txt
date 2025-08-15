@@ -1,0 +1,44 @@
+You are enhancing the **existing AIsaiah website repo**. Keep the current structure and styles where sensible; make surgical improvements with minimal diffs.
+
+### Non-negotiables
+- **No App Store / Google Play badges** (apps not available yet).
+- **No testimonials** and **no board/founders photos**.
+- Keep brand spelling **AIsaiah** (capital “I”) everywhere.
+
+### Goals
+1) Clear hero + waitlist conversion
+   - H1: “Turn your screen time into sacred time.”
+   - Subhead: “Build a daily rhythm of prayer, Scripture, and loving service.”
+   - Primary CTA: **Join the Waitlist** (opens inline email form or anchors to waitlist section).
+   - Optional desktop QR image (placeholder `/assets/qr.png`) with caption “Scan to join the waitlist”.
+
+2) Sections to keep/add (no new pages)
+   - **Features** (cards): Prayer, Scripture, Works, Schedule, Streaks, Insights.
+   - **Mission**: one paragraph—no photos.
+   - **FAQ**: availability, pricing, privacy, offline, how to support.
+   - **Waitlist**: email form using Formspree (placeholder endpoint), success/error states.
+   - **Footer**: Privacy, Terms, Support (mailto:hello@aisaiah.org), © year.
+
+3) Visual system (reuse site colors where possible)
+   - Dark theme; soft purple halo behind hero text and a teal “floor” glow under mockups.
+   - CSS vars:
+     `--bg-1:#0E1014; --bg-2:#12151B; --purple:#7C5CE3; --teal:#1BA39A; --gold:#F5C15B; --text:#E8EBF0; --muted:#A8AFB9;`
+   - Typography: Inter or system stack.
+
+### Implementation details
+- Update only existing files (`index.html`, `styles.css`, `script.js` etc.). Create `/assets` if missing.
+- Replace any store-badge CTAs with **Join Waitlist**.
+- Add accessible components: 44px min buttons, visible focus, proper landmarks, alt text.
+- Performance: convert large images to **WebP**, lazy-load below-the-fold, compress backgrounds.
+- SEO meta in `<head>`:
+  - `<title>AIsaiah — Spiritual Fitness App (Waitlist)</title>`
+  - `<meta name="description" content="Turn screen time into sacred time. Join the AIsaiah waitlist.">`
+  - OG/Twitter tags and a JSON-LD `SoftwareApplication` (iOS/Android “coming soon”).
+- Copy to use verbatim where helpful:
+  - Mission: “AIsaiah helps individuals and families return to daily prayer, Scripture, and loving service—turning everyday screen time into sacred time.”
+  - Privacy blurb: “Privacy-first. No ads, no data selling.”
+
+### Output
+- Apply changes with minimal diffs.
+- List all modified files with a brief summary of edits.
+- Include instructions in README for swapping the Formspree endpoint and QR image.

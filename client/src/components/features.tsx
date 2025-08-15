@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
-import { HandHeart, BookOpen, Bot, Church } from "lucide-react";
+import { HandHeart, BookOpen, Zap, Calendar, Target, BarChart3 } from "lucide-react";
 import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
 import splashScreen from "@assets/01_Splash_1755272472047.png";
@@ -29,27 +29,39 @@ export function Features() {
   const features = [
     {
       icon: HandHeart,
-      title: "Guided Prayer",
-      description: "AI-powered prayer guidance tailored to your spiritual needs and personal journey.",
-      gradient: "from-[hsl(var(--teal-primary))] to-[hsl(var(--purple-primary))]"
+      title: "Prayer",
+      description: "Guided prayer experiences and AI assistance for deeper spiritual connection.",
+      color: "var(--purple)"
     },
     {
       icon: BookOpen,
-      title: "Scripture Journaling",
-      description: "Digital journaling tools to reflect on biblical passages and track your spiritual growth.",
-      gradient: "from-[hsl(var(--purple-primary))] to-[hsl(var(--teal-primary))]"
+      title: "Scripture",
+      description: "Daily Scripture reading with AI-powered insights and reflection tools.",
+      color: "var(--teal)"
     },
     {
-      icon: Bot,
-      title: "AI Spiritual Companion",
-      description: "Your personal AI companion for spiritual guidance, questions, and faith-based conversations.",
-      gradient: "from-[hsl(var(--teal-primary))] to-[hsl(var(--purple-primary))]"
+      icon: Zap,
+      title: "Works",
+      description: "Track acts of service and loving kindness in your community.",
+      color: "var(--gold)"
     },
     {
-      icon: Church,
-      title: "Ministry Tools",
-      description: "Comprehensive tools for church leaders and ministry teams to serve their communities better.",
-      gradient: "from-[hsl(var(--purple-primary))] to-[hsl(var(--teal-primary))]"
+      icon: Calendar,
+      title: "Schedule",
+      description: "Plan and organize your spiritual practices and ministry commitments.",
+      color: "var(--purple)"
+    },
+    {
+      icon: Target,
+      title: "Streaks",
+      description: "Build consistency with prayer, Scripture, and service streaks.",
+      color: "var(--teal)"
+    },
+    {
+      icon: BarChart3,
+      title: "Insights",
+      description: "Track your spiritual growth with meaningful analytics and reflections.",
+      color: "var(--gold)"
     }
   ];
 
@@ -100,7 +112,7 @@ export function Features() {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
@@ -110,7 +122,7 @@ export function Features() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <div className={`w-16 h-16 bg-gradient-to-r ${feature.gradient} rounded-full flex items-center justify-center mb-4 mx-auto`}>
+                <div className="w-16 h-16 rounded-full flex items-center justify-center mb-4 mx-auto" style={{ backgroundColor: feature.color }}>
                   <feature.icon className="h-8 w-8 text-white" />
                 </div>
                 <h3 className="text-xl font-semibold text-center mb-3 text-foreground">{feature.title}</h3>

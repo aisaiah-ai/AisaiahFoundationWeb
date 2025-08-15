@@ -85,22 +85,24 @@ export function Hero() {
 
           {/* Headline */}
           <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-gradient-spiritual animate-fade-in"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 hero-text-glow animate-fade-in"
+            style={{ color: 'var(--text)' }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Empowering Spiritual Growth Through Faith & Technology
+            Turn your screen time into sacred time.
           </motion.h1>
 
           {/* Subtext */}
           <motion.p
-            className="text-xl md:text-2xl text-muted-foreground mb-8 leading-relaxed"
+            className="text-xl md:text-2xl mb-8 leading-relaxed"
+            style={{ color: 'var(--muted)' }}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
           >
-            AIsaiah Foundation is a nonprofit organization dedicated to building AI-powered spiritual tools for Christians and ministries worldwide.
+            Build a daily rhythm of prayer, Scripture, and loving service.
           </motion.p>
 
           {/* Call-to-Action Buttons */}
@@ -112,10 +114,11 @@ export function Hero() {
           >
             <Button
               size="lg"
-              onClick={() => scrollToSection("about")}
-              className="group bg-gradient-to-r from-[hsl(var(--teal-primary))] to-[hsl(var(--teal-secondary))] hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+              onClick={() => setShowWaitlistDialog(true)}
+              className="group bg-gradient-to-r from-[var(--teal)] to-[var(--purple)] hover:shadow-xl transform hover:scale-105 transition-all duration-300 min-h-[44px]"
+              data-testid="button-join-waitlist-hero"
             >
-              <span>Learn More</span>
+              <span>Join the Waitlist</span>
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
             </Button>
             <div className="relative">
