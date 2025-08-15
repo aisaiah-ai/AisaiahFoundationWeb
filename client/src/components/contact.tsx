@@ -94,7 +94,7 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gray-900 text-white">
+    <section id="contact" className="py-20" style={{ backgroundColor: 'var(--bg)', color: 'var(--text-primary)' }}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Contact Form Section */}
@@ -177,7 +177,7 @@ export function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <div className="bg-gray-800 rounded-2xl p-8">
+              <div className="card rounded-2xl p-8">
                 <h3 className="text-2xl font-bold mb-6">Send us a Message</h3>
                 <form className="space-y-6" onSubmit={handleContactSubmit}>
                   <div className="grid md:grid-cols-2 gap-4">
@@ -188,7 +188,7 @@ export function Contact() {
                         type="text"
                         value={contactForm.firstName}
                         onChange={(e) => setContactForm(prev => ({ ...prev, firstName: e.target.value }))}
-                        className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400"
+                        className="input"
                         placeholder="John"
                         required
                       />
@@ -200,7 +200,7 @@ export function Contact() {
                         type="text"
                         value={contactForm.lastName}
                         onChange={(e) => setContactForm(prev => ({ ...prev, lastName: e.target.value }))}
-                        className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400"
+                        className="input"
                         placeholder="Smith"
                         required
                       />
@@ -214,7 +214,7 @@ export function Contact() {
                       type="email"
                       value={contactForm.email}
                       onChange={(e) => setContactForm(prev => ({ ...prev, email: e.target.value }))}
-                      className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400"
+                      className="input"
                       placeholder="john@aisaiah.org"
                       required
                     />
@@ -226,7 +226,7 @@ export function Contact() {
                       value={contactForm.subject}
                       onValueChange={(value) => setContactForm(prev => ({ ...prev, subject: value }))}
                     >
-                      <SelectTrigger className="bg-gray-700 border-gray-600 text-white">
+                      <SelectTrigger className="input">
                         <SelectValue placeholder="Select a topic" />
                       </SelectTrigger>
                       <SelectContent>
@@ -247,7 +247,7 @@ export function Contact() {
                       rows={4}
                       value={contactForm.message}
                       onChange={(e) => setContactForm(prev => ({ ...prev, message: e.target.value }))}
-                      className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-400 resize-none"
+                      className="textarea resize-none"
                       placeholder="Tell us about your inquiry..."
                       required
                     />

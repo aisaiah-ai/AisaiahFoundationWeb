@@ -21,6 +21,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   </head>
   <body>
+    <script>
+      // Theme detection and early initialization to prevent FOUC
+      (() => {
+        const STORAGE_KEY = 'theme';
+        const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+        const saved = localStorage.getItem(STORAGE_KEY);
+        const theme = saved ?? (prefersLight ? 'light' : 'dark');
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
     <!-- This is a replit script which adds a banner on the top of the page when opened in development mode outside the replit environment -->

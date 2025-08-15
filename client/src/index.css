@@ -5,71 +5,45 @@
 @tailwind utilities;
 
 :root {
+  /* Common tokens */
+  --radius-xl: 1rem;
+  --shadow-card: 0 8px 24px rgba(0,0,0,.08);
+  
+  /* Dark theme (default) */
+  --bg: #0c0f14;
+  --bg-elev: rgba(255,255,255,.05);
+  --text-primary: #e6ecf5;
+  --text-secondary: #a7b0be;
+  --border: rgba(255,255,255,.12);
+  --link: #8bd2ff;
+  --accent: #22d3ee;
+  --btn-text-on-accent: #06121a;
+  --input-bg: rgba(255,255,255,.06);
+  --input-placeholder: #92a0b5;
+  --shadow-header: 0 8px 30px rgba(0,0,0,.25);
+  --glass-tint: rgba(12,15,20,.55);
+  --gooey-opacity: .28;
+  
   /* Enhanced AIsaiah theme colors */
-  --bg-1: #0E1014;
-  --bg-2: #12151B;
   --purple: #7C5CE3;
   --teal: #1BA39A;
   --gold: #F5C15B;
-  --text: #E8EBF0;
-  --muted: #A8AFB9;
-  
-  /* Shadcn/UI compatible mappings */
-  --background: var(--bg-1);
-  --foreground: var(--text);
-  --card: var(--bg-2);
-  --card-foreground: var(--text);
-  --popover: var(--bg-2);
-  --popover-foreground: var(--text);
-  --primary: var(--teal);
-  --primary-foreground: var(--bg-1);
-  --secondary: var(--bg-2);
-  --secondary-foreground: var(--text);
-  --muted: var(--bg-2);
-  --muted-foreground: var(--muted);
-  --accent: var(--purple);
-  --accent-foreground: var(--text);
-  --destructive: hsl(0, 84.2%, 60.2%);
-  --destructive-foreground: var(--text);
-  --border: hsl(217, 10%, 20%);
-  --input: hsl(217, 10%, 20%);
-  --ring: var(--teal);
-  --radius: 0.5rem;
-  
-  /* Legacy compatibility */
-  --teal-primary: var(--teal);
-  --teal-secondary: hsl(180, 81%, 27%);
-  --purple-primary: var(--purple);
-  --purple-secondary: hsl(260, 48%, 40%);
-  --spiritual-light: var(--text);
-  --spiritual-gray: var(--muted);
 }
 
-.dark {
-  /* Dark theme uses same enhanced colors */
-  --background: var(--bg-1);
-  --foreground: var(--text);
-  --card: var(--bg-2);
-  --card-foreground: var(--text);
-  --popover: var(--bg-2);
-  --popover-foreground: var(--text);
-  --primary: var(--teal);
-  --primary-foreground: var(--bg-1);
-  --secondary: var(--bg-2);
-  --secondary-foreground: var(--text);
-  --muted: var(--bg-2);
-  --muted-foreground: var(--muted);
-  --accent: var(--purple);
-  --accent-foreground: var(--text);
-  --destructive: hsl(0, 62.8%, 30.6%);
-  --destructive-foreground: hsl(0, 0%, 98%);
-  --border: hsl(0, 0%, 14.9%);
-  --input: hsl(0, 0%, 14.9%);
-  --ring: hsl(175, 92%, 30%);
-  
-  /* Dark mode spiritual colors */
-  --spiritual-light: hsl(0, 0%, 3.9%);
-  --spiritual-gray: hsl(0, 0%, 8%);
+[data-theme="light"] {
+  --bg: #f7fafc;
+  --bg-elev: rgba(255,255,255,.85);
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --border: rgba(2,6,23,.12);
+  --link: #0ea5e9;
+  --accent: #0891b2;
+  --btn-text-on-accent: #ffffff;
+  --input-bg: #ffffff;
+  --input-placeholder: #64748b;
+  --shadow-header: 0 8px 24px rgba(2,6,23,.08);
+  --glass-tint: rgba(255,255,255,.65);
+  --gooey-opacity: .18;
 }
 
 @layer base {
@@ -82,57 +56,148 @@
   }
 
   body {
-    @apply font-sans antialiased bg-background text-foreground transition-colors duration-300;
+    @apply font-sans antialiased transition-colors duration-300;
     font-family: 'Source Serif Pro', serif;
+    background: var(--bg);
+    color: var(--text-primary);
   }
 }
 
 @layer utilities {
-  /* Navigation link styles for improved readability */
+  /* Header glass effect */
+  .header-glass {
+    background: var(--bg-elev);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-header);
+  }
+  
+  /* Navigation link styles */
   .nav-link {
-    @apply relative px-2 py-1 text-slate-100/90 font-semibold tracking-wide transition;
+    @apply relative px-2 py-1 font-semibold tracking-wide transition;
+    color: var(--text-primary);
   }
   .nav-link:hover,
   .nav-link[aria-current="page"] {
-    @apply text-white;
+    color: var(--text-primary);
+    filter: brightness(1.1);
   }
-  .nav-link::after {
+  .nav-underline::after {
     content: "";
-    @apply absolute left-1/2 -bottom-0.5 h-0.5 w-0 rounded-full bg-cyan-300/80 transition-[width,left] duration-200;
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    height: 2px;
+    width: 0;
+    background: var(--accent);
+    border-radius: 9999px;
+    transition: width 0.2s, left 0.2s;
   }
-  .nav-link:hover::after,
-  .nav-link[aria-current="page"]::after {
-    @apply left-0 w-full;
+  .nav-link:hover .nav-underline::after,
+  .nav-link[aria-current="page"] .nav-underline::after {
+    left: 0;
+    width: 100%;
   }
   
-  /* Donate button as high-contrast pill */
-  .btn-donate {
-    @apply ml-2 rounded-full px-3 py-1.5 text-sm font-semibold
-           bg-teal-400/90 text-slate-900 hover:bg-teal-300 focus:outline-none
-           focus:ring-2 focus:ring-offset-0 focus:ring-cyan-300;
+  /* Accent button */
+  .btn-accent {
+    background: var(--accent);
+    color: var(--btn-text-on-accent);
+    border-radius: 9999px;
+    padding: 0.5rem 0.9rem;
+    font-weight: 600;
+    transition: filter 0.2s;
+  }
+  .btn-accent:hover {
+    filter: brightness(1.05);
   }
   
   /* Icon buttons */
   .icon-btn {
-    @apply rounded-full p-2 text-slate-100/90 hover:text-white focus:outline-none
-           focus:ring-2 focus:ring-cyan-300;
+    @apply rounded-full p-2 focus:outline-none;
+    color: var(--text-primary);
+  }
+  .icon-btn:hover {
+    color: var(--text-primary);
+    filter: brightness(1.1);
+  }
+  .icon-btn:focus {
+    box-shadow: 0 0 0 2px var(--accent);
   }
   
   /* Mobile navigation links */
   .mobile-link {
-    @apply block rounded-xl px-3 py-3 text-slate-100/90 hover:text-white hover:bg-white/5;
-    border-bottom: 1px solid rgba(255,255,255,.06);
+    @apply block rounded-xl px-3 py-3;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border);
+    min-height: 44px;
   }
-  .mobile-link:last-child { 
-    border-bottom: none; 
+  .mobile-link:hover {
+    background: var(--bg-elev);
+    filter: brightness(1.05);
   }
-  .mobile-donate { 
-    @apply block mt-1 rounded-xl px-3 py-3 bg-teal-400/90 text-slate-900 font-semibold text-center; 
+  .mobile-link:last-child {
+    border-bottom: none;
+  }
+  .mobile-donate {
+    @apply block mt-1 rounded-xl px-3 py-3 font-semibold text-center;
+    background: var(--accent);
+    color: var(--btn-text-on-accent);
+    min-height: 44px;
+  }
+  
+  /* Form inputs */
+  .input,
+  .textarea,
+  .select {
+    background: var(--input-bg);
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+  }
+  .input::placeholder,
+  .textarea::placeholder {
+    color: var(--input-placeholder);
+  }
+  .input:focus,
+  .textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 30%, transparent);
+  }
+  
+  /* Cards */
+  .card {
+    background: var(--bg-elev);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card);
+  }
+  
+  /* Links */
+  .theme-link {
+    color: var(--link);
+  }
+  .theme-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Icons */
+  .icon {
+    color: var(--text-primary);
+    fill: currentColor;
+    stroke: currentColor;
+  }
+  
+  /* Gooey layer */
+  .gooey-layer {
+    opacity: var(--gooey-opacity);
   }
   
   /* Reduce motion support */
   @media (prefers-reduced-motion: reduce) {
-    .nav-link::after {
+    .nav-underline::after {
       transition: none;
     }
   }

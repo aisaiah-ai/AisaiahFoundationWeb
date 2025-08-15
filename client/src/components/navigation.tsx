@@ -28,7 +28,6 @@ export function Navigation() {
     return () => document.removeEventListener('click', handleClickOutside);
   }, [isMenuOpen]);
 
-  // Handle keyboard navigation
   const handleMenuButtonClick = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -36,11 +35,13 @@ export function Navigation() {
   return (
     <header className="sticky top-0 z-50" id="navigation-header">
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <nav className="flex h-16 items-center justify-between rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl supports-[backdrop-filter]:bg-white/5 shadow-[0_8px_30px_rgb(0_0_0_/_0.25)]">
+        <nav className="header-glass flex h-16 items-center justify-between rounded-2xl">
           {/* Left: Logo */}
           <a href="/" className="flex items-center gap-3 px-2 py-2">
-            <Logo className="h-7 w-7" />
-            <span className="text-slate-100/95 font-semibold tracking-wide">AIsaiah Foundation</span>
+            <Logo className="h-7 w-7 icon" />
+            <span className="font-semibold tracking-wide" style={{ color: 'var(--text-primary)' }}>
+              AIsaiah Foundation
+            </span>
           </a>
 
           {/* Desktop nav */}
@@ -51,7 +52,7 @@ export function Navigation() {
                 onClick={() => scrollToSection("features")}
                 data-testid="nav-features"
               >
-                App Features
+                <span className="nav-underline">App Features</span>
               </button>
             </li>
             <li>
@@ -60,7 +61,7 @@ export function Navigation() {
                 onClick={() => scrollToSection("mission")}
                 data-testid="nav-mission"
               >
-                Mission
+                <span className="nav-underline">Mission</span>
               </button>
             </li>
             <li>
@@ -69,7 +70,7 @@ export function Navigation() {
                 onClick={() => scrollToSection("faq")}
                 data-testid="nav-faq"
               >
-                FAQ
+                <span className="nav-underline">FAQ</span>
               </button>
             </li>
             <li>
@@ -78,7 +79,7 @@ export function Navigation() {
                 onClick={() => scrollToSection("waitlist")}
                 data-testid="nav-waitlist"
               >
-                Waitlist
+                <span className="nav-underline">Waitlist</span>
               </button>
             </li>
             <li>
@@ -87,7 +88,7 @@ export function Navigation() {
                 onClick={() => scrollToSection("get-involved")}
                 data-testid="nav-get-involved"
               >
-                Get Involved
+                <span className="nav-underline">Get Involved</span>
               </button>
             </li>
             <li>
@@ -96,30 +97,30 @@ export function Navigation() {
                 onClick={() => scrollToSection("contact")}
                 data-testid="nav-contact"
               >
-                Contact
+                <span className="nav-underline">Contact</span>
               </button>
             </li>
             <li>
               <a 
-                className="nav-link" 
+                className="nav-link theme-link" 
                 href="/support"
                 data-testid="nav-support"
               >
-                Support
+                <span className="nav-underline">Support</span>
               </a>
             </li>
             <li>
               <a 
-                className="nav-link" 
+                className="nav-link theme-link" 
                 href="/privacy"
                 data-testid="nav-privacy"
               >
-                Privacy
+                <span className="nav-underline">Privacy</span>
               </a>
             </li>
             <li>
               <button 
-                className="btn-donate" 
+                className="btn-accent ml-2" 
                 onClick={() => scrollToSection("donate")}
                 data-testid="nav-donate"
               >
@@ -133,6 +134,7 @@ export function Navigation() {
             <button 
               className="icon-btn" 
               aria-label="Toggle theme" 
+              aria-pressed={theme === 'dark'}
               title="Toggle theme"
               onClick={toggleTheme}
               data-testid="theme-toggle"
@@ -163,7 +165,7 @@ export function Navigation() {
       {/* Mobile panel */}
       {isMenuOpen && (
         <div className="lg:hidden" data-testid="mobile-menu-panel">
-          <div className="mx-2 mt-2 rounded-2xl border border-white/10 bg-white/8 backdrop-blur-xl p-2">
+          <div className="mx-2 mt-2 header-glass rounded-2xl p-2">
             <button 
               className="mobile-link" 
               onClick={() => scrollToSection("features")}
@@ -207,14 +209,14 @@ export function Navigation() {
               Contact
             </button>
             <a 
-              className="mobile-link" 
+              className="mobile-link theme-link" 
               href="/support"
               data-testid="mobile-nav-support"
             >
               Support
             </a>
             <a 
-              className="mobile-link" 
+              className="mobile-link theme-link" 
               href="/privacy"
               data-testid="mobile-nav-privacy"
             >
@@ -233,7 +235,7 @@ export function Navigation() {
 
       {/* Liquid layer (kept subtle) */}
       <svg 
-        className="pointer-events-none absolute inset-0 -z-10 opacity-25" 
+        className="pointer-events-none absolute inset-0 -z-10 gooey-layer" 
         aria-hidden="true"
         viewBox="0 0 100 20"
         preserveAspectRatio="none"

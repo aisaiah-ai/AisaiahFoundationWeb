@@ -1,0 +1,173 @@
+Goal: Make light mode fully readable and consistent (nav, forms, footer, icons) while preserving the liquid/glass effect. Keep dark mode unchanged.
+
+Tasks
+  1.  Theme tokens
+  • Introduce CSS variables for both themes and swap via [data-theme="light"] / [data-theme="dark"].
+  • Map all header, nav links, text, borders, icons, inputs, and button colors to variables (no hardcoded dark values).
+  2.  Header + navigation (light mode)
+  • Keep the glass/liquid look but increase contrast: lighter tint with darker text (≥ 4.5:1).
+  • Ensure hover/active states are visible in light mode (no low-alpha white).
+  • Add a subtle bottom border or shadow to separate header from content.
+  3.  Icons
+  • Ensure all social and UI icons switch to a dark stroke/fill on light theme; avoid “washed out” gray.
+  • If SVGs are currentColor-driven, they’ll follow --text-primary. If not, set explicit fills per theme.
+  4.  Forms (contact section)
+  • Light background inputs, darker text/placeholder, visible borders and focus rings.
+  • Button styles with sufficient contrast and clear hover/disabled states.
+  5.  Body + sections
+  • Light background with subtle cards (white with 6–10% shadow, or border #e5e7eb).
+  • Links visible in paragraphs; visited/hover states distinct.
+  6.  Gooey/liquid effect
+  • Keep SVG blur/goo filter but reduce opacity in light mode (0.15–0.25) so it doesn’t reduce text contrast.
+  7.  Theme toggle + system default
+  • Respect prefers-color-scheme on first load, then persist user choice in localStorage.
+  • Add aria-pressed and visible focus state on the toggle.
+  8.  Accessibility
+  • All text ≥ AA contrast; focus outlines visible; minimum tap sizes on mobile.
+
+Implement with CSS variables (preferred)
+
+Create/extend theme.css (or your global stylesheet) with variables:
+
+:root {
+  /* common */
+  --radius-xl: 1rem;
+  --shadow-card: 0 8px 24px rgba(0,0,0,.08);
+
+  /* dark default (current) */
+  --bg: #0c0f14;
+  --bg-elev: rgba(255,255,255,.05);
+  --text-primary: #e6ecf5;
+  --text-secondary: #a7b0be;
+  --border: rgba(255,255,255,.12);
+  --link: #8bd2ff;
+  --accent: #22d3ee; /* teal/cyan */
+  --btn-text-on-accent: #06121a;
+  --input-bg: rgba(255,255,255,.06);
+  --input-placeholder: #92a0b5;
+  --shadow-header: 0 8px 30px rgba(0,0,0,.25);
+  --glass-tint: rgba(12,15,20,.55);
+  --gooey-opacity: .28;
+}
+
+[data-theme="light"] {
+  --bg: #f7fafc;               /* near white */
+  --bg-elev: rgba(255,255,255,.85);
+  --text-primary: #0f172a;     /* slate-900 */
+  --text-secondary: #334155;   /* slate-700 */
+  --border: rgba(2,6,23,.12);  /* slate-950/12% */
+  --link: #0ea5e9;             /* sky-500 */
+  --accent: #0891b2;           /* cyan-700 for contrast */
+  --btn-text-on-accent: #ffffff;
+  --input-bg: #ffffff;
+  --input-placeholder: #64748b;/* slate-500 */
+  --shadow-header: 0 8px 24px rgba(2,6,23,.08);
+  --glass-tint: rgba(255,255,255,.65);
+  --gooey-opacity: .18;
+}
+
+/* Apply tokens */
+html, body { background: var(--bg); color: var(--text-primary); }
+
+.header-glass {
+  background: var(--bg-elev);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-header);
+}
+
+.nav-link {
+  color: var(--text-primary);
+}
+.nav-link:hover,
+.nav-link[aria-current="page"] { color: #000; color: var(--text-primary); }
+.nav-underline::after {
+  content:"";
+  position:absolute; left:50%; bottom:-6px; height:2px; width:0;
+  background: var(--accent); border-radius:9999px; transition:width .2s,left .2s;
+}
+.nav-link:hover .nav-underline::after,
+.nav-link[aria-current="page"] .nav-underline::after { left:0; width:100%; }
+
+.btn-accent {
+  background: var(--accent); color: var(--btn-text-on-accent);
+  border-radius: 9999px; padding: .5rem .9rem; font-weight: 600;
+}
+.btn-accent:hover { filter: brightness(1.05); }
+
+.input, textarea, select {
+  background: var(--input-bg); color: var(--text-primary);
+  border: 1px solid var(--border); border-radius: var(--radius-xl);
+}
+.input::placeholder, textarea::placeholder { color: var(--input-placeholder); }
+.input:focus, textarea:focus {
+  outline: none; border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--accent) 30%, transparent);
+}
+
+/* Cards/sections */
+.card {
+  background: var(--bg-elev);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+}
+
+/* Links */
+a { color: var(--link); }
+a:hover { text-decoration: underline; }
+
+/* Icons inherit color */
+.icon { color: var(--text-primary); fill: currentColor; stroke: currentColor; }
+
+/* Gooey layer control */
+.gooey-layer { opacity: var(--gooey-opacity); }
+
+Theme toggle script (persist + system default)
+
+Add/adjust a small script (e.g., theme.js) and include it early:
+
+<script>
+(() => {
+  const STORAGE_KEY = 'theme';
+  const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+  const saved = localStorage.getItem(STORAGE_KEY);
+  const theme = saved ?? (prefersLight ? 'light' : 'dark');
+  document.documentElement.setAttribute('data-theme', theme);
+
+  window.toggleTheme = () => {
+    const cur = document.documentElement.getAttribute('data-theme');
+    const next = cur === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem(STORAGE_KEY, next);
+    const btn = document.getElementById('themeToggle');
+    if (btn) btn.setAttribute('aria-pressed', String(next === 'dark'));
+  };
+})();
+</script>
+
+Hook your existing toggle button:
+
+<button id="themeToggle" class="icon-btn" aria-pressed="false" aria-label="Toggle theme" onclick="toggleTheme()">
+  <!-- sun/moon svg that uses currentColor -->
+</button>
+
+Header markup adjustments (example)
+  • Add .header-glass to your header container.
+  • Wrap each link text in a span with .nav-underline for the animated underline.
+  • Ensure icons use class="icon" so they follow theme colors.
+
+<header class="header-glass sticky top-0 z-50">
+  <!-- ... -->
+  <a class="nav-link relative" href="/about"><span class="nav-underline">About</span></a>
+  <!-- repeat -->
+  <a class="btn-accent" href="/donate">Donate</a>
+</header>
+
+Acceptance criteria
+  • In light mode, all nav, form labels, placeholders, and footer/social icons are clearly visible and pass WCAG AA contrast.
+  • Glass/liquid header effect is retained but no longer washes out text in light mode.
+  • Theme toggle respects system preference on first load and persists user choice.
+  • Inputs and the message text area have visible borders and focus rings in light mode.
+  • No hardcoded dark colors remain in header/nav/components; all use CSS variables.
