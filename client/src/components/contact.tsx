@@ -127,7 +127,7 @@ export function Contact() {
                   </div>
                   <div>
                     <div className="font-semibold">Phone</div>
-                    <div className="text-gray-300">813-576-8131</div>
+                    <div className="text-gray-300">813-355-9645</div>
                   </div>
                 </div>
 
