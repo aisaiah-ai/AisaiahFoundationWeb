@@ -5,8 +5,8 @@ import { HandHeart, BookOpen, Zap, Calendar, Target, BarChart3 } from "lucide-re
 import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
 import splashScreen from "@assets/01_Splash_1755272472047.png";
-import welcomeMission from "@assets/02_WelcomeMission_1755272472047.png";
-import welcomeAI from "@assets/03_WelcomeAI_1755272472047.png";
+import welcomeMission from "@assets/02_WelcomeMission_1755290203101.png";
+import welcomeAI from "@assets/03_WelcomeAI_1755290203102.png";
 import spiritualRings from "@assets/04_SpiritualRings_1755272472047.png";
 import twrSchedule from "@assets/05_TWRSchedule_1755272472048.png";
 
