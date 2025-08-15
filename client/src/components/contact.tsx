@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
@@ -319,12 +320,21 @@ export function Contact() {
                 />
               </div>
               
-              <Button 
-                className="px-8 py-4 bg-white text-purple-600 font-bold hover:bg-gray-100 transform hover:scale-105 transition-all duration-200"
-                disabled={!donationAmount}
-              >
-                Donate Securely {donationAmount ? `$${donationAmount}` : ""}
-              </Button>
+              <div className="relative inline-block">
+                <Badge 
+                  className="absolute -top-2 -right-2 z-10 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs px-2 py-1 shadow-lg animate-pulse"
+                  data-testid="badge-donate-coming-soon"
+                >
+                  Coming Soon
+                </Badge>
+                <Button 
+                  className="px-8 py-4 bg-white text-purple-600 font-bold hover:bg-gray-100 transform hover:scale-105 transition-all duration-200 relative"
+                  disabled={!donationAmount}
+                  data-testid="button-donate-securely"
+                >
+                  Donate Securely {donationAmount ? `$${donationAmount}` : ""}
+                </Button>
+              </div>
               
               <p className="text-sm mt-4 opacity-75">
                 AIsaiah Foundation is a registered 501(c)(3) nonprofit organization. Your donation is tax-deductible.
