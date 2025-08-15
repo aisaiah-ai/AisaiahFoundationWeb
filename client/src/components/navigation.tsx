@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Logo } from "@/components/logo";
 import { useTheme } from "@/components/theme-provider";
-import { Moon, Menu, X } from "lucide-react";
+import { Moon, Sun, Menu, X } from "lucide-react";
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -137,7 +137,11 @@ export function Navigation() {
               onClick={toggleTheme}
               data-testid="theme-toggle"
             >
-              <Moon className="h-4 w-4" />
+              {theme === "dark" ? (
+                <Sun className="h-4 w-4" />
+              ) : (
+                <Moon className="h-4 w-4" />
+              )}
             </button>
             <button 
               className="lg:hidden icon-btn" 
