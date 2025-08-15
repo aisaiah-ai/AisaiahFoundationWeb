@@ -17,13 +17,13 @@ export function Navigation() {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-background/90 dark:bg-background/90 backdrop-blur-md z-50 border-b border-border">
+    <nav className="fixed top-0 w-full backdrop-blur-md z-50 border-b" style={{ backgroundColor: 'var(--bg-1)', borderColor: 'var(--muted)' }}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <Logo className="w-8 h-10" />
-            <span className="text-xl font-semibold text-foreground">
+            <span className="text-xl font-semibold" style={{ color: 'var(--text)' }}>
               AIsaiah Foundation
             </span>
           </div>
@@ -31,44 +31,51 @@ export function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <button
-              onClick={() => scrollToSection("about")}
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
-              About
-            </button>
-            <button
               onClick={() => scrollToSection("features")}
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
+              className="hover:opacity-80 transition-opacity duration-200"
+              style={{ color: 'var(--muted)' }}
             >
-              App Features
+              Features
             </button>
             <button
-              onClick={() => scrollToSection("get-involved")}
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
+              onClick={() => scrollToSection("mission")}
+              className="hover:opacity-80 transition-opacity duration-200"
+              style={{ color: 'var(--muted)' }}
             >
-              Get Involved
+              Mission
             </button>
             <button
-              onClick={() => scrollToSection("events")}
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
+              onClick={() => scrollToSection("faq")}
+              className="hover:opacity-80 transition-opacity duration-200"
+              style={{ color: 'var(--muted)' }}
             >
-              Events
+              FAQ
+            </button>
+            <button
+              onClick={() => scrollToSection("waitlist")}
+              className="hover:opacity-80 transition-opacity duration-200"
+              style={{ color: 'var(--muted)' }}
+            >
+              Waitlist
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
+              className="hover:opacity-80 transition-opacity duration-200"
+              style={{ color: 'var(--muted)' }}
             >
               Contact
             </button>
             <a
               href="/support"
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
+              className="hover:opacity-80 transition-opacity duration-200"
+              style={{ color: 'var(--muted)' }}
             >
               Support
             </a>
             <a
               href="/privacy"
-              className="text-muted-foreground hover:text-primary transition-colors duration-200"
+              className="hover:opacity-80 transition-opacity duration-200"
+              style={{ color: 'var(--muted)' }}
             >
               Privacy
             </a>
@@ -90,7 +97,8 @@ export function Navigation() {
 
             <Button
               onClick={() => scrollToSection("donate")}
-              className="bg-gradient-spiritual hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+              className="hover:shadow-lg transform hover:scale-105 transition-all duration-200"
+              style={{ backgroundColor: 'var(--teal)', color: 'var(--bg-1)' }}
             >
               Donate
             </Button>
@@ -116,51 +124,58 @@ export function Navigation() {
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
-        <div className="md:hidden bg-background border-t border-border">
+        <div className="md:hidden border-t" style={{ backgroundColor: 'var(--bg-1)', borderColor: 'var(--muted)' }}>
           <div className="px-4 py-4 space-y-4">
             <button
-              onClick={() => scrollToSection("about")}
-              className="block text-muted-foreground hover:text-primary transition-colors duration-200"
-            >
-              About
-            </button>
-            <button
               onClick={() => scrollToSection("features")}
-              className="block text-muted-foreground hover:text-primary transition-colors duration-200"
+              className="block hover:opacity-80 transition-opacity duration-200"
+              style={{ color: 'var(--muted)' }}
             >
-              App Features
+              Features
             </button>
             <button
-              onClick={() => scrollToSection("get-involved")}
-              className="block text-muted-foreground hover:text-primary transition-colors duration-200"
+              onClick={() => scrollToSection("mission")}
+              className="block hover:opacity-80 transition-opacity duration-200"
+              style={{ color: 'var(--muted)' }}
             >
-              Get Involved
+              Mission
             </button>
             <button
-              onClick={() => scrollToSection("events")}
-              className="block text-muted-foreground hover:text-primary transition-colors duration-200"
+              onClick={() => scrollToSection("faq")}
+              className="block hover:opacity-80 transition-opacity duration-200"
+              style={{ color: 'var(--muted)' }}
             >
-              Events
+              FAQ
+            </button>
+            <button
+              onClick={() => scrollToSection("waitlist")}
+              className="block hover:opacity-80 transition-opacity duration-200"
+              style={{ color: 'var(--muted)' }}
+            >
+              Waitlist
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="block text-muted-foreground hover:text-primary transition-colors duration-200"
+              className="block hover:opacity-80 transition-opacity duration-200"
+              style={{ color: 'var(--muted)' }}
             >
               Contact
             </button>
             <a
               href="/support"
-              className="block text-muted-foreground hover:text-primary transition-colors duration-200"
+              className="block hover:opacity-80 transition-opacity duration-200"
+              style={{ color: 'var(--muted)' }}
             >
               Support
             </a>
             <a
               href="/privacy"
-              className="block text-muted-foreground hover:text-primary transition-colors duration-200"
+              className="block hover:opacity-80 transition-opacity duration-200"
+              style={{ color: 'var(--muted)' }}
             >
               Privacy
             </a>
-            <div className="flex items-center space-x-4 pt-4 border-t border-border">
+            <div className="flex items-center space-x-4 pt-4 border-t" style={{ borderColor: 'var(--muted)' }}>
               <Button
                 variant="ghost"
                 size="icon"
@@ -175,7 +190,7 @@ export function Navigation() {
               </Button>
               <Button
                 onClick={() => scrollToSection("donate")}
-                className="bg-gradient-spiritual"
+                style={{ backgroundColor: 'var(--teal)', color: 'var(--bg-1)' }}
               >
                 Donate
               </Button>
