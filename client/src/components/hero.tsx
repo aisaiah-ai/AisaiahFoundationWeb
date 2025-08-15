@@ -1,10 +1,15 @@
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { Logo } from "@/components/logo";
+import { WaitlistDialog } from "@/components/ui/waitlist-dialog";
 import { ArrowRight, Download, Heart, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import faithTechBgPath from "@assets/1753116855202-faithtech_prayer_background_index_0@1536x1024_1753121360002.png";
 
 export function Hero() {
+  const [showWaitlistDialog, setShowWaitlistDialog] = useState(false);
+  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -113,14 +118,23 @@ export function Hero() {
               <span>Learn More</span>
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
             </Button>
-            <Button
-              size="lg"
-              onClick={() => scrollToSection("features")}
-              className="bg-gradient-to-r from-[hsl(var(--purple-primary))] to-[hsl(var(--purple-secondary))] hover:shadow-xl transform hover:scale-105 transition-all duration-300"
-            >
-              <Download className="mr-2 h-4 w-4" />
-              <span>Download the App</span>
-            </Button>
+            <div className="relative">
+              <Badge 
+                className="absolute -top-2 -right-2 z-10 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs px-2 py-1 shadow-lg animate-pulse"
+                data-testid="badge-coming-soon"
+              >
+                Coming Soon
+              </Badge>
+              <Button
+                size="lg"
+                onClick={() => setShowWaitlistDialog(true)}
+                className="bg-gradient-to-r from-[hsl(var(--purple-primary))] to-[hsl(var(--purple-secondary))] hover:shadow-xl transform hover:scale-105 transition-all duration-300 relative"
+                data-testid="button-download-app"
+              >
+                <Download className="mr-2 h-4 w-4" />
+                <span>Download the App</span>
+              </Button>
+            </div>
             <Button
               variant="outline"
               size="lg"
@@ -153,6 +167,11 @@ export function Hero() {
           </motion.div>
         </div>
       </div>
+      
+      <WaitlistDialog 
+        open={showWaitlistDialog} 
+        onOpenChange={setShowWaitlistDialog} 
+      />
     </section>
   );
 }
