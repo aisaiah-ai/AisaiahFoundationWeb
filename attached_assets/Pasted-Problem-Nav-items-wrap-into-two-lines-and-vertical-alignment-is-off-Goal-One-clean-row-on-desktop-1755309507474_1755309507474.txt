@@ -1,0 +1,155 @@
+Problem: Nav items wrap into two lines and vertical alignment is off.
+Goal: One clean row on desktop (≥1024px), logo at left, links centered with equal spacing, Donate + Theme toggle at right. On smaller screens, collapse to a hamburger menu (no wrapping).
+
+Requirements
+  • Header remains sticky, glass/liquid style intact.
+  • Desktop: no wrapping; consistent vertical centering; equal horizontal gaps.
+  • If the viewport can’t fit all links, switch to mobile/hamburger instead of wrapping.
+  • Maintain WCAG AA contrast for all states.
+
+Implement
+
+1) Markup (replace header block accordingly)
+
+<header class="site-header">
+  <div class="nav-shell">
+    <!-- Left: Logo -->
+    <a href="/" class="brand">
+      <img src="/logo.svg" alt="AIsaiah Foundation" class="brand-icon" />
+      <span class="brand-name">AIsaiah Foundation</span>
+    </a>
+
+    <!-- Center: Primary nav (desktop only) -->
+    <nav class="primary-nav" aria-label="Primary">
+      <ul class="nav-list">
+        <li><a class="nav-link" href="/features">App Features</a></li>
+        <li><a class="nav-link" href="/mission">Mission</a></li>
+        <li><a class="nav-link" href="/faq">FAQ</a></li>
+        <li><a class="nav-link" href="/waitlist">Waitlist</a></li>
+        <li><a class="nav-link" href="/involved">Get Involved</a></li>
+        <li><a class="nav-link" href="/contact">Contact</a></li>
+        <li><a class="nav-link" href="/support">Support</a></li>
+        <li><a class="nav-link" href="/privacy">Privacy</a></li>
+      </ul>
+    </nav>
+
+    <!-- Right: Actions -->
+    <div class="actions">
+      <a class="btn-donate" href="/donate">Donate</a>
+      <button id="themeToggle" class="icon-btn" aria-label="Toggle theme" aria-pressed="false" onclick="toggleTheme()">
+        <!-- moon/sun svg using currentColor -->
+      </button>
+      <button id="menuButton" class="icon-btn burger" aria-label="Open menu" aria-expanded="false">
+        <!-- hamburger svg -->
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div id="mobilePanel" class="mobile-panel" hidden>
+    <a class="mobile-link" href="/features">App Features</a>
+    <a class="mobile-link" href="/mission">Mission</a>
+    <a class="mobile-link" href="/faq">FAQ</a>
+    <a class="mobile-link" href="/waitlist">Waitlist</a>
+    <a class="mobile-link" href="/involved">Get Involved</a>
+    <a class="mobile-link" href="/contact">Contact</a>
+    <a class="mobile-link" href="/support">Support</a>
+    <a class="mobile-link" href="/privacy">Privacy</a>
+    <a class="mobile-donate" href="/donate">Donate</a>
+  </div>
+</header>
+
+2) CSS (glass + single-row layout + no-wrap)
+
+/* Shell keeps everything on one row */
+.site-header{
+  position: sticky; top:0; z-index:50; height:72px; isolation:isolate;
+}
+.nav-shell{
+  height:100%;
+  margin:8px auto; max-width:1100px;
+  display:flex; align-items:center; justify-content:space-between;
+  border-radius:16px; border:1px solid var(--border);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  background: var(--glass-tint); box-shadow: var(--hdr-shadow);
+  padding-inline:14px;
+}
+
+/* Left */
+.brand{ display:flex; align-items:center; gap:10px; min-width:0; text-decoration:none; }
+.brand-icon{ width:28px; height:28px; flex:0 0 auto; }
+.brand-name{ font-weight:700; color:var(--text-primary); white-space:nowrap; }
+
+/* Center (desktop) */
+.primary-nav{ flex:1 1 auto; display:flex; justify-content:center; }
+.nav-list{
+  display:flex; align-items:center; gap:22px;
+  white-space:nowrap;                /* DO NOT wrap */
+  overflow:hidden;                   /* prevent accidental wrap shifts */
+}
+.nav-link{
+  display:inline-block; padding:8px 6px; font-weight:600; color:var(--text-primary);
+  text-decoration:none; line-height:1; vertical-align:middle;
+}
+.nav-link:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+
+/* Right actions */
+.actions{ display:flex; align-items:center; gap:10px; }
+.btn-donate{
+  padding:.55rem .9rem; border-radius:9999px; font-weight:700;
+  background:var(--accent); color:var(--btn-text-on-accent); text-decoration:none;
+  white-space:nowrap;
+}
+.icon-btn{ display:inline-grid; place-items:center; width:36px; height:36px;
+  border-radius:9999px; color:var(--text-primary); border:1px solid var(--border);
+  background: color-mix(in oklab, var(--glass-tint) 60%, transparent);
+}
+.burger{ display:none; } /* hidden on desktop */
+
+/* Breakpoints: below 1200px switch to hamburger (no wrapping) */
+@media (max-width: 1199px){
+  .primary-nav{ display:none; }
+  .burger{ display:inline-grid; }
+}
+
+/* Mobile drawer inherits glass look */
+.mobile-panel[hidden]{ display:none; }
+.mobile-panel{
+  margin:6px auto 0; max-width:1100px; padding:8px;
+  border-radius:16px; border:1px solid var(--border);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  background:var(--glass-tint); box-shadow: var(--hdr-shadow);
+  display:grid; gap:4px;
+}
+.mobile-link{
+  display:block; padding:12px 10px; border-radius:12px;
+  color:var(--text-primary); text-decoration:none; border:1px solid transparent;
+}
+.mobile-link:hover{ background: rgba(255,255,255,.06); border-color: var(--border); }
+.mobile-donate{ display:block; text-align:center; padding:12px; border-radius:12px;
+  background:var(--accent); color:var(--btn-text-on-accent); font-weight:700; }
+
+3) JS — open/close mobile (prevents wrap instead of shrinking)
+
+const btn = document.getElementById('menuButton');
+const panel = document.getElementById('mobilePanel');
+btn?.addEventListener('click', () => {
+  const isHidden = panel.hasAttribute('hidden');
+  if (isHidden) panel.removeAttribute('hidden'); else panel.setAttribute('hidden','');
+  btn.setAttribute('aria-expanded', String(isHidden));
+});
+
+4) Notes (why this fixes alignment)
+  • No wrapping: .nav-list { white-space: nowrap; overflow: hidden; }
+  • Single row: center block (.primary-nav) flexes between brand and actions; links have equal gap.
+  • Breakpoint first: when there isn’t enough width, we hide the list and show burger — no two-line mess.
+  • Vertical centering: every interactive element uses a fixed height (36px) or line-height 1 within a 72px bar.
+  • Brand doesn’t wrap (white-space: nowrap) so the logo/text never splits.
+
+Acceptance Criteria
+  • On ≥1200px, header shows one row only, centered links, no wrapping at any zoom level.
+  • On <1200px, links collapse to hamburger; desktop never shows two lines.
+  • Donate button and theme toggle stay right-aligned and vertically centered.
+  • Glass/liquid styling unchanged; contrast passes AA.
+
+⸻

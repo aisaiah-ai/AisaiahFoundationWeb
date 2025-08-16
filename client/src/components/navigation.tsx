@@ -86,133 +86,137 @@ export function Navigation() {
       {/* Glass bar (nav content) */}
       <div className="glass-bar">
         {/* Left: Logo */}
-        <a href="/" className="flex items-center gap-3 px-2 py-2">
-          <Logo className="h-7 w-7 icon" />
-          <span className="font-semibold tracking-wide" style={{ color: 'var(--text-primary)' }}>
-            AIsaiah Foundation
-          </span>
-        </a>
+        <div className="nav-left">
+          <a href="/" className="flex items-center gap-3 px-2 py-2">
+            <Logo className="h-7 w-7 icon" />
+            <span className="font-semibold tracking-wide" style={{ color: 'var(--text-primary)' }}>
+              AIsaiah Foundation
+            </span>
+          </a>
+        </div>
 
-        {/* Desktop nav */}
-        <ul className="hidden lg:flex items-center gap-6">
-          <li>
+        {/* Center: Desktop nav */}
+        <nav className="nav-center hidden xl:flex">
+          <ul className="flex items-center gap-6">
+            <li>
+              <button 
+                className="nav-link" 
+                onClick={() => scrollToSection("features")}
+                data-testid="nav-features"
+              >
+                Features
+              </button>
+            </li>
+            <li>
+              <button 
+                className="nav-link" 
+                onClick={() => scrollToSection("mission")}
+                data-testid="nav-mission"
+              >
+                Mission
+              </button>
+            </li>
+            <li>
+              <button 
+                className="nav-link" 
+                onClick={() => scrollToSection("faq")}
+                data-testid="nav-faq"
+              >
+                FAQ
+              </button>
+            </li>
+            <li>
+              <button 
+                className="nav-link" 
+                onClick={() => scrollToSection("waitlist")}
+                data-testid="nav-waitlist"
+              >
+                Waitlist
+              </button>
+            </li>
+            <li>
+              <button 
+                className="nav-link" 
+                onClick={() => scrollToSection("get-involved")}
+                data-testid="nav-get-involved"
+              >
+                Get Involved
+              </button>
+            </li>
+            <li>
+              <button 
+                className="nav-link" 
+                onClick={() => scrollToSection("contact")}
+                data-testid="nav-contact"
+              >
+                Contact
+              </button>
+            </li>
+          </ul>
+        </nav>
+
+        {/* Right: Actions (Donate + Theme toggle + mobile button) */}
+        <div className="nav-right">
+          <div className="hidden xl:flex items-center gap-3">
             <button 
-              className="nav-link" 
-              onClick={() => scrollToSection("features")}
-              data-testid="nav-features"
-            >
-              App Features
-            </button>
-          </li>
-          <li>
-            <button 
-              className="nav-link" 
-              onClick={() => scrollToSection("mission")}
-              data-testid="nav-mission"
-            >
-              Mission
-            </button>
-          </li>
-          <li>
-            <button 
-              className="nav-link" 
-              onClick={() => scrollToSection("faq")}
-              data-testid="nav-faq"
-            >
-              FAQ
-            </button>
-          </li>
-          <li>
-            <button 
-              className="nav-link" 
-              onClick={() => scrollToSection("waitlist")}
-              data-testid="nav-waitlist"
-            >
-              Waitlist
-            </button>
-          </li>
-          <li>
-            <button 
-              className="nav-link" 
-              onClick={() => scrollToSection("get-involved")}
-              data-testid="nav-get-involved"
-            >
-              Get Involved
-            </button>
-          </li>
-          <li>
-            <button 
-              className="nav-link" 
-              onClick={() => scrollToSection("contact")}
-              data-testid="nav-contact"
-            >
-              Contact
-            </button>
-          </li>
-          <li>
-            <a 
-              className="nav-link theme-link" 
-              href="/support"
-              data-testid="nav-support"
-            >
-              Support
-            </a>
-          </li>
-          <li>
-            <a 
-              className="nav-link theme-link" 
-              href="/privacy"
-              data-testid="nav-privacy"
-            >
-              Privacy
-            </a>
-          </li>
-          <li>
-            <button 
-              className="btn-donate ml-2" 
+              className="btn-donate" 
               onClick={() => scrollToSection("donate")}
               data-testid="nav-donate"
             >
               Donate
             </button>
-          </li>
-        </ul>
-
-        {/* Right: Theme toggle + mobile button */}
-        <div className="flex items-center gap-2">
-          <button 
-            className="icon-btn" 
-            aria-label="Toggle theme" 
-            aria-pressed={theme === 'dark'}
-            title="Toggle theme"
-            onClick={toggleTheme}
-            data-testid="theme-toggle"
-          >
-            {theme === "dark" ? (
-              <Sun className="h-4 w-4" />
-            ) : (
-              <Moon className="h-4 w-4" />
-            )}
-          </button>
-          <button 
-            className="lg:hidden icon-btn" 
-            aria-label="Open menu" 
-            aria-expanded={isMenuOpen}
-            onClick={handleMenuButtonClick}
-            data-testid="mobile-menu-button"
-          >
-            {isMenuOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
-          </button>
+            <button 
+              className="icon-btn" 
+              aria-label="Toggle theme" 
+              aria-pressed={theme === 'dark'}
+              title="Toggle theme"
+              onClick={toggleTheme}
+              data-testid="theme-toggle"
+            >
+              {theme === "dark" ? (
+                <Sun className="h-4 w-4" />
+              ) : (
+                <Moon className="h-4 w-4" />
+              )}
+            </button>
+          </div>
+          
+          {/* Mobile controls */}
+          <div className="xl:hidden flex items-center gap-2">
+            <button 
+              className="icon-btn" 
+              aria-label="Toggle theme" 
+              aria-pressed={theme === 'dark'}
+              title="Toggle theme"
+              onClick={toggleTheme}
+              data-testid="theme-toggle-mobile"
+            >
+              {theme === "dark" ? (
+                <Sun className="h-4 w-4" />
+              ) : (
+                <Moon className="h-4 w-4" />
+              )}
+            </button>
+            <button 
+              className="icon-btn" 
+              aria-label="Open menu" 
+              aria-expanded={isMenuOpen}
+              onClick={handleMenuButtonClick}
+              data-testid="mobile-menu-button"
+            >
+              {isMenuOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
       {/* Mobile panel */}
       {isMenuOpen && (
-        <div className="lg:hidden mobile-panel" data-testid="mobile-menu-panel">
+        <div className="xl:hidden mobile-panel" data-testid="mobile-menu-panel">
           <button 
             className="mobile-link" 
             onClick={() => scrollToSection("features")}

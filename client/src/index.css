@@ -109,16 +109,17 @@
     position: relative;
     height: 100%;
     margin: 8px auto;
-    max-width: 1100px;
-    display: flex;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
-    justify-content: space-between;
     border-radius: var(--glass-radius);
     backdrop-filter: blur(var(--glass-blur));
     -webkit-backdrop-filter: blur(var(--glass-blur));
     border: var(--glass-border) solid var(--border);
     box-shadow: var(--hdr-shadow);
     overflow: hidden;
+    padding: 0 1rem;
   }
   
   /* The tint layer that restores contrast on both themes */
@@ -136,12 +137,36 @@
     z-index: 1;
   }
   
+  /* Three-column navigation layout */
+  .nav-left {
+    justify-self: start;
+    min-width: 0; /* Allow shrinking */
+  }
+  
+  .nav-center {
+    justify-self: center;
+    min-width: 0; /* Allow shrinking */
+  }
+  
+  .nav-right {
+    justify-self: end;
+    min-width: 0; /* Allow shrinking */
+  }
+  
+  /* Compact navigation links for better spacing */
+  .nav-center ul {
+    gap: 1.25rem;
+    white-space: nowrap;
+  }
+  
   /* Navigation link styles */
   .nav-link {
     position: relative;
-    padding: 0.5rem 0.6rem;
+    padding: 0.5rem 0.75rem;
     font-weight: 600;
     color: var(--text-primary);
+    white-space: nowrap;
+    font-size: 0.9rem;
   }
   
   .nav-link:focus-visible {
@@ -170,10 +195,12 @@
   /* Donate pill (kept high-contrast) */
   .btn-donate {
     border-radius: 9999px;
-    padding: 0.55rem 0.9rem;
+    padding: 0.5rem 1rem;
     font-weight: 700;
     background: var(--accent);
     color: var(--btn-text-on-accent);
+    white-space: nowrap;
+    font-size: 0.875rem;
   }
   
   /* Icon buttons */
