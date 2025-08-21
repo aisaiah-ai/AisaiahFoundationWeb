@@ -106,8 +106,8 @@ export function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold mb-8">Get in Touch</h2>
-              <p className="text-xl text-gray-300 mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold mb-8" style={{ color: 'var(--text-primary)' }}>Get in Touch</h2>
+              <p className="text-xl mb-8" style={{ color: 'var(--text-secondary)' }}>
                 Have questions about our mission or want to get involved? We'd love to hear from you.
               </p>
 
@@ -117,8 +117,8 @@ export function Contact() {
                     <Mail className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <div className="font-semibold">Email</div>
-                    <div className="text-gray-300">info@aisaiah.org</div>
+                    <div className="font-semibold" style={{ color: 'var(--text-primary)' }}>Email</div>
+                    <div style={{ color: 'var(--text-secondary)' }}>info@aisaiah.org</div>
                   </div>
                 </div>
 
@@ -127,8 +127,8 @@ export function Contact() {
                     <Phone className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <div className="font-semibold">Phone</div>
-                    <div className="text-gray-300">813-355-9645</div>
+                    <div className="font-semibold" style={{ color: 'var(--text-primary)' }}>Phone</div>
+                    <div style={{ color: 'var(--text-secondary)' }}>813-355-9645</div>
                   </div>
                 </div>
 
@@ -137,8 +137,8 @@ export function Contact() {
                     <MapPin className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <div className="font-semibold">Address</div>
-                    <div className="text-gray-300">
+                    <div className="font-semibold" style={{ color: 'var(--text-primary)' }}>Address</div>
+                    <div style={{ color: 'var(--text-secondary)' }}>
                       16192 Coastal Hwy<br />
                       Lewes, Delaware 19958<br />
                       County of Sussex
@@ -149,13 +149,14 @@ export function Contact() {
 
               {/* Social Media Links */}
               <div className="mt-8">
-                <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
+                <h3 className="text-lg font-semibold mb-4" style={{ color: 'var(--text-primary)' }}>Follow Us</h3>
                 <div className="flex space-x-4">
                   {socialLinks.map((social, index) => (
                     <motion.a
                       key={social.label}
                       href={social.href}
-                      className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gradient-spiritual transition-all duration-300"
+                      className="w-12 h-12 rounded-full flex items-center justify-center hover:bg-gradient-spiritual transition-all duration-300"
+                      style={{ backgroundColor: 'var(--bg-elev)', color: 'var(--text-primary)' }}
                       whileHover={{ scale: 1.1 }}
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
