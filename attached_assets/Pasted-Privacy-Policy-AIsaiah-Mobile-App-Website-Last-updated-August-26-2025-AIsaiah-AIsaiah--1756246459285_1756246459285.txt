@@ -1,0 +1,156 @@
+Privacy Policy — AIsaiah (Mobile App & Website)
+
+Last updated: August 26, 2025
+
+AIsaiah (“AIsaiah,” “we,” “us,” or “our”) provides mobile applications and related services that help users build daily spiritual habits, including optional conference features. This Privacy Policy explains what we collect, why we collect it, how we use and share it, how you can exercise your rights, and how to contact us.
+
+For Apple App Store review: This version clarifies that Daily Prayer/Reading is accessible without sign‑in, adds a clear, in‑app Account Deletion path and description of what is deleted, and aligns data categories/purposes and processor disclosures with App Privacy.
+
+⸻
+
+1. Summary of Key Points
+	•	Guest access: Core reading content (e.g., Daily Prayer/Reading) is available without registration. Accounts are optional for sync, reminders, favorites, and conference personalization.
+	•	No ads / no tracking: We do not sell personal data and do not track users across apps or websites for targeted advertising.
+	•	Processors disclosed: We use service providers (e.g., Apple/Google for sign‑in; Firebase for auth, database, analytics, crash reporting, and messaging; cloud hosting) under contracts limiting use to providing the Services.
+	•	Deletion in‑app: You can delete your account from Settings → Account → Delete Account. This removes your auth record and deletes associated personal data we control (details in §8).
+	•	Security: We use TLS in transit and cloud provider protections at rest. We do not represent the app as providing end‑to‑end encryption of user content.
+
+⸻
+
+2. Scope
+
+This Policy applies to our mobile apps, websites (including aisaiah.org), and related services that link to it (collectively, the “Services”).
+
+⸻
+
+3. Data We Collect
+
+3.1 Information you provide
+	•	Account data: Email address or identity token (Sign in with Apple or Google) and optional profile fields (display name, photo).
+	•	Preferences: Reminders, favorites, streaks/habits, conference selections, session bookmarks.
+	•	Support messages: Content of messages you send to us (e.g., via email or forms).
+
+3.2 Information collected automatically
+	•	Device & app data: Device model, OS version, app version, language/locale, time zone.
+	•	Usage data: Screens viewed, basic interaction events, error/crash diagnostics, performance metrics.
+	•	Push token: Device token for notifications you opt into.
+	•	Approximate location (optional): When you use features that request location (e.g., nearby venue info), you can decline at any time in OS settings.
+
+3.3 Information from third parties
+	•	Sign‑in providers: Apple/Google share identity info needed to authenticate you.
+
+We do not collect sensitive categories unless you choose to provide optional content (e.g., a profile photo). Do not include personal health or highly sensitive content in free‑text fields.
+
+⸻
+
+4. How We Use Data
+	•	Provide and improve the Services: authentication, sync settings, reminders, conference schedules/announcements, and content delivery.
+	•	Communications: notifications and service messages you request (e.g., reminders, schedule changes).
+	•	Analytics & diagnostics: understand feature usage, fix bugs, and improve reliability.
+	•	Security & abuse prevention: detect misuse, fraud, and protect the Services and users.
+
+Legal bases (EEA/UK): contract (to provide requested Services), legitimate interests (to secure and improve), and consent where required (e.g., notifications).
+
+⸻
+
+5. Non‑Account Access (Guest Mode)
+
+Core Daily Prayer/Reading content is accessible without registration. Account creation is optional and unlocks multi‑device sync, reminders, favorites, and personalized conference features.
+
+⸻
+
+6. Cookies & Similar Technologies
+
+Our mobile apps use local storage for settings and cached content. On the website, we may use minimal, non‑advertising cookies for functionality and analytics. You can control website cookies in your browser.
+
+⸻
+
+7. Sharing & Service Providers
+
+We do not sell, rent, or trade personal data. We share limited data with service providers under data‑processing terms so they may operate the Services for us:
+	•	Identity & authentication: Apple (Sign in with Apple), Google (Google Sign‑In)
+	•	Backend platform: Google Firebase (Authentication, Firestore Database, Cloud Storage, Cloud Messaging), Firebase Analytics, Crashlytics/Performance Monitoring
+	•	Hosting & infrastructure: Cloud providers that run our servers and security controls
+	•	Support & communications: Email and ticketing tools you use to contact us
+
+We may also disclose data where required by law or to protect rights, safety, and the integrity of the Services.
+
+⸻
+
+8. Account Deletion (Right to Erasure)
+
+You can initiate deletion in‑app: Settings → Account → Delete Account. Once confirmed, we will:
+	•	Delete your authentication record.
+	•	Delete your personal profile and preferences we control (e.g., reminders, favorites, bookmarks, notification tokens).
+	•	Delete your user‑owned files in cloud storage (if any) associated with your account.
+	•	Sign you out on all devices.
+
+If you cannot access the app, you may email privacy@aisaiah.org from your account email to request deletion. We may take reasonable steps to verify your identity.
+
+What we may retain: Minimal records needed to comply with law, resolve disputes, or maintain security (e.g., server logs) are kept for limited periods and then deleted or anonymized.
+
+⸻
+
+9. Data Retention
+	•	Account data: retained while the account is active and deleted on account deletion (§8).
+	•	Conference selections & preferences: retained while the feature is active and up to 1 year after the relevant event, unless you delete earlier.
+	•	Analytics data: typically retained for up to 2 years.
+	•	Server logs / backups: kept on rolling schedules (e.g., logs ~90 days; backups per provider policy) and then deleted or anonymized.
+
+⸻
+
+10. Your Rights & Choices
+
+Depending on your location, you may have rights to access, correct, delete, object/limit processing, or export your data. You can:
+	•	Access/edit your profile in‑app.
+	•	Turn notifications on/off in device settings.
+	•	Delete your account in‑app (§8) or email us at privacy@aisaiah.org.
+
+California (CPRA) and EEA/UK (GDPR) users may exercise rights by contacting us; we will verify and respond within applicable timelines.
+
+⸻
+
+11. Children’s Privacy
+
+The Services are not directed to children under 13 (or the age of digital consent where you live). If you believe a child provided personal data without consent, contact privacy@aisaiah.org and we will delete it.
+
+⸻
+
+12. Security
+
+We use administrative, technical, and organizational measures to protect personal data, including TLS for data in transit and cloud provider protections at rest, access controls, and regular updates. We do not represent the Services as providing end‑to‑end encryption of user content.
+
+⸻
+
+13. International Data Transfers
+
+We may process data in the United States and other countries where our providers operate. Where required, we implement appropriate safeguards for cross‑border transfers.
+
+⸻
+
+14. Digital Services Act (EU) & Contact Information
+
+If distributed in the EU, we identify as a trader and display contact details as required by the DSA:
+
+AIsaiah
+Attn: Privacy
+16192 Coastal Hwy, Lewes, DE 19958
+Phone: +1 (813) 355‑9645
+Email: privacy@aisaiah.org
+
+You may also contact our privacy team at dpo@aisaiah.org.
+
+⸻
+
+15. Changes to This Policy
+
+We may update this Policy from time to time. When we do, we will change the “Last updated” date above and, when changes are material, provide additional notice in‑app.
+
+⸻
+
+16. How to Contact Us
+
+For privacy questions or requests:
+	•	Email: privacy@aisaiah.org
+	•	Mailing: AIsaiah — Privacy, 16192 Coastal Hwy, Lewes, DE 19958, USA
+	•	EU users may use the DSA contact above.
