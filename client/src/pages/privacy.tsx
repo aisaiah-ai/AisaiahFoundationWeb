@@ -69,9 +69,6 @@ export default function PrivacyPage() {
               <p className="text-muted-foreground leading-relaxed">
                 AIsaiah ("AIsaiah," "we," "us," or "our") provides mobile applications and related services that help users build daily spiritual habits, including optional conference features. This Privacy Policy explains what we collect, why we collect it, how we use and share it, how you can exercise your rights, and how to contact us.
               </p>
-              <p className="text-muted-foreground leading-relaxed mt-4">
-                <strong>For Apple App Store review:</strong> This version clarifies that Daily Prayer/Reading is accessible without sign‑in, adds a clear, in‑app Account Deletion path and description of what is deleted, and aligns data categories/purposes and processor disclosures with App Privacy.
-              </p>
             </CardContent>
           </Card>
         </motion.div>
