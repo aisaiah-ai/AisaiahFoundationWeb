@@ -303,9 +303,11 @@ export default function SupportPage() {
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             Our team is dedicated to supporting your spiritual journey. Don't hesitate to reach out with any questions or concerns.
           </p>
-          <Button size="lg" className="bg-gradient-to-r from-[hsl(var(--teal-primary))] to-[hsl(var(--teal-secondary))]">
-            Contact Support Team
-          </Button>
+          <a href="mailto:support@aisaiah.org">
+            <Button size="lg" className="bg-gradient-to-r from-[hsl(var(--teal-primary))] to-[hsl(var(--teal-secondary))]">
+              Contact Support Team
+            </Button>
+          </a>
         </motion.div>
       </div>
     </div>
