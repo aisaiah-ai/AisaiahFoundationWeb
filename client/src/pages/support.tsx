@@ -186,14 +186,25 @@ export default function SupportPage() {
                 <CardContent className="text-center">
                   <p className="font-medium mb-2">{method.contact}</p>
                   <p className="text-sm text-muted-foreground mb-4">Response time: {method.responseTime}</p>
-                  <Button 
-                    className="w-full"
-                    variant={method.primary ? "default" : "outline"}
-                  >
-                    {method.title === "Email Support" ? "Send Email" : 
-                     method.title === "Community Forum" ? "Join Forum" : "Schedule Call"}
-                    <ExternalLink className="w-4 h-4 ml-2" />
-                  </Button>
+                  {method.title === "Email Support" ? (
+                    <a href="mailto:support@aisaiah.org" className="w-full">
+                      <Button 
+                        className="w-full"
+                        variant={method.primary ? "default" : "outline"}
+                      >
+                        Send Email
+                        <ExternalLink className="w-4 h-4 ml-2" />
+                      </Button>
+                    </a>
+                  ) : (
+                    <Button 
+                      className="w-full"
+                      variant={method.primary ? "default" : "outline"}
+                    >
+                      {method.title === "Community Forum" ? "Join Forum" : "Schedule Call"}
+                      <ExternalLink className="w-4 h-4 ml-2" />
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
             ))}
