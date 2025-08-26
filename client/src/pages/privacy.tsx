@@ -290,8 +290,8 @@ export default function PrivacyPage() {
                     <p className="text-muted-foreground">
                       AIsaiah Foundation<br />
                       Privacy Department<br />
-                      [Your Address]<br />
-                      [City, State ZIP]
+                      16192 Coastal Hwy<br />
+                      Lewes, DE 19958
                     </p>
                   </div>
                   <div className="space-y-2">
