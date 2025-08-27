@@ -186,25 +186,19 @@ export default function SupportPage() {
                 <CardContent className="text-center">
                   <p className="font-medium mb-2">{method.contact}</p>
                   <p className="text-sm text-muted-foreground mb-4">Response time: {method.responseTime}</p>
-                  {method.title === "Email Support" ? (
-                    <a href="mailto:support@aisaiah.org" className="w-full">
-                      <Button 
-                        className="w-full"
-                        variant={method.primary ? "default" : "outline"}
-                      >
-                        Send Email
-                        <ExternalLink className="w-4 h-4 ml-2" />
-                      </Button>
-                    </a>
-                  ) : (
-                    <Button 
-                      className="w-full"
-                      variant={method.primary ? "default" : "outline"}
-                    >
-                      {method.title === "Community Forum" ? "Join Forum" : "Schedule Call"}
-                      <ExternalLink className="w-4 h-4 ml-2" />
-                    </Button>
-                  )}
+                  <Button 
+                    className="w-full"
+                    variant={method.primary ? "default" : "outline"}
+                    onClick={() => {
+                      if (method.title === "Email Support") {
+                        window.location.href = "mailto:support@aisaiah.org";
+                      }
+                    }}
+                  >
+                    {method.title === "Email Support" ? "Send Email" : 
+                     method.title === "Community Forum" ? "Join Forum" : "Schedule Call"}
+                    <ExternalLink className="w-4 h-4 ml-2" />
+                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -314,11 +308,13 @@ export default function SupportPage() {
           <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
             Our team is dedicated to supporting your spiritual journey. Don't hesitate to reach out with any questions or concerns.
           </p>
-          <a href="mailto:support@aisaiah.org">
-            <Button size="lg" className="bg-gradient-to-r from-[hsl(var(--teal-primary))] to-[hsl(var(--teal-secondary))]">
-              Contact Support Team
-            </Button>
-          </a>
+          <Button 
+            size="lg" 
+            className="bg-gradient-to-r from-[hsl(var(--teal-primary))] to-[hsl(var(--teal-secondary))]"
+            onClick={() => window.location.href = "mailto:support@aisaiah.org"}
+          >
+            Contact Support Team
+          </Button>
         </motion.div>
       </div>
     </div>
