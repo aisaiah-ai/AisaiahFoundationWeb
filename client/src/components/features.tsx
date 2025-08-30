@@ -189,7 +189,7 @@ export function Features() {
                   placeholder="Enter your email"
                   value={waitlistEmail}
                   onChange={(e) => setWaitlistEmail(e.target.value)}
-                  className="flex-1 text-gray-900 placeholder:text-gray-500"
+                  className="flex-1 text-gray-900 placeholder:text-gray-500 bg-white"
                   required
                 />
                 <Button 
