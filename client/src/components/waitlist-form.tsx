@@ -16,29 +16,29 @@ export function WaitlistForm() {
     setStatus('loading');
     
     try {
-      // TODO: Replace with actual Formspree endpoint
-      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      const response = await fetch('/api/waitlist', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          email: email,
-          _replyto: email,
-          _subject: 'AIsaiah Waitlist Signup'
+          email: email
         }),
       });
+
+      const result = await response.json();
 
       if (response.ok) {
         setStatus('success');
         setMessage("Welcome to the waitlist! We'll notify you when AIsaiah launches.");
         setEmail("");
       } else {
-        throw new Error('Failed to submit');
+        setStatus('error');
+        setMessage(result.message || "Something went wrong. Please try again or email us at support@aisaiah.org");
       }
     } catch (error) {
       setStatus('error');
-      setMessage("Something went wrong. Please try again or email us at hello@aisaiah.org");
+      setMessage("Something went wrong. Please try again or email us at support@aisaiah.org");
     }
   };
 

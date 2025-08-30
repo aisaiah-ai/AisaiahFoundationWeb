@@ -14,15 +14,44 @@ export function Events() {
   });
   const { toast } = useToast();
 
-  const handleNewsletterSubmit = (e: React.FormEvent) => {
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (newsletterData.name && newsletterData.email && newsletterData.consent) {
-      // TODO: Implement actual newsletter subscription
-      toast({
-        title: "Success!",
-        description: "Thank you for subscribing to our newsletter!",
-      });
-      setNewsletterData({ name: "", email: "", consent: false });
+      try {
+        const response = await fetch('/api/newsletter', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: newsletterData.name,
+            email: newsletterData.email,
+            consentGiven: newsletterData.consent
+          }),
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          toast({
+            title: "Success!",
+            description: "Thank you for subscribing to our newsletter!",
+          });
+          setNewsletterData({ name: "", email: "", consent: false });
+        } else {
+          toast({
+            title: "Error",
+            description: result.message || "Failed to subscribe. Please try again.",
+            variant: "destructive"
+          });
+        }
+      } catch (error) {
+        toast({
+          title: "Error",
+          description: "Something went wrong. Please try again.",
+          variant: "destructive"
+        });
+      }
     }
   };
 
