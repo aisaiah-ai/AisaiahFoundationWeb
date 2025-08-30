@@ -235,6 +235,7 @@ export function Contact() {
                         <SelectItem value="partnership">Partnership Opportunity</SelectItem>
                         <SelectItem value="volunteer">Volunteering</SelectItem>
                         <SelectItem value="donation">Donation Questions</SelectItem>
+                        <SelectItem value="waitlist">Waitlist Questions</SelectItem>
                         <SelectItem value="support">Technical Support</SelectItem>
                         <SelectItem value="other">Other</SelectItem>
                       </SelectContent>
