@@ -73,7 +73,7 @@ export function WaitlistForm() {
                     placeholder="Enter your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 text-foreground bg-background border-border"
+                    className="flex-1 text-white dark:text-white bg-background border-border"
                     style={{
                       minHeight: '44px'
                     }}
