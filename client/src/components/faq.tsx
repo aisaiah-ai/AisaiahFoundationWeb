@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { SiApple } from "react-icons/si";
 import { motion } from "framer-motion";
 
 export function FAQ() {
@@ -8,7 +9,21 @@ export function FAQ() {
   const faqs = [
     {
       question: "When will AIsaiah be available?",
-      answer: "AIsaiah is now available on iOS! Download on the App Store: https://apps.apple.com/us/app/aisaiah/id6751301980. Join our waitlist to be notified when the app launches for Android."
+      answer: (
+        <>
+          AIsaiah is now available on iOS!{" "}
+          <a 
+            href="https://apps.apple.com/us/app/aisaiah/id6751301980" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 text-[hsl(var(--teal-primary))] hover:underline font-semibold"
+          >
+            <SiApple className="h-4 w-4" />
+            Download on App Store
+          </a>
+          . Join our waitlist to be notified when the app launches for Android.
+        </>
+      )
     },
     {
       question: "How much will AIsaiah cost?",
@@ -87,7 +102,7 @@ export function FAQ() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <p style={{ color: 'var(--muted)' }}>{faq.answer}</p>
+                    <div style={{ color: 'var(--muted)' }}>{faq.answer}</div>
                   </motion.div>
                 )}
               </motion.div>
