@@ -2,8 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Logo } from "@/components/logo";
 import { WaitlistDialog } from "@/components/ui/waitlist-dialog";
-import { ArrowRight, Download, Heart, ChevronDown } from "lucide-react";
-import { SiApple } from "react-icons/si";
+import { Heart, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import faithTechBgPath from "@assets/1753116855202-faithtech_prayer_background_index_0@1536x1024_1753121360002.png";
@@ -113,16 +112,13 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <a href="https://apps.apple.com/us/app/aisaiah/id6751301980" target="_blank" rel="noopener noreferrer">
-              <Button
-                size="lg"
-                className="group bg-gradient-to-r from-[var(--teal)] to-[var(--purple)] hover:shadow-xl transform hover:scale-105 transition-all duration-300 min-h-[44px]"
+            <a href="https://apps.apple.com/us/app/aisaiah/id6751301980" target="_blank" rel="noopener noreferrer" className="transform hover:scale-105 transition-all duration-300">
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" 
+                alt="Download on the App Store" 
+                className="h-14"
                 data-testid="button-download-app"
-              >
-                <SiApple className="mr-2 h-5 w-5" />
-                <span>Download on App Store</span>
-                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
-              </Button>
+              />
             </a>
             <Button
               size="lg"

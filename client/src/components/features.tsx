@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { HandHeart, BookOpen, Zap, Calendar, Target, BarChart3 } from "lucide-react";
-import { SiApple } from "react-icons/si";
 import { motion } from "framer-motion";
 import { useToast } from "@/hooks/use-toast";
 import splashScreen from "@assets/01_Splash_1755272472047.png";
@@ -182,13 +181,12 @@ export function Features() {
               <h3 className="text-2xl font-bold mb-4">Download AIsaiah Now</h3>
               <p className="mb-6 opacity-90">Available now on iOS App Store!</p>
               <div className="flex flex-col gap-4 max-w-md mx-auto">
-                <a href="https://apps.apple.com/us/app/aisaiah/id6751301980" target="_blank" rel="noopener noreferrer" className="w-full">
-                  <Button 
-                    className="w-full bg-white text-purple-600 hover:bg-gray-100"
-                  >
-                    <SiApple className="mr-2 h-5 w-5" />
-                    Download on App Store
-                  </Button>
+                <a href="https://apps.apple.com/us/app/aisaiah/id6751301980" target="_blank" rel="noopener noreferrer" className="flex justify-center transform hover:scale-105 transition-all duration-300">
+                  <img 
+                    src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" 
+                    alt="Download on the App Store" 
+                    className="h-12"
+                  />
                 </a>
                 <p className="text-sm opacity-75">Join the waitlist for Android updates:</p>
                 <form 

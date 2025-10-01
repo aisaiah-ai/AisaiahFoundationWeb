@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { SiApple } from "react-icons/si";
 import { motion } from "framer-motion";
 
 export function FAQ() {
@@ -16,12 +15,16 @@ export function FAQ() {
             href="https://apps.apple.com/us/app/aisaiah/id6751301980" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-[hsl(var(--teal-primary))] hover:underline font-semibold"
+            className="inline-block align-middle transform hover:scale-105 transition-all duration-300"
           >
-            <SiApple className="h-4 w-4" />
-            Download on App Store
+            <img 
+              src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" 
+              alt="Download on the App Store" 
+              className="h-10 inline-block"
+            />
           </a>
-          . Join our waitlist to be notified when the app launches for Android.
+          <br />
+          Join our waitlist to be notified when the app launches for Android.
         </>
       )
     },

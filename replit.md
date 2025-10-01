@@ -10,6 +10,17 @@ Preferred communication style: Simple, everyday language.
 
 ## Recent Changes
 
+### October 1, 2025
+- **Official App Store Badges**: Replaced custom icon buttons with official Apple App Store badges
+  - Integrated official SVG badges from Wikimedia Commons (public domain)
+  - Badge source: https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg
+  - Implemented in three locations: Hero section, Features section, and FAQ section
+  - Responsive sizing: Hero (h-14), Features (h-12), FAQ (h-10)
+  - Added hover scale effects (105%) for better UX
+  - All badges link to official App Store URL: https://apps.apple.com/us/app/aisaiah/id6751301980
+  - Removed unused SiApple icon imports from components
+  - Verified functionality with e2e testing (desktop and mobile viewports)
+
 ### January 21, 2025
 - **Database Integration**: Successfully integrated PostgreSQL database using Neon Database
   - Added DatabaseStorage class to replace MemStorage for persistent data storage
