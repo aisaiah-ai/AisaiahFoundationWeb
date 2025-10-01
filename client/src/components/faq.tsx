@@ -8,7 +8,7 @@ export function FAQ() {
   const faqs = [
     {
       question: "When will AIsaiah be available?",
-      answer: "AIsaiah is currently in development. Join our waitlist to be notified when the app launches for iOS and Android."
+      answer: "AIsaiah is now available on iOS! Download on the App Store: https://apps.apple.com/us/app/aisaiah/id6751301980. Join our waitlist to be notified when the app launches for Android."
     },
     {
       question: "How much will AIsaiah cost?",
