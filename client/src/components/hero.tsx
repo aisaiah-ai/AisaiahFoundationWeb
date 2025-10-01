@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Logo } from "@/components/logo";
 import { WaitlistDialog } from "@/components/ui/waitlist-dialog";
 import { ArrowRight, Download, Heart, ChevronDown } from "lucide-react";
+import { SiApple } from "react-icons/si";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import faithTechBgPath from "@assets/1753116855202-faithtech_prayer_background_index_0@1536x1024_1753121360002.png";
@@ -118,7 +119,7 @@ export function Hero() {
                 className="group bg-gradient-to-r from-[var(--teal)] to-[var(--purple)] hover:shadow-xl transform hover:scale-105 transition-all duration-300 min-h-[44px]"
                 data-testid="button-download-app"
               >
-                <Download className="mr-2 h-4 w-4" />
+                <SiApple className="mr-2 h-5 w-5" />
                 <span>Download on App Store</span>
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
               </Button>
