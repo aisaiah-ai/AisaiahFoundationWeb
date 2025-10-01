@@ -178,27 +178,37 @@ export function Features() {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <div className="bg-gradient-spiritual rounded-2xl p-8 text-white">
-              <h3 className="text-2xl font-bold mb-4">Join the Waitlist</h3>
-              <p className="mb-6 opacity-90">Be the first to experience the AIsaiah App when it launches.</p>
-              <form 
-                className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
-                onSubmit={handleWaitlistSubmit}
-              >
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={waitlistEmail}
-                  onChange={(e) => setWaitlistEmail(e.target.value)}
-                  className="flex-1 text-gray-900 placeholder:text-gray-500 bg-white"
-                  required
-                />
-                <Button 
-                  type="submit"
-                  className="bg-white text-purple-600 hover:bg-gray-100"
+              <h3 className="text-2xl font-bold mb-4">Download AIsaiah Now</h3>
+              <p className="mb-6 opacity-90">Available now on iOS App Store!</p>
+              <div className="flex flex-col gap-4 max-w-md mx-auto">
+                <a href="https://apps.apple.com/us/app/aisaiah/id6751301980" target="_blank" rel="noopener noreferrer" className="w-full">
+                  <Button 
+                    className="w-full bg-white text-purple-600 hover:bg-gray-100"
+                  >
+                    Download on App Store
+                  </Button>
+                </a>
+                <p className="text-sm opacity-75">Join the waitlist for Android updates:</p>
+                <form 
+                  className="flex flex-col sm:flex-row gap-4"
+                  onSubmit={handleWaitlistSubmit}
                 >
-                  Join Waitlist
-                </Button>
-              </form>
+                  <Input
+                    type="email"
+                    placeholder="Enter your email"
+                    value={waitlistEmail}
+                    onChange={(e) => setWaitlistEmail(e.target.value)}
+                    className="flex-1 text-gray-900 placeholder:text-gray-500 bg-white"
+                    required
+                  />
+                  <Button 
+                    type="submit"
+                    className="bg-white/20 text-white hover:bg-white/30"
+                  >
+                    Join Waitlist
+                  </Button>
+                </form>
+              </div>
             </div>
           </motion.div>
         </div>

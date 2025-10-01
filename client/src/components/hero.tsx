@@ -112,32 +112,25 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            <Button
-              size="lg"
-              onClick={() => setShowWaitlistDialog(true)}
-              className="group bg-gradient-to-r from-[var(--teal)] to-[var(--purple)] hover:shadow-xl transform hover:scale-105 transition-all duration-300 min-h-[44px]"
-              data-testid="button-join-waitlist-hero"
-            >
-              <span>Join the Waitlist</span>
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
-            </Button>
-            <div className="relative">
-              <Badge 
-                className="absolute -top-2 -right-2 z-10 bg-gradient-to-r from-orange-500 to-red-500 text-white text-xs px-2 py-1 shadow-lg animate-pulse"
-                data-testid="badge-coming-soon"
-              >
-                Coming Soon
-              </Badge>
+            <a href="https://apps.apple.com/us/app/aisaiah/id6751301980" target="_blank" rel="noopener noreferrer">
               <Button
                 size="lg"
-                onClick={() => setShowWaitlistDialog(true)}
-                className="bg-gradient-to-r from-[hsl(var(--purple-primary))] to-[hsl(var(--purple-secondary))] hover:shadow-xl transform hover:scale-105 transition-all duration-300 relative"
+                className="group bg-gradient-to-r from-[var(--teal)] to-[var(--purple)] hover:shadow-xl transform hover:scale-105 transition-all duration-300 min-h-[44px]"
                 data-testid="button-download-app"
               >
                 <Download className="mr-2 h-4 w-4" />
-                <span>Download the App</span>
+                <span>Download on App Store</span>
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
               </Button>
-            </div>
+            </a>
+            <Button
+              size="lg"
+              onClick={() => setShowWaitlistDialog(true)}
+              className="bg-gradient-to-r from-[hsl(var(--purple-primary))] to-[hsl(var(--purple-secondary))] hover:shadow-xl transform hover:scale-105 transition-all duration-300 relative"
+              data-testid="button-join-waitlist-hero"
+            >
+              <span>Join the Waitlist</span>
+            </Button>
             <Button
               variant="outline"
               size="lg"

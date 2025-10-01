@@ -56,7 +56,7 @@ export function WaitlistForm() {
               Join the Waitlist
             </h2>
             <p className="text-xl mb-8" style={{ color: 'var(--muted)' }}>
-              Be the first to experience spiritual fitness when AIsaiah launches.
+              Get notified about Android release and new features. iOS app is now available on the App Store!
             </p>
 
             {status === 'success' ? (
