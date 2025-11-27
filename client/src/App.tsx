@@ -17,6 +17,7 @@ function Router() {
       <Route path="/support" component={Support} />
       <Route path="/privacy" component={Privacy} />
       <Route path="/data-deletion" component={DataDeletion} />
+      <Route path="/delete-account" component={DataDeletion} />
       <Route component={NotFound} />
     </Switch>
   );
