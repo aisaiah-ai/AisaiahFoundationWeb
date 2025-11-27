@@ -1,0 +1,13 @@
+name = "aisaiah-foundation-api"
+main = "dist/worker.js"
+compatibility_date = "2024-11-27"
+
+[env.production]
+name = "aisaiah-foundation-api"
+
+[env.production.vars]
+NODE_ENV = "production"
+
+# Database connection will be set via secrets
+# Use: wrangler secret put DATABASE_URL
+
