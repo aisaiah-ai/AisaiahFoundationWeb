@@ -144,6 +144,19 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
+      - name: Configure Custom Domain (Optional)
+        if: steps.deploy.outcome == 'success'
+        run: |
+          echo "Checking for custom domain configuration..."
+          # Only add domain if it's not already configured
+          # This will fail gracefully if domain is not in Cloudflare or already added
+          wrangler pages domain add aisaiah.org \
+            --project-name=aisaiah-foundation-web 2>&1 || echo "Domain may already be configured or not available in Cloudflare"
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        continue-on-error: true
+
       - name: Deployment Summary
         if: always()
         run: |
@@ -152,8 +165,12 @@ jobs:
           if [ "${{ steps.deploy.outcome }}" == "success" ]; then
             echo "✅ **Deployment Successful**" >> $GITHUB_STEP_SUMMARY
             if [ -n "${{ steps.deploy.outputs.deploy_url }}" ]; then
-              echo "🌐 **URL**: ${{ steps.deploy.outputs.deploy_url }}" >> $GITHUB_STEP_SUMMARY
+              echo "🌐 **Pages URL**: ${{ steps.deploy.outputs.deploy_url }}" >> $GITHUB_STEP_SUMMARY
             fi
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "📋 **Custom Domain**: https://aisaiah.org (configure in Cloudflare Dashboard if not working)" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "See SETUP_CUSTOM_DOMAIN.md for instructions on configuring aisaiah.org" >> $GITHUB_STEP_SUMMARY
           else
             echo "❌ **Deployment Failed**" >> $GITHUB_STEP_SUMMARY
             echo "Check the logs above for details." >> $GITHUB_STEP_SUMMARY
