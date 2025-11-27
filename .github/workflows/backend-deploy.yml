@@ -14,6 +14,11 @@ on:
       - 'package.json'
       - 'package-lock.json'
 
+# Prevent multiple runs from running simultaneously
+concurrency:
+  group: backend-deploy-notify
+  cancel-in-progress: false
+
 jobs:
   notify:
     runs-on: ubuntu-latest

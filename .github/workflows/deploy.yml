@@ -6,6 +6,11 @@ on:
       - main
   workflow_dispatch: # Allow manual triggers
 
+# Prevent multiple deployments from running simultaneously
+concurrency:
+  group: cloudflare-pages-deploy
+  cancel-in-progress: true
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
