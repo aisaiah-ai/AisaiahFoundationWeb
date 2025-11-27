@@ -50,7 +50,8 @@ Before the GitHub Actions workflow can deploy, you must create the project in Cl
    - Requires GitHub secrets:
      - `CLOUDFLARE_API_TOKEN`: Your Cloudflare API token (with "Cloudflare Pages:Edit" permission)
      - `CLOUDFLARE_ACCOUNT_ID`: Your Cloudflare account ID
-   - The workflow uses `wrangler-action` (updated from deprecated `pages-action`)
+   - The workflow uses direct Wrangler CLI (more reliable than actions)
+   - **Auto-creates the project if it doesn't exist** - no manual setup needed!
 
 3. **Manual Setup Alternative** (if not using GitHub Actions):
    - Go to Cloudflare Dashboard → Pages
@@ -137,21 +138,27 @@ Convert the entire app to Cloudflare Workers (requires significant refactoring).
 ## Troubleshooting
 
 ### "Project not found" Error (404)
-**This is the most common error!** The Cloudflare Pages project must be created before deployment.
+**Note:** The workflow now auto-creates the project if it doesn't exist, so this should be resolved automatically.
 
-**Solution:**
-1. Go to [Cloudflare Dashboard](https://dash.cloudflare.com) → Pages
-2. Click "Create a project"
-3. Name it: `aisaiah-foundation-web`
-4. You can leave it empty or connect to Git later
-5. Re-run the GitHub Actions workflow
+**If you still see this error:**
+1. Check that your `CLOUDFLARE_API_TOKEN` has "Cloudflare Pages:Edit" permission
+2. Verify your `CLOUDFLARE_ACCOUNT_ID` is correct
+3. The workflow will attempt to create the project automatically
 
-**Or create via CLI:**
+**Manual creation (if auto-creation fails):**
 ```bash
 npm install -g wrangler
 wrangler login
 wrangler pages project create aisaiah-foundation-web
 ```
+
+### Wrangler Installation Errors
+If you see errors about wrangler installation or npx failures:
+
+**Solution:**
+- The workflow now installs wrangler directly via npm, which is more reliable
+- If issues persist, check Node.js version (should be 20)
+- Verify network connectivity in GitHub Actions
 
 ### Build Failures
 - Check Node version (should be 20)
