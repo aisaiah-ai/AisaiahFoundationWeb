@@ -1,0 +1,31 @@
+# One-time workflow to create the Cloudflare Pages project
+# Run this manually once before the main deployment workflow
+
+name: Create Cloudflare Pages Project
+
+on:
+  workflow_dispatch: # Manual trigger only
+
+jobs:
+  create-project:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Wrangler
+        run: npm install -g wrangler@latest
+
+      - name: Create Cloudflare Pages Project
+        run: |
+          wrangler pages project create aisaiah-foundation-web \
+            --compatibility-date=2024-11-27 \
+            --production-branch=main
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      - name: Verify Project Created
+        run: |
+          wrangler pages project list
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+

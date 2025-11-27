@@ -40,12 +40,10 @@ jobs:
           echo "Build output verified:"
           ls -la dist/public/ | head -20
 
-      - name: Publish to Cloudflare Pages
-        uses: cloudflare/pages-action@v1
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          projectName: aisaiah-foundation-web
-          directory: dist/public
-          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
-          wranglerVersion: '3'
+          command: pages deploy dist/public --project-name=aisaiah-foundation-web
+        continue-on-error: false

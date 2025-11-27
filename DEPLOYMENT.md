@@ -31,13 +31,28 @@ This is the recommended approach for full-stack applications.
 
 #### Frontend (Cloudflare Pages)
 
-1. **Automatic Deployment via GitHub Actions**
+**IMPORTANT: Create the Cloudflare Pages project first!**
+
+Before the GitHub Actions workflow can deploy, you must create the project in Cloudflare:
+
+1. **Create Cloudflare Pages Project** (Required First Step):
+   - Go to [Cloudflare Dashboard](https://dash.cloudflare.com) → Pages
+   - Click "Create a project"
+   - Choose "Connect to Git" (optional, or use "Upload assets" for manual)
+   - Project name: `aisaiah-foundation-web`
+   - Or create via CLI:
+     ```bash
+     wrangler pages project create aisaiah-foundation-web
+     ```
+
+2. **Automatic Deployment via GitHub Actions**
    - The workflow in `.github/workflows/deploy.yml` automatically deploys to Cloudflare Pages on push to `main`
    - Requires GitHub secrets:
-     - `CLOUDFLARE_API_TOKEN`: Your Cloudflare API token
+     - `CLOUDFLARE_API_TOKEN`: Your Cloudflare API token (with "Cloudflare Pages:Edit" permission)
      - `CLOUDFLARE_ACCOUNT_ID`: Your Cloudflare account ID
+   - The workflow uses `wrangler-action` (updated from deprecated `pages-action`)
 
-2. **Manual Setup** (if needed):
+3. **Manual Setup Alternative** (if not using GitHub Actions):
    - Go to Cloudflare Dashboard → Pages
    - Create a new project
    - Connect to GitHub repository
@@ -121,10 +136,28 @@ Convert the entire app to Cloudflare Workers (requires significant refactoring).
 
 ## Troubleshooting
 
+### "Project not found" Error (404)
+**This is the most common error!** The Cloudflare Pages project must be created before deployment.
+
+**Solution:**
+1. Go to [Cloudflare Dashboard](https://dash.cloudflare.com) → Pages
+2. Click "Create a project"
+3. Name it: `aisaiah-foundation-web`
+4. You can leave it empty or connect to Git later
+5. Re-run the GitHub Actions workflow
+
+**Or create via CLI:**
+```bash
+npm install -g wrangler
+wrangler login
+wrangler pages project create aisaiah-foundation-web
+```
+
 ### Build Failures
 - Check Node version (should be 20)
 - Verify all dependencies are in `package.json`
 - Check build logs in Cloudflare Pages dashboard
+- Ensure `dist/public` directory exists after build
 
 ### API Connection Issues
 - Verify `VITE_API_URL` is set correctly
@@ -135,6 +168,11 @@ Convert the entire app to Cloudflare Workers (requires significant refactoring).
 - Verify `DATABASE_URL` is set correctly
 - Check database provider (Neon, Supabase, etc.) connection limits
 - Ensure database allows connections from your hosting provider
+
+### Workflow Errors
+- Verify GitHub secrets are set correctly
+- Check that `CLOUDFLARE_API_TOKEN` has "Cloudflare Pages:Edit" permission
+- Ensure `CLOUDFLARE_ACCOUNT_ID` is correct (found in dashboard URL or sidebar)
 
 ## Current Deployment Status
 
