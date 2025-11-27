@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Home from "@/pages/home";
 import Support from "@/pages/support";
 import Privacy from "@/pages/privacy";
+import DataDeletion from "@/pages/data-deletion";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -15,6 +16,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/support" component={Support} />
       <Route path="/privacy" component={Privacy} />
+      <Route path="/data-deletion" component={DataDeletion} />
       <Route component={NotFound} />
     </Switch>
   );

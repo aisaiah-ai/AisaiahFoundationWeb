@@ -7,16 +7,16 @@ export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
   getUserByUsername(username: string): Promise<User | undefined>;
   createUser(user: InsertUser): Promise<User>;
-  
+
   // Contact operations
   createContact(contact: InsertContact): Promise<Contact>;
   getAllContacts(): Promise<Contact[]>;
-  
+
   // Newsletter operations
   createNewsletterSubscription(subscription: InsertNewsletter): Promise<NewsletterSubscription>;
   getAllNewsletterSubscriptions(): Promise<NewsletterSubscription[]>;
   getNewsletterSubscriptionByEmail(email: string): Promise<NewsletterSubscription | undefined>;
-  
+
   // Waitlist operations
   createWaitlistEntry(entry: InsertWaitlist): Promise<WaitlistEntry>;
   getAllWaitlistEntries(): Promise<WaitlistEntry[]>;
@@ -65,9 +65,9 @@ export class MemStorage implements IStorage {
   // Contact operations
   async createContact(insertContact: InsertContact): Promise<Contact> {
     const id = this.currentContactId++;
-    const contact: Contact = { 
-      ...insertContact, 
-      id, 
+    const contact: Contact = {
+      ...insertContact,
+      id,
       createdAt: new Date()
     };
     this.contacts.set(id, contact);
@@ -89,9 +89,9 @@ export class MemStorage implements IStorage {
     }
 
     const id = this.currentNewsletterId++;
-    const subscription: NewsletterSubscription = { 
-      ...insertSubscription, 
-      id, 
+    const subscription: NewsletterSubscription = {
+      ...insertSubscription,
+      id,
       createdAt: new Date()
     };
     this.newsletterSubscriptions.set(id, subscription);
@@ -119,9 +119,9 @@ export class MemStorage implements IStorage {
     }
 
     const id = this.currentWaitlistId++;
-    const entry: WaitlistEntry = { 
-      ...insertEntry, 
-      id, 
+    const entry: WaitlistEntry = {
+      ...insertEntry,
+      id,
       createdAt: new Date()
     };
     this.waitlistEntries.set(id, entry);
@@ -241,4 +241,4 @@ export class DatabaseStorage implements IStorage {
   }
 }
 
-export const storage = new DatabaseStorage();
+export const storage = process.env.DATABASE_URL ? new DatabaseStorage() : new MemStorage();
