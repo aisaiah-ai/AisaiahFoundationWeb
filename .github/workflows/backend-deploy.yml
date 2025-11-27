@@ -1,0 +1,25 @@
+# Optional: Deploy backend to Railway/Render
+# This workflow can be used to trigger backend deployments
+# when using services like Railway or Render that auto-deploy from GitHub
+
+name: Backend Deployment Trigger
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'server/**'
+      - 'shared/**'
+      - 'package.json'
+      - 'package-lock.json'
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Backend Changes Detected
+        run: |
+          echo "Backend changes detected. If using Railway/Render, they should auto-deploy."
+          echo "Make sure your backend service is connected to this repository."
+
