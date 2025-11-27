@@ -40,10 +40,43 @@ jobs:
           echo "Build output verified:"
           ls -la dist/public/ | head -20
 
+      - name: Install Wrangler
+        run: npm install -g wrangler@latest
+
+      - name: Verify Wrangler Installation
+        run: wrangler --version
+
+      - name: Check if Project Exists
+        id: check_project
+        run: |
+          if wrangler pages project list 2>/dev/null | grep -q "aisaiah-foundation-web"; then
+            echo "exists=true" >> $GITHUB_OUTPUT
+            echo "✅ Project exists"
+          else
+            echo "exists=false" >> $GITHUB_OUTPUT
+            echo "⚠️ Project does not exist yet"
+          fi
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        continue-on-error: true
+
+      - name: Create Project if Needed
+        if: steps.check_project.outputs.exists != 'true'
+        run: |
+          echo "Creating Cloudflare Pages project..."
+          wrangler pages project create aisaiah-foundation-web \
+            --compatibility-date=2024-11-27 \
+            --production-branch=main || echo "Project creation failed or already exists"
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist/public --project-name=aisaiah-foundation-web
-        continue-on-error: false
+        run: |
+          wrangler pages deploy dist/public \
+            --project-name=aisaiah-foundation-web \
+            --compatibility-date=2024-11-27
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
