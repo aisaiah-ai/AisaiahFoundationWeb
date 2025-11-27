@@ -49,12 +49,19 @@ jobs:
       - name: Check if Project Exists
         id: check_project
         run: |
-          if wrangler pages project list 2>/dev/null | grep -q "aisaiah-foundation-web"; then
+          echo "Checking for existing Cloudflare Pages project..."
+          set +e  # Don't exit on error
+          PROJECT_LIST=$(wrangler pages project list 2>&1)
+          EXIT_CODE=$?
+          
+          if [ $EXIT_CODE -eq 0 ] && echo "$PROJECT_LIST" | grep -q "aisaiah-foundation-web"; then
             echo "exists=true" >> $GITHUB_OUTPUT
             echo "✅ Project exists"
           else
             echo "exists=false" >> $GITHUB_OUTPUT
-            echo "⚠️ Project does not exist yet"
+            echo "⚠️ Project does not exist yet (or error checking: $EXIT_CODE)"
+            echo "Project list output:"
+            echo "$PROJECT_LIST"
           fi
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -65,18 +72,84 @@ jobs:
         if: steps.check_project.outputs.exists != 'true'
         run: |
           echo "Creating Cloudflare Pages project..."
+          set +e  # Don't exit on error
           wrangler pages project create aisaiah-foundation-web \
             --compatibility-date=2024-11-27 \
-            --production-branch=main || echo "Project creation failed or already exists"
+            --production-branch=main
+          CREATE_EXIT=$?
+          if [ $CREATE_EXIT -eq 0 ]; then
+            echo "✅ Project created successfully"
+          else
+            echo "⚠️ Project creation returned exit code $CREATE_EXIT (may already exist)"
+            # Try to verify it exists now
+            sleep 2
+            wrangler pages project list | grep "aisaiah-foundation-web" && echo "✅ Project verified" || echo "❌ Project still not found"
+          fi
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        continue-on-error: true
+
+      - name: Validate Secrets
+        run: |
+          if [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+            echo "❌ CLOUDFLARE_API_TOKEN is not set"
+            exit 1
+          fi
+          if [ -z "$CLOUDFLARE_ACCOUNT_ID" ]; then
+            echo "❌ CLOUDFLARE_ACCOUNT_ID is not set"
+            exit 1
+          fi
+          echo "✅ Secrets validated"
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
 
       - name: Deploy to Cloudflare Pages
+        id: deploy
         run: |
-          wrangler pages deploy dist/public \
+          echo "Deploying to Cloudflare Pages..."
+          echo "Project: aisaiah-foundation-web"
+          echo "Directory: dist/public"
+          echo "Branch: main"
+          
+          DEPLOY_OUTPUT=$(wrangler pages deploy dist/public \
             --project-name=aisaiah-foundation-web \
-            --compatibility-date=2024-11-27
+            --branch=main \
+            --commit-hash="${{ github.sha }}" \
+            --commit-message="${{ github.event.head_commit.message || 'Deploy from GitHub Actions' }}" 2>&1)
+          DEPLOY_EXIT=$?
+          
+          echo "$DEPLOY_OUTPUT"
+          
+          if [ $DEPLOY_EXIT -ne 0 ]; then
+            echo "❌ Deployment failed with exit code $DEPLOY_EXIT"
+            exit 1
+          fi
+          
+          # Extract deployment URL if available
+          if echo "$DEPLOY_OUTPUT" | grep -q "https://"; then
+            DEPLOY_URL=$(echo "$DEPLOY_OUTPUT" | grep -o 'https://[^ ]*' | head -1)
+            echo "deploy_url=$DEPLOY_URL" >> $GITHUB_OUTPUT
+            echo "✅ Deployment successful: $DEPLOY_URL"
+          else
+            echo "✅ Deployment completed"
+          fi
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+      - name: Deployment Summary
+        if: always()
+        run: |
+          echo "## Deployment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ "${{ steps.deploy.outcome }}" == "success" ]; then
+            echo "✅ **Deployment Successful**" >> $GITHUB_STEP_SUMMARY
+            if [ -n "${{ steps.deploy.outputs.deploy_url }}" ]; then
+              echo "🌐 **URL**: ${{ steps.deploy.outputs.deploy_url }}" >> $GITHUB_STEP_SUMMARY
+            fi
+          else
+            echo "❌ **Deployment Failed**" >> $GITHUB_STEP_SUMMARY
+            echo "Check the logs above for details." >> $GITHUB_STEP_SUMMARY
+          fi
