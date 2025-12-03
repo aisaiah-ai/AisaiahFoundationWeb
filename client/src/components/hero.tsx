@@ -1,15 +1,9 @@
-import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Logo } from "@/components/logo";
-import { WaitlistDialog } from "@/components/ui/waitlist-dialog";
 import { Heart, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
-import { useState } from "react";
 import faithTechBgPath from "@assets/1753116855202-faithtech_prayer_background_index_0@1536x1024_1753121360002.png";
 
 export function Hero() {
-  const [showWaitlistDialog, setShowWaitlistDialog] = useState(false);
-  
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -120,23 +114,22 @@ export function Hero() {
                 data-testid="button-download-app"
               />
             </a>
-            <Button
-              size="lg"
-              onClick={() => setShowWaitlistDialog(true)}
-              className="bg-gradient-to-r from-[hsl(var(--purple-primary))] to-[hsl(var(--purple-secondary))] hover:shadow-xl transform hover:scale-105 transition-all duration-300 relative"
-              data-testid="button-join-waitlist-hero"
-            >
-              <span>Join the Waitlist</span>
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
+            <a href="https://play.google.com/store/apps/details?id=org.aisaiah.spiritualfitness&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="transform hover:scale-105 transition-all duration-300">
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
+                alt="Get it on Google Play" 
+                className="h-14"
+                data-testid="button-download-google-play"
+              />
+            </a>
+            <button
               onClick={() => scrollToSection("donate")}
-              className="border-2 border-[hsl(var(--teal-primary))] text-[hsl(var(--teal-primary))] hover:bg-[hsl(var(--teal-primary))] hover:text-white transition-all duration-300"
+              className="border-2 border-[hsl(var(--teal-primary))] text-[hsl(var(--teal-primary))] hover:bg-[hsl(var(--teal-primary))] hover:text-white transition-all duration-300 rounded-lg h-14 w-[180px] flex items-center justify-center gap-2 transform hover:scale-105"
+              data-testid="button-support-us-hero"
             >
-              <Heart className="mr-2 h-4 w-4" />
-              <span>Support Us</span>
-            </Button>
+              <Heart className="h-5 w-5" />
+              <span className="font-semibold text-lg">Support Us</span>
+            </button>
           </motion.div>
 
           {/* Scroll Down Indicator - Positioned below CTA buttons */}
@@ -160,11 +153,6 @@ export function Hero() {
           </motion.div>
         </div>
       </div>
-      
-      <WaitlistDialog 
-        open={showWaitlistDialog} 
-        onOpenChange={setShowWaitlistDialog} 
-      />
     </section>
   );
 }

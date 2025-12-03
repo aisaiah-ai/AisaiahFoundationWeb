@@ -10,21 +10,33 @@ export function FAQ() {
       question: "When will AIsaiah be available?",
       answer: (
         <>
-          AIsaiah is now available on iOS!{" "}
-          <a 
-            href="https://apps.apple.com/us/app/aisaiah/id6751301980" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="inline-block align-middle transform hover:scale-105 transition-all duration-300"
-          >
-            <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" 
-              alt="Download on the App Store" 
-              className="h-10 inline-block"
-            />
-          </a>
-          <br />
-          Join our waitlist to be notified when the app launches for Android.
+          AIsaiah is now available on iOS App Store and Google Play Store!{" "}
+          <div className="flex flex-col sm:flex-row gap-3 mt-3 justify-center items-center">
+            <a 
+              href="https://apps.apple.com/us/app/aisaiah/id6751301980" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block align-middle transform hover:scale-105 transition-all duration-300"
+            >
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" 
+                alt="Download on the App Store" 
+                className="h-10 inline-block"
+              />
+            </a>
+            <a 
+              href="https://play.google.com/store/apps/details?id=org.aisaiah.spiritualfitness&pcampaignid=web_share" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="inline-block align-middle transform hover:scale-105 transition-all duration-300"
+            >
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
+                alt="Get it on Google Play" 
+                className="h-10 inline-block"
+              />
+            </a>
+          </div>
         </>
       )
     },

@@ -179,16 +179,25 @@ export function Features() {
           >
             <div className="bg-gradient-spiritual rounded-2xl p-8 text-white">
               <h3 className="text-2xl font-bold mb-4">Download AIsaiah Now</h3>
-              <p className="mb-6 opacity-90">Available now on iOS App Store!</p>
+              <p className="mb-6 opacity-90">Available now on iOS App Store and Google Play Store!</p>
               <div className="flex flex-col gap-4 max-w-md mx-auto">
-                <a href="https://apps.apple.com/us/app/aisaiah/id6751301980" target="_blank" rel="noopener noreferrer" className="flex justify-center transform hover:scale-105 transition-all duration-300">
-                  <img 
-                    src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" 
-                    alt="Download on the App Store" 
-                    className="h-12"
-                  />
-                </a>
-                <p className="text-sm opacity-75">Join the waitlist for Android updates:</p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                  <a href="https://apps.apple.com/us/app/aisaiah/id6751301980" target="_blank" rel="noopener noreferrer" className="flex justify-center transform hover:scale-105 transition-all duration-300">
+                    <img 
+                      src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" 
+                      alt="Download on the App Store" 
+                      className="h-12"
+                    />
+                  </a>
+                  <a href="https://play.google.com/store/apps/details?id=org.aisaiah.spiritualfitness&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" className="flex justify-center transform hover:scale-105 transition-all duration-300">
+                    <img 
+                      src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" 
+                      alt="Get it on Google Play" 
+                      className="h-12"
+                    />
+                  </a>
+                </div>
+                <p className="text-sm opacity-75">Stay updated on new features and updates:</p>
                 <form 
                   className="flex flex-col sm:flex-row gap-4"
                   onSubmit={handleWaitlistSubmit}

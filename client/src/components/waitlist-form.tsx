@@ -56,7 +56,7 @@ export function WaitlistForm() {
               Join the Waitlist
             </h2>
             <p className="text-xl mb-8" style={{ color: 'var(--muted)' }}>
-              Get notified about Android release and new features. iOS app is now available on the App Store!
+              Get notified about new features and updates. AIsaiah is now available on iOS App Store and Google Play Store!
             </p>
 
             {status === 'success' ? (
