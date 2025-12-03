@@ -8,6 +8,7 @@ import Home from "@/pages/home";
 import Support from "@/pages/support";
 import Privacy from "@/pages/privacy";
 import DataDeletion from "@/pages/data-deletion";
+import Download from "@/pages/download";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -18,6 +19,7 @@ function Router() {
       <Route path="/privacy" component={Privacy} />
       <Route path="/data-deletion" component={DataDeletion} />
       <Route path="/delete-account" component={DataDeletion} />
+      <Route path="/download" component={Download} />
       <Route component={NotFound} />
     </Switch>
   );
