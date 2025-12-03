@@ -125,21 +125,12 @@ jobs:
           echo "Project: aisaiah-foundation-web"
           echo "Directory: dist/public"
           echo "Branch: main"
-          echo "Commit: ${{ github.sha }}"
-          echo "Commit Message: ${{ github.event.head_commit.message || 'Deploy from GitHub Actions' }}"
-          echo ""
-          
-          # Show what we're deploying
-          echo "Files to deploy:"
-          find dist/public -type f | head -20
-          echo ""
           
           DEPLOY_OUTPUT=$(wrangler pages deploy dist/public \
             --project-name=aisaiah-foundation-web \
             --branch=main \
             --commit-hash="${{ github.sha }}" \
-            --commit-message="${{ github.event.head_commit.message || 'Deploy from GitHub Actions' }}" \
-            --compatibility-date=2024-11-27 2>&1)
+            --commit-message="${{ github.event.head_commit.message || 'Deploy from GitHub Actions' }}" 2>&1)
           DEPLOY_EXIT=$?
           
           echo "$DEPLOY_OUTPUT"
@@ -154,11 +145,6 @@ jobs:
             DEPLOY_URL=$(echo "$DEPLOY_OUTPUT" | grep -o 'https://[^ ]*' | head -1)
             echo "deploy_url=$DEPLOY_URL" >> $GITHUB_OUTPUT
             echo "✅ Deployment successful: $DEPLOY_URL"
-            echo ""
-            echo "⚠️ If you see old content, try:"
-            echo "   1. Hard refresh: Ctrl+Shift+R (Windows/Linux) or Cmd+Shift+R (Mac)"
-            echo "   2. Clear browser cache"
-            echo "   3. Wait 1-2 minutes for Cloudflare cache to propagate"
           else
             echo "✅ Deployment completed"
           fi
