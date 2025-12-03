@@ -1,0 +1,42 @@
+# Cloudflare Pages headers file
+# Controls caching behavior for static assets
+
+# HTML files should not be cached (always fetch fresh)
+/*.html
+  Cache-Control: no-cache, no-store, must-revalidate
+  X-Content-Type-Options: nosniff
+
+# JavaScript and CSS files can be cached but with revalidation
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images and other static assets
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+/*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+/*.ico
+  Cache-Control: public, max-age=31536000, immutable
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+# Fonts
+/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/*.ttf
+  Cache-Control: public, max-age=31536000, immutable
+
+# JSON and data files
+/*.json
+  Cache-Control: public, max-age=3600
+
+# Default: short cache for everything else
+/*
+  Cache-Control: public, max-age=300
+

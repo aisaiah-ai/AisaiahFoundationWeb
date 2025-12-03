@@ -17,13 +17,17 @@ If the workflow is triggered multiple times (e.g., multiple commits in quick suc
 ## Solutions
 
 ### Option 1: Use Only GitHub Actions (Recommended)
-**Disable Cloudflare Pages Git Integration:**
+**Disable Cloudflare Pages Git Integration (if enabled):**
 
-1. Go to [Cloudflare Dashboard](https://dash.cloudflare.com) → Pages
-2. Select your project: `aisaiah-foundation-web`
-3. Go to **Settings** → **Builds & deployments**
-4. **Disable** "Git integration" or disconnect the Git repository
-5. Keep only the GitHub Actions workflow for deployments
+1. Go to [Cloudflare Dashboard](https://dash.cloudflare.com) → Pages → `aisaiah-foundation-web`
+2. Check the **Deployments** tab to see if deployments are coming from "Git" source
+3. If Git integration is enabled, you'll need to:
+   - Go to **Settings** → Look for Git/repository connection options
+   - Or contact Cloudflare support to disconnect the Git repository
+   - Alternatively, delete and recreate the project using only the API (via GitHub Actions)
+4. Keep only the GitHub Actions workflow for deployments
+
+**Note:** If your project was created via `wrangler pages project create` (as your GitHub Actions does), Git integration is likely NOT enabled, and you're already using GitHub Actions only.
 
 **Benefits:**
 - Full control over deployment process
@@ -67,18 +71,28 @@ This will:
 
 ## How to Check
 
-1. **Check Cloudflare Dashboard:**
-   - Go to Pages → Your Project → Settings
-   - Look for "Git integration" or "Connected repository"
-   - If connected, you'll see the repository name
+1. **Check for Duplicate Deployments (Best Method):**
+   - Go to Cloudflare Dashboard → Pages → `aisaiah-foundation-web` → **Deployments** tab
+   - Look at recent deployments for the same commit
+   - **If you see TWO deployments for the same commit message** → You have duplicate deployments (Git + GitHub Actions)
+   - **If you see ONE deployment per commit** → You're good! Only one deployment method is active
+   - Note: GitHub Actions deployments show branch/commit info (making them look like Git deployments), so the UI may not clearly distinguish. The key is checking for duplicates.
 
 2. **Check GitHub Actions:**
-   - Go to your repository → Actions
-   - See if multiple workflows are running
+   - Go to your repository → Actions tab
+   - See if the workflow is running on pushes
+   - Check if deployments are happening from GitHub Actions
 
-3. **Check Deployment Logs:**
-   - In Cloudflare Pages, check the deployment source
-   - It will show if it came from "Git" or "API" (GitHub Actions)
+3. **Check Deployment Details (Alternative):**
+   - Click "View details" on a recent deployment in the Deployments tab
+   - Look for deployment source information in the details
+   - Note: GitHub Actions deployments via `wrangler` will show branch/commit info, making them look similar to Git deployments in the UI
+   - The key indicator is: **Do you see TWO deployments for the same commit?** If yes, you have duplicates.
+
+4. **Check Settings (Alternative):**
+   - Go to Pages → `aisaiah-foundation-web` → Settings → General
+   - Look for any Git-related settings or connected repository info
+   - Note: The "Production branch: main" setting is just a default and doesn't mean Git integration is enabled
 
 ## Quick Fix
 

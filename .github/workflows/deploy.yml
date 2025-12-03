@@ -44,6 +44,14 @@ jobs:
           fi
           echo "Build output verified:"
           ls -la dist/public/ | head -20
+          echo ""
+          echo "Checking for key files:"
+          ls -la dist/public/index.html || echo "⚠️ index.html not found!"
+          ls -la dist/public/_redirects || echo "⚠️ _redirects not found!"
+          ls -la dist/public/_headers || echo "⚠️ _headers not found!"
+          echo ""
+          echo "Build timestamp: $(date -u +"%Y-%m-%d %H:%M:%S UTC")"
+          echo "Commit: ${{ github.sha }}"
 
       - name: Install Wrangler
         run: npm install -g wrangler@latest
@@ -117,12 +125,21 @@ jobs:
           echo "Project: aisaiah-foundation-web"
           echo "Directory: dist/public"
           echo "Branch: main"
+          echo "Commit: ${{ github.sha }}"
+          echo "Commit Message: ${{ github.event.head_commit.message || 'Deploy from GitHub Actions' }}"
+          echo ""
+          
+          # Show what we're deploying
+          echo "Files to deploy:"
+          find dist/public -type f | head -20
+          echo ""
           
           DEPLOY_OUTPUT=$(wrangler pages deploy dist/public \
             --project-name=aisaiah-foundation-web \
             --branch=main \
             --commit-hash="${{ github.sha }}" \
-            --commit-message="${{ github.event.head_commit.message || 'Deploy from GitHub Actions' }}" 2>&1)
+            --commit-message="${{ github.event.head_commit.message || 'Deploy from GitHub Actions' }}" \
+            --compatibility-date=2024-11-27 2>&1)
           DEPLOY_EXIT=$?
           
           echo "$DEPLOY_OUTPUT"
@@ -137,6 +154,11 @@ jobs:
             DEPLOY_URL=$(echo "$DEPLOY_OUTPUT" | grep -o 'https://[^ ]*' | head -1)
             echo "deploy_url=$DEPLOY_URL" >> $GITHUB_OUTPUT
             echo "✅ Deployment successful: $DEPLOY_URL"
+            echo ""
+            echo "⚠️ If you see old content, try:"
+            echo "   1. Hard refresh: Ctrl+Shift+R (Windows/Linux) or Cmd+Shift+R (Mac)"
+            echo "   2. Clear browser cache"
+            echo "   3. Wait 1-2 minutes for Cloudflare cache to propagate"
           else
             echo "✅ Deployment completed"
           fi
@@ -164,11 +186,20 @@ jobs:
           echo "" >> $GITHUB_STEP_SUMMARY
           if [ "${{ steps.deploy.outcome }}" == "success" ]; then
             echo "✅ **Deployment Successful**" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Commit**: \`${{ github.sha }}\`" >> $GITHUB_STEP_SUMMARY
+            echo "**Message**: ${{ github.event.head_commit.message || 'Deploy from GitHub Actions' }}" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
             if [ -n "${{ steps.deploy.outputs.deploy_url }}" ]; then
               echo "🌐 **Pages URL**: ${{ steps.deploy.outputs.deploy_url }}" >> $GITHUB_STEP_SUMMARY
             fi
             echo "" >> $GITHUB_STEP_SUMMARY
-            echo "📋 **Custom Domain**: https://aisaiah.org (configure in Cloudflare Dashboard if not working)" >> $GITHUB_STEP_SUMMARY
+            echo "📋 **Custom Domain**: https://aisaiah.org" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "⚠️ **If you see old content:**" >> $GITHUB_STEP_SUMMARY
+            echo "   - Hard refresh: \`Ctrl+Shift+R\` (Windows/Linux) or \`Cmd+Shift+R\` (Mac)" >> $GITHUB_STEP_SUMMARY
+            echo "   - Clear browser cache" >> $GITHUB_STEP_SUMMARY
+            echo "   - Wait 1-2 minutes for Cloudflare cache to propagate" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "See SETUP_CUSTOM_DOMAIN.md for instructions on configuring aisaiah.org" >> $GITHUB_STEP_SUMMARY
           else
