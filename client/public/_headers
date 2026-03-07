@@ -32,6 +32,11 @@
 /*.ttf
   Cache-Control: public, max-age=31536000, immutable
 
+# Apple App Site Association (universal links — must be application/json)
+/.well-known/apple-app-site-association
+  Content-Type: application/json
+  Cache-Control: public, max-age=3600
+
 # JSON and data files
 /*.json
   Cache-Control: public, max-age=3600
