@@ -1,5 +1,7 @@
 # Cloudflare Pages redirects for SPA routing
-# All routes should serve index.html so client-side routing works
+
+# Serve .well-known files directly (universal links / app links)
+/.well-known/*  /.well-known/:splat  200
+
+# All other routes should serve index.html so client-side routing works
 /*    /index.html   200
-
-
