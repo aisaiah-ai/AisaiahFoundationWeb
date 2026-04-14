@@ -1,6 +1,21 @@
 node_modules
 dist
 .DS_Store
-server/public
-vite.config.ts.*
+.next
+out
 *.tar.gz
+.env
+.env.local
+.env*.local
+screen_capture
+_old_backup
+
+# Playwright
+test-results/
+playwright-report/
+
+# Terraform
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.backup
+terraform/.terraform.lock.hcl
