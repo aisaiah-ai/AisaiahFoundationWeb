@@ -85,7 +85,7 @@ export default function BoardPage() {
         ]}
         metrics={[
           {
-            value: "9 Board Members",
+            value: "8 Board Members",
             label: "Officers and directors providing governance and strategic oversight.",
           },
           {
@@ -98,92 +98,6 @@ export default function BoardPage() {
           },
         ]}
       />
-
-      {/* Founder — full detail card */}
-      <Section>
-        <SectionHeader>
-          <SectionTitle>Founder</SectionTitle>
-          <SectionDescription>
-            The executive leadership behind the Aisaiah Foundation and platform.
-          </SectionDescription>
-        </SectionHeader>
-        <div className="grid grid-cols-1 gap-8">
-          {boardMembers.filter((m) => m.role === "Founder").map((member, index) => (
-            <Card key={member.name} hover className="surface-panel">
-              <CardContent className="p-8">
-                <div className="grid gap-8 lg:grid-cols-[96px_minmax(0,1fr)_320px]">
-                  <div
-                    className={cn(
-                      "h-24 w-24 rounded-[2rem] flex items-center justify-center text-white font-bold text-2xl",
-                      gradients[0]
-                    )}
-                  >
-                    {getInitials(member.name)}
-                  </div>
-
-                  <div className="min-w-0">
-                    <div className="flex items-center gap-3 mb-1">
-                      <h2 className="text-2xl font-bold text-slate-900">
-                        {member.name}
-                      </h2>
-                      {member.linkedin && (
-                        <a
-                          href={member.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-slate-400 hover:text-primary-600 transition-colors"
-                          aria-label={`${member.name} on LinkedIn`}
-                        >
-                          <Linkedin className="w-5 h-5" />
-                        </a>
-                      )}
-                    </div>
-                    <p className="text-primary-600 font-medium">
-                      {member.title}
-                    </p>
-                    {member.location ? (
-                      <div className="mt-3 flex items-center gap-2 text-sm text-slate-500">
-                        <MapPin className="h-4 w-4" />
-                        {member.location}
-                      </div>
-                    ) : null}
-
-                    <p className="mt-5 text-slate-600 leading-relaxed">
-                      {member.bio}
-                    </p>
-                  </div>
-
-                  <div className="rounded-[1.75rem] border border-slate-200 bg-white p-6">
-                    <div className="flex items-center gap-2 mb-3">
-                      <Heart className="w-4 h-4 text-primary-600" />
-                      <span className="text-sm font-semibold text-primary-800">
-                        Community Roots
-                      </span>
-                    </div>
-                    <p className="text-sm text-primary-700 leading-relaxed">
-                      {member.communityRoots}
-                    </p>
-
-                    <div className="mt-6">
-                      <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
-                        Focus areas
-                      </h3>
-                      <ul className="mt-3 space-y-3">
-                        {member.focusAreas.map((item) => (
-                          <li key={item} className="flex items-start gap-3 text-sm text-slate-600">
-                            <ArrowRight className="mt-0.5 h-4 w-4 text-primary-600" />
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </Section>
 
       {/* Officers */}
       <Section variant="muted">

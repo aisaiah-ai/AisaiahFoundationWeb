@@ -2,26 +2,6 @@ import type { BoardMember, BoardSeatProfile } from "@/types";
 
 export const boardMembers: BoardMember[] = [
   {
-    name: "Isaiah Elijah Aisaiah",
-    title: "Founder & Executive Director",
-    role: "Founder",
-    bio: "Isaiah leads Aisaiah Foundation at the intersection of product strategy, software engineering, and ministry operations. He founded the organization to give faith communities a technology partner that understands both mission and execution, building scalable tools rooted in real ministry experience.",
-    communityRoots:
-      "Active member of Couples for Christ with direct experience in the operational realities of chapter life, events, communications, and volunteer-driven ministry delivery. Guided by Catholic faith and a commitment to serving the broader Christian community.",
-    credentials: [
-      "Founder of the Aisaiah Foundation and Aisaiah platform",
-      "Software engineering and product strategy background",
-      "Leads nonprofit operations, partnerships, and platform direction",
-    ],
-    focusAreas: [
-      "Platform architecture",
-      "Executive partnerships",
-      "Mission-aligned product strategy",
-    ],
-    location: "Florida, USA",
-    linkedin: "#",
-  },
-  {
     name: "Hope Dajao",
     title: "Chairperson",
     role: "Chairperson",
