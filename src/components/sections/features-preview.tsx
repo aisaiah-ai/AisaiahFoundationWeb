@@ -1,15 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
+  Heart,
+  BookOpen,
+  Target,
+  Sparkles,
+  PenLine,
+  TrendingUp,
   ClipboardList,
-  CalendarCheck,
   ScanLine,
-  BarChart3,
-  Users,
-  LayoutDashboard,
+  Calendar,
 } from "lucide-react";
-import { platformFeatures } from "@/content/features";
+import { appFeatures } from "@/content/features";
 import {
   Section,
   SectionHeader,
@@ -21,12 +25,12 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 const iconMap: Record<string, React.ComponentType<React.SVGProps<SVGSVGElement>>> = {
-  ClipboardList,
-  CalendarCheck,
-  ScanLine,
-  BarChart3,
-  Users,
-  LayoutDashboard,
+  Heart,
+  BookOpen,
+  Target,
+  Sparkles,
+  PenLine,
+  TrendingUp,
 };
 
 const cardVariants = {
@@ -40,100 +44,146 @@ const cardVariants = {
 
 export function FeaturesPreview() {
   return (
-    <Section>
-      <SectionHeader>
-        <SectionTitle>Platform Capabilities Built For Ministry Operations</SectionTitle>
-        <SectionDescription>
-          Move from manual coordination to one connected operating system
-          designed for faith-based communities.
-        </SectionDescription>
-      </SectionHeader>
+    <>
+      {/* App Features — Primary */}
+      <Section>
+        <SectionHeader>
+          <SectionTitle>Your Daily Faith Companion</SectionTitle>
+          <SectionDescription>
+            Guided prayer, Scripture reading, spiritual fitness tracking, and
+            personal reflections — everything you need to build lasting spiritual
+            habits, right in your pocket.
+          </SectionDescription>
+        </SectionHeader>
 
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {platformFeatures.map((feature, i) => {
-          const Icon = iconMap[feature.icon];
-          const isHero = i === 0;
-          return (
-            <motion.div
-              key={feature.title}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-40px" }}
-              variants={cardVariants}
-              className={cn(isHero && "sm:col-span-2 lg:col-span-1")}
-            >
-              <Card hover className={cn("h-full", isHero && "lg:border-primary-200 lg:shadow-md")}>
-                <CardContent className={cn("flex flex-col gap-4", isHero ? "p-8" : "p-6")}>
-                  <div
-                    className={cn(
-                      "flex items-center justify-center rounded-xl",
-                      isHero
-                        ? "h-14 w-14 bg-gradient-to-br from-primary-500 to-accent-500 text-white"
-                        : "h-12 w-12 bg-primary-50 text-primary-600"
-                    )}
-                  >
-                    {Icon && (
-                      <Icon
-                        className={cn(isHero ? "h-7 w-7" : "h-6 w-6")}
-                        strokeWidth={1.5}
-                      />
-                    )}
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {appFeatures.map((feature, i) => {
+            const Icon = iconMap[feature.icon];
+            const isHero = i === 0;
+            return (
+              <motion.div
+                key={feature.title}
+                custom={i}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-40px" }}
+                variants={cardVariants}
+                className={cn(isHero && "sm:col-span-2 lg:col-span-1")}
+              >
+                <Card hover className={cn("h-full", isHero && "lg:border-primary-200 lg:shadow-md")}>
+                  <CardContent className={cn("flex flex-col gap-4", isHero ? "p-8" : "p-6")}>
+                    <div
+                      className={cn(
+                        "flex items-center justify-center rounded-xl",
+                        isHero
+                          ? "h-14 w-14 bg-gradient-to-br from-primary-500 to-accent-500 text-white"
+                          : "h-12 w-12 bg-primary-50 text-primary-600"
+                      )}
+                    >
+                      {Icon && (
+                        <Icon
+                          className={cn(isHero ? "h-7 w-7" : "h-6 w-6")}
+                          strokeWidth={1.5}
+                        />
+                      )}
+                    </div>
+                    <h3
+                      className={cn(
+                        "font-semibold text-slate-900",
+                        isHero ? "text-xl" : "text-lg"
+                      )}
+                    >
+                      {feature.title}
+                    </h3>
+                    <p className="text-slate-600 leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        {/* App screenshots row */}
+        <div className="mt-16 overflow-x-auto pb-4 -mx-4 px-4">
+          <div className="flex gap-6 min-w-max justify-center">
+            {[
+              { src: "/images/Screen2.jpg", alt: "Designed for your daily prayer rhythm" },
+              { src: "/images/Screen3.jpg", alt: "Spiritual fitness dashboard with Pray, Reflect, Service rings" },
+              { src: "/images/Screen4.jpg", alt: "Spiritual history and weekly breakdown" },
+              { src: "/images/Screen5.jpg", alt: "Daily Scripture readings" },
+            ].map((screenshot) => (
+              <div
+                key={screenshot.src}
+                className="relative w-[200px] h-[400px] rounded-[2rem] overflow-hidden shadow-xl border border-slate-200/60 flex-shrink-0"
+              >
+                <Image
+                  src={screenshot.src}
+                  alt={screenshot.alt}
+                  fill
+                  className="object-cover"
+                  sizes="200px"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-10 text-center">
+          <Button href="/solutions" variant="outline" size="lg">
+            Explore The Full Platform
+          </Button>
+        </div>
+      </Section>
+
+      {/* Event capabilities — Secondary */}
+      <Section variant="muted">
+        <div className="mx-auto max-w-4xl text-center mb-12">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary-700 mb-4">
+            Also in the app
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
+            Event Management, Built In
+          </h2>
+          <p className="text-lg text-slate-600 leading-relaxed">
+            Register for events, check in with NFC or QR codes, and browse event
+            galleries — all from the same app you use for daily prayer.
+          </p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3 max-w-4xl mx-auto">
+          {[
+            {
+              icon: ClipboardList,
+              title: "Registration & RSVP",
+              description: "Sign up for conferences, retreats, and gatherings in seconds.",
+            },
+            {
+              icon: ScanLine,
+              title: "NFC & QR Check-in",
+              description: "Contactless check-in that eliminates lines and manual headcounts.",
+            },
+            {
+              icon: Calendar,
+              title: "Schedules & Gallery",
+              description: "Browse event schedules, sessions, and share photos with your community.",
+            },
+          ].map((item) => {
+            const Icon = item.icon;
+            return (
+              <Card key={item.title} hover>
+                <CardContent className="flex flex-col items-center text-center gap-3 p-6">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent-50 text-accent-600">
+                    <Icon className="h-6 w-6" strokeWidth={1.5} />
                   </div>
-                  <h3
-                    className={cn(
-                      "font-semibold text-slate-900",
-                      isHero ? "text-xl" : "text-lg"
-                    )}
-                  >
-                    {feature.title}
-                  </h3>
-                  <p className="text-slate-600 leading-relaxed">
-                    {feature.description}
-                  </p>
+                  <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">{item.description}</p>
                 </CardContent>
               </Card>
-            </motion.div>
-          );
-        })}
-      </div>
-
-      {/* Workflow highlights with improved contrast */}
-      <div className="mt-12 grid gap-4 rounded-2xl bg-slate-950 p-6 md:p-8 text-white md:grid-cols-3">
-        {[
-          {
-            title: "Registration to attendance",
-            description:
-              "Give leaders a clean view of who is coming, who checked in, and what needs follow-up.",
-          },
-          {
-            title: "Speaker, schedule, and session flow",
-            description:
-              "Support the event experience from planning through day-of execution without spreadsheet overload.",
-          },
-          {
-            title: "Board-ready reporting",
-            description:
-              "Turn scattered operational data into trustworthy summaries for leadership conversations and partnership reviews.",
-          },
-        ].map((item) => (
-          <div
-            key={item.title}
-            className="rounded-2xl border border-white/10 bg-white/[0.06] p-5 transition-colors hover:bg-white/[0.1]"
-          >
-            <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-slate-300">
-              {item.description}
-            </p>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-10 text-center">
-        <Button href="/solutions" variant="outline" size="lg">
-          Review The Full Platform
-        </Button>
-      </div>
-    </Section>
+            );
+          })}
+        </div>
+      </Section>
+    </>
   );
 }

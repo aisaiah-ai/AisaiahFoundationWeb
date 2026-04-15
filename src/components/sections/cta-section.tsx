@@ -13,32 +13,32 @@ export function CTASection() {
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
         <p className="text-sm font-semibold uppercase tracking-[0.24em] text-primary-300">
-          Partner with us
+          Start today
         </p>
         <h2 className="mt-5 font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
-          Ready to bring purpose-built technology{" "}
+          Turn screen time into{" "}
           <br className="hidden sm:block" />
-          to your community?
+          sacred time.
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-300 leading-relaxed">
-          Whether you&apos;re a church, ministry, diocese, or faith-based organization,
-          we&apos;d love to explore how Aisaiah can serve your mission. Let&apos;s start
-          a conversation.
+          Download the Aisaiah app — your free AI-powered companion for daily
+          prayer, Scripture reading, and spiritual growth. Available on iOS and
+          Android.
         </p>
         <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-5">
           <Button
-            href="/contact"
+            href="https://apps.apple.com/us/app/aisaiah/id6751301980"
             variant="accent"
             size="lg"
           >
-            Start A Partnership Conversation
+            Download for iOS
           </Button>
           <Button
-            href="/partnerships"
+            href="https://play.google.com/store/apps/details?id=org.aisaiah.spiritualfitness"
             size="lg"
             className="border border-white/20 bg-white/5 text-white hover:bg-white/10 hover:border-white/30"
           >
-            Explore Partnership Models
+            Get it on Google Play
           </Button>
         </div>
       </div>

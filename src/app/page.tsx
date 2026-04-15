@@ -8,9 +8,9 @@ import { FAQSection } from "@/components/sections/faq-section";
 import { CTASection } from "@/components/sections/cta-section";
 
 export const metadata: Metadata = {
-  title: "Aisaiah Foundation | Digital Infrastructure for Faith Communities",
+  title: "Aisaiah — AI-Powered Faith Companion | Prayer, Scripture & Spiritual Fitness",
   description:
-    "Aisaiah Foundation helps churches, ministries, and mission-driven communities modernize event operations, digital engagement, and leadership visibility through a faith-rooted nonprofit platform.",
+    "Download Aisaiah, the free AI-powered faith companion app for daily prayer, Scripture reading, spiritual fitness tracking, and community event management. Built by a 501(c)(3) nonprofit.",
   alternates: {
     canonical: "https://aisaiah.org",
   },

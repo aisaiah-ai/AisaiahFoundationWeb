@@ -1,35 +1,74 @@
 import type { Feature, FAQ } from "@/types";
 
-export const platformFeatures: Feature[] = [
+export const appFeatures: Feature[] = [
+  {
+    title: "Guided Prayer",
+    description:
+      "AI-assisted daily prayer guidance with customizable prayer selections grounded in authentic Church teaching.",
+    icon: "Heart",
+  },
+  {
+    title: "Scripture Reading",
+    description:
+      "Daily readings with date navigation — browse up to 3 days back or forward. First Reading, Responsorial Psalm, and Gospel at your fingertips.",
+    icon: "BookOpen",
+  },
+  {
+    title: "Spiritual Fitness",
+    description:
+      "Track your spiritual habits with three activity rings — Pray, Reflect, and Service — and see daily, weekly, and monthly progress.",
+    icon: "Target",
+  },
+  {
+    title: "Rosary & Devotions",
+    description:
+      "Step-by-step Rosary prayer guide and devotions including the Sto. Niño Novena. Pray on your own time, at your own pace.",
+    icon: "Sparkles",
+  },
+  {
+    title: "Journal & Reflections",
+    description:
+      "Record spiritual reflections, personal insights, and prayer intentions in a private journal built for your faith journey.",
+    icon: "PenLine",
+  },
+  {
+    title: "Growth Insights",
+    description:
+      "Personal spiritual analytics with daily, weekly, and monthly breakdowns to help you build habits that last.",
+    icon: "TrendingUp",
+  },
+];
+
+export const eventFeatures: Feature[] = [
   {
     title: "Event Registration",
     description:
-      "Streamlined digital registration for conferences, retreats, and community gatherings. Reduce manual paperwork and improve attendee experience.",
+      "Streamlined digital registration for conferences, retreats, and community gatherings — all from within the app.",
     icon: "ClipboardList",
-  },
-  {
-    title: "RSVP Management",
-    description:
-      "Real-time RSVP tracking with automated confirmations and reminders. Know exactly who's attending and plan accordingly.",
-    icon: "CalendarCheck",
   },
   {
     title: "Check-in System",
     description:
-      "Fast, digital check-in with QR codes and real-time attendance tracking. Eliminate long lines and manual headcounts.",
+      "Fast, contactless check-in with NFC and QR code support. Eliminate long lines and manual headcounts.",
     icon: "ScanLine",
+  },
+  {
+    title: "Event Gallery",
+    description:
+      "Share and browse event photos within your community. Capture the moments that matter.",
+    icon: "Camera",
+  },
+  {
+    title: "RSVP Management",
+    description:
+      "Real-time RSVP tracking with automated confirmations and reminders. Know exactly who's attending.",
+    icon: "CalendarCheck",
   },
   {
     title: "Session Tracking",
     description:
-      "Monitor session attendance, track spiritual growth activities, and generate meaningful participation reports.",
+      "Monitor session attendance and generate meaningful participation reports for leadership.",
     icon: "BarChart3",
-  },
-  {
-    title: "Speaker Profiles",
-    description:
-      "Showcase speakers with detailed profiles, session schedules, and topic descriptions. Help attendees plan their experience.",
-    icon: "Users",
   },
   {
     title: "Admin Portal",
@@ -39,60 +78,30 @@ export const platformFeatures: Feature[] = [
   },
 ];
 
-export const spiritualFeatures: Feature[] = [
-  {
-    title: "Guided Prayer",
-    description:
-      "AI-assisted prayer experiences for deeper spiritual connection and daily devotion.",
-    icon: "Heart",
-  },
-  {
-    title: "Scripture Reading",
-    description:
-      "Daily Scripture with insights and reflection tools powered by thoughtful AI assistance.",
-    icon: "BookOpen",
-  },
-  {
-    title: "Acts of Service",
-    description:
-      "Track and celebrate acts of service and loving kindness in your community.",
-    icon: "HandHeart",
-  },
-  {
-    title: "Spiritual Progress",
-    description:
-      "Visual progress tracking with meaningful analytics to support your spiritual journey.",
-    icon: "Target",
-  },
-  {
-    title: "Event Schedules",
-    description:
-      "Stay connected with ministry events, retreats, and community gatherings.",
-    icon: "Calendar",
-  },
-  {
-    title: "Growth Insights",
-    description:
-      "Personal spiritual growth analytics and reflections to guide your faith journey.",
-    icon: "TrendingUp",
-  },
-];
+// Keep backward compatibility
+export const platformFeatures = eventFeatures;
+export const spiritualFeatures = appFeatures;
 
 export const homeFAQs: FAQ[] = [
   {
-    question: "What is the Aisaiah Foundation?",
+    question: "What is the Aisaiah app?",
     answer:
-      "The Aisaiah Foundation is a 501(c)(3) nonprofit organization that bridges faith and technology. We develop digital tools that empower churches, ministries, and faith-based organizations to manage events, engage communities, and support spiritual growth through modern technology.",
+      "Aisaiah is a free AI-powered daily faith companion available on iOS and Android. It guides you through prayer, Scripture reading, reflection, and personal spiritual development — all grounded in authentic Catholic Church teaching.",
   },
   {
-    question: "How does Aisaiah support faith communities?",
+    question: "How does the Spiritual Fitness tracking work?",
     answer:
-      "We provide a purpose-built digital platform that handles event registration, RSVP management, check-in systems, session tracking, and spiritual growth tools. Born from our experience serving Couples for Christ, our platform is designed for the unique needs of conferences, retreats, and community gatherings across Christian organizations.",
+      "The app tracks three dimensions of your spiritual life — Pray, Reflect, and Service — using activity rings similar to fitness tracking. You can view your progress daily, weekly, and monthly to build lasting spiritual habits.",
   },
   {
-    question: "Is the Aisaiah app available now?",
+    question: "Can I use the app for event registration and check-in?",
     answer:
-      "Yes! The Aisaiah app is available on both the iOS App Store and Google Play Store. Download it today to access spiritual growth tools including guided prayer, Scripture reading, and community features.",
+      "Yes! The Aisaiah app includes built-in event registration, RSVP management, and contactless check-in using NFC or QR codes. It's designed for conferences, retreats, and community gatherings of all sizes.",
+  },
+  {
+    question: "Is the app free? Do I need to create an account?",
+    answer:
+      "The app is completely free to download and use. You can access features as a guest without creating an account, or sign up to sync your data across devices and unlock personalized features.",
   },
   {
     question: "How is my data and privacy protected?",
@@ -100,13 +109,8 @@ export const homeFAQs: FAQ[] = [
       "We are privacy-first: no ads, no data selling. Your spiritual reflections and personal information are encrypted and kept completely private. We only collect minimal data needed to provide our services and comply with all applicable data protection regulations.",
   },
   {
-    question: "How can I support the Aisaiah Foundation?",
-    answer:
-      "You can support us by downloading and sharing the app, partnering with us for your organization's events, volunteering your skills, or making a tax-deductible donation. Contact us to learn more about partnership opportunities.",
-  },
-  {
     question: "Can other faith organizations use the platform?",
     answer:
-      "Absolutely. Our platform serves churches, parishes, ministries, and faith-based nonprofits of all sizes. With deep roots in Couples for Christ and the Catholic community, we understand the unique needs of faith-driven organizations and design our tools to be flexible across denominations and ministry structures.",
+      "Absolutely. While built with deep roots in Couples for Christ and the Catholic community, the Aisaiah app and platform serve churches, parishes, ministries, and faith-based nonprofits of all sizes and denominations.",
   },
 ];

@@ -141,7 +141,6 @@ export default function ContactPage() {
         title="Open a conversation about partnership, implementation, or support."
         description="This form now writes directly to Firestore when Firebase is configured, giving the site a real intake path instead of a placeholder success state."
         actions={[
-          { label: "See CFC USA Page", href: "/cfc-usa", variant: "secondary" },
           {
             label: "Jump To Partnership Options",
             href: "#partnership",
@@ -394,12 +393,12 @@ export default function ContactPage() {
               Explore Our Platform
             </Button>
             <Button
-              href="/cfc-usa"
+              href="/partnerships"
               variant="outline"
               size="lg"
               className="border-white text-white hover:bg-white/10"
             >
-              CFC USA Partnership
+              View Partnerships
             </Button>
           </div>
         </div>

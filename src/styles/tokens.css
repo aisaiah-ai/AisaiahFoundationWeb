@@ -1,0 +1,177 @@
+/* ==========================================================================
+   AISAIAH FOUNDATION — Brand Tokens
+   ==========================================================================
+   This is the ONLY file that changes between sites.
+   Override these values to re-theme the entire platform.
+   ========================================================================== */
+
+:root {
+  /* ---------- Brand ---------- */
+  --brand-primary: #0d9488;
+  --brand-primary-dark: #0f766e;
+  --brand-primary-soft: rgba(13, 148, 136, 0.12);
+
+  --brand-accent: #2563eb;
+  --brand-accent-dark: #1d4ed8;
+  --brand-accent-soft: rgba(37, 99, 235, 0.12);
+
+  /* ---------- Brand Scale (primary) ---------- */
+  --primary-50: #f0fdfa;
+  --primary-100: #ccfbf1;
+  --primary-200: #99f6e4;
+  --primary-300: #5eead4;
+  --primary-400: #2dd4bf;
+  --primary-500: #14b8a6;
+  --primary-600: #0d9488;
+  --primary-700: #0f766e;
+  --primary-800: #115e59;
+  --primary-900: #134e4a;
+  --primary-950: #042f2e;
+
+  /* ---------- Brand Scale (accent) ---------- */
+  --accent-50: #eff6ff;
+  --accent-100: #dbeafe;
+  --accent-200: #bfdbfe;
+  --accent-300: #93c5fd;
+  --accent-400: #60a5fa;
+  --accent-500: #3b82f6;
+  --accent-600: #2563eb;
+  --accent-700: #1d4ed8;
+  --accent-800: #1e40af;
+  --accent-900: #1e3a8a;
+  --accent-950: #172554;
+
+  /* ---------- Brand Scale (gold) ---------- */
+  --gold-400: #fbbf24;
+  --gold-500: #f59e0b;
+  --gold-600: #d97706;
+
+  /* ---------- Surfaces ---------- */
+  --color-bg: #ffffff;
+  --color-bg-top: #f4fbfb;
+  --color-bg-bottom: #eef4ff;
+  --color-paper: #ffffff;
+  --color-ink: #0f172a;
+  --color-ink-soft: #334155;
+  --color-muted: #64748b;
+  --color-line: #e2e8f0;
+  --color-dark-bg: #0f172a;
+
+  /* ---------- Section backgrounds ---------- */
+  --section-light-bg: #ffffff;
+  --section-muted-bg: #f8fafc;
+  --section-dark-bg: #0f172a;
+  --section-gradient-bg: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  --section-cta-bg: #0f172a;
+
+  /* ---------- Typography ---------- */
+  --font-display: var(--font-display-face, "Playfair Display"), ui-serif, Georgia, serif;
+  --font-body: var(--font-sans-face, "Inter"), ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --text-hero: clamp(2.25rem, 4.5vw, 4.5rem);
+  --text-section: clamp(1.875rem, 3vw, 3rem);
+  --text-page: clamp(1.5rem, 2.6vw, 2.2rem);
+  --text-card-title: 1.25rem;
+  --text-card-value: 1.5rem;
+  --text-body: 1rem;
+  --text-small: 0.875rem;
+  --text-eyebrow: 0.75rem;
+
+  --leading-tight: 1.1;
+  --leading-normal: 1.65;
+
+  --tracking-tight: -0.03em;
+  --tracking-wide: 0.24em;
+
+  /* ---------- Spacing ---------- */
+  --s-1: 0.25rem;   /*  4px */
+  --s-2: 0.5rem;    /*  8px */
+  --s-3: 0.75rem;   /* 12px */
+  --s-4: 1rem;      /* 16px */
+  --s-5: 1.25rem;   /* 20px */
+  --s-6: 1.5rem;    /* 24px */
+  --s-8: 2rem;      /* 32px */
+  --s-10: 2.5rem;   /* 40px */
+  --s-12: 3rem;     /* 48px */
+  --s-16: 4rem;     /* 64px */
+  --s-20: 5rem;     /* 80px */
+  --s-24: 6rem;     /* 96px */
+  --s-28: 7rem;     /* 112px */
+
+  /* ---------- Surface styles ---------- */
+  --radius-card: 1rem;
+  --radius-card-lg: 2rem;
+  --radius-pill: 999px;
+  --radius-input: 0.5rem;
+
+  --shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 12px 32px rgba(15, 23, 42, 0.07);
+  --shadow-strong: 0 24px 48px -16px rgba(15, 23, 42, 0.16);
+  --shadow-hero: 0 24px 64px -32px rgba(15, 23, 42, 0.22);
+
+  --card-bg: #ffffff;
+  --card-border: 1px solid rgba(226, 232, 240, 0.6);
+  --card-padding: var(--s-6);
+
+  --panel-bg: rgba(255, 255, 255, 0.78);
+  --panel-border: 1px solid rgba(226, 232, 240, 0.9);
+  --panel-shadow: 0 24px 64px -32px rgba(15, 23, 42, 0.22);
+  --panel-blur: 20px;
+
+  /* ---------- Buttons ---------- */
+  --btn-radius: var(--radius-pill);
+  --btn-font-weight: 600;
+
+  --btn-sm-height: auto;
+  --btn-sm-padding: 0.5rem 1rem;
+  --btn-sm-font-size: var(--text-small);
+
+  --btn-md-height: auto;
+  --btn-md-padding: 0.75rem 1.5rem;
+  --btn-md-font-size: var(--text-body);
+
+  --btn-lg-height: auto;
+  --btn-lg-padding: 1rem 2rem;
+  --btn-lg-font-size: 1.125rem;
+
+  --btn-primary-bg: var(--primary-600);
+  --btn-primary-color: #ffffff;
+  --btn-primary-hover-bg: var(--primary-700);
+
+  --btn-secondary-bg: var(--accent-600);
+  --btn-secondary-color: #ffffff;
+  --btn-secondary-hover-bg: var(--accent-700);
+
+  --btn-outline-bg: rgba(255, 255, 255, 0.8);
+  --btn-outline-border: 1px solid var(--color-line);
+  --btn-outline-color: var(--color-ink);
+
+  /* ---------- Gradients ---------- */
+  --gradient-brand: linear-gradient(135deg, var(--brand-primary), var(--brand-accent));
+  --gradient-primary: linear-gradient(135deg, var(--brand-primary), var(--brand-primary-dark));
+  --gradient-accent: linear-gradient(135deg, var(--brand-accent), var(--brand-accent-dark));
+  --gradient-gold: linear-gradient(135deg, var(--gold-600), var(--gold-500));
+  --gradient-hero-overlay: linear-gradient(180deg, rgba(15,23,42,0.8) 0%, rgba(15,23,42,0.5) 50%, rgba(15,23,42,0.9) 100%);
+
+  /* ---------- Transitions ---------- */
+  --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 200ms;
+  --duration-normal: 300ms;
+
+  /* ---------- Container ---------- */
+  --container-max: 80rem;    /* 1280px */
+  --container-narrow: 48rem; /* 768px */
+  --container-padding: var(--s-4);
+}
+
+/* Responsive container padding */
+@media (min-width: 640px) {
+  :root {
+    --container-padding: var(--s-6);
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --container-padding: var(--s-8);
+  }
+}

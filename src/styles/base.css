@@ -1,0 +1,75 @@
+/* ==========================================================================
+   BASE — Resets, body defaults, focus states, global typography
+   ==========================================================================
+   Shared across all platform sites. Never modified per brand.
+   ========================================================================== */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background:
+    radial-gradient(circle at top, rgba(13, 148, 136, 0.08), transparent 22%),
+    radial-gradient(circle at 85% 15%, rgba(37, 99, 235, 0.08), transparent 22%),
+    linear-gradient(180deg, var(--color-bg-top) 0%, var(--color-bg) 22%, var(--color-bg) 78%, var(--color-bg-bottom) 100%);
+  text-rendering: optimizeLegibility;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.02) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45), transparent 78%);
+  z-index: -1;
+}
+
+/* ---------- Typography resets ---------- */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: var(--tracking-tight);
+}
+
+p {
+  text-wrap: pretty;
+}
+
+/* ---------- Selection ---------- */
+
+::selection {
+  background-color: var(--primary-100);
+  color: var(--primary-900);
+}
+
+/* ---------- Focus ---------- */
+
+:focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+}
+
+/* ---------- Scroll margin ---------- */
+
+section {
+  scroll-margin-top: var(--s-20);
+}
+
+/* ---------- Utility: balanced text ---------- */
+
+.text-balance {
+  text-wrap: balance;
+}

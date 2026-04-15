@@ -16,7 +16,7 @@ export const partnerships: Partnership[] = [
     ],
     icon: "Star",
     featured: true,
-    caseStudySlug: "cfc-usa",
+    // caseStudySlug: "cfc-usa", // hidden for now
   },
   {
     id: "strategic",

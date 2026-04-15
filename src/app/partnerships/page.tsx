@@ -14,7 +14,6 @@ import {
   getBreadcrumbSchema,
   getWebPageSchema,
 } from "@/lib/structured-data";
-import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Partnerships",
@@ -68,51 +67,6 @@ export default function PartnershipsPage() {
           {partnerships.map((partnership) => (
             <PartnershipTier key={partnership.id} partnership={partnership} />
           ))}
-        </div>
-      </Section>
-
-      <Section variant="muted">
-        <SectionHeader>
-          <SectionTitle>Our Founding Partnership</SectionTitle>
-          <SectionDescription>
-            Aisaiah Foundation was born from direct experience in Couples for
-            Christ. Our first major partnership reflects those deep roots —
-            and demonstrates what purpose-built ministry technology looks like
-            in practice.
-          </SectionDescription>
-        </SectionHeader>
-        <div className="mx-auto max-w-3xl">
-          <div className="rounded-[2rem] border border-slate-200/80 bg-white p-8 md:p-10">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary-700">
-              Case study
-            </p>
-            <h3 className="mt-4 font-display text-2xl font-semibold text-slate-950 md:text-3xl">
-              Couples for Christ USA
-            </h3>
-            <p className="mt-4 text-lg text-slate-600 leading-relaxed">
-              A strategic technology partnership designed to modernize event
-              operations, strengthen community engagement, and support CFC
-              USA&apos;s national mission through purpose-built digital
-              infrastructure.
-            </p>
-            <div className="mt-6 grid gap-3 sm:grid-cols-3">
-              {[
-                "Event registration & check-in",
-                "Community engagement tools",
-                "Leadership reporting & analytics",
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-2 text-sm text-slate-600">
-                  <ArrowRight className="h-4 w-4 text-primary-600" />
-                  {item}
-                </div>
-              ))}
-            </div>
-            <div className="mt-8">
-              <Button href="/partnerships/cfc-usa" variant="primary">
-                Read the Full Case Study
-              </Button>
-            </div>
-          </div>
         </div>
       </Section>
 

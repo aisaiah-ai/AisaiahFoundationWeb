@@ -3,11 +3,11 @@ export const siteConfig = {
   shortName: "Aisaiah",
   url: "https://aisaiah.org",
   description:
-    "Aisaiah Foundation is a 501(c)(3) nonprofit building digital infrastructure for churches, ministries, and faith-driven communities through event operations, spiritual formation, and leadership tools.",
-  tagline: "Faith-rooted digital infrastructure for ministries at national scale.",
+    "Aisaiah is a free AI-powered faith companion app for daily prayer, Scripture, spiritual fitness tracking, and event management — built by the Aisaiah Foundation, a 501(c)(3) nonprofit serving churches and faith communities.",
+  tagline: "Turn screen time into sacred time.",
   email: "info@aisaiah.org",
-  phone: "+1-813-355-9645",
-  phoneDisplay: "(813) 355-9645",
+  phone: "+1-443-347-2424",
+  phoneDisplay: "(443) 347-2424",
   address: {
     streetAddress: "16192 Coastal Hwy",
     addressLocality: "Lewes",
@@ -17,29 +17,30 @@ export const siteConfig = {
     formatted: ["16192 Coastal Hwy", "Lewes, DE 19958"],
   },
   keywords: [
+    "Catholic prayer app",
+    "daily Scripture reading app",
+    "spiritual fitness tracker",
+    "faith companion app",
+    "church event management app",
     "Catholic nonprofit technology",
-    "event management for ministries",
-    "ministry digital platform",
-    "faith-driven nonprofit technology",
-    "church event registration software",
-    "Christian community technology",
-    "mission-driven digital platform",
+    "Christian community app",
+    "Rosary prayer guide app",
   ],
   sameAs: [] as string[],
 };
 
 export const trustHighlights = [
   {
-    value: "501(c)(3)",
-    label: "Mission-governed nonprofit with a public-service mandate",
+    value: "Free on iOS & Android",
+    label: "Download the Aisaiah app today — no account required to get started",
   },
   {
-    value: "Ministry-tested",
-    label: "Built with first-hand understanding of faith-community workflows and operations",
+    value: "Pray · Reflect · Serve",
+    label: "Track your spiritual fitness with daily, weekly, and monthly insights",
   },
   {
-    value: "Platform-ready",
-    label: "Mobile app, event operations, and leadership reporting in one stack",
+    value: "501(c)(3) Nonprofit",
+    label: "No ads, no data selling — built to serve faith communities, not profit from them",
   },
 ];
 

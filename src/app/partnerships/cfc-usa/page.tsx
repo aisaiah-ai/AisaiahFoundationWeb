@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { JsonLd } from "@/components/seo/json-ld";
 import { PageHero } from "@/components/sections/page-hero";
@@ -168,6 +169,8 @@ const capabilities: Capability[] = [
 ];
 
 export default function CFCUSACaseStudyPage() {
+  notFound();
+
   const pageSchema = getWebPageSchema({
     title: "Couples for Christ USA Partnership",
     description: metadata.description as string,
