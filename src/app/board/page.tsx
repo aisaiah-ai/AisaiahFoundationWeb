@@ -85,37 +85,37 @@ export default function BoardPage() {
         ]}
         metrics={[
           {
-            value: "Founder-led",
-            label: "Active executive leadership driving day-to-day operations and strategy.",
+            value: "9 Board Members",
+            label: "Officers and directors providing governance and strategic oversight.",
           },
           {
             value: "Faith-rooted",
             label: "Board leadership shaped by Catholic faith and Couples for Christ experience.",
           },
           {
-            value: "Formation in progress",
-            label: "Expanding governance with professionals in ministry, technology, and finance.",
+            value: "501(c)(3) Governed",
+            label: "Transparent nonprofit governance with mission-driven accountability.",
           },
         ]}
       />
 
+      {/* Founder — full detail card */}
       <Section>
         <SectionHeader>
-          <SectionTitle>Confirmed Leadership</SectionTitle>
+          <SectionTitle>Founder</SectionTitle>
           <SectionDescription>
-            The leaders currently serving on the Aisaiah Foundation board, bringing
-            direct ministry experience and professional expertise to our mission.
+            The executive leadership behind the Aisaiah Foundation and platform.
           </SectionDescription>
         </SectionHeader>
         <div className="grid grid-cols-1 gap-8">
-          {boardMembers.map((member, index) => (
-            <Card key={member.name + index} hover className="surface-panel">
+          {boardMembers.filter((m) => m.role === "Founder").map((member, index) => (
+            <Card key={member.name} hover className="surface-panel">
               <CardContent className="p-8">
                 <div className="grid gap-8 lg:grid-cols-[96px_minmax(0,1fr)_320px]">
                   <div
                     className={cn(
                       "h-24 w-24 rounded-[2rem] flex items-center justify-center text-white font-bold text-2xl",
-                      gradients[index % gradients.length]
+                      gradients[0]
                     )}
                   >
                     {getInitials(member.name)}
@@ -141,9 +141,6 @@ export default function BoardPage() {
                     <p className="text-primary-600 font-medium">
                       {member.title}
                     </p>
-                    <span className="inline-block mt-1 text-sm text-slate-500 font-medium">
-                      {member.role}
-                    </span>
                     {member.location ? (
                       <div className="mt-3 flex items-center gap-2 text-sm text-slate-500">
                         <MapPin className="h-4 w-4" />
@@ -169,22 +166,6 @@ export default function BoardPage() {
 
                     <div className="mt-6">
                       <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
-                        Core strengths
-                      </h3>
-                      <div className="mt-3 flex flex-wrap gap-2">
-                        {member.credentials.map((credential) => (
-                          <span
-                            key={credential}
-                            className="rounded-full bg-slate-100 px-3 py-2 text-sm text-slate-700"
-                          >
-                            {credential}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="mt-6">
-                      <h3 className="text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
                         Focus areas
                       </h3>
                       <ul className="mt-3 space-y-3">
@@ -204,38 +185,93 @@ export default function BoardPage() {
         </div>
       </Section>
 
+      {/* Officers */}
       <Section variant="muted">
         <SectionHeader>
-          <SectionTitle>Board Formation Priorities</SectionTitle>
+          <SectionTitle>Board Officers</SectionTitle>
           <SectionDescription>
-            We are actively expanding our board with experienced professionals
-            who share our commitment to faith, service, and operational excellence.
+            The officers responsible for governance, administration, and financial
+            stewardship of the Aisaiah Foundation.
           </SectionDescription>
         </SectionHeader>
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {boardSeatProfiles.map((seat) => (
-            <Card key={seat.title} hover className="h-full">
-              <CardContent className="p-8">
-                <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary-700">
-                  {seat.emphasis}
-                </p>
-                <h3 className="mt-4 text-2xl font-semibold text-slate-950">
-                  {seat.title}
-                </h3>
-                <p className="mt-4 text-slate-600 leading-relaxed">
-                  {seat.overview}
-                </p>
-                <ul className="mt-6 space-y-3">
-                  {seat.desiredBackground.map((item) => (
-                    <li key={item} className="flex items-start gap-3 text-sm text-slate-600">
-                      <ShieldCheck className="mt-0.5 h-4 w-4 text-primary-600" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {boardMembers
+            .filter((m) => ["Chairperson", "Secretary", "Treasurer"].includes(m.role))
+            .map((member, index) => (
+              <Card key={member.name} hover className="h-full">
+                <CardContent className="p-6">
+                  <div
+                    className={cn(
+                      "h-16 w-16 rounded-2xl flex items-center justify-center text-white font-bold text-lg mb-4",
+                      gradients[(index + 1) % gradients.length]
+                    )}
+                  >
+                    {getInitials(member.name)}
+                  </div>
+                  <h3 className="text-xl font-bold text-slate-900">
+                    {member.name}
+                  </h3>
+                  <p className="text-primary-600 font-medium mt-1">
+                    {member.role}
+                  </p>
+                  <p className="mt-4 text-sm text-slate-600 leading-relaxed">
+                    {member.bio}
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {member.focusAreas.map((area) => (
+                      <span
+                        key={area}
+                        className="rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary-700"
+                      >
+                        {area}
+                      </span>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+        </div>
+      </Section>
+
+      {/* Directors */}
+      <Section>
+        <SectionHeader>
+          <SectionTitle>Board of Directors</SectionTitle>
+          <SectionDescription>
+            Directors providing strategic oversight and governance as the
+            Foundation serves faith communities through technology.
+          </SectionDescription>
+        </SectionHeader>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {boardMembers
+            .filter((m) => m.role === "Director")
+            .map((member, index) => (
+              <Card key={member.name} hover className="h-full">
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div
+                      className={cn(
+                        "h-12 w-12 rounded-xl flex items-center justify-center text-white font-semibold text-sm",
+                        gradients[(index + 2) % gradients.length]
+                      )}
+                    >
+                      {getInitials(member.name)}
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-bold text-slate-900">
+                        {member.name}
+                      </h3>
+                      <p className="text-sm text-primary-600 font-medium">
+                        Director
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    {member.bio}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
         </div>
       </Section>
 
