@@ -56,7 +56,7 @@ export const boardMembers: BoardMember[] = [
     name: "Alvin Martinez",
     title: "Director",
     role: "Director",
-    bio: "Alvin serves as a Director on the Aisaiah Foundation Board, contributing to the strategic direction and governance of the organization in its mission to deliver purpose-built technology to faith communities.",
+    bio: "Alvin serves as a Director on the AIsaiah Foundation Board, contributing to the strategic direction and governance of the organization in its mission to help people grow in faith through technology.",
     communityRoots:
       "Engaged in the Couples for Christ community and committed to supporting faith-driven nonprofit initiatives.",
     credentials: [

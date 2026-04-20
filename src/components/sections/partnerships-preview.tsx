@@ -38,10 +38,9 @@ export function PartnershipsPreview() {
           Built for partnership. Open to every faith community.
         </SectionTitle>
         <SectionDescription className="text-slate-300">
-          Rooted in the Catholic faith and Couples for Christ, Aisaiah Foundation
-          partners with churches, ministries, and organizations across the
-          Christian community to bring purpose-built technology to the people who
-          need it most.
+          Rooted in the Catholic faith and Couples for Christ, we partner with
+          churches, ministries, and organizations across the Christian community
+          to help people grow in daily prayer, reflection, and service.
         </SectionDescription>
       </SectionHeader>
 

@@ -12,7 +12,7 @@ const pillars = [
   {
     icon: Heart,
     label: "Mission",
-    text: "To bridge faith and technology, empowering churches, ministries, and faith-based organizations with innovative digital solutions rooted in service.",
+    text: "Helping people build a daily relationship with God through prayer, reflection, and service — powered by modern technology.",
   },
   {
     icon: Eye,

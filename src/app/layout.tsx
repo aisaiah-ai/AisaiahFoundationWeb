@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default:
-      "Aisaiah — AI-Powered Faith Companion | Prayer, Scripture & Spiritual Fitness",
+      "AIsaiah — Daily Prayer, Reflection & Service | Grow in Your Faith",
     template: "%s | Aisaiah Foundation",
   },
   description: siteConfig.description,
@@ -40,20 +40,20 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: siteConfig.url,
     siteName: "Aisaiah Foundation",
-    title: "Aisaiah — AI-Powered Faith Companion for Prayer & Spiritual Growth",
+    title: "AIsaiah — Daily Prayer, Reflection & Service",
     description: siteConfig.description,
     images: [
       {
         url: "/opengraph-image.png",
         width: 1200,
         height: 630,
-        alt: "Aisaiah app — daily prayer, Scripture reading, and spiritual fitness tracking",
+        alt: "AIsaiah — helping people grow in faith through prayer, reflection, and service",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aisaiah — AI-Powered Faith Companion for Prayer & Spiritual Growth",
+    title: "AIsaiah — Daily Prayer, Reflection & Service",
     description: siteConfig.description,
     images: ["/twitter-image.png"],
   },

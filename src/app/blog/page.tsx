@@ -12,11 +12,11 @@ import {
 export const metadata: Metadata = {
   title: "Blog & Insights",
   description:
-    "Perspectives on faith, technology, privacy, and the future of digital infrastructure for ministry — from the Aisaiah Foundation team.",
+    "Perspectives on faith and technology, daily spiritual habits, and the modern spiritual life — from the AIsaiah Foundation team.",
   openGraph: {
     title: "Blog & Insights | Aisaiah Foundation",
     description:
-      "Perspectives on faith, technology, and the future of ministry infrastructure.",
+      "Perspectives on faith, technology, and building daily spiritual habits.",
   },
 };
 
@@ -42,7 +42,7 @@ export default function BlogPage() {
       <PageHero
         eyebrow="Blog & Insights"
         title="From the Foundation"
-        description="Perspectives on faith and technology, ministry operations, data stewardship, and the future of digital infrastructure for the communities we serve."
+        description="Perspectives on faith and technology, daily spiritual habits, and building a modern spiritual life — from the people helping you grow in prayer, reflection, and service."
       />
 
       <Section>

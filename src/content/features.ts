@@ -4,37 +4,37 @@ export const appFeatures: Feature[] = [
   {
     title: "Guided Prayer",
     description:
-      "AI-assisted daily prayer guidance with customizable prayer selections grounded in authentic Church teaching.",
+      "Start each day with AI-guided prayer grounded in authentic Church teaching. Build a prayer habit that grows with you.",
     icon: "Heart",
   },
   {
-    title: "Scripture Reading",
+    title: "Scripture & Reflection",
     description:
-      "Daily readings with date navigation — browse up to 3 days back or forward. First Reading, Responsorial Psalm, and Gospel at your fingertips.",
+      "Read daily Scripture — First Reading, Psalm, and Gospel — and reflect on how God's Word speaks to your life today.",
     icon: "BookOpen",
   },
   {
-    title: "Spiritual Fitness",
+    title: "Spiritual Growth Tracking",
     description:
-      "Track your spiritual habits with three activity rings — Pray, Reflect, and Service — and see daily, weekly, and monthly progress.",
+      "Track your daily habits with three rings — Prayer, Reflection, and Service — and see how your faith grows over time.",
     icon: "Target",
   },
   {
     title: "Rosary & Devotions",
     description:
-      "Step-by-step Rosary prayer guide and devotions including the Sto. Niño Novena. Pray on your own time, at your own pace.",
+      "Pray the Rosary step by step, explore devotions, and deepen your relationship with God at your own pace.",
     icon: "Sparkles",
   },
   {
-    title: "Journal & Reflections",
+    title: "Journal & Reflect",
     description:
-      "Record spiritual reflections, personal insights, and prayer intentions in a private journal built for your faith journey.",
+      "Write personal reflections, capture spiritual insights, and revisit how God has been working in your life.",
     icon: "PenLine",
   },
   {
     title: "Growth Insights",
     description:
-      "Personal spiritual analytics with daily, weekly, and monthly breakdowns to help you build habits that last.",
+      "See your progress daily, weekly, and monthly. Build lasting habits of prayer, reflection, and service.",
     icon: "TrendingUp",
   },
 ];
@@ -84,33 +84,33 @@ export const spiritualFeatures = appFeatures;
 
 export const homeFAQs: FAQ[] = [
   {
-    question: "What is the Aisaiah app?",
+    question: "What is AIsaiah?",
     answer:
-      "Aisaiah is a free AI-powered daily faith companion available on iOS and Android. It guides you through prayer, Scripture reading, reflection, and personal spiritual development — all grounded in authentic Catholic Church teaching.",
+      "AIsaiah is a free app that helps you build a daily relationship with God through prayer, reflection, and service. Available on iOS and Android, it guides you through daily prayer, Scripture, journaling, and spiritual growth tracking.",
   },
   {
-    question: "How does the Spiritual Fitness tracking work?",
+    question: "How does the spiritual growth tracking work?",
     answer:
-      "The app tracks three dimensions of your spiritual life — Pray, Reflect, and Service — using activity rings similar to fitness tracking. You can view your progress daily, weekly, and monthly to build lasting spiritual habits.",
+      "The app tracks three areas of your faith life — Prayer, Reflection, and Service — using activity rings you can check daily, weekly, and monthly. It helps you build consistent habits and see your growth over time.",
   },
   {
-    question: "Can I use the app for event registration and check-in?",
+    question: "Can I use the app for church events?",
     answer:
-      "Yes! The Aisaiah app includes built-in event registration, RSVP management, and contactless check-in using NFC or QR codes. It's designed for conferences, retreats, and community gatherings of all sizes.",
+      "Yes! AIsaiah includes event registration, RSVP management, and contactless check-in with NFC or QR codes. It's built for conferences, retreats, and gatherings of all sizes.",
   },
   {
-    question: "Is the app free? Do I need to create an account?",
+    question: "Is the app free?",
     answer:
-      "The app is completely free to download and use. You can access features as a guest without creating an account, or sign up to sync your data across devices and unlock personalized features.",
+      "Completely free. You can start using it as a guest without creating an account, or sign up to sync your progress across devices.",
   },
   {
-    question: "How is my data and privacy protected?",
+    question: "How is my data protected?",
     answer:
-      "We are privacy-first: no ads, no data selling. Your spiritual reflections and personal information are encrypted and kept completely private. We only collect minimal data needed to provide our services and comply with all applicable data protection regulations.",
+      "Your spiritual life is sacred, and we treat your data the same way. No ads, no data selling. Your reflections and personal information are encrypted and private.",
   },
   {
-    question: "Can other faith organizations use the platform?",
+    question: "Is this only for Catholics?",
     answer:
-      "Absolutely. While built with deep roots in Couples for Christ and the Catholic community, the Aisaiah app and platform serve churches, parishes, ministries, and faith-based nonprofits of all sizes and denominations.",
+      "AIsaiah is rooted in the Catholic faith and Couples for Christ, but it's built to serve all Christian communities. Churches, ministries, and faith-based organizations of any size and denomination are welcome.",
   },
 ];

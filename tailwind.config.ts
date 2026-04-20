@@ -45,6 +45,10 @@ const config: Config = {
         "fade-in": "fade-in 0.6s ease-out",
         "slide-up": "slide-up 0.6s ease-out",
         "slide-down": "slide-down 0.4s ease-out",
+        "float": "float 6s ease-in-out infinite",
+        "float-delayed": "float 6s ease-in-out 2s infinite",
+        "glow-pulse": "glow-pulse 4s ease-in-out infinite",
+        "breathe": "breathe 5s ease-in-out infinite",
       },
       keyframes: {
         "fade-in": {
@@ -58,6 +62,18 @@ const config: Config = {
         "slide-down": {
           from: { opacity: "0", transform: "translateY(-12px)" },
           to: { opacity: "1", transform: "translateY(0)" },
+        },
+        "float": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-12px)" },
+        },
+        "glow-pulse": {
+          "0%, 100%": { opacity: "0.4" },
+          "50%": { opacity: "0.8" },
+        },
+        "breathe": {
+          "0%, 100%": { transform: "scale(1)" },
+          "50%": { transform: "scale(1.02)" },
         },
       },
     },

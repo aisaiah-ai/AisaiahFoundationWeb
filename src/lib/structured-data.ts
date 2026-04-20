@@ -34,7 +34,7 @@ export function getWebsiteSchema() {
     name: siteConfig.name,
     url: siteConfig.url,
     description:
-      "Faith-driven technology solutions for churches, ministries, and faith-based organizations.",
+      "Helping people build a daily relationship with God through prayer, reflection, and service.",
     publisher: {
       "@type": "Organization",
       name: siteConfig.name,
@@ -46,11 +46,11 @@ export function getSoftwareApplicationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "Aisaiah",
+    name: "AIsaiah",
     applicationCategory: "LifestyleApplication",
     operatingSystem: "iOS, Android",
     description:
-      "Spiritual growth app with guided prayer, Scripture reading, and community event management for faith-based organizations.",
+      "Build daily habits of prayer, reflection, and service. Free app for spiritual growth, Scripture reading, and community events.",
     offers: {
       "@type": "Offer",
       price: "0",

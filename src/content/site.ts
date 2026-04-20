@@ -3,8 +3,8 @@ export const siteConfig = {
   shortName: "Aisaiah",
   url: "https://aisaiah.org",
   description:
-    "Aisaiah is a free AI-powered faith companion app for daily prayer, Scripture, spiritual fitness tracking, and event management — built by the Aisaiah Foundation, a 501(c)(3) nonprofit serving churches and faith communities.",
-  tagline: "Turn screen time into sacred time.",
+    "Helping people build a daily relationship with God through prayer, reflection, and service. Download the free AIsaiah app for guided prayer, Scripture, and spiritual growth — built by a 501(c)(3) nonprofit.",
+  tagline: "Helping people grow in faith through prayer, reflection, and service.",
   email: "info@aisaiah.org",
   phone: "+1-443-347-2424",
   phoneDisplay: "(443) 347-2424",
@@ -17,14 +17,14 @@ export const siteConfig = {
     formatted: ["16192 Coastal Hwy", "Lewes, DE 19958"],
   },
   keywords: [
-    "Catholic prayer app",
-    "daily Scripture reading app",
-    "spiritual fitness tracker",
+    "daily prayer app",
+    "Scripture reading app",
+    "spiritual growth app",
     "faith companion app",
-    "church event management app",
-    "Catholic nonprofit technology",
+    "prayer reflection service",
+    "Catholic prayer app",
     "Christian community app",
-    "Rosary prayer guide app",
+    "church event management app",
   ],
   sameAs: [] as string[],
 };
@@ -32,15 +32,15 @@ export const siteConfig = {
 export const trustHighlights = [
   {
     value: "Free on iOS & Android",
-    label: "Download the Aisaiah app today — no account required to get started",
+    label: "Download AIsaiah today — no account required to get started",
   },
   {
-    value: "Pray · Reflect · Serve",
-    label: "Track your spiritual fitness with daily, weekly, and monthly insights",
+    value: "Prayer · Reflection · Service",
+    label: "Build daily habits that help you grow in your faith",
   },
   {
     value: "501(c)(3) Nonprofit",
-    label: "No ads, no data selling — built to serve faith communities, not profit from them",
+    label: "No ads, no data selling — built to help you grow, not to profit from you",
   },
 ];
 
@@ -81,21 +81,21 @@ export const governancePrinciples = [
   {
     title: "Mission Alignment",
     description:
-      "Every product decision is evaluated against ministry outcomes, not vanity metrics.",
+      "Every decision is measured by how well it helps people grow in prayer, reflection, and service.",
   },
   {
     title: "Operational Credibility",
     description:
-      "We focus on workflows leaders actually need: registration, attendance, reporting, and communication.",
+      "We build what communities actually need: tools for engagement, growth, and connection.",
   },
   {
     title: "Privacy Stewardship",
     description:
-      "Community data is treated as a responsibility to protect, never a channel to monetize.",
+      "Your spiritual life is sacred. We protect your data — we never monetize it.",
   },
   {
     title: "Scalable Delivery",
     description:
-      "Our architecture is built to support pilot launches today and national rollouts later.",
+      "Built to serve a single small group today and thousands of communities tomorrow.",
   },
 ];

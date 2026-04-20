@@ -17,7 +17,7 @@ export function Footer() {
               <div>
                 <div className="text-lg font-bold">Aisaiah Foundation</div>
                 <div className="text-xs text-slate-400 uppercase tracking-widest">
-                  Digital Infrastructure For Ministry
+                  Prayer · Reflection · Service
                 </div>
               </div>
             </Link>
@@ -127,7 +127,10 @@ export function Footer() {
               ))}
             </div>
           </div>
-          <p className="text-xs text-slate-600 text-center mt-6 max-w-3xl mx-auto">
+          <p className="text-sm text-slate-400 text-center mt-6 max-w-xl mx-auto">
+            Helping people grow in faith through prayer, reflection, and service.
+          </p>
+          <p className="text-xs text-slate-600 text-center mt-3 max-w-3xl mx-auto">
             Aisaiah Foundation is a registered 501(c)(3) nonprofit organization.
             Contributions are tax-deductible to the extent permitted by law.
           </p>

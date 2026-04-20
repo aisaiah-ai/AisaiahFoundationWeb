@@ -48,11 +48,11 @@ export function FeaturesPreview() {
       {/* App Features — Primary */}
       <Section>
         <SectionHeader>
-          <SectionTitle>Your Daily Faith Companion</SectionTitle>
+          <SectionTitle>Your Daily Faith Toolkit</SectionTitle>
           <SectionDescription>
-            Guided prayer, Scripture reading, spiritual fitness tracking, and
-            personal reflections — everything you need to build lasting spiritual
-            habits, right in your pocket.
+            Guided prayer, Scripture, reflection, and service tracking —
+            everything you need to build daily habits that help you grow in
+            your faith.
           </SectionDescription>
         </SectionHeader>
 
@@ -110,7 +110,7 @@ export function FeaturesPreview() {
           <div className="flex gap-6 min-w-max justify-center">
             {[
               { src: "/images/Screen2.jpg", alt: "Designed for your daily prayer rhythm" },
-              { src: "/images/Screen3.jpg", alt: "Spiritual fitness dashboard with Pray, Reflect, Service rings" },
+              { src: "/images/Screen3.jpg", alt: "Spiritual growth dashboard with Prayer, Reflection, and Service rings" },
               { src: "/images/Screen4.jpg", alt: "Spiritual history and weekly breakdown" },
               { src: "/images/Screen5.jpg", alt: "Daily Scripture readings" },
             ].map((screenshot) => (

@@ -16,14 +16,13 @@ export function CTASection() {
           Start today
         </p>
         <h2 className="mt-5 font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
-          Turn screen time into{" "}
+          Start your journey{" "}
           <br className="hidden sm:block" />
-          sacred time.
+          today.
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-slate-300 leading-relaxed">
-          Download the Aisaiah app — your free AI-powered companion for daily
-          prayer, Scripture reading, and spiritual growth. Available on iOS and
-          Android.
+          Download AIsaiah and begin building daily habits of prayer,
+          reflection, and service. Free on iOS and Android.
         </p>
         <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-5">
           <Button

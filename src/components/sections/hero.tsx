@@ -56,8 +56,8 @@ export function Hero() {
               variants={fadeInUp}
               className="mt-8 max-w-4xl font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
             >
-              Turn screen time into{" "}
-              <span className="text-gradient">sacred time</span>.
+              Struggling to stay consistent in your{" "}
+              <span className="text-gradient">faith?</span>
             </motion.h1>
 
             <motion.p
@@ -65,9 +65,8 @@ export function Hero() {
               variants={fadeInUp}
               className="mt-7 max-w-2xl text-lg leading-relaxed text-slate-300 md:text-xl"
             >
-              Aisaiah is your AI-powered faith companion — guiding you through
-              daily prayer, Scripture, spiritual fitness tracking, and community
-              events. Built by a nonprofit, for your spiritual growth.
+              AIsaiah helps you build daily habits of prayer, reflection, and
+              service — so your relationship with God grows every day.
             </motion.p>
 
             <motion.div
@@ -123,7 +122,7 @@ export function Hero() {
             <div className="relative w-[180px] h-[380px] rounded-[2rem] overflow-hidden shadow-2xl border border-white/10">
               <Image
                 src="/images/Screen3.jpg"
-                alt="Aisaiah spiritual fitness dashboard showing Pray, Reflect, and Service rings"
+                alt="AIsaiah spiritual growth dashboard showing Prayer, Reflection, and Service rings"
                 fill
                 className="object-cover"
                 sizes="180px"

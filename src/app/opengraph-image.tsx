@@ -66,7 +66,7 @@ export default function OpenGraphImage() {
                 maxWidth: 820,
               }}
             >
-              Digital infrastructure for faith communities.
+              Helping people grow in faith through prayer, reflection, and service.
             </div>
             <div
               style={{
@@ -76,16 +76,16 @@ export default function OpenGraphImage() {
                 maxWidth: 880,
               }}
             >
-              Executive-ready nonprofit platform positioning, event operations,
-              and faith-rooted product strategy in one modern website.
+              Build daily habits of prayer, reflection, and service with the
+              free AIsaiah app. Built by a 501(c)(3) nonprofit.
             </div>
           </div>
 
           <div style={{ display: "flex", gap: 18 }}>
             {[
-              "Mission-governed nonprofit",
-              "Faith-rooted leadership",
-              "Platform + app + reporting",
+              "Prayer · Reflection · Service",
+              "501(c)(3) Nonprofit",
+              "Free on iOS & Android",
             ].map((item) => (
               <div
                 key={item}

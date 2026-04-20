@@ -17,8 +17,8 @@ export function BlogPreview() {
       <SectionHeader>
         <SectionTitle>Insights from the Foundation</SectionTitle>
         <SectionDescription>
-          Perspectives on faith, technology, and the future of ministry
-          infrastructure — from the team building it.
+          Perspectives on faith, technology, and building daily spiritual
+          habits — from the team behind AIsaiah.
         </SectionDescription>
       </SectionHeader>
 

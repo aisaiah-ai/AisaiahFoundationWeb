@@ -25,7 +25,7 @@ export const events: Event[] = [
     id: "faith-tech-roundtable",
     title: "Faith & Technology Roundtable",
     description:
-      "An open conversation with ministry leaders and technologists about the future of digital infrastructure for faith communities. Share challenges, explore solutions, and connect with peers.",
+      "An open conversation with ministry leaders and technologists about helping communities grow in faith through technology. Share challenges, explore solutions, and connect with peers.",
     date: "2026-08-10",
     location: "Virtual",
     type: "community",

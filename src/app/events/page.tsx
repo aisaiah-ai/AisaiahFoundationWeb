@@ -19,11 +19,11 @@ import { Calendar, MapPin, Tag } from "lucide-react";
 export const metadata: Metadata = {
   title: "Events & Initiatives",
   description:
-    "Upcoming events, workshops, and community initiatives from the Aisaiah Foundation — connecting faith leaders with purpose-built technology.",
+    "Upcoming events, workshops, and community gatherings from AIsaiah Foundation — helping faith communities grow through prayer, reflection, and service.",
   openGraph: {
     title: "Events & Initiatives | Aisaiah Foundation",
     description:
-      "Upcoming events, workshops, and community initiatives from the Aisaiah Foundation.",
+      "Events and gatherings that help communities grow in prayer, reflection, and service.",
   },
 };
 
@@ -54,7 +54,7 @@ export default function EventsPage() {
       <PageHero
         eyebrow="Events & initiatives"
         title="Connect, learn, and grow with us."
-        description="Join our workshops, roundtables, and community events — designed to help faith leaders explore what purpose-built technology can do for their communities."
+        description="Join our workshops, roundtables, and community events. Use AIsaiah to deepen prayer, reflection, and service during and after your event."
       />
 
       {upcoming.length > 0 && (
@@ -137,8 +137,8 @@ export default function EventsPage() {
             Want to host an event with us?
           </h2>
           <p className="text-lg text-slate-600 leading-relaxed mb-10">
-            If your organization is interested in co-hosting a workshop,
-            demo, or community event, we&apos;d love to hear from you.
+            Want to host an event that helps your community grow in faith?
+            We&apos;d love to help you plan it.
           </p>
           <Button href="/contact" variant="primary" size="lg">
             Get in Touch

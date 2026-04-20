@@ -29,11 +29,11 @@ import {
 export const metadata: Metadata = {
   title: "Board of Directors",
   description:
-    "Meet the Board of Directors of the Aisaiah Foundation — experienced professionals rooted in faith and service, guiding our mission to bridge faith and technology for communities worldwide.",
+    "Meet the Board of Directors of AIsaiah Foundation — leaders rooted in faith and service, guiding our mission to help people grow through prayer, reflection, and service.",
   openGraph: {
     title: "Board of Directors | Aisaiah Foundation",
     description:
-      "Meet the experienced professionals guiding the Aisaiah Foundation's mission to empower faith-based communities through technology.",
+      "Leaders guiding AIsaiah Foundation's mission to help people grow in faith.",
   },
 };
 
@@ -78,7 +78,7 @@ export default function BoardPage() {
       <PageHero
         eyebrow="Leadership and governance"
         title="Led by faith. Guided by stewardship. Built for accountability."
-        description="Our board brings together leaders rooted in the Catholic faith and Couples for Christ, committed to transparent governance and mission-driven technology that serves the broader Christian community."
+        description="Our board brings together leaders rooted in the Catholic faith and Couples for Christ, committed to helping people grow in prayer, reflection, and service through trustworthy technology."
         actions={[
           { label: "Discuss Partnership", href: "/contact", variant: "primary" },
           { label: "Explore Partnerships", href: "/partnerships", variant: "outline", className: "border-white/20 bg-white/5 text-white hover:border-white/35 hover:bg-white/10" },
@@ -152,8 +152,8 @@ export default function BoardPage() {
         <SectionHeader>
           <SectionTitle>Board of Directors</SectionTitle>
           <SectionDescription>
-            Directors providing strategic oversight and governance as the
-            Foundation serves faith communities through technology.
+            Directors providing strategic oversight as we help more people
+            grow in faith through prayer, reflection, and service.
           </SectionDescription>
         </SectionHeader>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -198,8 +198,9 @@ export default function BoardPage() {
             Governance Commitments
           </h2>
           <p className="text-lg text-slate-600 leading-relaxed mb-10">
-            Our leadership is accountable to mission, delivery quality, privacy,
-            and stewardship as Aisaiah Foundation grows to serve more communities.
+            Our leadership is accountable to mission, privacy, and stewardship
+            as we help more people build daily habits of prayer, reflection,
+            and service.
           </p>
           <div className="grid gap-4 text-left md:grid-cols-2">
             {governancePrinciples.map((principle) => (

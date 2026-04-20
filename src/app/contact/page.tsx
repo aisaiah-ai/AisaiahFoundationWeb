@@ -48,19 +48,19 @@ const partnershipTypes: PartnershipType[] = [
     icon: Code,
     title: "Technology Partner",
     description:
-      "Collaborate on building and deploying digital solutions for faith communities. We welcome contributions from developers, designers, and product thinkers.",
+      "Help us build better tools for prayer, reflection, and service. We welcome developers, designers, and product thinkers.",
   },
   {
     icon: Handshake,
     title: "Ministry Partner",
     description:
-      "Integrate the Aisaiah platform into your ministry's operations. We work closely with faith-based organizations to tailor our tools to their specific needs.",
+      "Bring AIsaiah to your community. We'll help you support daily faith growth for your members.",
   },
   {
     icon: Heart,
     title: "Donor & Supporter",
     description:
-      "Support our mission with a tax-deductible contribution. Every donation helps us build better technology and serve more communities.",
+      "Help us bring tools for prayer, reflection, and service to more people. Every contribution is tax-deductible.",
   },
 ];
 
@@ -137,9 +137,9 @@ export default function ContactPage() {
   return (
     <>
       <PageHero
-        eyebrow="Contact and partnership"
-        title="Open a conversation about partnership, implementation, or support."
-        description="This form now writes directly to Firestore when Firebase is configured, giving the site a real intake path instead of a placeholder success state."
+        eyebrow="Contact us"
+        title="Let's talk about how we can help."
+        description="Whether you want to partner, donate, or learn more — we'd love to hear from you. Tell us about your community and how you want to help people grow in faith."
         actions={[
           {
             label: "Jump To Partnership Options",
@@ -353,8 +353,8 @@ export default function ContactPage() {
         <SectionHeader>
           <SectionTitle>Partnership Opportunities</SectionTitle>
           <SectionDescription>
-            There are many ways to join us in our mission to empower faith
-            communities through technology
+            Join us in helping people grow in faith through prayer, reflection,
+            and service
           </SectionDescription>
         </SectionHeader>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -382,11 +382,12 @@ export default function ContactPage() {
       <Section variant="gradient">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Make an Impact?
+            Ready to Help People Grow in Faith?
           </h2>
           <p className="text-lg md:text-xl text-slate-300 leading-relaxed mb-10">
             Whether you bring technical skills, ministry connections, or a heart
-            for giving — there is a place for you in the Aisaiah mission.
+            for giving — there is a place for you in helping people build daily
+            habits of prayer, reflection, and service.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/solutions" variant="secondary" size="lg">

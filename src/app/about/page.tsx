@@ -25,11 +25,11 @@ import {
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn the story behind the Aisaiah Foundation — a 501(c)(3) nonprofit bridging faith and technology to empower churches, ministries, and faith-based communities worldwide.",
+    "Learn the story behind AIsaiah Foundation — a 501(c)(3) nonprofit helping people build a daily relationship with God through prayer, reflection, and service.",
   openGraph: {
     title: "About Us | Aisaiah Foundation",
     description:
-      "Discover how the Aisaiah Foundation bridges faith and technology to serve faith communities worldwide.",
+      "Helping people build a daily relationship with God through prayer, reflection, and service.",
   },
 };
 
@@ -38,37 +38,37 @@ const values = [
     icon: Heart,
     title: "Faith-Centered",
     description:
-      "Every product, decision, and partnership is rooted in our commitment to serving God and His people through technology.",
+      "Everything we build helps people grow in prayer, reflection, and service. That's our measure of success.",
   },
   {
     icon: Shield,
     title: "Privacy-First",
     description:
-      "We believe faith communities deserve technology that respects their data. Privacy isn't a feature — it's a foundation.",
+      "Your spiritual life is sacred. We protect your data — we never sell it, and we never will.",
   },
   {
     icon: Users,
     title: "Community-Driven",
     description:
-      "Our solutions are shaped by the real needs of ministry members, leaders, and communities. We build with them, not just for them.",
+      "We build with communities, not just for them. Your needs shape what we create.",
   },
   {
     icon: Star,
     title: "Excellence",
     description:
-      "Ministry deserves world-class technology. We hold ourselves to the same standards as the best organizations in the world.",
+      "You deserve world-class tools for your faith journey. We build to that standard.",
   },
   {
     icon: Globe,
     title: "Accessibility",
     description:
-      "Technology should empower everyone, regardless of technical skill or resources. Our tools are designed to be intuitive and inclusive.",
+      "Everyone deserves tools to grow in faith, regardless of technical skill or resources.",
   },
   {
     icon: Eye,
     title: "Transparency",
     description:
-      "As a 501(c)(3) nonprofit, we are accountable to our community. Our finances, decisions, and roadmaps are open and honest.",
+      "As a 501(c)(3) nonprofit, we're accountable to you. Our decisions and roadmaps are open.",
   },
 ];
 
@@ -88,8 +88,8 @@ export default function AboutPage() {
       <JsonLd data={[pageSchema, breadcrumbSchema]} />
       <PageHero
         eyebrow="About the foundation"
-        title="Building a credible bridge between faith, operations, and technology."
-        description="Aisaiah Foundation was formed to give mission-driven communities a technology partner that understands ministry realities and can execute with modern product discipline."
+        title="Helping people build a daily relationship with God."
+        description="AIsaiah Foundation is a 501(c)(3) nonprofit building tools for prayer, reflection, and service — so every person and community can grow in faith through modern technology."
         actions={[
           { label: "Meet Our Board", href: "/board", variant: "primary" },
           { label: "View Solutions", href: "/solutions", variant: "outline", className: "border-white/20 bg-white/5 text-white hover:border-white/35 hover:bg-white/10" },
@@ -104,21 +104,19 @@ export default function AboutPage() {
                 Our story
               </p>
               <h2 className="mt-4 font-display text-3xl font-semibold text-slate-950">
-                Ministry deserves technology that feels both trustworthy and
-                well-built.
+                We believe faith and technology should work together.
               </h2>
               <div className="mt-6 space-y-4 text-lg leading-relaxed text-slate-600">
                 <p>
-                  Aisaiah began with a simple conviction: faith communities
-                  should not have to choose between mission integrity and modern
-                  digital capability.
+                  AIsaiah began with a simple conviction: people need better
+                  tools to grow in their faith — and those tools should be
+                  trustworthy, modern, and accessible.
                 </p>
                 <p>
-                  What started as a founder-led effort to improve registration,
-                  communications, and spiritual engagement — born from direct
-                  experience in Couples for Christ — evolved into a nonprofit
-                  platform with a broader mandate: build digital infrastructure
-                  that serves any ministry at the level leaders actually need.
+                  What started from direct experience in Couples for Christ
+                  evolved into a nonprofit building tools that help anyone build
+                  daily habits of prayer, reflection, and service — whether
+                  you're an individual or leading a community of thousands.
                 </p>
               </div>
             </CardContent>
@@ -165,9 +163,9 @@ export default function AboutPage() {
         </SectionHeader>
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xl md:text-2xl text-slate-700 leading-relaxed font-medium">
-            A world where every faith community has access to purpose-built
-            technology that strengthens their mission and connects believers
-            across boundaries.
+            A world where every person and every community has the tools to
+            grow in daily prayer, reflection, and service — and where
+            technology strengthens faith rather than distracting from it.
           </p>
         </div>
       </Section>
@@ -176,8 +174,7 @@ export default function AboutPage() {
         <SectionHeader>
           <SectionTitle>Our Values</SectionTitle>
           <SectionDescription>
-            The principles that guide everything we build and every decision we
-            make
+            The principles that guide how we help people grow in faith
           </SectionDescription>
         </SectionHeader>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -204,11 +201,10 @@ export default function AboutPage() {
 
       <Section>
         <SectionHeader>
-          <SectionTitle>Architecture For Long-Term Scale</SectionTitle>
+          <SectionTitle>Built to Grow With You</SectionTitle>
           <SectionDescription>
-            Our platform is structured to support a clean separation between
-            presentation, services, and data as the organization and its
-            partners grow.
+            Our platform is designed to support your community today and scale
+            with you as you reach more people.
           </SectionDescription>
         </SectionHeader>
         <div className="grid gap-8 lg:grid-cols-3">

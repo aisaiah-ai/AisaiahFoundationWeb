@@ -6,12 +6,12 @@ export const partnerships: Partnership[] = [
     name: "Founding Partners",
     tier: "founding",
     description:
-      "Organizations that partner with Aisaiah Foundation from the ground up — shaping our platform, providing real-world feedback, and helping us build technology that truly serves faith communities.",
+      "Shape the future of faith technology from the ground up. Founding partners help us build tools that support prayer, reflection, and service at scale.",
     benefits: [
-      "Direct influence on platform development and roadmap",
-      "Dedicated implementation support and onboarding",
-      "Custom feature development for your community's needs",
-      "Priority access to new capabilities and integrations",
+      "Direct influence on what we build and how",
+      "Dedicated onboarding and implementation support",
+      "Custom features for your community's needs",
+      "Early access to new capabilities",
       "Named recognition as a founding partner",
     ],
     icon: "Star",
@@ -23,13 +23,13 @@ export const partnerships: Partnership[] = [
     name: "Strategic Partners",
     tier: "strategic",
     description:
-      "Churches, dioceses, ministries, and faith-based organizations that adopt the Aisaiah platform to modernize their event operations and community engagement.",
+      "Bring AIsaiah to your church, ministry, or organization. Help your community grow in daily faith through prayer, reflection, and service.",
     benefits: [
-      "Full platform access for event management and community tools",
+      "Full access to spiritual growth and event management tools",
       "Guided onboarding and training for your team",
-      "Ongoing support and regular platform updates",
-      "Data privacy and security built for ministry trust",
-      "Integration with your existing workflows and systems",
+      "Ongoing support and regular updates",
+      "Privacy-first data protection your community can trust",
+      "Integration with your existing workflows",
     ],
     icon: "Handshake",
     featured: true,
@@ -39,12 +39,12 @@ export const partnerships: Partnership[] = [
     name: "Community Partners",
     tier: "community",
     description:
-      "Donors, volunteers, and supporters who believe in the mission of bringing purpose-built technology to faith communities and want to contribute to that vision.",
+      "Support our mission to help more people grow in faith. Your contribution brings tools for prayer, reflection, and service to communities that need them most.",
     benefits: [
       "Tax-deductible contributions to a 501(c)(3) nonprofit",
-      "Regular updates on platform impact and community growth",
-      "Opportunities to volunteer skills and expertise",
-      "Invitation to partner events and community gatherings",
+      "Regular updates on impact and community growth",
+      "Opportunities to volunteer your skills",
+      "Invitations to partner events and gatherings",
       "Recognition in our annual impact report",
     ],
     icon: "Heart",
@@ -55,14 +55,14 @@ export const partnerships: Partnership[] = [
 export const partnershipHighlights = [
   {
     metric: "501(c)(3)",
-    description: "Mission-governed nonprofit — your partnership supports a public-service mandate, not a profit motive.",
+    description: "We exist to help people grow in faith — not to generate profit.",
   },
   {
     metric: "Privacy-first",
-    description: "No ads, no data selling. Community data is protected as a stewardship responsibility.",
+    description: "No ads, no data selling. Your community's trust is sacred to us.",
   },
   {
     metric: "Faith-rooted",
-    description: "Built by leaders formed in Couples for Christ and the Catholic faith, serving all Christian communities.",
+    description: "Built by people of faith, for people of faith — serving all Christian communities.",
   },
 ];

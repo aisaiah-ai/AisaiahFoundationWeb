@@ -34,13 +34,13 @@ import {
 import type { LucideIcon } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "The Aisaiah App — Prayer, Scripture & Spiritual Fitness",
+  title: "The AIsaiah App — Prayer, Reflection & Service",
   description:
-    "Your AI-powered faith companion for daily prayer, Scripture reading, spiritual fitness tracking, and event management. Free on iOS and Android.",
+    "Build daily habits of prayer, reflection, and service with AIsaiah. Free on iOS and Android — for individuals, churches, and faith communities.",
   openGraph: {
-    title: "The Aisaiah App | Aisaiah Foundation",
+    title: "The AIsaiah App | Aisaiah Foundation",
     description:
-      "Daily prayer, Scripture, spiritual fitness tracking, and event management — all in one free app.",
+      "Build daily habits of prayer, reflection, and service. Free on iOS and Android.",
   },
 };
 
@@ -63,11 +63,11 @@ const eventIconMap: Record<string, LucideIcon> = {
 };
 
 const appScreenshots = [
-  { src: "/images/Screen1.jpg", alt: "Turn screen time into sacred time" },
-  { src: "/images/Screen2.jpg", alt: "Designed for your daily prayer rhythm" },
-  { src: "/images/Screen3.jpg", alt: "Spiritual fitness dashboard — Pray, Reflect, Service" },
-  { src: "/images/Screen4.jpg", alt: "Your spiritual dashboard with history and insights" },
-  { src: "/images/Screen5.jpg", alt: "Daily Scripture readings and guided prayer" },
+  { src: "/images/Screen1.jpg", alt: "AIsaiah app — build daily habits of prayer, reflection, and service" },
+  { src: "/images/Screen2.jpg", alt: "Start your day with guided prayer" },
+  { src: "/images/Screen3.jpg", alt: "Spiritual growth dashboard — Prayer, Reflection, and Service rings" },
+  { src: "/images/Screen4.jpg", alt: "Track your spiritual growth over time" },
+  { src: "/images/Screen5.jpg", alt: "Daily Scripture readings for reflection" },
 ];
 
 export default function SolutionsPage() {
@@ -86,12 +86,12 @@ export default function SolutionsPage() {
     <>
       <JsonLd data={[pageSchema, breadcrumbSchema, softwareSchema]} />
       <PageHero
-        eyebrow="The Aisaiah App"
-        title="Turn screen time into sacred time."
-        description="An AI-powered daily faith companion for guided prayer, Scripture reading, spiritual fitness tracking, and community events — free on iOS and Android."
+        eyebrow="The AIsaiah App"
+        title="Build daily habits of prayer, reflection, and service."
+        description="Everything you need to grow in your faith — guided prayer, daily Scripture, spiritual growth tracking, and community events. Free on iOS and Android."
         actions={[
           {
-            label: "Download for iOS",
+            label: "Download the App",
             href: "https://apps.apple.com/us/app/aisaiah/id6751301980",
             variant: "secondary",
           },
@@ -104,16 +104,16 @@ export default function SolutionsPage() {
         ]}
         metrics={[
           {
-            value: "Pray · Reflect · Serve",
-            label: "Three spiritual fitness rings to build daily habits that last.",
+            value: "Prayer · Reflection · Service",
+            label: "Three daily habits that help you grow in your relationship with God.",
           },
           {
             value: "Daily Scripture",
-            label: "Readings, Psalms, and Gospel with date navigation and USCCB links.",
+            label: "Readings, Psalms, and Gospel — reflect on God's Word every day.",
           },
           {
             value: "Events Built In",
-            label: "Registration, NFC/QR check-in, and event gallery — all in the app.",
+            label: "Registration, NFC/QR check-in, and event gallery — all in one app.",
           },
         ]}
       />
@@ -123,8 +123,8 @@ export default function SolutionsPage() {
         <SectionHeader>
           <SectionTitle>See It In Action</SectionTitle>
           <SectionDescription>
-            From your daily prayer rhythm to spiritual history and Scripture
-            readings — designed to help you grow in faith every day.
+            From daily prayer to Scripture reflection and growth tracking —
+            designed to help you build a daily relationship with God.
           </SectionDescription>
         </SectionHeader>
         <div className="overflow-x-auto pb-4 -mx-4 px-4">
@@ -150,10 +150,10 @@ export default function SolutionsPage() {
       {/* Spiritual Features */}
       <Section variant="muted">
         <SectionHeader>
-          <SectionTitle>Your Spiritual Growth Toolkit</SectionTitle>
+          <SectionTitle>Your Daily Faith Toolkit</SectionTitle>
           <SectionDescription>
-            Everything you need for daily prayer, reflection, and spiritual
-            development — guided by AI, grounded in Church teaching.
+            Everything you need for daily prayer, reflection, and service —
+            guided by AI, grounded in Church teaching.
           </SectionDescription>
         </SectionHeader>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -182,11 +182,11 @@ export default function SolutionsPage() {
       <Section id="download">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
-            Download the Aisaiah App
+            Start Growing in Your Faith Today
           </h2>
           <p className="text-lg text-slate-600 leading-relaxed mb-10">
-            Free to download. No account required to get started. Available on
-            iOS and Android.
+            Download AIsaiah — free on iOS and Android. No account required to
+            start building habits of prayer, reflection, and service.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <a
@@ -223,24 +223,23 @@ export default function SolutionsPage() {
       <Section variant="dark" id="events">
         <SectionHeader>
           <SectionTitle className="text-white">
-            Event Management, Built Into the App
+            Events That Deepen Faith
           </SectionTitle>
           <SectionDescription className="text-slate-300">
-            From registration to post-event analytics — manage conferences,
-            retreats, and gatherings without leaving the app.
+            Use AIsaiah to manage events and deepen prayer, reflection, and
+            service before, during, and after your gathering.
           </SectionDescription>
         </SectionHeader>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <div className="space-y-4">
               <h3 className="text-2xl font-bold text-white">
-                Built for Conferences, Retreats, and Gatherings
+                For Conferences, Retreats, and Gatherings
               </h3>
               <p className="text-lg text-slate-300 leading-relaxed">
-                Whether you&apos;re organizing a regional conference with
-                hundreds of attendees or an intimate parish retreat, the Aisaiah
-                app scales to meet your needs with built-in registration,
-                contactless check-in, and real-time analytics.
+                Whether you&apos;re organizing a regional conference or an
+                intimate retreat, AIsaiah helps you manage logistics and
+                support spiritual growth — all in one place.
               </p>
             </div>
             <ul className="space-y-4">
@@ -299,11 +298,12 @@ export default function SolutionsPage() {
       <Section variant="gradient">
         <div className="mx-auto max-w-3xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Start Your Spiritual Journey Today
+            Start Your Journey Today
           </h2>
           <p className="text-lg md:text-xl text-slate-300 leading-relaxed mb-10">
-            Download the Aisaiah app and join a growing community of believers
-            building daily habits of prayer, reflection, and service.
+            Download AIsaiah and start building daily habits of prayer,
+            reflection, and service. Your relationship with God grows one day
+            at a time.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button

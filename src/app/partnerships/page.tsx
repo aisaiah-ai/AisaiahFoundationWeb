@@ -18,11 +18,11 @@ import {
 export const metadata: Metadata = {
   title: "Partnerships",
   description:
-    "Partner with Aisaiah Foundation to bring purpose-built digital infrastructure to your faith community. Open to churches, ministries, dioceses, and Christian organizations of all sizes.",
+    "Partner with AIsaiah Foundation to help your community grow in daily faith through prayer, reflection, and service. Open to churches, ministries, and Christian organizations of all sizes.",
   openGraph: {
     title: "Partnerships | Aisaiah Foundation",
     description:
-      "Explore partnership opportunities with Aisaiah Foundation — technology built for faith communities, governed by mission.",
+      "Help your community grow in daily faith through prayer, reflection, and service.",
   },
 };
 
@@ -42,8 +42,8 @@ export default function PartnershipsPage() {
       <JsonLd data={[pageSchema, breadcrumbSchema]} />
       <PageHero
         eyebrow="Work with us"
-        title="Partner with a foundation that understands your mission."
-        description="Whether you're a church, ministry, diocese, or faith-based organization, Aisaiah Foundation offers purpose-built technology designed to serve your community — not sell to it."
+        title="Help your community grow in daily faith."
+        description="Whether you're a church, ministry, or faith-based organization — we help you support prayer, reflection, and service at scale with tools your community can trust."
         actions={[
           { label: "Start a Conversation", href: "/contact", variant: "primary" },
           { label: "View Our Platform", href: "/solutions", variant: "outline", className: "border-white/20 bg-white/5 text-white hover:border-white/35 hover:bg-white/10" },
@@ -58,9 +58,8 @@ export default function PartnershipsPage() {
         <SectionHeader>
           <SectionTitle>Partnership Models</SectionTitle>
           <SectionDescription>
-            We offer flexible partnership structures designed to meet your
-            community where it is — from founding collaborations to community
-            support.
+            Flexible partnerships designed to meet your community where it is —
+            and help your people grow in prayer, reflection, and service.
           </SectionDescription>
         </SectionHeader>
         <div className="grid gap-8 lg:grid-cols-3">
@@ -77,8 +76,8 @@ export default function PartnershipsPage() {
           </h2>
           <p className="text-lg md:text-xl text-slate-300 leading-relaxed mb-10">
             Every partnership starts with a conversation. Tell us about your
-            community, your challenges, and your vision — and we&apos;ll show you
-            how Aisaiah can help.
+            community and how you want to help your people grow — and we&apos;ll
+            show you how AIsaiah can support that.
           </p>
           <Button href="/contact" variant="secondary" size="lg">
             Start a Partnership Conversation

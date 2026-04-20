@@ -36,11 +36,11 @@ import type { LucideIcon } from "lucide-react";
 export const metadata: Metadata = {
   title: "Couples for Christ USA Partnership",
   description:
-    "How Aisaiah Foundation partners with Couples for Christ USA — a founding partnership delivering purpose-built event management, community engagement, and digital infrastructure.",
+    "How AIsaiah Foundation partners with Couples for Christ USA — a founding partnership helping communities grow in faith through prayer, reflection, and service.",
   openGraph: {
     title: "CFC USA Partnership | Aisaiah Foundation",
     description:
-      "Our founding partnership with Couples for Christ USA — purpose-built technology for faith community operations.",
+      "Our founding partnership with Couples for Christ USA — helping communities grow in daily faith.",
   },
 };
 
@@ -188,7 +188,7 @@ export default function CFCUSACaseStudyPage() {
       <PageHero
         eyebrow="Founding partnership"
         title="A strategic technology partnership with Couples for Christ USA."
-        description="Our founding partnership with CFC USA demonstrates what purpose-built ministry technology looks like when it's created by people who understand the community from the inside."
+        description="Our founding partnership with CFC USA — helping members grow in daily prayer, reflection, and service through technology built by people who understand the community from the inside."
         actions={[
           {
             label: "Start The Conversation",
