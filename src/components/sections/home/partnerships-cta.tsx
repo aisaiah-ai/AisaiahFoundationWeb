@@ -3,16 +3,21 @@
 import { motion } from "framer-motion";
 import { Church, Users, BookOpen, Calendar, Compass } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { communityContent } from "@/content/homepage";
+import type { LucideIcon } from "lucide-react";
 
-const useCases = [
-  { icon: Church, label: "Churches & Parishes" },
-  { icon: Calendar, label: "Retreats & Conferences" },
-  { icon: Users, label: "Small Groups" },
-  { icon: BookOpen, label: "Formation Programs" },
-  { icon: Compass, label: "Ministry Engagement" },
-];
+const iconMap: Record<string, LucideIcon> = {
+  Church,
+  Users,
+  BookOpen,
+  Calendar,
+  Compass,
+};
 
 export function PartnershipsCTA() {
+  const { eyebrow, headline, description, primaryCTA, secondaryCTA, useCases } =
+    communityContent;
+
   return (
     <section className="relative overflow-hidden bg-slate-950 py-24 md:py-32">
       <div className="absolute inset-0">
@@ -30,28 +35,26 @@ export function PartnershipsCTA() {
             transition={{ duration: 0.6 }}
           >
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary-300 mb-4">
-              For Organizations
+              {eyebrow}
             </p>
             <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white">
-              Built for communities, not just individuals
+              {headline}
             </h2>
             <p className="mt-6 text-lg text-slate-300 leading-relaxed">
-              Help your community grow in daily faith. AIsaiah gives churches,
-              ministries, and organizations tools to support prayer, reflection,
-              and service at scale.
+              {description}
             </p>
 
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <Button href="/partnerships" variant="accent" size="lg">
-                Partner With Us
+              <Button href={primaryCTA.href} variant="accent" size="lg">
+                {primaryCTA.label}
               </Button>
               <Button
-                href="/contact"
+                href={secondaryCTA.href}
                 variant="outline"
                 size="lg"
                 className="border-white/20 bg-white/5 text-white hover:border-white/30 hover:bg-white/10"
               >
-                Get in Touch
+                {secondaryCTA.label}
               </Button>
             </div>
           </motion.div>
@@ -64,19 +67,22 @@ export function PartnershipsCTA() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3"
           >
-            {useCases.map((item) => (
-              <div
-                key={item.label}
-                className="flex flex-col items-center gap-3 rounded-2xl border border-slate-700/60 bg-slate-800/40 p-6 text-center backdrop-blur-sm transition-all duration-300 hover:bg-slate-800/60 hover:border-slate-600"
-              >
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-500/10 text-primary-400">
-                  <item.icon className="h-6 w-6" strokeWidth={1.5} />
+            {useCases.map((item) => {
+              const Icon = iconMap[item.icon];
+              return (
+                <div
+                  key={item.label}
+                  className="flex flex-col items-center gap-3 rounded-2xl border border-slate-700/60 bg-slate-800/40 p-6 text-center backdrop-blur-sm transition-all duration-300 hover:bg-slate-800/60 hover:border-slate-600"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-500/10 text-primary-400">
+                    {Icon && <Icon className="h-6 w-6" strokeWidth={1.5} />}
+                  </div>
+                  <span className="text-sm font-medium text-slate-200">
+                    {item.label}
+                  </span>
                 </div>
-                <span className="text-sm font-medium text-slate-200">
-                  {item.label}
-                </span>
-              </div>
-            ))}
+              );
+            })}
           </motion.div>
         </div>
       </div>

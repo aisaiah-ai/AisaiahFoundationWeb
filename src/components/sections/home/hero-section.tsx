@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { heroContent } from "@/content/homepage";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -14,6 +15,9 @@ const fadeInUp = {
 };
 
 export function HeroSection() {
+  const { badge, headline, subheadline, primaryCTA, secondaryCTA, supportingLine, appScreens } =
+    heroContent;
+
   return (
     <section className="relative overflow-hidden bg-slate-950 pt-32 pb-20 md:pt-40 md:pb-28 lg:pt-44 lg:pb-32">
       {/* Background layers */}
@@ -34,7 +38,7 @@ export function HeroSection() {
             <motion.div custom={0} variants={fadeInUp}>
               <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary-300 backdrop-blur-sm">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                Free on iOS & Android
+                {badge}
               </span>
             </motion.div>
 
@@ -43,7 +47,7 @@ export function HeroSection() {
               variants={fadeInUp}
               className="mt-8 max-w-xl font-display text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl"
             >
-              Struggling to stay consistent in your{" "}
+              {headline.replace("faith?", "")}
               <span className="text-gradient">faith?</span>
             </motion.h1>
 
@@ -52,8 +56,7 @@ export function HeroSection() {
               variants={fadeInUp}
               className="mt-6 max-w-lg text-lg leading-relaxed text-slate-300 md:text-xl"
             >
-              AIsaiah helps you build daily habits of prayer, reflection, and
-              service — so your relationship with God grows every day.
+              {subheadline}
             </motion.p>
 
             <motion.div
@@ -61,20 +64,16 @@ export function HeroSection() {
               variants={fadeInUp}
               className="mt-10 flex flex-col gap-4 sm:flex-row"
             >
-              <Button
-                href="https://apps.apple.com/us/app/aisaiah/id6751301980"
-                variant="accent"
-                size="lg"
-              >
-                Download the App
+              <Button href={primaryCTA.href} variant="accent" size="lg">
+                {primaryCTA.label}
               </Button>
               <Button
-                href="/partnerships"
+                href={secondaryCTA.href}
                 variant="outline"
                 size="lg"
                 className="border-white/20 bg-white/5 text-white hover:border-white/30 hover:bg-white/10"
               >
-                For Churches & Events
+                {secondaryCTA.label}
               </Button>
             </motion.div>
 
@@ -83,8 +82,7 @@ export function HeroSection() {
               variants={fadeInUp}
               className="mt-6 max-w-md text-sm leading-relaxed text-slate-400"
             >
-              Built for individuals, ministries, and faith communities seeking
-              deeper daily spiritual habits.
+              {supportingLine}
             </motion.p>
           </motion.div>
 
@@ -95,15 +93,14 @@ export function HeroSection() {
             transition={{ duration: 0.9, delay: 0.3, ease: "easeOut" }}
             className="relative flex justify-center lg:justify-end"
           >
-            {/* Glow behind devices */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[400px] rounded-full bg-primary-500/15 blur-[100px] animate-glow-pulse" />
 
             <div className="relative flex items-end gap-4 md:gap-5">
               {/* Screen 1 — Prayer */}
               <div className="relative w-[140px] h-[290px] sm:w-[160px] sm:h-[330px] md:w-[180px] md:h-[370px] rounded-[1.5rem] overflow-hidden shadow-2xl border border-white/10 animate-float-delayed">
                 <Image
-                  src="/images/Screen2.jpg"
-                  alt="AIsaiah daily prayer screen"
+                  src={appScreens[0].src}
+                  alt={appScreens[0].alt}
                   fill
                   className="object-cover"
                   sizes="180px"
@@ -114,8 +111,8 @@ export function HeroSection() {
               {/* Screen 2 — Dashboard (center, taller) */}
               <div className="relative w-[160px] h-[320px] sm:w-[180px] sm:h-[370px] md:w-[200px] md:h-[410px] rounded-[1.75rem] overflow-hidden shadow-2xl border border-white/15 ring-1 ring-primary-400/20 animate-float -mb-4">
                 <Image
-                  src="/images/Screen3.jpg"
-                  alt="AIsaiah spiritual growth dashboard with Prayer, Reflection, and Service rings"
+                  src={appScreens[1].src}
+                  alt={appScreens[1].alt}
                   fill
                   className="object-cover"
                   sizes="200px"
@@ -126,8 +123,8 @@ export function HeroSection() {
               {/* Screen 3 — Scripture */}
               <div className="hidden sm:block relative w-[160px] h-[330px] md:w-[180px] md:h-[370px] rounded-[1.5rem] overflow-hidden shadow-2xl border border-white/10 animate-float-delayed">
                 <Image
-                  src="/images/Screen5.jpg"
-                  alt="AIsaiah daily Scripture readings"
+                  src={appScreens[2].src}
+                  alt={appScreens[2].alt}
                   fill
                   className="object-cover"
                   sizes="180px"

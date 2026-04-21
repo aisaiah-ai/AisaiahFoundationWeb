@@ -2,8 +2,12 @@
 
 import { motion } from "framer-motion";
 import { Quote } from "lucide-react";
+import { testimonialContent } from "@/content/homepage";
 
 export function Testimonials() {
+  const { quotes } = testimonialContent;
+  const featured = quotes[0];
+
   return (
     <section className="py-24 md:py-32 bg-slate-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -21,22 +25,32 @@ export function Testimonials() {
           </div>
 
           <blockquote className="font-display text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight text-slate-900 leading-snug">
-            &ldquo;This helped me pray consistently again. It changed my daily
-            routine and brought me closer to God in a way I didn&rsquo;t expect.&rdquo;
+            &ldquo;{featured.text}&rdquo;
           </blockquote>
 
           <div className="mt-8 flex flex-col items-center gap-1">
-            <p className="font-semibold text-slate-800">Early App User</p>
-            <p className="text-sm text-slate-500">
-              Couples for Christ Community Member
-            </p>
+            <p className="font-semibold text-slate-800">{featured.author}</p>
+            <p className="text-sm text-slate-500">{featured.role}</p>
           </div>
 
-          {/* Placeholder for future testimonials */}
+          {/* Pagination dots — ready for multiple testimonials */}
           <div className="mt-12 flex justify-center gap-2">
-            <span className="h-2 w-8 rounded-full bg-primary-500" />
-            <span className="h-2 w-2 rounded-full bg-slate-300" />
-            <span className="h-2 w-2 rounded-full bg-slate-300" />
+            {quotes.map((_, i) => (
+              <span
+                key={i}
+                className={
+                  i === 0
+                    ? "h-2 w-8 rounded-full bg-primary-500"
+                    : "h-2 w-2 rounded-full bg-slate-300"
+                }
+              />
+            ))}
+            {quotes.length === 1 && (
+              <>
+                <span className="h-2 w-2 rounded-full bg-slate-300" />
+                <span className="h-2 w-2 rounded-full bg-slate-300" />
+              </>
+            )}
           </div>
         </motion.div>
       </div>

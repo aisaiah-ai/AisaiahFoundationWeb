@@ -3,29 +3,12 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-
-const steps = [
-  {
-    number: "01",
-    title: "Start with prayer",
-    description:
-      "Begin your day connecting with God through guided prayer that meets you where you are.",
-  },
-  {
-    number: "02",
-    title: "Reflect on Scripture",
-    description:
-      "Read daily Scripture, journal your thoughts, and let God's Word shape how you live.",
-  },
-  {
-    number: "03",
-    title: "Serve with purpose",
-    description:
-      "Track how you're living your faith through service and see your growth over time.",
-  },
-];
+import { experienceContent } from "@/content/homepage";
 
 export function ProductExperience() {
+  const { eyebrow, headline, subheadline, showcaseImage, steps, cta } =
+    experienceContent;
+
   return (
     <section className="relative overflow-hidden bg-slate-950 py-24 md:py-32">
       {/* Ambient background */}
@@ -43,19 +26,18 @@ export function ProductExperience() {
           className="mx-auto max-w-3xl text-center mb-16"
         >
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary-300 mb-4">
-            The Daily Rhythm
+            {eyebrow}
           </p>
           <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white">
-            A daily rhythm that brings you closer to God
+            {headline}
           </h2>
           <p className="mt-6 text-lg text-slate-300 leading-relaxed">
-            AIsaiah helps you build a simple daily rhythm of prayer, reflection,
-            and service — so your relationship with God grows every day.
+            {subheadline}
           </p>
         </motion.div>
 
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-          {/* Left — Phone with screenshots */}
+          {/* Left — Phone showcase */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -67,8 +49,8 @@ export function ProductExperience() {
 
             <div className="relative w-[220px] h-[450px] sm:w-[240px] sm:h-[490px] rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10 ring-1 ring-primary-400/20 animate-breathe">
               <Image
-                src="/images/Screen3.jpg"
-                alt="AIsaiah spiritual growth dashboard showing Prayer, Reflection, and Service rings"
+                src={showcaseImage.src}
+                alt={showcaseImage.alt}
                 fill
                 className="object-cover"
                 sizes="240px"
@@ -110,12 +92,8 @@ export function ProductExperience() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="pt-4"
             >
-              <Button
-                href="https://apps.apple.com/us/app/aisaiah/id6751301980"
-                variant="accent"
-                size="lg"
-              >
-                Download the App
+              <Button href={cta.href} variant="accent" size="lg">
+                {cta.label}
               </Button>
             </motion.div>
           </div>
