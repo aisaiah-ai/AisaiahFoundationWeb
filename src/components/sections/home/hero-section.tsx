@@ -110,27 +110,27 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.3, ease: "easeOut" }}
-            className="relative flex justify-center lg:justify-end"
+            className="relative flex justify-center"
             aria-hidden="true"
           >
             {/* Glow effects */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-72 w-72 rounded-full bg-primary-400/20 blur-[100px] animate-glow-pulse" />
             <div className="absolute top-1/3 right-1/4 h-48 w-48 rounded-full bg-accent-400/10 blur-[80px]" />
 
-            {/* 3-card stack with rotation */}
-            <div className="relative h-[360px] w-[320px] sm:h-[400px] sm:w-[380px] md:h-[440px] md:w-[420px]">
-              {/* Left — Prayer (rotated) */}
-              <div className="absolute left-0 top-6 sm:top-4 -rotate-6 origin-bottom-right z-10 animate-float-delayed">
+            {/* 3-card overlapping stack */}
+            <div className="relative flex items-end justify-center gap-0">
+              {/* Left — Prayer (rotated, behind) */}
+              <div className="-mr-8 sm:-mr-6 -rotate-6 z-10 animate-float-delayed mb-4">
                 <AppPlaceholderCard variant="prayer" size="sm" />
               </div>
 
-              {/* Center — Reflection (dominant) */}
-              <div className="absolute left-1/2 -translate-x-1/2 top-0 z-20 animate-float">
+              {/* Center — Reflection (dominant, front) */}
+              <div className="relative z-20 animate-float">
                 <AppPlaceholderCard variant="reflection" size="md" />
               </div>
 
-              {/* Right — Service (rotated) */}
-              <div className="hidden sm:block absolute right-0 top-6 sm:top-4 rotate-6 origin-bottom-left z-10 animate-float-delayed">
+              {/* Right — Service (rotated, behind) */}
+              <div className="-ml-8 sm:-ml-6 rotate-6 z-10 animate-float-delayed mb-4">
                 <AppPlaceholderCard variant="service" size="sm" />
               </div>
             </div>
