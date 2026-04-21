@@ -8,3 +8,7 @@ export { PartnershipsCTA } from "./partnerships-cta";
 export { MissionSection } from "./mission-section";
 export { DonationCTA } from "./donation-cta";
 export { FinalCTA } from "./final-cta";
+
+// Shared components
+export { AppPreviewCard } from "./app-preview-card";
+export { SectionHeading } from "./section-heading";

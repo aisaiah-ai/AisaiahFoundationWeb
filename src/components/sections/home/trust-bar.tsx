@@ -11,7 +11,7 @@ export function TrustBar() {
   const { headline, items } = trustContent;
 
   return (
-    <section className="relative border-y border-slate-200/60 bg-slate-50/80 py-10 md:py-12">
+    <section id="trust" aria-label="Trusted by faith communities" className="relative border-y border-slate-200/60 bg-slate-50/80 py-10 md:py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.p
           initial={{ opacity: 0 }}

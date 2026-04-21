@@ -19,7 +19,7 @@ export function PartnershipsCTA() {
     communityContent;
 
   return (
-    <section className="relative overflow-hidden bg-slate-950 py-24 md:py-32">
+    <section id="community" aria-label="For churches and organizations" className="relative overflow-hidden bg-slate-950 py-24 md:py-32">
       <div className="absolute inset-0">
         <div className="absolute top-1/4 right-0 h-[400px] w-[400px] rounded-full bg-accent-600/10 blur-[120px]" />
         <div className="absolute bottom-0 left-1/4 h-[300px] w-[300px] rounded-full bg-primary-600/10 blur-[100px]" />

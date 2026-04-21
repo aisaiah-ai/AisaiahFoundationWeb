@@ -9,7 +9,7 @@ export function DonationCTA() {
   const { headline, description, trustMarkers, cta } = donationContent;
 
   return (
-    <section className="py-24 md:py-32 bg-slate-50">
+    <section id="support" aria-label="Support the mission" className="py-24 md:py-32 bg-slate-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

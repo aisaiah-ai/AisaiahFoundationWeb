@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Heart, BookOpen, HandHeart } from "lucide-react";
+import { SectionHeading } from "./section-heading";
 import { valueContent } from "@/content/homepage";
 import type { LucideIcon } from "lucide-react";
 
@@ -17,29 +18,17 @@ const cardVariants = {
 };
 
 export function ValueProposition() {
-  const { eyebrow, headline, subheadline, pillars } = valueContent;
+  const { eyebrow, headline, headlineAccent, subheadline, pillars } = valueContent;
 
   return (
-    <section className="py-24 md:py-32 bg-white">
+    <section id="pillars" aria-label="Prayer, Reflection, and Service" className="py-24 md:py-32 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mx-auto max-w-3xl text-center mb-16"
-        >
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary-600 mb-4">
-            {eyebrow}
-          </p>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-950">
-            {headline.replace("faith", "")}{" "}
-            <span className="text-gradient">faith</span>
-          </h2>
-          <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-            {subheadline}
-          </p>
-        </motion.div>
+        <SectionHeading
+          eyebrow={eyebrow}
+          headline={headline}
+          headlineAccent={headlineAccent}
+          subheadline={subheadline}
+        />
 
         <div className="grid gap-8 md:grid-cols-3">
           {pillars.map((pillar, i) => {

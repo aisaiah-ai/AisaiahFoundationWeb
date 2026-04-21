@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { AppPreviewCard } from "./app-preview-card";
+import { SectionHeading } from "./section-heading";
 import { experienceContent } from "@/content/homepage";
 
 export function ProductExperience() {
@@ -10,31 +11,19 @@ export function ProductExperience() {
     experienceContent;
 
   return (
-    <section className="relative overflow-hidden bg-slate-950 py-24 md:py-32">
-      {/* Ambient background */}
-      <div className="absolute inset-0">
+    <section id="daily-rhythm" aria-label="Daily spiritual rhythm" className="relative overflow-hidden bg-slate-950 py-24 md:py-32">
+      <div className="absolute inset-0" aria-hidden="true">
         <div className="absolute top-0 left-1/3 h-[500px] w-[500px] rounded-full bg-primary-600/10 blur-[150px]" />
         <div className="absolute bottom-0 right-1/4 h-[400px] w-[400px] rounded-full bg-accent-600/8 blur-[120px]" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mx-auto max-w-3xl text-center mb-16"
-        >
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary-300 mb-4">
-            {eyebrow}
-          </p>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-white">
-            {headline}
-          </h2>
-          <p className="mt-6 text-lg text-slate-300 leading-relaxed">
-            {subheadline}
-          </p>
-        </motion.div>
+        <SectionHeading
+          eyebrow={eyebrow}
+          headline={headline}
+          subheadline={subheadline}
+          variant="dark"
+        />
 
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Left — Phone showcase */}
@@ -44,18 +33,14 @@ export function ProductExperience() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
             className="relative flex justify-center"
+            aria-hidden="true"
           >
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[350px] w-[350px] rounded-full bg-primary-500/10 blur-[80px] animate-glow-pulse" />
-
-            <div className="relative w-[220px] h-[450px] sm:w-[240px] sm:h-[490px] rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10 ring-1 ring-primary-400/20 animate-breathe">
-              <Image
-                src={showcaseImage.src}
-                alt={showcaseImage.alt}
-                fill
-                className="object-cover"
-                sizes="240px"
-              />
-            </div>
+            <AppPreviewCard
+              screen={showcaseImage}
+              size="lg"
+              className="animate-breathe"
+            />
           </motion.div>
 
           {/* Right — Steps */}

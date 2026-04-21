@@ -11,7 +11,7 @@ export function MissionSection() {
   const { eyebrow, headline, body, values } = missionContent;
 
   return (
-    <section className="py-24 md:py-32 bg-white">
+    <section id="mission" aria-label="Our mission" className="py-24 md:py-32 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Left — Mission statement */}

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Download, Clock, TrendingUp } from "lucide-react";
+import { SectionHeading } from "./section-heading";
 import { howItWorksContent } from "@/content/homepage";
 import type { LucideIcon } from "lucide-react";
 
@@ -11,22 +12,13 @@ export function HowItWorks() {
   const { eyebrow, headline, steps } = howItWorksContent;
 
   return (
-    <section className="py-24 md:py-32 bg-white">
+    <section id="how-it-works" aria-label="How to get started" className="py-24 md:py-32 bg-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mx-auto max-w-2xl text-center mb-16"
-        >
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary-600 mb-4">
-            {eyebrow}
-          </p>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-slate-950">
-            {headline}
-          </h2>
-        </motion.div>
+        <SectionHeading
+          eyebrow={eyebrow}
+          headline={headline}
+          className="max-w-2xl"
+        />
 
         <div className="grid gap-8 md:grid-cols-3 max-w-4xl mx-auto">
           {steps.map((item, i) => {
@@ -41,7 +33,10 @@ export function HowItWorks() {
                 className="relative flex flex-col items-center text-center"
               >
                 {i < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-10 left-[calc(50%+2rem)] right-[calc(-50%+2rem)] h-px bg-gradient-to-r from-primary-300 to-primary-100" />
+                  <div
+                    className="hidden md:block absolute top-10 left-[calc(50%+2rem)] right-[calc(-50%+2rem)] h-px bg-gradient-to-r from-primary-300 to-primary-100"
+                    aria-hidden="true"
+                  />
                 )}
 
                 <div className="relative flex h-20 w-20 items-center justify-center rounded-3xl bg-gradient-to-br from-primary-50 to-accent-50 border border-primary-100 shadow-sm">

@@ -1,4 +1,9 @@
 import type { Metadata } from "next";
+import { JsonLd } from "@/components/seo/json-ld";
+import {
+  getOrganizationSchema,
+  getSoftwareApplicationSchema,
+} from "@/lib/structured-data";
 import {
   HeroSection,
   TrustBar,
@@ -15,15 +20,18 @@ import {
 export const metadata: Metadata = {
   title: "AIsaiah — Daily Prayer, Reflection & Service | Grow in Your Faith",
   description:
-    "Helping people build a daily relationship with God through prayer, reflection, and service. Download the free AIsaiah app — built by a 501(c)(3) nonprofit.",
+    "AIsaiah helps people grow in faith through daily habits of prayer, reflection, and service. Build a consistent relationship with God through a simple daily rhythm. Free on iOS and Android.",
   alternates: {
     canonical: "https://aisaiah.org",
   },
 };
 
 export default function HomePage() {
+  const appSchema = getSoftwareApplicationSchema();
+
   return (
     <>
+      <JsonLd data={appSchema} />
       <HeroSection />
       <TrustBar />
       <ValueProposition />

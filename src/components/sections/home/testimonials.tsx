@@ -9,7 +9,7 @@ export function Testimonials() {
   const featured = quotes[0];
 
   return (
-    <section className="py-24 md:py-32 bg-slate-50">
+    <section id="testimonials" aria-label="What people are saying" className="py-24 md:py-32 bg-slate-50">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
