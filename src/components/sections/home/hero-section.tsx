@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { Download, Handshake } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { AppPreviewCard } from "./app-preview-card";
+import { AppPlaceholderCard } from "./app-preview-card";
 import { heroContent } from "@/content/homepage";
 
 const fadeInUp = {
@@ -23,7 +24,6 @@ export function HeroSection() {
     primaryCTA,
     secondaryCTA,
     supportingLine,
-    appScreens,
   } = heroContent;
 
   const headlineBase = headline.replace(headlineAccent, "").trimEnd();
@@ -82,6 +82,7 @@ export function HeroSection() {
               className="mt-10 flex flex-col gap-4 sm:flex-row"
             >
               <Button href={primaryCTA.href} variant="accent" size="lg">
+                <Download className="mr-2 h-4 w-4" />
                 {primaryCTA.label}
               </Button>
               <Button
@@ -90,6 +91,7 @@ export function HeroSection() {
                 size="lg"
                 className="border-white/20 bg-white/5 text-white hover:border-white/30 hover:bg-white/10"
               >
+                <Handshake className="mr-2 h-4 w-4" />
                 {secondaryCTA.label}
               </Button>
             </motion.div>
@@ -103,7 +105,7 @@ export function HeroSection() {
             </motion.p>
           </motion.div>
 
-          {/* Right column — App showcase */}
+          {/* Right column — App preview cards */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -111,27 +113,26 @@ export function HeroSection() {
             className="relative flex justify-center lg:justify-end"
             aria-hidden="true"
           >
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[400px] rounded-full bg-primary-500/15 blur-[100px] animate-glow-pulse" />
+            {/* Glow effects */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-72 w-72 rounded-full bg-primary-400/20 blur-[100px] animate-glow-pulse" />
+            <div className="absolute top-1/3 right-1/4 h-48 w-48 rounded-full bg-accent-400/10 blur-[80px]" />
 
-            <div className="relative flex items-end gap-4 md:gap-5">
-              <AppPreviewCard
-                screen={appScreens[0]}
-                size="sm"
-                className="animate-float-delayed"
-                priority
-              />
-              <AppPreviewCard
-                screen={appScreens[1]}
-                size="md"
-                className="animate-float -mb-4"
-                priority
-              />
-              <AppPreviewCard
-                screen={appScreens[2]}
-                size="sm"
-                className="hidden sm:block animate-float-delayed"
-                priority
-              />
+            {/* 3-card stack with rotation */}
+            <div className="relative h-[360px] w-[320px] sm:h-[400px] sm:w-[380px] md:h-[440px] md:w-[420px]">
+              {/* Left — Prayer (rotated) */}
+              <div className="absolute left-0 top-6 sm:top-4 -rotate-6 origin-bottom-right z-10 animate-float-delayed">
+                <AppPlaceholderCard variant="prayer" size="sm" />
+              </div>
+
+              {/* Center — Reflection (dominant) */}
+              <div className="absolute left-1/2 -translate-x-1/2 top-0 z-20 animate-float">
+                <AppPlaceholderCard variant="reflection" size="md" />
+              </div>
+
+              {/* Right — Service (rotated) */}
+              <div className="hidden sm:block absolute right-0 top-6 sm:top-4 rotate-6 origin-bottom-left z-10 animate-float-delayed">
+                <AppPlaceholderCard variant="service" size="sm" />
+              </div>
             </div>
           </motion.div>
         </div>

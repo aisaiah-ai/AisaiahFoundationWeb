@@ -10,5 +10,5 @@ export { DonationCTA } from "./donation-cta";
 export { FinalCTA } from "./final-cta";
 
 // Shared components
-export { AppPreviewCard } from "./app-preview-card";
+export { AppPreviewCard, AppPlaceholderCard } from "./app-preview-card";
 export { SectionHeading } from "./section-heading";
