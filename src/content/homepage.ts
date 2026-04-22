@@ -1,12 +1,8 @@
 /**
  * Homepage Content — Single source of truth
  *
- * All user-facing copy for the homepage lives here, separated from UI.
- * This makes it easy to:
- *  - swap in CMS data later
- *  - A/B test copy
- *  - keep messaging consistent
- *  - review/audit content without reading JSX
+ * Redesigned for spiritual storytelling, emotional resonance,
+ * and pillar-colored visual identity (Pray=Purple, Reflect=Teal, Serve=Gold).
  */
 
 // ---------------------------------------------------------------------------
@@ -32,9 +28,7 @@ export interface ValuePillar {
   title: string;
   description: string;
   icon: string;
-  gradient: string;
-  iconBg: string;
-  border: string;
+  color: "purple" | "primary" | "gold";
 }
 
 export interface RhythmStep {
@@ -76,6 +70,7 @@ export const coreMessaging = {
     "https://play.google.com/store/apps/details?id=org.aisaiah.spiritualfitness",
   partnershipsUrl: "/partnerships",
   contactUrl: "/contact",
+  solutionsUrl: "/solutions",
 };
 
 // ---------------------------------------------------------------------------
@@ -84,18 +79,18 @@ export const coreMessaging = {
 
 export const heroContent = {
   badge: "Free on iOS & Android",
-  headline: "Struggling to stay consistent in your faith?",
-  headlineAccent: "faith?",
+  headline: "Strengthen Your Faith.",
+  headlineLine2: "Live It Daily.",
   subheadline:
-    "AIsaiah helps you build daily habits of prayer, reflection, and service — so your relationship with God grows every day.",
-  primaryCTA: { label: "Download the App", href: coreMessaging.appDownloadUrl } satisfies CTALink,
-  secondaryCTA: { label: "For Churches & Events", href: coreMessaging.partnershipsUrl } satisfies CTALink,
+    "A spiritual journey through prayer, reflection, and service \u2014 guided by an app that grows with you.",
+  primaryCTA: { label: "Start Your Journey", href: coreMessaging.appDownloadUrl } satisfies CTALink,
+  secondaryCTA: { label: "Explore the App", href: coreMessaging.solutionsUrl } satisfies CTALink,
   supportingLine:
     "Built for individuals, ministries, and faith communities seeking deeper daily spiritual habits.",
   appScreens: [
-    { src: "/images/app-prayer.png", alt: "AIsaiah Daily Prayer — guided prayer with Scripture" },
-    { src: "/images/app-reflect.png", alt: "AIsaiah Reflect — daily Scripture readings and journaling" },
-    { src: "/images/app-serve.png", alt: "AIsaiah Serve — community events and acts of service" },
+    { src: "/images/app-prayer.png", alt: "AIsaiah Daily Prayer \u2014 guided prayer with Scripture" },
+    { src: "/images/app-reflect.png", alt: "AIsaiah Reflect \u2014 daily Scripture readings and journaling" },
+    { src: "/images/app-serve.png", alt: "AIsaiah Serve \u2014 community events and acts of service" },
   ] satisfies AppScreen[],
 };
 
@@ -105,7 +100,7 @@ export const heroContent = {
 
 export const trustContent = {
   headline:
-    "Used in faith communities, ministries, and spiritual growth experiences",
+    "Trusted by faith communities, ministries, and spiritual leaders",
   items: [
     { icon: "Shield", label: "501(c)(3) Nonprofit" },
     { icon: "Users", label: "Faith Communities" },
@@ -115,41 +110,35 @@ export const trustContent = {
 };
 
 // ---------------------------------------------------------------------------
-// Value proposition (Pray · Reflect · Serve)
+// Value proposition (Pray \u00b7 Reflect \u00b7 Serve)
 // ---------------------------------------------------------------------------
 
 export const valueContent = {
-  eyebrow: "Core Experience",
-  headline: "Three ways to grow in your faith",
-  headlineAccent: "faith",
-  subheadline: "Three pillars of daily faith, woven into one simple rhythm.",
+  eyebrow: "Your Spiritual Rhythm",
+  headline: "Three pillars of a life lived in faith",
+  subheadline:
+    "Every day is an invitation to draw closer to God. AIsaiah guides you through three simple practices that transform your spiritual life.",
   pillars: [
     {
       title: "Pray",
       description:
-        "Start each day connecting with God. Guided prayer experiences help you build a consistent, meaningful prayer life.",
+        "Begin each day in conversation with God. Guided prayer experiences help you build a consistent, meaningful prayer life \u2014 even on the hardest days.",
       icon: "Heart",
-      gradient: "from-rose-500/10 to-primary-500/10",
-      iconBg: "bg-rose-50 text-rose-600",
-      border: "border-rose-200/40",
+      color: "purple",
     },
     {
       title: "Reflect",
       description:
-        "Engage with daily Scripture, journal your thoughts, and let God\u2019s Word shape how you see the world.",
+        "Let Scripture speak to your life today. Daily readings, journaling, and devotionals help you listen to God\u2019s Word and let it shape your heart.",
       icon: "BookOpen",
-      gradient: "from-primary-500/10 to-accent-500/10",
-      iconBg: "bg-primary-50 text-primary-600",
-      border: "border-primary-200/40",
+      color: "primary",
     },
     {
       title: "Serve",
       description:
-        "Live your faith through action. Track acts of service and see how daily choices connect to spiritual growth.",
+        "Faith comes alive through action. Track acts of service, connect with your community, and see how your daily choices become acts of love.",
       icon: "HandHeart",
-      gradient: "from-accent-500/10 to-violet-500/10",
-      iconBg: "bg-accent-50 text-accent-600",
-      border: "border-accent-200/40",
+      color: "gold",
     },
   ] satisfies ValuePillar[],
 };
@@ -160,34 +149,34 @@ export const valueContent = {
 
 export const experienceContent = {
   eyebrow: "The Daily Rhythm",
-  headline: "A daily rhythm that brings you closer to God",
+  headline: "A daily rhythm that draws you closer to God",
   subheadline:
-    "AIsaiah helps you build a simple daily rhythm of prayer, reflection, and service \u2014 so your relationship with God grows every day.",
+    "Not another productivity app. A spiritual companion that helps you build a simple, consistent daily rhythm of prayer, reflection, and service.",
   showcaseImage: {
-    src: "/images/Screen3.jpg",
-    alt: "AIsaiah spiritual growth dashboard showing Prayer, Reflection, and Service rings",
+    src: "/images/app-reflect.png",
+    alt: "AIsaiah Reflect \u2014 daily Scripture readings and journaling",
   } satisfies AppScreen,
   steps: [
     {
       number: "01",
-      title: "Start with prayer",
+      title: "Begin with prayer",
       description:
-        "Begin your day connecting with God through guided prayer that meets you where you are.",
+        "Start your morning in God\u2019s presence. Guided prayer meets you exactly where you are.",
     },
     {
       number: "02",
       title: "Reflect on Scripture",
       description:
-        "Read daily Scripture, journal your thoughts, and let God\u2019s Word shape how you live.",
+        "Sit with the Word. Read, journal, and let it reshape how you see your day.",
     },
     {
       number: "03",
-      title: "Serve with purpose",
+      title: "Serve with intention",
       description:
-        "Track how you\u2019re living your faith through service and see your growth over time.",
+        "Carry your faith into the world. Small acts of service become a lived expression of love.",
     },
   ] satisfies RhythmStep[],
-  cta: { label: "Download the App", href: coreMessaging.appDownloadUrl } satisfies CTALink,
+  cta: { label: "Start Your Journey", href: coreMessaging.appDownloadUrl } satisfies CTALink,
 };
 
 // ---------------------------------------------------------------------------
@@ -196,27 +185,27 @@ export const experienceContent = {
 
 export const howItWorksContent = {
   eyebrow: "Get Started",
-  headline: "Start in minutes",
+  headline: "Begin in minutes",
   steps: [
     {
       step: "1",
       icon: "Download",
       title: "Download the app",
-      description: "Free on iOS and Android. No account required to get started.",
+      description: "Free on iOS and Android. No account required to begin.",
     },
     {
       step: "2",
       icon: "Clock",
-      title: "Set your daily rhythm",
+      title: "Set your rhythm",
       description:
-        "Choose your prayer time, select your devotions, and personalize your experience.",
+        "Choose your prayer time, pick your devotions, and make it yours.",
     },
     {
       step: "3",
       icon: "TrendingUp",
-      title: "Grow in faith every day",
+      title: "Grow every day",
       description:
-        "Build lasting habits of prayer, reflection, and service \u2014 and watch your faith grow.",
+        "Watch your spiritual life deepen as daily habits of prayer, reflection, and service take root.",
     },
   ] satisfies OnboardingStep[],
 };
@@ -240,10 +229,10 @@ export const testimonialContent = {
 // ---------------------------------------------------------------------------
 
 export const communityContent = {
-  eyebrow: "For Organizations",
-  headline: "Built for communities, not just individuals",
+  eyebrow: "For Communities",
+  headline: "Your community\u2019s spiritual growth, supported daily",
   description:
-    "Help your community grow in daily faith. AIsaiah gives churches, ministries, and organizations tools to support prayer, reflection, and service at scale.",
+    "AIsaiah helps churches, ministries, and faith organizations nurture daily habits of prayer, reflection, and service \u2014 across your entire community.",
   primaryCTA: { label: "Partner With Us", href: coreMessaging.partnershipsUrl } satisfies CTALink,
   secondaryCTA: { label: "Get in Touch", href: coreMessaging.contactUrl } satisfies CTALink,
   useCases: [
@@ -261,9 +250,9 @@ export const communityContent = {
 
 export const missionContent = {
   eyebrow: "Our Mission",
-  headline: "Why AIsaiah exists",
+  headline: "Why this exists",
   body: [
-    "Helping people build a daily relationship with God through prayer, reflection, and service. AIsaiah Foundation is a 501(c)(3) nonprofit building accessible tools so every person and every community can grow in faith \u2014 through modern digital experiences.",
+    "We believe faith should be lived daily \u2014 not just on Sundays. AIsaiah Foundation is a 501(c)(3) nonprofit building tools that make it easier for every person and every community to grow closer to God through prayer, reflection, and service.",
     "Rooted in the Catholic faith and Couples for Christ, open to all Christian communities.",
   ],
   values: [
@@ -271,19 +260,19 @@ export const missionContent = {
       icon: "Lightbulb",
       title: "Faith meets innovation",
       description:
-        "You deserve better tools to grow in your faith. We build them with the same care and quality you\u2019d expect from the best.",
+        "You deserve beautiful, thoughtful tools for your spiritual life. We build them with the same care you\u2019d expect from the best.",
     },
     {
       icon: "Lock",
-      title: "Privacy as a principle",
+      title: "Your privacy is sacred",
       description:
-        "No ads. No data selling. Your spiritual life is sacred, and we protect your data \u2014 always.",
+        "No ads. No data selling. Your spiritual journey is between you and God \u2014 we simply provide the path.",
     },
     {
       icon: "Cpu",
-      title: "Accessible to all",
+      title: "For everyone",
       description:
-        "Every community deserves tools for prayer, reflection, and service \u2014 regardless of size or budget.",
+        "Every community deserves tools for spiritual growth \u2014 regardless of size, budget, or technical skill.",
     },
   ] satisfies MissionValue[],
 };
@@ -293,9 +282,9 @@ export const missionContent = {
 // ---------------------------------------------------------------------------
 
 export const donationContent = {
-  headline: "Support the mission",
+  headline: "Support the journey",
   description:
-    "Help us bring tools for prayer, reflection, and service to more people around the world. Your support directly funds the technology that helps communities grow in faith.",
+    "Every contribution helps us bring tools for prayer, reflection, and service to more people around the world. You\u2019re not just donating \u2014 you\u2019re helping someone grow closer to God.",
   trustMarkers: ["Tax-deductible", "501(c)(3) nonprofit", "100% mission-driven"],
   cta: { label: "Support AIsaiah", href: coreMessaging.contactUrl } satisfies CTALink,
 };
@@ -305,10 +294,10 @@ export const donationContent = {
 // ---------------------------------------------------------------------------
 
 export const finalCTAContent = {
-  eyebrow: "Begin Today",
-  headline: "Start your journey today",
+  eyebrow: "Your Journey Starts Here",
+  headline: "Strengthen your faith. Live it daily.",
   description:
-    "Download AIsaiah and begin building daily habits of prayer, reflection, and service. Free on iOS and Android.",
-  primaryCTA: { label: "Download the App", href: coreMessaging.appDownloadUrl } satisfies CTALink,
+    "Download AIsaiah and begin building a daily rhythm of prayer, reflection, and service. Free on iOS and Android.",
+  primaryCTA: { label: "Start Your Journey", href: coreMessaging.appDownloadUrl } satisfies CTALink,
   secondaryCTA: { label: "Partner With Us", href: coreMessaging.partnershipsUrl } satisfies CTALink,
 };

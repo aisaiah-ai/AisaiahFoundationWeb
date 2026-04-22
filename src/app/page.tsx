@@ -18,9 +18,9 @@ import {
 } from "@/components/sections/home";
 
 export const metadata: Metadata = {
-  title: "AIsaiah — Daily Prayer, Reflection & Service | Grow in Your Faith",
+  title: "AIsaiah — Strengthen Your Faith. Live It Daily.",
   description:
-    "AIsaiah helps people grow in faith through daily habits of prayer, reflection, and service. Build a consistent relationship with God through a simple daily rhythm. Free on iOS and Android.",
+    "A spiritual journey through prayer, reflection, and service. AIsaiah helps you build a daily relationship with God through guided prayer, Scripture, and community. Free on iOS and Android.",
   alternates: {
     canonical: "https://aisaiah.org",
   },

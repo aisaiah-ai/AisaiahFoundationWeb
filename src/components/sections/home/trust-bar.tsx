@@ -11,7 +11,11 @@ export function TrustBar() {
   const { headline, items } = trustContent;
 
   return (
-    <section id="trust" aria-label="Trusted by faith communities" className="relative border-y border-slate-200/60 bg-slate-50/80 py-10 md:py-12">
+    <section
+      id="trust"
+      aria-label="Trusted by faith communities"
+      className="relative border-y border-white/5 bg-slate-950/80 py-10 md:py-12"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.p
           initial={{ opacity: 0 }}
@@ -28,19 +32,19 @@ export function TrustBar() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.15 }}
-          className="grid grid-cols-2 gap-6 md:grid-cols-4"
+          className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6"
         >
           {items.map((item) => {
             const Icon = iconMap[item.icon];
             return (
               <div
                 key={item.label}
-                className="flex flex-col items-center gap-3 rounded-2xl border border-slate-200/60 bg-white p-5 shadow-sm"
+                className="flex flex-col items-center gap-3 rounded-2xl border border-white/8 bg-white/[0.03] p-5 backdrop-blur-sm"
               >
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-50 text-primary-600">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-500/10 text-purple-400">
                   {Icon && <Icon className="h-5 w-5" strokeWidth={1.5} />}
                 </div>
-                <span className="text-sm font-semibold text-slate-700">
+                <span className="text-sm font-semibold text-slate-300">
                   {item.label}
                 </span>
               </div>
