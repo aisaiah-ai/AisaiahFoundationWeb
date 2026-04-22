@@ -29,7 +29,7 @@ export function Header() {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-200/60"
+          ? "bg-slate-950/95 backdrop-blur-md shadow-sm border-b border-white/5"
           : "bg-transparent"
       )}
     >
@@ -43,20 +43,10 @@ export function Header() {
           >
             <Logo className="w-7 h-9 md:w-8 md:h-10 transition-transform group-hover:scale-105" />
             <div className="flex flex-col">
-              <span
-                className={cn(
-                  "text-lg font-bold tracking-tight transition-colors",
-                  isScrolled || pathname !== "/" ? "text-slate-900" : "text-white"
-                )}
-              >
+              <span className="text-lg font-bold tracking-tight text-white transition-colors">
                 Aisaiah
               </span>
-              <span
-                className={cn(
-                  "text-[10px] font-medium uppercase tracking-widest -mt-1 transition-colors",
-                  isScrolled || pathname !== "/" ? "text-slate-500" : "text-white/70"
-                )}
-              >
+              <span className="text-[10px] font-medium uppercase tracking-widest -mt-1 text-white/60 transition-colors">
                 Foundation
               </span>
             </div>
@@ -71,10 +61,8 @@ export function Header() {
                 className={cn(
                   "px-4 py-2 text-sm font-medium rounded-lg transition-all duration-200",
                   pathname === item.href
-                    ? "text-primary-700 bg-primary-50"
-                    : isScrolled || pathname !== "/"
-                      ? "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
-                      : "text-white/80 hover:text-white hover:bg-white/10"
+                    ? "text-purple-400 bg-purple-500/10"
+                    : "text-white/70 hover:text-white hover:bg-white/5"
                 )}
               >
                 {item.label}
@@ -82,14 +70,9 @@ export function Header() {
             ))}
             <div className="ml-3">
               <Button
-                variant={isScrolled || pathname !== "/" ? "primary" : "outline"}
                 size="sm"
                 href="/contact"
-                className={cn(
-                  isScrolled || pathname !== "/"
-                    ? ""
-                    : "border-white/40 text-white hover:bg-white/10"
-                )}
+                className="bg-gradient-to-r from-purple-600 to-purple-500 text-white shadow-sm shadow-purple-900/20 hover:from-purple-700 hover:to-purple-600 rounded-full"
               >
                 Partner With Us
               </Button>
@@ -98,12 +81,7 @@ export function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className={cn(
-              "md:hidden p-2 rounded-lg transition-colors",
-              isScrolled || pathname !== "/"
-                ? "text-slate-600 hover:bg-slate-100"
-                : "text-white hover:bg-white/10"
-            )}
+            className="md:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle navigation menu"
             aria-expanded={isMobileMenuOpen}
@@ -119,7 +97,7 @@ export function Header() {
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden pb-6 animate-slide-down">
-            <div className="bg-white rounded-xl shadow-lg border border-slate-200/60 p-2 mt-2">
+            <div className="bg-slate-900 rounded-xl shadow-lg border border-white/10 p-2 mt-2">
               {mainNavItems.map((item) => (
                 <Link
                   key={item.href}
@@ -127,15 +105,19 @@ export function Header() {
                   className={cn(
                     "block px-4 py-3 rounded-lg text-sm font-medium transition-colors",
                     pathname === item.href
-                      ? "text-primary-700 bg-primary-50"
-                      : "text-slate-600 hover:text-slate-900 hover:bg-slate-50"
+                      ? "text-purple-400 bg-purple-500/10"
+                      : "text-slate-300 hover:text-white hover:bg-white/5"
                   )}
                 >
                   {item.label}
                 </Link>
               ))}
               <div className="mt-2 px-2">
-                <Button variant="primary" size="md" href="/contact" className="w-full">
+                <Button
+                  size="md"
+                  href="/contact"
+                  className="w-full bg-gradient-to-r from-purple-600 to-purple-500 text-white rounded-full"
+                >
                   Partner With Us
                 </Button>
               </div>

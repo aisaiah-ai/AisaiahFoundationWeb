@@ -25,11 +25,11 @@ import {
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn the story behind AIsaiah Foundation — a 501(c)(3) nonprofit helping people build a daily relationship with God through prayer, reflection, and service.",
+    "The story behind AIsaiah Foundation — a 501(c)(3) nonprofit helping people build a daily relationship with God through prayer, reflection, and service.",
   openGraph: {
     title: "About Us | Aisaiah Foundation",
     description:
-      "Helping people build a daily relationship with God through prayer, reflection, and service.",
+      "A spiritual journey through prayer, reflection, and service.",
   },
 };
 
@@ -38,13 +38,13 @@ const values = [
     icon: Heart,
     title: "Faith-Centered",
     description:
-      "Everything we build helps people grow in prayer, reflection, and service. That's our measure of success.",
+      "Everything we build helps people grow in prayer, reflection, and service. That\u2019s our measure of success.",
   },
   {
     icon: Shield,
     title: "Privacy-First",
     description:
-      "Your spiritual life is sacred. We protect your data — we never sell it, and we never will.",
+      "Your spiritual life is sacred. We protect your data \u2014 we never sell it, and we never will.",
   },
   {
     icon: Users,
@@ -56,7 +56,7 @@ const values = [
     icon: Star,
     title: "Excellence",
     description:
-      "You deserve world-class tools for your faith journey. We build to that standard.",
+      "You deserve beautiful, thoughtful tools for your faith journey. We build to that standard.",
   },
   {
     icon: Globe,
@@ -68,7 +68,7 @@ const values = [
     icon: Eye,
     title: "Transparency",
     description:
-      "As a 501(c)(3) nonprofit, we're accountable to you. Our decisions and roadmaps are open.",
+      "As a 501(c)(3) nonprofit, we\u2019re accountable to you. Our decisions and roadmaps are open.",
   },
 ];
 
@@ -87,65 +87,68 @@ export default function AboutPage() {
     <>
       <JsonLd data={[pageSchema, breadcrumbSchema]} />
       <PageHero
-        eyebrow="About the foundation"
-        title="Helping people build a daily relationship with God."
-        description="AIsaiah Foundation is a 501(c)(3) nonprofit building tools for prayer, reflection, and service — so every person and community can grow in faith through modern technology."
+        eyebrow="Our story"
+        title="Faith became routine. We believed it could be more."
+        description="AIsaiah Foundation exists because we saw a gap \u2014 between the faith people wanted to live and the tools available to help them live it. So we built something better."
         actions={[
           { label: "Meet Our Board", href: "/board", variant: "primary" },
-          { label: "View Solutions", href: "/solutions", variant: "outline", className: "border-white/20 bg-white/5 text-white hover:border-white/35 hover:bg-white/10" },
+          { label: "Explore the App", href: "/solutions", variant: "outline", className: "border-white/15 bg-white/5 text-white hover:border-white/25 hover:bg-white/10" },
         ]}
       />
 
-      <Section>
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
-          <Card className="surface-panel">
-            <CardContent className="p-8 md:p-10">
-              <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary-700">
-                Our story
+      {/* The Problem → Vision → Solution narrative */}
+      <Section variant="spiritual">
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-16">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-purple-400 mb-4">
+              The problem
+            </p>
+            <h2 className="font-display text-3xl font-semibold text-white">
+              Faith becomes disconnected from daily life.
+            </h2>
+            <div className="mt-6 space-y-4 text-lg leading-relaxed text-slate-300">
+              <p>
+                People want to pray more. They want to read Scripture. They
+                want to serve. But life gets busy, habits don&apos;t stick, and
+                faith slowly becomes something reserved for Sundays.
               </p>
-              <h2 className="mt-4 font-display text-3xl font-semibold text-slate-950">
-                We believe faith and technology should work together.
-              </h2>
-              <div className="mt-6 space-y-4 text-lg leading-relaxed text-slate-600">
-                <p>
-                  AIsaiah began with a simple conviction: people need better
-                  tools to grow in their faith — and those tools should be
-                  trustworthy, modern, and accessible.
-                </p>
-                <p>
-                  What started from direct experience in Couples for Christ
-                  evolved into a nonprofit building tools that help anyone build
-                  daily habits of prayer, reflection, and service — whether
-                  you're an individual or leading a community of thousands.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+              <p>
+                We experienced this firsthand in Couples for Christ. The
+                desire was there. The tools weren&apos;t.
+              </p>
+            </div>
+          </div>
 
-          <div className="grid gap-6">
-            {governancePrinciples.map((principle) => (
-              <Card key={principle.title} hover className="h-full">
-                <CardContent className="p-7">
-                  <h3 className="text-xl font-semibold text-slate-950">
-                    {principle.title}
-                  </h3>
-                  <p className="mt-3 text-slate-600 leading-relaxed">
-                    {principle.description}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary-400 mb-4">
+              The vision
+            </p>
+            <h2 className="font-display text-3xl font-semibold text-white">
+              A life lived in daily relationship with God.
+            </h2>
+            <div className="mt-6 space-y-4 text-lg leading-relaxed text-slate-300">
+              <p>
+                We believe every person can build a daily rhythm of prayer,
+                reflection, and service \u2014 and that the right tools can make
+                that rhythm natural, consistent, and deeply meaningful.
+              </p>
+              <p>
+                That&apos;s why we built AIsaiah. Not as another app, but as a
+                spiritual companion for the journey.
+              </p>
+            </div>
           </div>
         </div>
       </Section>
 
-      <Section variant="muted" id="mission">
+      {/* Mission blockquote */}
+      <Section id="mission">
         <SectionHeader>
           <SectionTitle>Our Mission</SectionTitle>
         </SectionHeader>
         <div className="mx-auto max-w-3xl">
-          <blockquote className="border-l-4 border-primary-600 pl-6 py-2">
-            <p className="text-lg md:text-xl text-slate-700 leading-relaxed italic">
+          <blockquote className="border-l-4 border-purple-500 pl-6 py-2">
+            <p className="text-lg md:text-xl text-slate-200 leading-relaxed italic">
               The Aisaiah Foundation exists to empower churches, ministries,
               and faith-based organizations with innovative, accessible,
               and privacy-first technology. Rooted in the Catholic faith and
@@ -157,39 +160,41 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section>
+      {/* Vision */}
+      <Section variant="spiritual">
         <SectionHeader>
           <SectionTitle>Our Vision</SectionTitle>
         </SectionHeader>
         <div className="mx-auto max-w-3xl text-center">
-          <p className="text-xl md:text-2xl text-slate-700 leading-relaxed font-medium">
+          <p className="text-xl md:text-2xl text-slate-200 leading-relaxed font-medium">
             A world where every person and every community has the tools to
-            grow in daily prayer, reflection, and service — and where
+            grow in daily prayer, reflection, and service \u2014 and where
             technology strengthens faith rather than distracting from it.
           </p>
         </div>
       </Section>
 
-      <Section variant="muted">
+      {/* Values */}
+      <Section>
         <SectionHeader>
           <SectionTitle>Our Values</SectionTitle>
           <SectionDescription>
             The principles that guide how we help people grow in faith
           </SectionDescription>
         </SectionHeader>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {values.map((value) => {
             const Icon = value.icon;
             return (
               <Card key={value.title} hover>
                 <CardContent>
-                  <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary-50 text-primary-600">
+                  <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400">
                     <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                  <h3 className="text-xl font-semibold text-white mb-2">
                     {value.title}
                   </h3>
-                  <p className="text-slate-600 leading-relaxed">
+                  <p className="text-slate-400 leading-relaxed">
                     {value.description}
                   </p>
                 </CardContent>
@@ -199,31 +204,24 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section>
+      {/* Governance */}
+      <Section variant="spiritual">
         <SectionHeader>
-          <SectionTitle>Built to Grow With You</SectionTitle>
+          <SectionTitle>How We&apos;re Governed</SectionTitle>
           <SectionDescription>
-            Our platform is designed to support your community today and scale
-            with you as you reach more people.
+            Mission-driven principles that guide every decision
           </SectionDescription>
         </SectionHeader>
-        <div className="grid gap-8 lg:grid-cols-3">
-          {architecturePillars.map((pillar) => (
-            <Card key={pillar.title} hover className="h-full">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-semibold text-slate-950">
-                  {pillar.title}
+        <div className="grid gap-6 md:grid-cols-2 max-w-4xl mx-auto">
+          {governancePrinciples.map((principle) => (
+            <Card key={principle.title} hover>
+              <CardContent className="p-7">
+                <h3 className="text-xl font-semibold text-white">
+                  {principle.title}
                 </h3>
-                <p className="mt-4 text-slate-600 leading-relaxed">
-                  {pillar.description}
+                <p className="mt-3 text-slate-400 leading-relaxed">
+                  {principle.description}
                 </p>
-                <ul className="mt-6 space-y-3">
-                  {pillar.points.map((point) => (
-                    <li key={point} className="text-sm leading-relaxed text-slate-600">
-                      {point}
-                    </li>
-                  ))}
-                </ul>
               </CardContent>
             </Card>
           ))}

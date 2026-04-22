@@ -122,20 +122,20 @@ export default function BoardPage() {
                   >
                     {getInitials(member.name)}
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900">
+                  <h3 className="text-xl font-bold text-white">
                     {member.name}
                   </h3>
-                  <p className="text-primary-600 font-medium mt-1">
+                  <p className="text-purple-400 font-medium mt-1">
                     {member.role}
                   </p>
-                  <p className="mt-4 text-sm text-slate-600 leading-relaxed">
+                  <p className="mt-4 text-sm text-slate-300 leading-relaxed">
                     {member.bio}
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {member.focusAreas.map((area) => (
                       <span
                         key={area}
-                        className="rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary-700"
+                        className="rounded-full bg-purple-500/10 px-3 py-1 text-xs font-medium text-purple-400"
                       >
                         {area}
                       </span>
@@ -172,15 +172,15 @@ export default function BoardPage() {
                       {getInitials(member.name)}
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-slate-900">
+                      <h3 className="text-lg font-bold text-white">
                         {member.name}
                       </h3>
-                      <p className="text-sm text-primary-600 font-medium">
+                      <p className="text-sm text-purple-400 font-medium">
                         Director
                       </p>
                     </div>
                   </div>
-                  <p className="text-sm text-slate-600 leading-relaxed">
+                  <p className="text-sm text-slate-300 leading-relaxed">
                     {member.bio}
                   </p>
                 </CardContent>
@@ -191,13 +191,13 @@ export default function BoardPage() {
 
       <Section>
         <div className="mx-auto max-w-3xl text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary-100 text-primary-600 mb-8">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-purple-500/10 text-purple-400 mb-8">
             <Users className="w-8 h-8" />
           </div>
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
             Governance Commitments
           </h2>
-          <p className="text-lg text-slate-600 leading-relaxed mb-10">
+          <p className="text-lg text-slate-300 leading-relaxed mb-10">
             Our leadership is accountable to mission, privacy, and stewardship
             as we help more people build daily habits of prayer, reflection,
             and service.
@@ -206,10 +206,10 @@ export default function BoardPage() {
             {governancePrinciples.map((principle) => (
               <Card key={principle.title}>
                 <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold text-slate-950">
+                  <h3 className="text-lg font-semibold text-white">
                     {principle.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-slate-600">
+                  <p className="mt-2 text-sm leading-relaxed text-slate-300">
                     {principle.description}
                   </p>
                 </CardContent>

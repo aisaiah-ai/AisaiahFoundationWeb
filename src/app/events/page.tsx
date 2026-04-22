@@ -52,7 +52,7 @@ export default function EventsPage() {
     <>
       <JsonLd data={[pageSchema, breadcrumbSchema]} />
       <PageHero
-        eyebrow="Events & initiatives"
+        eyebrow="Join the movement"
         title="Connect, learn, and grow with us."
         description="Join our workshops, roundtables, and community events. Use AIsaiah to deepen prayer, reflection, and service during and after your event."
       />
@@ -70,7 +70,7 @@ export default function EventsPage() {
               <Card key={event.id} hover className="h-full">
                 <CardContent className="flex h-full flex-col p-8">
                   <div className="flex items-center gap-2 mb-4">
-                    <span className="rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
+                    <span className="rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-400">
                       Upcoming
                     </span>
                     <span className="flex items-center gap-1 text-xs text-slate-500">
@@ -78,10 +78,10 @@ export default function EventsPage() {
                       {typeLabels[event.type] || event.type}
                     </span>
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-900">
+                  <h3 className="text-xl font-semibold text-white">
                     {event.title}
                   </h3>
-                  <p className="mt-3 flex-1 text-slate-600 leading-relaxed">
+                  <p className="mt-3 flex-1 text-slate-300 leading-relaxed">
                     {event.description}
                   </p>
                   <div className="mt-6 space-y-2">
@@ -114,7 +114,7 @@ export default function EventsPage() {
             {past.map((event) => (
               <Card key={event.id} className="h-full opacity-75">
                 <CardContent className="p-8">
-                  <h3 className="text-lg font-semibold text-slate-900">
+                  <h3 className="text-lg font-semibold text-white">
                     {event.title}
                   </h3>
                   <p className="mt-2 text-sm text-slate-500">
@@ -133,10 +133,10 @@ export default function EventsPage() {
 
       <Section variant={past.length > 0 ? "default" : "muted"}>
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
             Want to host an event with us?
           </h2>
-          <p className="text-lg text-slate-600 leading-relaxed mb-10">
+          <p className="text-lg text-slate-300 leading-relaxed mb-10">
             Want to host an event that helps your community grow in faith?
             We&apos;d love to help you plan it.
           </p>

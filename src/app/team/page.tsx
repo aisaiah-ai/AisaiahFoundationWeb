@@ -75,10 +75,10 @@ export default function TeamPage() {
 
       <Section variant="muted">
         <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-6">
             Want to contribute?
           </h2>
-          <p className="text-lg text-slate-600 leading-relaxed mb-10">
+          <p className="text-lg text-slate-300 leading-relaxed mb-10">
             We're looking for people who share our mission — engineers,
             designers, ministry leaders, and anyone who believes people deserve
             better tools to grow in faith.

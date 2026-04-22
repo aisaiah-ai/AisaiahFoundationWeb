@@ -160,13 +160,13 @@ export default function SolutionsPage() {
             return (
               <Card key={feature.title} hover>
                 <CardContent>
-                  <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary-50 text-primary-600">
+                  <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400">
                     <Icon className="w-6 h-6" strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-2">
+                  <h3 className="text-xl font-semibold text-white mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-slate-600 leading-relaxed">
+                  <p className="text-slate-300 leading-relaxed">
                     {feature.description}
                   </p>
                 </CardContent>
@@ -182,7 +182,7 @@ export default function SolutionsPage() {
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
             Start Growing in Your Faith Today
           </h2>
-          <p className="text-lg text-slate-600 leading-relaxed mb-10">
+          <p className="text-lg text-slate-300 leading-relaxed mb-10">
             Download AIsaiah — free on iOS and Android. No account required to
             start building habits of prayer, reflection, and service.
           </p>

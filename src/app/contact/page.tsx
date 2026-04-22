@@ -168,10 +168,10 @@ export default function ContactPage() {
                     <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-50 text-green-600 mb-6">
                       <CheckCircle className="w-8 h-8" />
                     </div>
-                    <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                    <h3 className="text-2xl font-bold text-white mb-3">
                       Message Sent Successfully
                     </h3>
-                    <p className="text-slate-600 max-w-md mx-auto mb-8">
+                    <p className="text-slate-300 max-w-md mx-auto mb-8">
                       Thank you for reaching out. We typically respond within
                       1-2 business days. We look forward to connecting with you.
                     </p>
@@ -226,7 +226,7 @@ export default function ContactPage() {
                     <div className="space-y-1.5">
                       <label
                         htmlFor="subject"
-                        className="block text-sm font-medium text-slate-700"
+                        className="block text-sm font-medium text-slate-200"
                       >
                         Subject
                       </label>
@@ -237,7 +237,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         className={cn(
-                          "w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-base text-slate-900",
+                          "w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-base text-white",
                           "focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none",
                           "transition-colors duration-200",
                           !formData.subject && "text-slate-400"
@@ -294,7 +294,7 @@ export default function ContactPage() {
 
           <div className="space-y-8">
             <div>
-              <h3 className="text-lg font-semibold text-slate-900 mb-6">
+              <h3 className="text-lg font-semibold text-white mb-6">
                 Contact Information
               </h3>
               <ul className="space-y-6">
@@ -302,14 +302,14 @@ export default function ContactPage() {
                   const Icon = item.icon;
                   const content = (
                     <div className="flex items-start gap-4">
-                      <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-primary-50 text-primary-600 flex-shrink-0">
+                      <div className="inline-flex items-center justify-center w-10 h-10 rounded-lg bg-purple-500/10 text-purple-400 flex-shrink-0">
                         <Icon className="w-5 h-5" />
                       </div>
                       <div>
                         <p className="text-sm font-medium text-slate-500">
                           {item.label}
                         </p>
-                        <p className="text-base font-medium text-slate-900">
+                        <p className="text-base font-medium text-white">
                           {item.value}
                         </p>
                       </div>
@@ -333,12 +333,12 @@ export default function ContactPage() {
                 })}
               </ul>
             </div>
-            <hr className="border-slate-200" />
+            <hr className="border-white/10" />
             <div>
-              <h3 className="text-lg font-semibold text-slate-900 mb-3">
+              <h3 className="text-lg font-semibold text-white mb-3">
                 Office Hours
               </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="text-slate-300 text-sm leading-relaxed">
                 Monday &ndash; Friday: 9:00 AM &ndash; 5:00 PM EST
               </p>
               <p className="text-slate-500 text-sm mt-2">
@@ -363,13 +363,13 @@ export default function ContactPage() {
             return (
               <Card key={type.title} hover>
                 <CardContent className="text-center">
-                  <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary-50 text-primary-600">
+                  <div className="mb-4 inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-purple-500/10 text-purple-400">
                     <Icon className="w-7 h-7" />
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                  <h3 className="text-xl font-semibold text-white mb-3">
                     {type.title}
                   </h3>
-                  <p className="text-slate-600 leading-relaxed text-sm">
+                  <p className="text-slate-300 leading-relaxed text-sm">
                     {type.description}
                   </p>
                 </CardContent>

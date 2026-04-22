@@ -13,7 +13,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         {label && (
           <label
             htmlFor={id}
-            className="block text-sm font-medium text-slate-700"
+            className="block text-sm font-medium text-slate-200"
           >
             {label}
           </label>
@@ -22,16 +22,16 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           ref={ref}
           id={id}
           className={cn(
-            "w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-base text-slate-900",
-            "placeholder:text-slate-400",
-            "focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none",
+            "w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-base text-white",
+            "placeholder:text-slate-500",
+            "focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 focus:outline-none",
             "transition-colors duration-200",
             error && "border-red-500 focus:border-red-500 focus:ring-red-500/20",
             className
           )}
           {...props}
         />
-        {error && <p className="text-sm text-red-600">{error}</p>}
+        {error && <p className="text-sm text-red-400">{error}</p>}
       </div>
     );
   }
@@ -53,7 +53,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
         {label && (
           <label
             htmlFor={id}
-            className="block text-sm font-medium text-slate-700"
+            className="block text-sm font-medium text-slate-200"
           >
             {label}
           </label>
@@ -62,16 +62,16 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           ref={ref}
           id={id}
           className={cn(
-            "w-full rounded-lg border border-slate-300 bg-white px-4 py-3 text-base text-slate-900 resize-none",
-            "placeholder:text-slate-400",
-            "focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none",
+            "w-full rounded-lg border border-white/10 bg-white/5 px-4 py-3 text-base text-white resize-none",
+            "placeholder:text-slate-500",
+            "focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 focus:outline-none",
             "transition-colors duration-200",
             error && "border-red-500 focus:border-red-500 focus:ring-red-500/20",
             className
           )}
           {...props}
         />
-        {error && <p className="text-sm text-red-600">{error}</p>}
+        {error && <p className="text-sm text-red-400">{error}</p>}
       </div>
     );
   }
