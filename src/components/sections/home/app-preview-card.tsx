@@ -45,8 +45,8 @@ const placeholderScreens: Record<string, PlaceholderScreen> = {
 // ---------------------------------------------------------------------------
 
 const sizes = {
-  sm: "w-[140px] h-[290px] sm:w-[160px] sm:h-[330px] md:w-[180px] md:h-[370px] rounded-[1.5rem]",
-  md: "w-[160px] h-[320px] sm:w-[180px] sm:h-[370px] md:w-[200px] md:h-[410px] rounded-[1.75rem]",
+  sm: "w-[155px] h-[320px] sm:w-[175px] sm:h-[365px] md:w-[195px] md:h-[405px] rounded-[1.5rem]",
+  md: "w-[175px] h-[355px] sm:w-[200px] sm:h-[410px] md:w-[220px] md:h-[455px] rounded-[1.75rem]",
   lg: "w-[220px] h-[450px] sm:w-[240px] sm:h-[490px] rounded-[2.5rem]",
 };
 

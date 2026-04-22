@@ -111,41 +111,71 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.3, ease: "easeOut" }}
-            className="relative flex justify-center"
+            className="relative flex justify-center lg:justify-start lg:-ml-4"
             aria-hidden="true"
           >
-            {/* Glow effects */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-72 w-72 rounded-full bg-primary-400/20 blur-[100px] animate-glow-pulse" />
-            <div className="absolute top-1/3 right-1/4 h-48 w-48 rounded-full bg-accent-400/10 blur-[80px]" />
+            {/* Center glow — teal, behind Reflect card */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[320px] h-[320px] rounded-full bg-[#1AAE9F]/15 blur-[120px] animate-glow-pulse" />
+            {/* Secondary glow — violet accent */}
+            <div className="absolute top-1/3 right-1/4 w-[180px] h-[180px] rounded-full bg-violet-500/8 blur-[90px]" />
 
-            {/* 3-card overlapping stack */}
-            <div className="relative flex items-end justify-center gap-0">
-              {/* Left — Prayer (rotated, behind) */}
-              <div className="-mr-8 sm:-mr-6 -rotate-6 z-10 animate-float-delayed mb-4">
+            {/* 3-card overlapping stack with visual hierarchy */}
+            <div className="relative flex items-end justify-center">
+              {/* Left — Prayer (recessed, rotated) */}
+              <motion.div
+                animate={{ y: [0, -5, 0] }}
+                transition={{
+                  duration: 7,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 0.5,
+                }}
+                className="-mr-10 sm:-mr-8 -rotate-6 z-10 mb-6 scale-[0.92] opacity-80"
+              >
                 <AppPreviewCard
                   screen={appScreens[0]}
                   size="sm"
+                  className="shadow-[0_20px_60px_-20px_rgba(0,0,0,0.5)]"
                   priority
                 />
-              </div>
+              </motion.div>
 
-              {/* Center — Reflect (dominant, front) */}
-              <div className="relative z-20 animate-float">
+              {/* Center — Reflect (dominant, front, sharp) */}
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
+                transition={{
+                  duration: 6.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="relative z-20 scale-[1.02]"
+              >
                 <AppPreviewCard
                   screen={appScreens[1]}
                   size="md"
+                  className="shadow-[0_30px_80px_-20px_rgba(0,0,0,0.6)] ring-1 ring-white/10"
                   priority
                 />
-              </div>
+              </motion.div>
 
-              {/* Right — Serve (rotated, behind) */}
-              <div className="-ml-8 sm:-ml-6 rotate-6 z-10 animate-float-delayed mb-4">
+              {/* Right — Serve (recessed, rotated) */}
+              <motion.div
+                animate={{ y: [0, -6, 0] }}
+                transition={{
+                  duration: 7.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1,
+                }}
+                className="-ml-10 sm:-ml-8 rotate-6 z-10 mb-6 scale-[0.92] opacity-80"
+              >
                 <AppPreviewCard
                   screen={appScreens[2]}
                   size="sm"
+                  className="shadow-[0_20px_60px_-20px_rgba(0,0,0,0.5)]"
                   priority
                 />
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
