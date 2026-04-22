@@ -63,11 +63,9 @@ const eventIconMap: Record<string, LucideIcon> = {
 };
 
 const appScreenshots = [
-  { src: "/images/Screen1.jpg", alt: "AIsaiah app — build daily habits of prayer, reflection, and service" },
-  { src: "/images/Screen2.jpg", alt: "Start your day with guided prayer" },
-  { src: "/images/Screen3.jpg", alt: "Spiritual growth dashboard — Prayer, Reflection, and Service rings" },
-  { src: "/images/Screen4.jpg", alt: "Track your spiritual growth over time" },
-  { src: "/images/Screen5.jpg", alt: "Daily Scripture readings for reflection" },
+  { src: "/images/app-prayer.png", alt: "AIsaiah Daily Prayer — guided prayer with Scripture" },
+  { src: "/images/app-reflect.png", alt: "AIsaiah Reflect — daily Scripture readings and journaling" },
+  { src: "/images/app-serve.png", alt: "AIsaiah Serve — community events and acts of service" },
 ];
 
 export default function SolutionsPage() {
@@ -188,33 +186,21 @@ export default function SolutionsPage() {
             Download AIsaiah — free on iOS and Android. No account required to
             start building habits of prayer, reflection, and service.
           </p>
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <a
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
               href="https://apps.apple.com/us/app/aisaiah/id6751301980"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-slate-200 bg-white px-6 py-4 text-left shadow-sm transition-transform hover:scale-[1.02]"
+              variant="accent"
+              size="lg"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-                iOS
-              </p>
-              <p className="mt-2 text-lg font-semibold text-slate-950">
-                Download on the App Store
-              </p>
-            </a>
-            <a
+              Download for iOS
+            </Button>
+            <Button
               href="https://play.google.com/store/apps/details?id=org.aisaiah.spiritualfitness"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border border-slate-200 bg-white px-6 py-4 text-left shadow-sm transition-transform hover:scale-[1.02]"
+              variant="primary"
+              size="lg"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-                Android
-              </p>
-              <p className="mt-2 text-lg font-semibold text-slate-950">
-                Get it on Google Play
-              </p>
-            </a>
+              Get it on Google Play
+            </Button>
           </div>
         </div>
       </Section>
