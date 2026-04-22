@@ -93,12 +93,9 @@ export const heroContent = {
   supportingLine:
     "Built for individuals, ministries, and faith communities seeking deeper daily spiritual habits.",
   appScreens: [
-    { src: "/images/Screen2.jpg", alt: "AIsaiah daily prayer screen" },
-    {
-      src: "/images/Screen3.jpg",
-      alt: "AIsaiah spiritual growth dashboard with Prayer, Reflection, and Service rings",
-    },
-    { src: "/images/Screen5.jpg", alt: "AIsaiah daily Scripture readings" },
+    { src: "/images/app-prayer.png", alt: "AIsaiah Daily Prayer — guided prayer with Scripture" },
+    { src: "/images/app-reflect.png", alt: "AIsaiah Reflect — daily Scripture readings and journaling" },
+    { src: "/images/app-serve.png", alt: "AIsaiah Serve — community events and acts of service" },
   ] satisfies AppScreen[],
 };
 

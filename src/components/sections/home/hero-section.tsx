@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { Download, Handshake } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { AppPlaceholderCard } from "./app-preview-card";
+import { AppPreviewCard } from "./app-preview-card";
 import { heroContent } from "@/content/homepage";
 
 const fadeInUp = {
@@ -24,6 +24,7 @@ export function HeroSection() {
     primaryCTA,
     secondaryCTA,
     supportingLine,
+    appScreens,
   } = heroContent;
 
   const headlineBase = headline.replace(headlineAccent, "").trimEnd();
@@ -105,7 +106,7 @@ export function HeroSection() {
             </motion.p>
           </motion.div>
 
-          {/* Right column — App preview cards */}
+          {/* Right column — Real app screenshots */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -121,17 +122,29 @@ export function HeroSection() {
             <div className="relative flex items-end justify-center gap-0">
               {/* Left — Prayer (rotated, behind) */}
               <div className="-mr-8 sm:-mr-6 -rotate-6 z-10 animate-float-delayed mb-4">
-                <AppPlaceholderCard variant="prayer" size="sm" />
+                <AppPreviewCard
+                  screen={appScreens[0]}
+                  size="sm"
+                  priority
+                />
               </div>
 
-              {/* Center — Reflection (dominant, front) */}
+              {/* Center — Reflect (dominant, front) */}
               <div className="relative z-20 animate-float">
-                <AppPlaceholderCard variant="reflection" size="md" />
+                <AppPreviewCard
+                  screen={appScreens[1]}
+                  size="md"
+                  priority
+                />
               </div>
 
-              {/* Right — Service (rotated, behind) */}
+              {/* Right — Serve (rotated, behind) */}
               <div className="-ml-8 sm:-ml-6 rotate-6 z-10 animate-float-delayed mb-4">
-                <AppPlaceholderCard variant="service" size="sm" />
+                <AppPreviewCard
+                  screen={appScreens[2]}
+                  size="sm"
+                  priority
+                />
               </div>
             </div>
           </motion.div>
