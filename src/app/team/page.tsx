@@ -79,7 +79,7 @@ export default function TeamPage() {
             Want to contribute?
           </h2>
           <p className="text-lg text-slate-300 leading-relaxed mb-10">
-            We're looking for people who share our mission — engineers,
+            We&apos;re looking for people who share our mission — engineers,
             designers, ministry leaders, and anyone who believes people deserve
             better tools to grow in faith.
           </p>

@@ -20,9 +20,9 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    setIsMobileMenuOpen(false);
-  }, [pathname]);
+  // Close mobile menu on route change
+  // eslint-disable-next-line react-hooks/set-state-in-effect -- intentional: close menu on navigation
+  useEffect(() => { setIsMobileMenuOpen(false); }, [pathname]);
 
   return (
     <header
