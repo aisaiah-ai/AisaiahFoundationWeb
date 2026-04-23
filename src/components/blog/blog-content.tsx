@@ -14,7 +14,7 @@ export function BlogContent({ content }: BlogContentProps) {
           return (
             <h2
               key={i}
-              className="mt-12 mb-6 font-display text-2xl font-semibold tracking-tight text-slate-900 md:text-3xl"
+              className="mt-12 mb-6 font-display text-2xl font-semibold tracking-tight text-white md:text-3xl"
             >
               {trimmed.replace("## ", "")}
             </h2>
@@ -25,7 +25,7 @@ export function BlogContent({ content }: BlogContentProps) {
           return (
             <p
               key={i}
-              className="mt-4 text-lg font-semibold text-slate-800"
+              className="mt-4 text-lg font-semibold text-slate-200"
             >
               {trimmed.replace(/\*\*/g, "")}
             </p>
@@ -39,7 +39,7 @@ export function BlogContent({ content }: BlogContentProps) {
               {items.map((item, j) => (
                 <li
                   key={j}
-                  className="text-base leading-relaxed text-slate-600 list-disc"
+                  className="text-base leading-relaxed text-slate-300 list-disc"
                 >
                   {renderInlineFormatting(item.replace("- ", ""))}
                 </li>
@@ -51,7 +51,7 @@ export function BlogContent({ content }: BlogContentProps) {
         return (
           <p
             key={i}
-            className="mt-4 text-base leading-relaxed text-slate-600 md:text-lg"
+            className="mt-4 text-base leading-relaxed text-slate-300 md:text-lg"
           >
             {renderInlineFormatting(trimmed)}
           </p>
@@ -66,7 +66,7 @@ function renderInlineFormatting(text: string) {
   return parts.map((part, i) => {
     if (part.startsWith("**") && part.endsWith("**")) {
       return (
-        <strong key={i} className="font-semibold text-slate-800">
+        <strong key={i} className="font-semibold text-slate-200">
           {part.slice(2, -2)}
         </strong>
       );

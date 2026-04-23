@@ -37,14 +37,14 @@ export function FAQSection() {
       </SectionHeader>
 
       <div className="mx-auto max-w-3xl">
-        <div className="rounded-2xl border border-slate-200/80 bg-white shadow-sm overflow-hidden">
+        <div className="rounded-2xl border border-white/8 bg-white/[0.03] backdrop-blur-sm overflow-hidden">
           {homeFAQs.map((faq, index) => (
             <div
               key={index}
               className={cn(
                 "transition-colors",
-                index !== 0 && "border-t border-slate-100",
-                openIndex === index && "bg-primary-50/30"
+                index !== 0 && "border-t border-white/5",
+                openIndex === index && "bg-purple-500/10"
               )}
             >
               <button
@@ -52,15 +52,15 @@ export function FAQSection() {
                 className="flex w-full items-center justify-between gap-4 px-6 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-inset"
                 aria-expanded={openIndex === index}
               >
-                <span className="text-lg font-medium text-slate-900">
+                <span className="text-lg font-medium text-white">
                   {faq.question}
                 </span>
                 <div
                   className={cn(
                     "flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-all duration-200",
                     openIndex === index
-                      ? "bg-primary-100 text-primary-700 rotate-180"
-                      : "bg-slate-100 text-slate-500"
+                      ? "bg-purple-500/10 text-purple-400 rotate-180"
+                      : "bg-white/10 text-slate-500"
                   )}
                 >
                   <ChevronDown className="h-4 w-4" />
@@ -75,7 +75,7 @@ export function FAQSection() {
                 )}
               >
                 <div className="overflow-hidden">
-                  <p className="px-6 pb-5 text-slate-600 leading-relaxed pr-16">
+                  <p className="px-6 pb-5 text-slate-300 leading-relaxed pr-16">
                     {faq.answer}
                   </p>
                 </div>

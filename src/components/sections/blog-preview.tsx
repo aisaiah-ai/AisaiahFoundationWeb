@@ -31,16 +31,16 @@ export function BlogPreview() {
                   {post.tags.slice(0, 2).map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full bg-primary-50 px-3 py-1 text-xs font-medium text-primary-700"
+                      className="rounded-full bg-purple-500/10 px-3 py-1 text-xs font-medium text-purple-400"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
-                <h3 className="text-xl font-semibold text-slate-900 group-hover:text-primary-600 transition-colors">
+                <h3 className="text-xl font-semibold text-white group-hover:text-purple-400 transition-colors">
                   {post.title}
                 </h3>
-                <p className="mt-3 flex-1 text-slate-600 leading-relaxed">
+                <p className="mt-3 flex-1 text-slate-300 leading-relaxed">
                   {post.excerpt}
                 </p>
                 <div className="mt-6 flex items-center justify-between">
@@ -52,7 +52,7 @@ export function BlogPreview() {
                       year: "numeric",
                     })}
                   </div>
-                  <span className="flex items-center gap-1 text-sm font-medium text-primary-600 group-hover:gap-2 transition-all">
+                  <span className="flex items-center gap-1 text-sm font-medium text-purple-400 group-hover:gap-2 transition-all">
                     Read <ArrowRight className="h-4 w-4" />
                   </span>
                 </div>

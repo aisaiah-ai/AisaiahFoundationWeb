@@ -19,10 +19,10 @@ export function BlogCard({ post }: BlogCardProps) {
               </Badge>
             ))}
           </div>
-          <h3 className="text-xl font-semibold text-slate-900 group-hover:text-primary-600 transition-colors">
+          <h3 className="text-xl font-semibold text-white group-hover:text-purple-400 transition-colors">
             {post.title}
           </h3>
-          <p className="mt-3 flex-1 text-slate-600 leading-relaxed">
+          <p className="mt-3 flex-1 text-slate-300 leading-relaxed">
             {post.excerpt}
           </p>
           <div className="mt-6 flex items-center justify-between">
@@ -34,7 +34,7 @@ export function BlogCard({ post }: BlogCardProps) {
                 year: "numeric",
               })}
             </div>
-            <span className="flex items-center gap-1 text-sm font-medium text-primary-600 group-hover:gap-2 transition-all">
+            <span className="flex items-center gap-1 text-sm font-medium text-purple-400 group-hover:gap-2 transition-all">
               Read <ArrowRight className="h-4 w-4" />
             </span>
           </div>

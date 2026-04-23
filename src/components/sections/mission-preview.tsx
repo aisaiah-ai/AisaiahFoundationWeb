@@ -41,13 +41,13 @@ export function MissionPreview() {
       <div className="grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)]">
         <Card className="surface-panel">
           <CardContent className="p-8 md:p-10">
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary-700">
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-purple-400">
               Our approach
             </p>
-            <h3 className="mt-4 font-display text-3xl font-semibold text-slate-950">
+            <h3 className="mt-4 font-display text-3xl font-semibold text-white">
               Mission-first. Capability-proven. Community-tested.
             </h3>
-            <div className="mt-6 space-y-4 text-base leading-relaxed text-slate-600">
+            <div className="mt-6 space-y-4 text-base leading-relaxed text-slate-300">
               <p>
                 Ministry leaders don&apos;t need another abstract pitch about digital
                 transformation. They need a partner who understands ministry
@@ -75,28 +75,28 @@ export function MissionPreview() {
           {pillars.map((pillar) => (
             <Card key={pillar.label} className="h-full">
               <CardContent className="flex h-full flex-col gap-4 p-8">
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary-100 text-primary-600">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-purple-500/10 text-purple-400">
                   <pillar.icon className="h-7 w-7" strokeWidth={1.5} />
                 </div>
-                <h3 className="text-xl font-semibold text-slate-900">
+                <h3 className="text-xl font-semibold text-white">
                   {pillar.label}
                 </h3>
-                <p className="text-slate-600 leading-relaxed">{pillar.text}</p>
+                <p className="text-slate-300 leading-relaxed">{pillar.text}</p>
               </CardContent>
             </Card>
           ))}
         </div>
       </div>
 
-      <div className="mt-10 grid gap-4 rounded-[2rem] border border-slate-200/80 bg-white p-6 md:grid-cols-3">
+      <div className="mt-10 grid gap-4 rounded-[2rem] border border-white/8 bg-white/[0.03] p-6 md:grid-cols-3">
         {[
           "Rooted in the Catholic faith and Couples for Christ, open to all Christian communities.",
           "Technology governed by a 501(c)(3) nonprofit mandate — mission over profit.",
           "Every feature built around real ministry workflows and volunteer-driven operations.",
         ].map((item) => (
           <div key={item} className="flex items-start gap-3">
-            <ArrowRight className="mt-0.5 h-5 w-5 text-primary-600" />
-            <p className="text-sm leading-relaxed text-slate-600">{item}</p>
+            <ArrowRight className="mt-0.5 h-5 w-5 text-purple-400" />
+            <p className="text-sm leading-relaxed text-slate-300">{item}</p>
           </div>
         ))}
       </div>

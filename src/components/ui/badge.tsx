@@ -14,10 +14,10 @@ export function Badge({
       className={cn(
         "inline-flex items-center rounded-full px-3 py-1 text-xs font-medium",
         {
-          default: "bg-slate-100 text-slate-700",
-          primary: "bg-primary-50 text-primary-700",
-          accent: "bg-accent-50 text-accent-700",
-          muted: "bg-slate-50 text-slate-500",
+          default: "bg-white/10 text-slate-300",
+          primary: "bg-purple-500/10 text-purple-400",
+          accent: "bg-primary-500/10 text-primary-400",
+          muted: "bg-white/5 text-slate-500",
         }[variant],
         className
       )}

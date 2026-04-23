@@ -9,9 +9,9 @@ interface TeamCardProps {
 }
 
 const gradients = [
+  "bg-gradient-to-br from-purple-600 to-purple-800",
   "bg-gradient-to-br from-primary-600 to-primary-800",
-  "bg-gradient-to-br from-accent-600 to-accent-800",
-  "bg-gradient-to-br from-primary-700 to-accent-600",
+  "bg-gradient-to-br from-purple-700 to-primary-600",
 ];
 
 function getInitials(name: string): string {
@@ -38,7 +38,7 @@ export function TeamCard({ member, index }: TeamCardProps) {
           </div>
           <div className="min-w-0">
             <div className="flex items-center gap-2">
-              <h3 className="text-lg font-semibold text-slate-900">
+              <h3 className="text-lg font-semibold text-white">
                 {member.name}
               </h3>
               {member.linkedin && (
@@ -46,14 +46,14 @@ export function TeamCard({ member, index }: TeamCardProps) {
                   href={member.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-slate-400 hover:text-primary-600 transition-colors"
+                  className="text-slate-500 hover:text-purple-400 transition-colors"
                   aria-label={`${member.name} on LinkedIn`}
                 >
                   <Linkedin className="w-4 h-4" />
                 </a>
               )}
             </div>
-            <p className="text-primary-600 text-sm font-medium">
+            <p className="text-purple-400 text-sm font-medium">
               {member.title}
             </p>
             {member.location && (
@@ -65,7 +65,7 @@ export function TeamCard({ member, index }: TeamCardProps) {
           </div>
         </div>
 
-        <p className="mt-5 text-sm text-slate-600 leading-relaxed">
+        <p className="mt-5 text-sm text-slate-300 leading-relaxed">
           {member.bio}
         </p>
 
@@ -77,9 +77,9 @@ export function TeamCard({ member, index }: TeamCardProps) {
             {member.focusAreas.map((area) => (
               <li
                 key={area}
-                className="flex items-center gap-2 text-sm text-slate-600"
+                className="flex items-center gap-2 text-sm text-slate-400"
               >
-                <ArrowRight className="h-3.5 w-3.5 text-primary-600" />
+                <ArrowRight className="h-3.5 w-3.5 text-purple-400" />
                 {area}
               </li>
             ))}

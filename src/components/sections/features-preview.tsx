@@ -77,7 +77,7 @@ export function FeaturesPreview() {
                         "flex items-center justify-center rounded-xl",
                         isHero
                           ? "h-14 w-14 bg-gradient-to-br from-primary-500 to-accent-500 text-white"
-                          : "h-12 w-12 bg-primary-50 text-primary-600"
+                          : "h-12 w-12 bg-purple-500/10 text-purple-400"
                       )}
                     >
                       {Icon && (
@@ -89,13 +89,13 @@ export function FeaturesPreview() {
                     </div>
                     <h3
                       className={cn(
-                        "font-semibold text-slate-900",
+                        "font-semibold text-white",
                         isHero ? "text-xl" : "text-lg"
                       )}
                     >
                       {feature.title}
                     </h3>
-                    <p className="text-slate-600 leading-relaxed">
+                    <p className="text-slate-300 leading-relaxed">
                       {feature.description}
                     </p>
                   </CardContent>
@@ -140,13 +140,13 @@ export function FeaturesPreview() {
       {/* Event capabilities — Secondary */}
       <Section variant="muted">
         <div className="mx-auto max-w-4xl text-center mb-12">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary-700 mb-4">
+          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-purple-400 mb-4">
             Also in the app
           </p>
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-6">
             Event Management, Built In
           </h2>
-          <p className="text-lg text-slate-600 leading-relaxed">
+          <p className="text-lg text-slate-300 leading-relaxed">
             Register for events, check in with NFC or QR codes, and browse event
             galleries — all from the same app you use for daily prayer.
           </p>
@@ -173,11 +173,11 @@ export function FeaturesPreview() {
             return (
               <Card key={item.title} hover>
                 <CardContent className="flex flex-col items-center text-center gap-3 p-6">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent-50 text-accent-600">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-500/10 text-primary-400">
                     <Icon className="h-6 w-6" strokeWidth={1.5} />
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-900">{item.title}</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">{item.description}</p>
+                  <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                  <p className="text-sm text-slate-300 leading-relaxed">{item.description}</p>
                 </CardContent>
               </Card>
             );
