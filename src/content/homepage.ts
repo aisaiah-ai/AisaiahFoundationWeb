@@ -153,8 +153,8 @@ export const experienceContent = {
   subheadline:
     "Not another productivity app. A spiritual companion that helps you build a simple, consistent daily rhythm of prayer, reflection, and service.",
   showcaseImage: {
-    src: "/images/app-reflect.png",
-    alt: "AIsaiah Reflect \u2014 daily Scripture readings and journaling",
+    src: "/images/app-rhythm.png",
+    alt: "AIsaiah Your Daily Rhythm \u2014 Pray, Reflect, and Serve rings with daily progress",
   } satisfies AppScreen,
   steps: [
     {
