@@ -1,10 +1,10 @@
 import { test, expect } from "@playwright/test";
 
 const pages = [
-  { path: "/", title: "Aisaiah Foundation" },
+  { path: "/", title: "AIsaiah" },
   { path: "/about", title: "About" },
   { path: "/board", title: "Board" },
-  { path: "/solutions", title: "Solutions" },
+  { path: "/solutions", title: "AIsaiah App" },
   { path: "/partnerships", title: "Partner" },
   { path: "/partnerships/cfc-usa", title: "Couples for Christ" },
   { path: "/blog", title: "Blog" },
