@@ -57,8 +57,9 @@ jobs:
       - name: Deploy to Cloudflare Pages (Dev)
         id: deploy
         run: |
-          npm install -g wrangler@latest
+          npm install -g wrangler@3
           COMMIT_MSG=$(echo "${{ github.event.head_commit.message || 'Dev deploy' }}" | head -1)
+          set -o pipefail
           wrangler pages deploy out \
             --project-name=aisaiah-foundation-dev \
             --branch=dev \
