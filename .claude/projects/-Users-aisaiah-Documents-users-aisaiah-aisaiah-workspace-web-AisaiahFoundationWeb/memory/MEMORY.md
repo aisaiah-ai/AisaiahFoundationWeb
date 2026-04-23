@@ -1,1 +1,2 @@
 - [Firebase project mapping](reference_firebase.md) — Dev = aisaiah-app-dev, Prod = aisaiah-app
+- [Project status](project_status.md) — Current branch, what's done, pending tasks, key files
