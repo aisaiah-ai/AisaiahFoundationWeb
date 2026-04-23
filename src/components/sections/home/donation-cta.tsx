@@ -55,7 +55,7 @@ export function DonationCTA() {
             <Button
               href={cta.href}
               size="lg"
-              className="bg-gradient-to-r from-purple-600 to-purple-500 text-white shadow-lg shadow-purple-900/30 hover:from-purple-700 hover:to-purple-600 rounded-full"
+              variant="accent"
             >
               {cta.label}
             </Button>

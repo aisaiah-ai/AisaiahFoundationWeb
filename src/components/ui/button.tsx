@@ -33,15 +33,15 @@ export function Button(props: ButtonProps) {
 
   const variants = {
     primary:
-      "bg-primary-600 text-white shadow-sm shadow-primary-950/10 hover:bg-primary-700 hover:shadow-md",
+      "bg-purple-600 text-white shadow-sm shadow-purple-950/20 hover:bg-purple-700 hover:shadow-md",
     secondary:
-      "bg-accent-600 text-white shadow-sm shadow-accent-950/10 hover:bg-accent-700 hover:shadow-md",
+      "bg-primary-600 text-white shadow-sm shadow-primary-950/10 hover:bg-primary-700 hover:shadow-md",
     outline:
-      "border border-slate-300 bg-white/80 text-slate-900 hover:border-slate-400 hover:bg-white",
+      "border border-white/15 bg-white/5 text-white hover:border-white/25 hover:bg-white/10",
     ghost:
-      "bg-transparent text-slate-600 hover:bg-slate-100 hover:text-slate-900",
+      "bg-transparent text-slate-300 hover:bg-white/10 hover:text-white",
     accent:
-      "bg-gradient-to-r from-primary-600 via-primary-500 to-accent-600 text-white shadow-sm shadow-slate-950/15 hover:from-primary-700 hover:to-accent-700 hover:shadow-md",
+      "bg-gradient-to-r from-purple-600 to-purple-500 text-white shadow-lg shadow-purple-950/30 hover:from-purple-700 hover:to-purple-600 hover:shadow-xl",
   };
 
   const sizes = {

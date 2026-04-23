@@ -63,6 +63,7 @@ const eventIconMap: Record<string, LucideIcon> = {
 };
 
 const appScreenshots = [
+  { src: "/images/app-rhythm.png", alt: "AIsaiah Your Daily Rhythm — Pray, Reflect, Serve rings" },
   { src: "/images/app-prayer.png", alt: "AIsaiah Daily Prayer — guided prayer with Scripture" },
   { src: "/images/app-reflect.png", alt: "AIsaiah Reflect — daily Scripture readings and journaling" },
   { src: "/images/app-serve.png", alt: "AIsaiah Serve — community events and acts of service" },

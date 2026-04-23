@@ -45,7 +45,7 @@ export function FinalCTA() {
             <Button
               href={primaryCTA.href}
               size="lg"
-              className="bg-gradient-to-r from-purple-600 to-purple-500 text-white shadow-lg shadow-purple-900/30 hover:from-purple-700 hover:to-purple-600 rounded-full"
+              variant="accent"
             >
               <Download className="mr-2 h-4 w-4" />
               {primaryCTA.label}

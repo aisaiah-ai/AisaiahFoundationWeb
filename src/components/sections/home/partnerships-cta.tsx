@@ -47,7 +47,7 @@ export function PartnershipsCTA() {
               <Button
                 href={primaryCTA.href}
                 size="lg"
-                className="bg-gradient-to-r from-gold-600 to-gold-500 text-white shadow-lg shadow-gold-900/20 hover:from-gold-700 hover:to-gold-600 rounded-full"
+                variant="accent"
               >
                 {primaryCTA.label}
               </Button>

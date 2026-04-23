@@ -84,8 +84,8 @@ export function ProductExperience() {
             >
               <Button
                 href={cta.href}
+                variant="accent"
                 size="lg"
-                className="bg-gradient-to-r from-purple-600 to-primary-600 text-white shadow-lg shadow-purple-900/20 hover:from-purple-700 hover:to-primary-700 rounded-full"
               >
                 {cta.label}
               </Button>

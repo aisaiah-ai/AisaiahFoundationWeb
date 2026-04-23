@@ -91,8 +91,8 @@ export function HeroSection() {
             >
               <Button
                 href={primaryCTA.href}
+                variant="accent"
                 size="lg"
-                className="bg-gradient-to-r from-purple-600 to-purple-500 text-white shadow-lg shadow-purple-900/30 hover:from-purple-700 hover:to-purple-600 rounded-full"
               >
                 <Download className="mr-2 h-4 w-4" />
                 {primaryCTA.label}
@@ -101,7 +101,6 @@ export function HeroSection() {
                 href={secondaryCTA.href}
                 variant="outline"
                 size="lg"
-                className="border-white/15 bg-white/5 text-white hover:border-white/25 hover:bg-white/10"
               >
                 {secondaryCTA.label}
                 <ArrowRight className="ml-2 h-4 w-4" />
