@@ -58,11 +58,12 @@ jobs:
         id: deploy
         run: |
           npm install -g wrangler@latest
+          COMMIT_MSG=$(echo "${{ github.event.head_commit.message || 'Production deploy' }}" | head -1)
           DEPLOY_OUTPUT=$(wrangler pages deploy out \
             --project-name=aisaiah-foundation-web \
             --branch=main \
             --commit-hash="${{ github.sha }}" \
-            --commit-message="${{ github.event.head_commit.message || 'Production deploy' }}" 2>&1)
+            --commit-message="$COMMIT_MSG" 2>&1)
           echo "$DEPLOY_OUTPUT"
           DEPLOY_URL=$(echo "$DEPLOY_OUTPUT" | grep -o 'https://[^ ]*' | head -1)
           echo "deploy_url=$DEPLOY_URL" >> $GITHUB_OUTPUT
