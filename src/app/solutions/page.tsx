@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { StoreBadges } from "@/components/ui/store-badges";
 import { JsonLd } from "@/components/seo/json-ld";
 import { PageHero } from "@/components/sections/page-hero";
 import {
@@ -13,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { appFeatures, eventFeatures } from "@/content/features";
 import {
   getBreadcrumbSchema,
+  getFAQSchema,
   getSoftwareApplicationSchema,
   getWebPageSchema,
 } from "@/lib/structured-data";
@@ -41,6 +43,9 @@ export const metadata: Metadata = {
     title: "The AIsaiah App | Aisaiah Foundation",
     description:
       "Build daily habits of prayer, reflection, and service. Free on iOS and Android.",
+  },
+  alternates: {
+    canonical: "/solutions",
   },
 };
 
@@ -80,25 +85,45 @@ export default function SolutionsPage() {
     { name: "Solutions", path: "/solutions" },
   ]);
   const softwareSchema = getSoftwareApplicationSchema();
+  const faqSchema = getFAQSchema([
+    {
+      question: "What is AIsaiah?",
+      answer: "AIsaiah is a free mobile app built by the Aisaiah Foundation, a 501(c)(3) nonprofit. It helps people build a daily rhythm of prayer, Scripture reflection, and service — guided by AI, grounded in Church teaching.",
+    },
+    {
+      question: "Is AIsaiah free?",
+      answer: "Yes. AIsaiah is completely free on iOS and Android. No account is required to get started. There are no ads and no in-app purchases.",
+    },
+    {
+      question: "Is my data private?",
+      answer: "Absolutely. Your spiritual life is sacred. We never sell your data, never show ads, and never monetize your information. AIsaiah is privacy-first by design.",
+    },
+    {
+      question: "Who is AIsaiah for?",
+      answer: "AIsaiah is for anyone seeking to grow in faith — individuals, families, small groups, parishes, and large faith communities. It's rooted in the Catholic faith and Couples for Christ, but open to all Christian communities.",
+    },
+    {
+      question: "Does AIsaiah support event management?",
+      answer: "Yes. AIsaiah includes event registration, NFC and QR code check-in, real-time attendance dashboards, event photo galleries, and post-event analytics — all built into the same app you use for daily prayer.",
+    },
+  ]);
 
   return (
     <>
-      <JsonLd data={[pageSchema, breadcrumbSchema, softwareSchema]} />
+      <JsonLd data={[pageSchema, breadcrumbSchema, softwareSchema, faqSchema]} />
       <PageHero
         eyebrow="The AIsaiah App"
         title="Build daily habits of prayer, reflection, and service."
         description="Everything you need to grow in your faith — guided prayer, daily Scripture, spiritual growth tracking, and community events. Free on iOS and Android."
+        storeBadges
         actions={[
           {
-            label: "Download the App",
+            label: "Download on the App Store",
             href: "https://apps.apple.com/us/app/aisaiah/id6751301980",
-            variant: "secondary",
           },
           {
             label: "Get it on Google Play",
             href: "https://play.google.com/store/apps/details?id=org.aisaiah.spiritualfitness",
-            variant: "outline",
-            className: "border-white/20 bg-white/5 text-white hover:border-white/35 hover:bg-white/10",
           },
         ]}
         metrics={[
@@ -187,22 +212,7 @@ export default function SolutionsPage() {
             Download AIsaiah — free on iOS and Android. No account required to
             start building habits of prayer, reflection, and service.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              href="https://apps.apple.com/us/app/aisaiah/id6751301980"
-              variant="accent"
-              size="lg"
-            >
-              Download for iOS
-            </Button>
-            <Button
-              href="https://play.google.com/store/apps/details?id=org.aisaiah.spiritualfitness"
-              variant="primary"
-              size="lg"
-            >
-              Get it on Google Play
-            </Button>
-          </div>
+          <StoreBadges className="justify-center" />
         </div>
       </Section>
 
@@ -292,18 +302,12 @@ export default function SolutionsPage() {
             reflection, and service. Your relationship with God grows one day
             at a time.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              href="https://apps.apple.com/us/app/aisaiah/id6751301980"
-              variant="secondary"
-              size="lg"
-            >
-              Download for iOS
-            </Button>
+          <div className="flex flex-col items-center gap-6">
+            <StoreBadges className="justify-center" />
             <Button
               href="/contact"
               variant="outline"
-              size="lg"
+              size="md"
               className="border-white text-white hover:bg-white/10"
             >
               Contact Us

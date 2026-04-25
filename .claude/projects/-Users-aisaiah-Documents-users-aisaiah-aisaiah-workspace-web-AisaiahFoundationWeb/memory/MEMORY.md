@@ -1,2 +1,4 @@
 - [Firebase project mapping](reference_firebase.md) — Dev = aisaiah-app-dev, Prod = aisaiah-app
 - [Project status](project_status.md) — Current branch, what's done, pending tasks, key files
+- [Verify before claiming success](feedback_verify_before_claiming.md) — Always check actual CI logs and live site, never assume from status
+- [Cloudflare account mapping](reference_cloudflare.md) — Account ID, Pages projects, deploy commands, Firebase mapping

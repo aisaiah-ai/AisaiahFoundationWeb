@@ -83,7 +83,8 @@ export const heroContent = {
   headlineLine2: "Live It Daily.",
   subheadline:
     "A spiritual journey through prayer, reflection, and service \u2014 guided by an app that grows with you.",
-  primaryCTA: { label: "Start Your Journey", href: coreMessaging.appDownloadUrl } satisfies CTALink,
+  primaryCTA: { label: "Download for iOS", href: coreMessaging.appDownloadUrl } satisfies CTALink,
+  googlePlayCTA: { label: "Get it on Google Play", href: coreMessaging.playStoreUrl } satisfies CTALink,
   secondaryCTA: { label: "Explore the App", href: coreMessaging.solutionsUrl } satisfies CTALink,
   supportingLine:
     "Built for individuals, ministries, and faith communities seeking deeper daily spiritual habits.",

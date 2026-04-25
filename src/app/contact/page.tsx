@@ -270,6 +270,7 @@ export default function ContactPage() {
                     )}
                     <Button
                       type="submit"
+                      variant="accent"
                       size="lg"
                       disabled={isSubmitting}
                       className="w-full sm:w-auto"

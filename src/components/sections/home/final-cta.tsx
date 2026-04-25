@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { StoreBadges } from "@/components/ui/store-badges";
 import { finalCTAContent } from "@/content/homepage";
 
 export function FinalCTA() {
@@ -41,19 +41,12 @@ export function FinalCTA() {
             {description}
           </p>
 
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <Button
-              href={primaryCTA.href}
-              size="lg"
-              variant="accent"
-            >
-              <Download className="mr-2 h-4 w-4" />
-              {primaryCTA.label}
-            </Button>
+          <div className="mt-10 flex flex-col items-center gap-6">
+            <StoreBadges className="justify-center" />
             <Button
               href={secondaryCTA.href}
               variant="outline"
-              size="lg"
+              size="md"
               className="border-white/15 bg-white/5 text-white hover:border-white/25 hover:bg-white/10"
             >
               {secondaryCTA.label}

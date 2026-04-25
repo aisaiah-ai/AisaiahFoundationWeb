@@ -35,6 +35,9 @@ export const metadata: Metadata = {
     description:
       "Leaders guiding AIsaiah Foundation's mission to help people grow in faith.",
   },
+  alternates: {
+    canonical: "/board",
+  },
 };
 
 function getInitials(name: string): string {

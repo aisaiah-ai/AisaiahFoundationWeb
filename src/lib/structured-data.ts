@@ -3,11 +3,15 @@ import { siteConfig } from "@/content/site";
 export function getOrganizationSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": ["Organization", "NGO"],
+    "@id": `${siteConfig.url}/#organization`,
     name: siteConfig.name,
     alternateName: siteConfig.shortName,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/icon`,
+    logo: {
+      "@type": "ImageObject",
+      url: `${siteConfig.url}/icon`,
+    },
     description: siteConfig.description,
     foundingDate: "2024",
     address: {
@@ -36,8 +40,7 @@ export function getWebsiteSchema() {
     description:
       "Helping people build a daily relationship with God through prayer, reflection, and service.",
     publisher: {
-      "@type": "Organization",
-      name: siteConfig.name,
+      "@id": `${siteConfig.url}/#organization`,
     },
   };
 }
@@ -51,6 +54,14 @@ export function getSoftwareApplicationSchema() {
     operatingSystem: "iOS, Android",
     description:
       "Build daily habits of prayer, reflection, and service. Free app for spiritual growth, Scripture reading, and community events.",
+    downloadUrl: [
+      "https://apps.apple.com/us/app/aisaiah/id6751301980",
+      "https://play.google.com/store/apps/details?id=org.aisaiah.spiritualfitness",
+    ],
+    screenshot: `${siteConfig.url}/images/app-rhythm.png`,
+    author: {
+      "@id": `${siteConfig.url}/#organization`,
+    },
     offers: {
       "@type": "Offer",
       price: "0",
@@ -129,12 +140,15 @@ export function getArticleSchema(article: {
   updatedAt?: string;
   tags?: string[];
 }) {
+  const url = `${siteConfig.url}/blog/${article.slug}`;
   return {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: article.title,
     description: article.description,
-    url: `${siteConfig.url}/blog/${article.slug}`,
+    url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    image: `${siteConfig.url}/opengraph-image.png`,
     datePublished: article.publishedAt,
     dateModified: article.updatedAt || article.publishedAt,
     author: {
@@ -143,8 +157,13 @@ export function getArticleSchema(article: {
     },
     publisher: {
       "@type": "Organization",
+      "@id": `${siteConfig.url}/#organization`,
       name: siteConfig.name,
       url: siteConfig.url,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteConfig.url}/icon`,
+      },
     },
     keywords: article.tags?.join(", "),
     isPartOf: {

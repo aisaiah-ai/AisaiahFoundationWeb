@@ -1,0 +1,16 @@
+{
+  "name": "Aisaiah Foundation",
+  "short_name": "Aisaiah",
+  "description": "Helping people build a daily relationship with God through prayer, reflection, and service.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#0f172a",
+  "theme_color": "#9333ea",
+  "icons": [
+    {
+      "src": "/icon",
+      "sizes": "64x64",
+      "type": "image/png"
+    }
+  ]
+}

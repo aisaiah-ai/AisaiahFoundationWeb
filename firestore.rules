@@ -1,0 +1,62 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Website contact-form submissions — allow unauthenticated creates only
+    match /contactSubmissions/{docId} {
+      allow create: if
+        // Only these exact keys are permitted (no arbitrary fields)
+        request.resource.data.keys().hasAll([
+          'firstName', 'lastName', 'email', 'organization',
+          'subject', 'message', 'fullName',
+          'source', 'status', 'submittedAt', 'submittedAtIso'
+        ])
+        && request.resource.data.keys().size() == 11
+
+        // Required strings with max lengths
+        && request.resource.data.firstName is string
+        && request.resource.data.firstName.size() > 0
+        && request.resource.data.firstName.size() <= 100
+
+        && request.resource.data.lastName is string
+        && request.resource.data.lastName.size() > 0
+        && request.resource.data.lastName.size() <= 100
+
+        && request.resource.data.email is string
+        && request.resource.data.email.size() > 0
+        && request.resource.data.email.size() <= 320
+
+        && request.resource.data.subject is string
+        && request.resource.data.subject.size() > 0
+        && request.resource.data.subject.size() <= 200
+
+        && request.resource.data.message is string
+        && request.resource.data.message.size() >= 24
+        && request.resource.data.message.size() <= 5000
+
+        // Optional but must be string
+        && request.resource.data.organization is string
+        && request.resource.data.organization.size() <= 200
+
+        && request.resource.data.fullName is string
+        && request.resource.data.fullName.size() <= 201
+
+        // Fixed values — prevent spoofing
+        && request.resource.data.source == 'website-contact-form'
+        && request.resource.data.status == 'new'
+
+        // Timestamps — serverTimestamp() resolves to timestamp during rule eval
+        && request.resource.data.submittedAt == request.time
+        && request.resource.data.submittedAtIso is string;
+
+      // No read/update/delete from the client — admin SDK only
+      allow read, update, delete: if false;
+    }
+
+    // All other collections — allow authenticated access (shared with mobile app)
+    // TODO: tighten these rules per-collection once mobile app rules are audited
+    match /{document=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
+import { StoreBadges } from "@/components/ui/store-badges";
 import { trustHighlights } from "@/content/site";
 import { cn } from "@/lib/utils";
 
@@ -74,21 +74,7 @@ export function Hero() {
               variants={fadeInUp}
               className="mt-10 flex flex-col gap-4 sm:flex-row sm:gap-5"
             >
-              <Button
-                href="https://apps.apple.com/us/app/aisaiah/id6751301980"
-                variant="accent"
-                size="lg"
-              >
-                Download for iOS
-              </Button>
-              <Button
-                href="https://play.google.com/store/apps/details?id=org.aisaiah.spiritualfitness"
-                variant="outline"
-                size="lg"
-                className="border-white/20 bg-white/5 text-white hover:border-white/35 hover:bg-white/10"
-              >
-                Get it on Google Play
-              </Button>
+              <StoreBadges />
             </motion.div>
 
             <motion.div

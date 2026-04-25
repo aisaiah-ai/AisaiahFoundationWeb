@@ -12,6 +12,7 @@ import { PartnershipTier } from "@/components/partnerships/partnership-tier";
 import { partnerships, partnershipHighlights } from "@/content/partnerships";
 import {
   getBreadcrumbSchema,
+  getFAQSchema,
   getWebPageSchema,
 } from "@/lib/structured-data";
 
@@ -23,6 +24,9 @@ export const metadata: Metadata = {
     title: "Partnerships | Aisaiah Foundation",
     description:
       "Help your community grow in daily faith through prayer, reflection, and service.",
+  },
+  alternates: {
+    canonical: "/partnerships",
   },
 };
 
@@ -36,10 +40,37 @@ export default function PartnershipsPage() {
     { name: "Home", path: "/" },
     { name: "Partnerships", path: "/partnerships" },
   ]);
+  const faqSchema = getFAQSchema([
+    {
+      question: "Who can partner with the Aisaiah Foundation?",
+      answer:
+        "Churches, ministries, parishes, dioceses, schools, and Christian organizations of any size. Our partnership models scale from small communities to large multi-site networks.",
+    },
+    {
+      question: "How does a partnership with AIsaiah work?",
+      answer:
+        "Every partnership starts with a conversation about your community's needs. We then help you bring AIsaiah to your members — supporting daily prayer, Scripture reflection, service opportunities, and event management — with the level of customization and support that fits your size.",
+    },
+    {
+      question: "Is there a cost to partner with AIsaiah?",
+      answer:
+        "The AIsaiah app is free for individuals on iOS and Android. Partnership tiers vary based on the level of customization, integration, and support your organization needs. Contact us to discuss what's right for your community.",
+    },
+    {
+      question: "Can AIsaiah be customized for our community?",
+      answer:
+        "Yes. Higher-tier partnerships include custom branding, tailored content libraries, integration with your existing systems, dedicated support, and event-management workflows configured for your specific gatherings.",
+    },
+    {
+      question: "How do we get started?",
+      answer:
+        "Reach out through our contact form or email info@aisaiah.org. We'll set up a discovery call to understand your community, walk through the platform, and recommend the partnership model that fits best.",
+    },
+  ]);
 
   return (
     <>
-      <JsonLd data={[pageSchema, breadcrumbSchema]} />
+      <JsonLd data={[pageSchema, breadcrumbSchema, faqSchema]} />
       <PageHero
         eyebrow="Work with us"
         title="Help your community grow in daily faith."

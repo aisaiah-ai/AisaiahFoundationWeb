@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description:
     "A spiritual journey through prayer, reflection, and service. AIsaiah helps you build a daily relationship with God through guided prayer, Scripture, and community. Free on iOS and Android.",
   alternates: {
-    canonical: "https://aisaiah.org",
+    canonical: "/",
   },
 };
 

@@ -45,6 +45,9 @@ export async function generateMetadata({
       title: post.title,
       description: post.excerpt,
     },
+    alternates: {
+      canonical: `/blog/${slug}`,
+    },
   };
 }
 
@@ -123,8 +126,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       </section>
 
       <Section>
+        <article>
         <BlogContent content={post.content} />
 
+        </article>
         <div className="mx-auto mt-16 max-w-3xl border-t border-slate-200 pt-8">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <Button href="/blog" variant="outline">

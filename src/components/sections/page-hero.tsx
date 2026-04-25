@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -19,6 +20,7 @@ interface PageHeroProps {
   title: string;
   description: string;
   actions?: HeroAction[];
+  storeBadges?: boolean;
   metrics?: HeroMetric[];
   aside?: React.ReactNode;
   className?: string;
@@ -29,6 +31,7 @@ export function PageHero({
   title,
   description,
   actions = [],
+  storeBadges = false,
   metrics = [],
   aside,
   className,
@@ -79,20 +82,59 @@ export function PageHero({
 
           {actions.length > 0 ? (
             <div className={cn(
-              "mt-10 flex flex-col gap-4 sm:flex-row",
+              "mt-10 flex flex-col gap-4 sm:flex-row sm:items-center",
               !hasAside && "sm:justify-center"
             )}>
-              {actions.map((action) => (
-                <Button
-                  key={action.label + action.href}
-                  href={action.href}
-                  variant={action.variant ?? "primary"}
-                  size={action.size ?? "lg"}
-                  className={action.className}
-                >
-                  {action.label}
-                </Button>
-              ))}
+              {storeBadges ? (
+                <>
+                  {actions.map((action) => {
+                    const isAppStore = action.href.includes("apps.apple.com");
+                    const isPlayStore = action.href.includes("play.google.com");
+                    if (isAppStore || isPlayStore) {
+                      return (
+                        <a
+                          key={action.href}
+                          href={action.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-block transition-opacity hover:opacity-80"
+                        >
+                          <Image
+                            src={isAppStore ? "/images/badge-appstore.png" : "/images/badge-googleplay.png"}
+                            alt={action.label}
+                            width={150}
+                            height={50}
+                            className="h-[50px] w-auto"
+                          />
+                        </a>
+                      );
+                    }
+                    return (
+                      <Button
+                        key={action.label + action.href}
+                        href={action.href}
+                        variant={action.variant ?? "primary"}
+                        size={action.size ?? "lg"}
+                        className={action.className}
+                      >
+                        {action.label}
+                      </Button>
+                    );
+                  })}
+                </>
+              ) : (
+                actions.map((action) => (
+                  <Button
+                    key={action.label + action.href}
+                    href={action.href}
+                    variant={action.variant ?? "primary"}
+                    size={action.size ?? "lg"}
+                    className={action.className}
+                  >
+                    {action.label}
+                  </Button>
+                ))
+              )}
             </div>
           ) : null}
 

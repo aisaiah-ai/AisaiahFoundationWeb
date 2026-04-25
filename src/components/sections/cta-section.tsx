@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { StoreBadges } from "@/components/ui/store-badges";
 
 export function CTASection() {
   return (
@@ -24,22 +24,7 @@ export function CTASection() {
           Download AIsaiah and begin building daily habits of prayer,
           reflection, and service. Free on iOS and Android.
         </p>
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-5">
-          <Button
-            href="https://apps.apple.com/us/app/aisaiah/id6751301980"
-            variant="accent"
-            size="lg"
-          >
-            Download for iOS
-          </Button>
-          <Button
-            href="https://play.google.com/store/apps/details?id=org.aisaiah.spiritualfitness"
-            size="lg"
-            className="border border-white/20 bg-white/5 text-white hover:bg-white/10 hover:border-white/30"
-          >
-            Get it on Google Play
-          </Button>
-        </div>
+        <StoreBadges className="mt-10 justify-center" />
       </div>
     </section>
   );

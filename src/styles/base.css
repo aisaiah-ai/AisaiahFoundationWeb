@@ -48,8 +48,9 @@ p {
 
 /* ---------- Scroll margin ---------- */
 
-section {
-  scroll-margin-top: var(--s-20);
+section,
+[id] {
+  scroll-margin-top: 6rem;
 }
 
 /* ---------- Utility: balanced text ---------- */

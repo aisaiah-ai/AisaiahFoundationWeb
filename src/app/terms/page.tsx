@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Terms of Service",
   description:
     "Aisaiah Foundation terms of service. Understand the terms governing use of our platform and services.",
+  alternates: {
+    canonical: "/terms",
+  },
 };
 
 export default function TermsPage() {

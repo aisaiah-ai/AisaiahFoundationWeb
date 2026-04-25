@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     description:
       "A spiritual journey through prayer, reflection, and service.",
   },
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 const values = [
@@ -38,13 +41,13 @@ const values = [
     icon: Heart,
     title: "Faith-Centered",
     description:
-      "Everything we build helps people grow in prayer, reflection, and service. That\u2019s our measure of success.",
+      "Everything we build helps people grow in prayer, reflection, and service. That's our measure of success.",
   },
   {
     icon: Shield,
     title: "Privacy-First",
     description:
-      "Your spiritual life is sacred. We protect your data \u2014 we never sell it, and we never will.",
+      "Your spiritual life is sacred. We protect your data — we never sell it, and we never will.",
   },
   {
     icon: Users,
@@ -68,7 +71,7 @@ const values = [
     icon: Eye,
     title: "Transparency",
     description:
-      "As a 501(c)(3) nonprofit, we\u2019re accountable to you. Our decisions and roadmaps are open.",
+      "As a 501(c)(3) nonprofit, we're accountable to you. Our decisions and roadmaps are open.",
   },
 ];
 
@@ -89,7 +92,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="Our story"
         title="Faith became routine. We believed it could be more."
-        description="AIsaiah Foundation exists because we saw a gap \u2014 between the faith people wanted to live and the tools available to help them live it. So we built something better."
+        description="AIsaiah Foundation exists because we saw a gap — between the faith people wanted to live and the tools available to help them live it. So we built something better."
         actions={[
           { label: "Meet Our Board", href: "/board", variant: "primary" },
           { label: "Explore the App", href: "/solutions", variant: "outline", className: "border-white/15 bg-white/5 text-white hover:border-white/25 hover:bg-white/10" },
@@ -129,7 +132,7 @@ export default function AboutPage() {
             <div className="mt-6 space-y-4 text-lg leading-relaxed text-slate-300">
               <p>
                 We believe every person can build a daily rhythm of prayer,
-                reflection, and service \u2014 and that the right tools can make
+                reflection, and service — and that the right tools can make
                 that rhythm natural, consistent, and deeply meaningful.
               </p>
               <p>
@@ -168,7 +171,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xl md:text-2xl text-slate-200 leading-relaxed font-medium">
             A world where every person and every community has the tools to
-            grow in daily prayer, reflection, and service \u2014 and where
+            grow in daily prayer, reflection, and service — and where
             technology strengthens faith rather than distracting from it.
           </p>
         </div>

@@ -25,6 +25,9 @@ export const metadata: Metadata = {
     description:
       "Meet the people building tools for prayer, reflection, and service.",
   },
+  alternates: {
+    canonical: "/team",
+  },
 };
 
 export default function TeamPage() {

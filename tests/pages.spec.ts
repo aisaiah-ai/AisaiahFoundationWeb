@@ -110,7 +110,7 @@ test.describe("SEO", () => {
       try {
         const data = JSON.parse(s);
         const items = Array.isArray(data) ? data : [data];
-        return items.some((item) => item["@type"] === "Article");
+        return items.some((item) => item["@type"] === "Article" || item["@type"] === "BlogPosting");
       } catch {
         return false;
       }

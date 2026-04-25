@@ -25,6 +25,9 @@ export const metadata: Metadata = {
     description:
       "Events and gatherings that help communities grow in prayer, reflection, and service.",
   },
+  alternates: {
+    canonical: "/events",
+  },
 };
 
 const typeLabels: Record<string, string> = {

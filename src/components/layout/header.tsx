@@ -30,7 +30,7 @@ export function Header() {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
           ? "bg-slate-950/95 backdrop-blur-md shadow-sm border-b border-white/5"
-          : "bg-transparent"
+          : "bg-slate-950/80 backdrop-blur-sm"
       )}
     >
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

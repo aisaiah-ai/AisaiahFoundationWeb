@@ -1,0 +1,53 @@
+# Aisaiah Foundation
+
+> The Aisaiah Foundation is a 501(c)(3) nonprofit building the AIsaiah app —
+> a free spiritual companion for daily prayer, Scripture reflection, and service.
+> Rooted in the Catholic faith and Couples for Christ, open to all Christian communities.
+
+## About
+
+- Name: Aisaiah Foundation
+- Type: 501(c)(3) Nonprofit Organization
+- Founded: 2024
+- Location: Lewes, Delaware, USA
+- Contact: info@aisaiah.org | (443) 347-2424
+- Website: https://aisaiah.org
+
+## The AIsaiah App
+
+AIsaiah is a free mobile app (iOS and Android) that helps people build a daily rhythm
+of prayer, reflection, and service. It includes guided prayer, daily Scripture readings,
+spiritual growth tracking, journaling, and community event management with NFC/QR check-in.
+
+- App Store: https://apps.apple.com/us/app/aisaiah/id6751301980
+- Google Play: https://play.google.com/store/apps/details?id=org.aisaiah.spiritualfitness
+- Price: Free
+- Privacy: No ads, no data selling — privacy-first by design
+
+## Core Pages
+
+- [Home](https://aisaiah.org/): Main landing page — mission, app overview, and download
+- [About](https://aisaiah.org/about): Our story, mission, vision, values, and governance
+- [Solutions](https://aisaiah.org/solutions): The AIsaiah app — features, screenshots, download
+- [Board of Directors](https://aisaiah.org/board): Leadership and governance
+- [Team](https://aisaiah.org/team): The people building AIsaiah
+- [Partnerships](https://aisaiah.org/partnerships): How churches and ministries can partner with us
+- [CFC-USA Partnership](https://aisaiah.org/partnerships/cfc-usa): Our founding partnership with Couples for Christ USA
+- [Events](https://aisaiah.org/events): Community events and gatherings
+- [Contact](https://aisaiah.org/contact): Get in touch — partnerships, volunteering, donations
+- [Blog](https://aisaiah.org/blog): Articles on faith, technology, and ministry
+
+## Blog Posts
+
+- [Why We Built AIsaiah](https://aisaiah.org/blog/why-we-built-aisaiah): The founding story — why a group of CFC members built a prayer app
+- [Faith Communities Deserve Better Technology](https://aisaiah.org/blog/faith-communities-deserve-better-technology): Why churches and ministries need purpose-built tools
+- [Our Approach to Privacy in Ministry Tech](https://aisaiah.org/blog/our-approach-to-privacy-in-ministry-tech): How we protect spiritual data
+- [The Case for Purpose-Built Ministry Platforms](https://aisaiah.org/blog/the-case-for-purpose-built-ministry-platforms): Why generic tools fall short for faith communities
+
+## Key Facts
+
+- Three spiritual pillars: Pray, Reflect, Serve
+- AI-powered guidance grounded in Church teaching
+- Event management with registration, NFC/QR check-in, and photo galleries
+- Built for individuals, small groups, parishes, and large conferences
+- Tax-deductible donations accepted

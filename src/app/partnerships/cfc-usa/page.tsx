@@ -42,6 +42,9 @@ export const metadata: Metadata = {
     description:
       "Our founding partnership with Couples for Christ USA — helping communities grow in daily faith.",
   },
+  alternates: {
+    canonical: "/partnerships/cfc-usa",
+  },
 };
 
 interface AlignmentPoint {

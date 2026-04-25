@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     template: "%s | Aisaiah Foundation",
   },
   description: siteConfig.description,
-  keywords: siteConfig.keywords,
+  manifest: "/manifest.webmanifest",
   authors: [{ name: "Aisaiah Foundation" }],
   creator: "Aisaiah Foundation",
   publisher: "Aisaiah Foundation",
@@ -57,20 +57,22 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     images: ["/twitter-image.png"],
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  alternates: {
-    canonical: siteConfig.url,
-  },
+  robots: process.env.NEXT_PUBLIC_SITE_ENV === "production"
+    ? {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          "max-video-preview": -1,
+          "max-image-preview": "large",
+          "max-snippet": -1,
+        },
+      }
+    : {
+        index: false,
+        follow: false,
+      },
 };
 
 export default function RootLayout({

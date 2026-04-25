@@ -18,6 +18,9 @@ export const metadata: Metadata = {
     description:
       "Perspectives on faith, technology, and building daily spiritual habits.",
   },
+  alternates: {
+    canonical: "/blog",
+  },
 };
 
 export default function BlogPage() {

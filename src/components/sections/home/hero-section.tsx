@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Download, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AppPreviewCard } from "./app-preview-card";
 import { heroContent } from "@/content/homepage";
@@ -22,6 +23,7 @@ export function HeroSection() {
     headlineLine2,
     subheadline,
     primaryCTA,
+    googlePlayCTA,
     secondaryCTA,
     supportingLine,
     appScreens,
@@ -87,24 +89,45 @@ export function HeroSection() {
             <motion.div
               custom={0.36}
               variants={fadeInUp}
-              className="mt-10 flex flex-col gap-4 sm:flex-row"
+              className="mt-10 flex flex-col gap-5"
             >
-              <Button
-                href={primaryCTA.href}
-                variant="accent"
-                size="lg"
-              >
-                <Download className="mr-2 h-4 w-4" />
-                {primaryCTA.label}
-              </Button>
-              <Button
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                <a
+                  href={primaryCTA.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block transition-opacity hover:opacity-80"
+                >
+                  <Image
+                    src="/images/badge-appstore.png"
+                    alt="Download on the App Store"
+                    width={150}
+                    height={50}
+                    className="h-[50px] w-auto"
+                  />
+                </a>
+                <a
+                  href={googlePlayCTA.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block transition-opacity hover:opacity-80"
+                >
+                  <Image
+                    src="/images/badge-googleplay.png"
+                    alt="Get it on Google Play"
+                    width={150}
+                    height={50}
+                    className="h-[50px] w-auto"
+                  />
+                </a>
+              </div>
+              <a
                 href={secondaryCTA.href}
-                variant="outline"
-                size="lg"
+                className="inline-flex items-center justify-center h-[50px] px-6 rounded-lg border border-white/20 bg-white/5 text-white text-sm font-semibold transition-all hover:bg-white/10 hover:border-white/30"
               >
                 {secondaryCTA.label}
                 <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+              </a>
             </motion.div>
 
             <motion.p

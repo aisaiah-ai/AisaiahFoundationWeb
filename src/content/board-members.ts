@@ -83,10 +83,10 @@ export const boardMembers: BoardMember[] = [
     ],
   },
   {
-    name: "Christoper Angelo",
+    name: "Christopher Angelo",
     title: "Director",
     role: "Director",
-    bio: "Christoper serves as a Director on the Aisaiah Foundation Board, supporting the Foundation's strategic goals and ensuring its technology serves the real needs of churches and faith-based organizations.",
+    bio: "Christopher serves as a Director on the Aisaiah Foundation Board, supporting the Foundation's strategic goals and ensuring its technology serves the real needs of churches and faith-based organizations.",
     communityRoots:
       "Connected to the Couples for Christ community with a commitment to advancing technology for ministry use.",
     credentials: [

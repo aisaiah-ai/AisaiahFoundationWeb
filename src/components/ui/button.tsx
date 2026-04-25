@@ -53,26 +53,41 @@ export function Button(props: ButtonProps) {
   const classes = cn(baseStyles, variants[variant], sizes[size], className);
 
   if ("href" in props && props.href) {
-    const { href, ...linkProps } = props;
+    const {
+      href,
+      className: _cls,
+      variant: _v,
+      size: _s,
+      children: _c,
+      ...anchorProps
+    } = props as ButtonAsLink;
+
     const isExternal =
       href.startsWith("http") || href.startsWith("mailto:") || href.startsWith("tel:");
 
     if (isExternal) {
       return (
-        <a href={href} className={classes} {...linkProps}>
+        <a href={href} className={classes} {...anchorProps}>
           {children}
         </a>
       );
     }
 
     return (
-      <Link href={href} className={classes}>
+      <Link href={href} className={classes} {...(anchorProps as React.AnchorHTMLAttributes<HTMLAnchorElement>)}>
         {children}
       </Link>
     );
   }
 
-  const { href: _href, ...buttonProps } = props as ButtonAsButton;
+  const {
+    href: _href,
+    className: _cls,
+    variant: _v,
+    size: _s,
+    children: _c,
+    ...buttonProps
+  } = props as ButtonAsButton;
 
   return (
     <button className={classes} {...buttonProps}>

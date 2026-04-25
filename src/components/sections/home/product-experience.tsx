@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { StoreBadges } from "@/components/ui/store-badges";
 import { AppPreviewCard } from "./app-preview-card";
 import { SectionHeading } from "./section-heading";
 import { experienceContent } from "@/content/homepage";
@@ -82,13 +82,7 @@ export function ProductExperience() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="pt-4"
             >
-              <Button
-                href={cta.href}
-                variant="accent"
-                size="lg"
-              >
-                {cta.label}
-              </Button>
+              <StoreBadges />
             </motion.div>
           </div>
         </div>
