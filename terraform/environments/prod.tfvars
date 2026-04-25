@@ -9,9 +9,9 @@
 domain = "aisaiah.org"
 
 # Firebase Prod — replace with your production Firebase project values
-firebase_api_key_prod              = ""
-firebase_auth_domain_prod          = ""
-firebase_project_id_prod           = ""
-firebase_storage_bucket_prod       = ""
-firebase_messaging_sender_id_prod  = ""
-firebase_app_id_prod               = ""
+firebase_api_key_prod             = ""
+firebase_auth_domain_prod         = ""
+firebase_project_id_prod          = ""
+firebase_storage_bucket_prod      = ""
+firebase_messaging_sender_id_prod = ""
+firebase_app_id_prod              = ""

@@ -9,7 +9,9 @@ const REQUIRED_PUBLIC_FIREBASE = [
 
 export function assertBuildEnv(): void {
   if (process.env.SKIP_ENV_VALIDATION === "1") return;
-  if (process.env.NODE_ENV !== "production") return;
+  // next.config.ts is loaded by `next lint`, `next dev`, and `next build` alike.
+  // Only enforce env presence during the real production build.
+  if (process.env.NEXT_PHASE !== "phase-production-build") return;
 
   const missing = REQUIRED_PUBLIC_FIREBASE.filter((k) => !process.env[k]);
   if (missing.length === 0) return;

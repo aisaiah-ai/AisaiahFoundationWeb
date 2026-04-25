@@ -22,8 +22,8 @@ resource "cloudflare_pages_project" "site" {
 
 # Custom domain attachment (only if custom_domain is provided)
 resource "cloudflare_pages_domain" "custom" {
-  count      = var.custom_domain != "" ? 1 : 0
-  account_id = var.account_id
+  count        = var.custom_domain != "" ? 1 : 0
+  account_id   = var.account_id
   project_name = cloudflare_pages_project.site.name
   domain       = var.custom_domain
 }

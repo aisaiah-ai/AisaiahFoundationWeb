@@ -9,9 +9,9 @@
 domain = "aisaiah.org"
 
 # Firebase Dev — replace with your dev Firebase project values
-firebase_api_key_dev              = ""
-firebase_auth_domain_dev          = ""
-firebase_project_id_dev           = ""
-firebase_storage_bucket_dev       = ""
-firebase_messaging_sender_id_dev  = ""
-firebase_app_id_dev               = ""
+firebase_api_key_dev             = ""
+firebase_auth_domain_dev         = ""
+firebase_project_id_dev          = ""
+firebase_storage_bucket_dev      = ""
+firebase_messaging_sender_id_dev = ""
+firebase_app_id_dev              = ""
