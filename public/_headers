@@ -1,0 +1,45 @@
+# Cloudflare Pages headers config.
+# Controls content-type and caching for static assets.
+
+# Apple Universal Links — Apple requires application/json for this file with no extension.
+/.well-known/apple-app-site-association
+  Content-Type: application/json
+  Cache-Control: public, max-age=3600
+
+# Android App Links
+/.well-known/assetlinks.json
+  Content-Type: application/json
+  Cache-Control: public, max-age=3600
+
+# HTML — never cache (so deploys propagate immediately)
+/*.html
+  Cache-Control: no-cache, no-store, must-revalidate
+  X-Content-Type-Options: nosniff
+
+# Fingerprinted JS/CSS bundles — long cache
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images and fonts
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+/*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+/*.svg
+  Cache-Control: public, max-age=31536000, immutable
+/*.ico
+  Cache-Control: public, max-age=31536000, immutable
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+/*.woff
+  Cache-Control: public, max-age=31536000, immutable
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+/*.ttf
+  Cache-Control: public, max-age=31536000, immutable
+
+# Default: short cache, allows quick rollouts
+/*
+  Cache-Control: public, max-age=300
