@@ -25,7 +25,7 @@ import {
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "The story behind AIsaiah Foundation — a 501(c)(3) nonprofit helping people build a daily relationship with God through prayer, reflection, and service.",
+    "The story behind AIsaiah Foundation — a nonprofit foundation helping people build a daily relationship with God through prayer, reflection, and service.",
   openGraph: {
     title: "About Us | Aisaiah Foundation",
     description:
@@ -71,7 +71,7 @@ const values = [
     icon: Eye,
     title: "Transparency",
     description:
-      "As a 501(c)(3) nonprofit, we're accountable to you. Our decisions and roadmaps are open.",
+      "As a nonprofit foundation, we're accountable to you. Our decisions and roadmaps are open.",
   },
 ];
 

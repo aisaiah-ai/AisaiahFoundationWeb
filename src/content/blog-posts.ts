@@ -24,7 +24,7 @@ Aisaiah Foundation was born from a simple conviction: faith communities deserve 
 
 We set out to build a platform that handles the operational weight — event registration, RSVP tracking, check-in, session management, reporting — so ministry leaders can focus on what matters most: the people in front of them.
 
-We incorporated as a 501(c)(3) nonprofit because we believe this work should be mission-governed, not profit-driven. The technology we build belongs to the communities it serves.
+We incorporated as a nonprofit because we believe this work should be mission-governed, not profit-driven. The technology we build belongs to the communities it serves.
 
 ## Where we are today
 
@@ -119,7 +119,7 @@ When we approach potential partners — churches, ministries, dioceses, organiza
 
 Ministry leaders are responsible for the trust their community places in them. Choosing a technology partner is, in part, choosing who to trust with that community's information.
 
-We built Aisaiah Foundation as a 501(c)(3) nonprofit precisely so that our incentives are aligned with the communities we serve. We don't have shareholders pushing for data monetization. We don't have ad revenue targets. Our only stakeholder is the mission.
+We built Aisaiah Foundation as a nonprofit precisely so that our incentives are aligned with the communities we serve. We don't have shareholders pushing for data monetization. We don't have ad revenue targets. Our only stakeholder is the mission.
 
 That's not just a policy position. It's a structural commitment.`,
     author: "Isaiah Elijah Aisaiah",

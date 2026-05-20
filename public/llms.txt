@@ -1,13 +1,13 @@
 # Aisaiah Foundation
 
-> The Aisaiah Foundation is a 501(c)(3) nonprofit building the AIsaiah app —
+> The Aisaiah Foundation is a Delaware nonprofit corporation (501(c)(3) status pending) building the AIsaiah app —
 > a free spiritual companion for daily prayer, Scripture reflection, and service.
 > Rooted in the Catholic faith and Couples for Christ, open to all Christian communities.
 
 ## About
 
 - Name: Aisaiah Foundation
-- Type: 501(c)(3) Nonprofit Organization
+- Type: Delaware Nonprofit Corporation (501(c)(3) status pending)
 - Founded: 2024
 - Location: Lewes, Delaware, USA
 - Contact: info@aisaiah.org | (443) 347-2424
@@ -50,4 +50,3 @@ spiritual growth tracking, journaling, and community event management with NFC/Q
 - AI-powered guidance grounded in Church teaching
 - Event management with registration, NFC/QR check-in, and photo galleries
 - Built for individuals, small groups, parishes, and large conferences
-- Tax-deductible donations accepted

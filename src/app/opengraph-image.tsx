@@ -77,14 +77,14 @@ export default function OpenGraphImage() {
               }}
             >
               Build daily habits of prayer, reflection, and service with the
-              free AIsaiah app. Built by a 501(c)(3) nonprofit.
+              free AIsaiah app. Built by a nonprofit foundation.
             </div>
           </div>
 
           <div style={{ display: "flex", gap: 18 }}>
             {[
               "Prayer · Reflection · Service",
-              "501(c)(3) Nonprofit",
+              "Nonprofit Foundation",
               "Free on iOS & Android",
             ].map((item) => (
               <div

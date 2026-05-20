@@ -3,7 +3,7 @@ export const siteConfig = {
   shortName: "Aisaiah",
   url: "https://aisaiah.org",
   description:
-    "Helping people build a daily relationship with God through prayer, reflection, and service. Download the free AIsaiah app for guided prayer, Scripture, and spiritual growth — built by a 501(c)(3) nonprofit.",
+    "Helping people build a daily relationship with God through prayer, reflection, and service. Download the free AIsaiah app for guided prayer, Scripture, and spiritual growth — built by a nonprofit foundation.",
   tagline: "Helping people grow in faith through prayer, reflection, and service.",
   email: "info@aisaiah.org",
   phone: "+1-443-347-2424",
@@ -39,7 +39,7 @@ export const trustHighlights = [
     label: "Build daily habits that help you grow in your faith",
   },
   {
-    value: "501(c)(3) Nonprofit",
+    value: "Nonprofit Foundation",
     label: "No ads, no data selling — built to help you grow, not to profit from you",
   },
 ];

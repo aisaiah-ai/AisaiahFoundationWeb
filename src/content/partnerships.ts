@@ -41,7 +41,7 @@ export const partnerships: Partnership[] = [
     description:
       "Support our mission to help more people grow in faith. Your contribution brings tools for prayer, reflection, and service to communities that need them most.",
     benefits: [
-      "Tax-deductible contributions to a 501(c)(3) nonprofit",
+      "Direct support for a mission-driven nonprofit foundation",
       "Regular updates on impact and community growth",
       "Opportunities to volunteer your skills",
       "Invitations to partner events and gatherings",
@@ -54,7 +54,7 @@ export const partnerships: Partnership[] = [
 
 export const partnershipHighlights = [
   {
-    metric: "501(c)(3)",
+    metric: "Nonprofit",
     description: "We exist to help people grow in faith — not to generate profit.",
   },
   {
