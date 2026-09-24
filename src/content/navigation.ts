@@ -6,6 +6,7 @@ export const mainNavItems: NavItem[] = [
   { label: "Solutions", href: "/solutions" },
   { label: "Partnerships", href: "/partnerships" },
   { label: "Blog", href: "/blog" },
+  { label: "Download", href: "/download" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -25,10 +26,12 @@ export const footerNavItems = {
     { label: "Contact Us", href: "/contact" },
     { label: "Partnership Inquiry", href: "/contact#partnership" },
     { label: "Blog & Insights", href: "/blog" },
-    { label: "Download App", href: "/solutions#download" },
+    { label: "Download App", href: "/download" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
+    { label: "Account Deletion", href: "/data-deletion" },
+    { label: "Security & Compliance", href: "/security" },
   ],
 };

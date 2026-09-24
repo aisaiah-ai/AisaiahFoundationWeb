@@ -131,8 +131,7 @@ export function Footer() {
             Helping people grow in faith through prayer, reflection, and service.
           </p>
           <p className="text-xs text-slate-600 text-center mt-3 max-w-3xl mx-auto">
-            Aisaiah Foundation is a registered 501(c)(3) nonprofit organization.
-            Contributions are tax-deductible to the extent permitted by law.
+            Aisaiah Foundation is a Delaware nonprofit corporation (501(c)(3) status pending).
           </p>
         </div>
       </div>

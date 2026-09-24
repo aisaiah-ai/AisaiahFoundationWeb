@@ -60,7 +60,7 @@ const partnershipTypes: PartnershipType[] = [
     icon: Heart,
     title: "Donor & Supporter",
     description:
-      "Help us bring tools for prayer, reflection, and service to more people. Every contribution is tax-deductible.",
+      "Help us bring tools for prayer, reflection, and service to more people around the world.",
   },
 ];
 

@@ -45,6 +45,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     },
     {
+      url: `${baseUrl}/download`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/blog`,
       lastModified: new Date(),
       changeFrequency: "weekly",
@@ -80,6 +86,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: "yearly",
       priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/security`,
+      lastModified: new Date("2026-09-24"),
+      changeFrequency: "monthly",
+      priority: 0.4,
     },
   ];
 }

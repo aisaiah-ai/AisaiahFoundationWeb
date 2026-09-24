@@ -96,7 +96,7 @@ export default function BoardPage() {
             label: "Board leadership shaped by Catholic faith and Couples for Christ experience.",
           },
           {
-            value: "501(c)(3) Governed",
+            value: "Nonprofit Governed",
             label: "Transparent nonprofit governance with mission-driven accountability.",
           },
         ]}

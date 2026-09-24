@@ -88,7 +88,7 @@ export default function SolutionsPage() {
   const faqSchema = getFAQSchema([
     {
       question: "What is AIsaiah?",
-      answer: "AIsaiah is a free mobile app built by the Aisaiah Foundation, a 501(c)(3) nonprofit. It helps people build a daily rhythm of prayer, Scripture reflection, and service — guided by AI, grounded in Church teaching.",
+      answer: "AIsaiah is a free mobile app built by the Aisaiah Foundation, a nonprofit foundation. It helps people build a daily rhythm of prayer, Scripture reflection, and service — guided by AI, grounded in Church teaching.",
     },
     {
       question: "Is AIsaiah free?",

@@ -103,7 +103,7 @@ export const trustContent = {
   headline:
     "Trusted by faith communities, ministries, and spiritual leaders",
   items: [
-    { icon: "Shield", label: "501(c)(3) Nonprofit" },
+    { icon: "Shield", label: "Nonprofit Foundation" },
     { icon: "Users", label: "Faith Communities" },
     { icon: "Sparkles", label: "AI-Powered" },
     { icon: "Heart", label: "Privacy-First" },
@@ -253,7 +253,7 @@ export const missionContent = {
   eyebrow: "Our Mission",
   headline: "Why this exists",
   body: [
-    "We believe faith should be lived daily \u2014 not just on Sundays. AIsaiah Foundation is a 501(c)(3) nonprofit building tools that make it easier for every person and every community to grow closer to God through prayer, reflection, and service.",
+    "We believe faith should be lived daily \u2014 not just on Sundays. AIsaiah Foundation is a Delaware nonprofit corporation building tools that make it easier for every person and every community to grow closer to God through prayer, reflection, and service.",
     "Rooted in the Catholic faith and Couples for Christ, open to all Christian communities.",
   ],
   values: [
@@ -286,7 +286,7 @@ export const donationContent = {
   headline: "Support the journey",
   description:
     "Every contribution helps us bring tools for prayer, reflection, and service to more people around the world. You\u2019re not just donating \u2014 you\u2019re helping someone grow closer to God.",
-  trustMarkers: ["Tax-deductible", "501(c)(3) nonprofit", "100% mission-driven"],
+  trustMarkers: ["Nonprofit foundation", "100% mission-driven"],
   cta: { label: "Support AIsaiah", href: coreMessaging.contactUrl } satisfies CTALink,
 };
 

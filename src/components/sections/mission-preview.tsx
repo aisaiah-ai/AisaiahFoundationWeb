@@ -91,7 +91,7 @@ export function MissionPreview() {
       <div className="mt-10 grid gap-4 rounded-[2rem] border border-white/8 bg-white/[0.03] p-6 md:grid-cols-3">
         {[
           "Rooted in the Catholic faith and Couples for Christ, open to all Christian communities.",
-          "Technology governed by a 501(c)(3) nonprofit mandate — mission over profit.",
+          "Technology governed by a nonprofit mandate — mission over profit.",
           "Every feature built around real ministry workflows and volunteer-driven operations.",
         ].map((item) => (
           <div key={item} className="flex items-start gap-3">

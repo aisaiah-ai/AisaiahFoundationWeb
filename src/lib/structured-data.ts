@@ -25,7 +25,6 @@ export function getOrganizationSchema() {
       email: siteConfig.email,
     },
     sameAs: siteConfig.sameAs,
-    nonprofitStatus: "Nonprofit501c3",
     areaServed: "United States",
     keywords: siteConfig.keywords.join(", "),
   };
